@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="AVX_TPSD107K010R0080_0">
+                    <description>Low ESR</description>
+                    <wire layer="51" y2="2.15" width="0.15" x2="-3.65" y1="-2.15" x1="-3.65"/>
+                    <wire layer="51" y2="2.15" width="0.15" x2="3.65" y1="2.15" x1="-3.65"/>
+                    <wire layer="51" y2="-2.15" width="0.15" x2="3.65" y1="2.15" x1="3.65"/>
+                    <wire layer="51" y2="-2.15" width="0.15" x2="-3.65" y1="-2.15" x1="3.65"/>
+                    <wire layer="21" y2="2.15" width="0.15" x2="-3.65" y1="2.15" x1="3.65"/>
+                    <wire layer="21" y2="-2.15" width="0.15" x2="3.65" y1="-2.15" x1="-3.65"/>
+                    <wire layer="39" y2="2.35" width="0.1" x2="-4.1" y1="-2.35" x1="-4.1"/>
+                    <wire layer="39" y2="2.35" width="0.1" x2="4.1" y1="2.35" x1="-4.1"/>
+                    <wire layer="39" y2="-2.35" width="0.1" x2="4.1" y1="2.35" x1="4.1"/>
+                    <wire layer="39" y2="-2.35" width="0.1" x2="-4.1" y1="-2.35" x1="4.1"/>
+                    <text layer="25" align="bottom-left" y="2.6" x="-4.125" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="0.05" x="-4.65" layer="21" radius="0.25" width="0.0"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="2.0" dy="3.0" y="0.0" x="-3.0" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="2.0" dy="3.0" y="0.0" x="3.0" rot="R0" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="AVX_TPSD107K010R0080_0_0">
+                    <description>Low ESR</description>
+                    <wire layer="94" y2="-4.057" width="0.508" curve="-96.9109812718" x2="5.08" y1="-4.057" x1="0.0"/>
+                    <wire layer="94" y2="-2.032" width="0.508" x2="5.08" y1="-2.032" x1="0.0"/>
+                    <wire layer="94" y2="-3.048" width="0.15" x2="2.54" y1="-5.08" x1="2.54"/>
+                    <wire layer="94" y2="-2.032" width="0.15" x2="2.54" y1="0.0" x1="2.54"/>
+                    <text layer="95" align="top-left" y="0.762" x="8.382" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-4.318" x="8.382" rot="R0" size="2.54">100.0µF</text>
+                    <text layer="95" align="top-left" y="0.508" x="-0.254" rot="R0" size="2.54">+</text>
+                    <text layer="95" align="top-left" y="-1.778" x="8.382" rot="R0" size="2.54">10V</text>
+                    <pin name="CATHODE" visible="pad" length="short" y="-7.62" x="2.54" rot="R90"/>
+                    <pin name="ANODE" visible="pad" length="short" y="2.54" x="2.54" rot="R270"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="C" name="AVX_TPSD107K010R0080">
+                    <description>Low ESR</description>
+                    <gates>
+                        <gate name="G$0" symbol="AVX_TPSD107K010R0080_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="AVX_TPSD107K010R0080_0_0" package="AVX_TPSD107K010R0080_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="CATHODE"/>
+                                <connect gate="G$0" pad="2" pin="ANODE"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="MPN" value="TPSD107K010R0080"/>
+                                    <attribute name="mouser_part_number" value="581-TPSD107K010R0080"/>
+                                    <attribute name="capacitance" value="100.0µF"/>
+                                    <attribute name="package" value="2917 (7343 metric)"/>
+                                    <attribute name="digikey_description" value="CAP TANT 100UF 10V 10% 2917"/>
+                                    <attribute name="centroid_not_specified" value="No"/>
+                                    <attribute name="digikey_part_number" value="478-5242-1-ND"/>
+                                    <attribute name="lead_free" value="yes"/>
+                                    <attribute name="rohs" value="yes"/>
+                                    <attribute name="prefix" value="C"/>
+                                    <attribute name="MF" value="AVX"/>
+                                    <attribute name="voltage" value="10V"/>
+                                    <attribute name="temperature_range_low" value="-55°C"/>
+                                    <attribute name="datasheet" value="https://upverter.com/datasheet/fe583bf64744968656606b570adcaf0be7e175dd.pdf"/>
+                                    <attribute name="temperature_range_high" value="+125°C"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>

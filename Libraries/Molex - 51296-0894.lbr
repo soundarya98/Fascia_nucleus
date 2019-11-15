@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="MOLEX_51296-0894_0">
+                    <description>MOLX-51296-0894</description>
+                    <wire layer="51" y2="1.225" width="0.1" x2="2.5" y1="1.225" x1="-2.5"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="-2.5" y1="1.225" x1="-2.5"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="-2.5" y1="1.45" x1="-3.3"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="2.5" y1="1.225" x1="2.5"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="3.3" y1="1.45" x1="2.5"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="3.3" y1="0.35" x1="3.3"/>
+                    <wire layer="51" y2="0.35" width="0.1" x2="3.85" y1="0.35" x1="3.3"/>
+                    <wire layer="51" y2="1.45" width="0.1" x2="-3.3" y1="0.35" x1="-3.3"/>
+                    <wire layer="51" y2="0.35" width="0.1" x2="-3.3" y1="0.35" x1="-3.85"/>
+                    <wire layer="51" y2="0.35" width="0.1" x2="-3.85" y1="-2.25" x1="-3.85"/>
+                    <wire layer="51" y2="-2.25" width="0.1" x2="-2.15" y1="-2.25" x1="-3.85"/>
+                    <wire layer="51" y2="0.35" width="0.1" x2="3.85" y1="-2.25" x1="3.85"/>
+                    <wire layer="51" y2="-2.25" width="0.1" x2="3.85" y1="-2.25" x1="2.15"/>
+                    <wire layer="51" y2="-2.55" width="0.1" x2="2.15" y1="-2.55" x1="-2.15"/>
+                    <wire layer="51" y2="-2.25" width="0.1" x2="2.15" y1="-2.55" x1="2.15"/>
+                    <wire layer="51" y2="-2.25" width="0.1" x2="-2.15" y1="-2.55" x1="-2.15"/>
+                    <wire layer="21" y2="0.35" width="0.15" x2="3.85" y1="-0.375" x1="3.85"/>
+                    <wire layer="21" y2="0.35" width="0.15" x2="3.85" y1="0.35" x1="3.3"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="3.3" y1="0.35" x1="3.3"/>
+                    <wire layer="21" y2="0.35" width="0.15" x2="-3.85" y1="-0.375" x1="-3.85"/>
+                    <wire layer="21" y2="0.35" width="0.15" x2="-3.3" y1="0.35" x1="-3.85"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="-3.3" y1="0.35" x1="-3.3"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="-2.3" y1="1.45" x1="-3.3"/>
+                    <wire layer="21" y2="1.45" width="0.15" x2="3.3" y1="1.45" x1="2.3"/>
+                    <wire layer="21" y2="-2.25" width="0.15" x2="-2.2" y1="-2.55" x1="-2.2"/>
+                    <wire layer="21" y2="-2.55" width="0.15" x2="2.2" y1="-2.55" x1="-2.2"/>
+                    <wire layer="21" y2="-2.25" width="0.15" x2="2.2" y1="-2.55" x1="2.2"/>
+                    <wire layer="39" y2="2.025" width="0.1" x2="-4.1" y1="-2.65" x1="-4.1"/>
+                    <wire layer="39" y2="2.025" width="0.1" x2="4.1" y1="2.025" x1="-4.1"/>
+                    <wire layer="39" y2="-2.65" width="0.1" x2="4.1" y1="2.025" x1="4.1"/>
+                    <wire layer="39" y2="-2.65" width="0.1" x2="-4.1" y1="-2.65" x1="4.1"/>
+                    <text layer="25" align="bottom-left" y="2.6" x="-5.1" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="2.475" x="-1.75" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="MP2" stop="yes" roundness="0" dx="1.4" dy="1.5" y="-1.525" x="3.3" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="MP1" stop="yes" roundness="0" dx="1.4" dy="1.5" y="-1.525" x="-3.3" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="-1.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="-1.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="-0.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="4" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="-0.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="5" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="0.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="6" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="0.75" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="7" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="1.25" rot="R0" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="8" stop="yes" roundness="0" dx="0.3" dy="0.8" y="1.525" x="1.75" rot="R0" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="MOLEX_51296-0894_0_0">
+                    <description>MOLX-51296-0894</description>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="20.32" y1="-10.16" x1="20.32"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="17.78" y1="-10.16" x1="17.78"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="15.24" y1="-10.16" x1="15.24"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="12.7" y1="-10.16" x1="12.7"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="10.16" y1="-10.16" x1="10.16"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="7.62" y1="-10.16" x1="7.62"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="5.08" y1="-10.16" x1="5.08"/>
+                    <wire layer="94" y2="-8.382" width="0.254" x2="2.54" y1="-10.16" x1="2.54"/>
+                    <wire layer="94" y2="-5.08" width="0.254" x2="0.0" y1="-10.16" x1="0.0"/>
+                    <wire layer="94" y2="-5.08" width="0.254" x2="30.48" y1="-5.08" x1="0.0"/>
+                    <wire layer="94" y2="-10.16" width="0.254" x2="30.48" y1="-5.08" x1="30.48"/>
+                    <wire layer="94" y2="-10.16" width="0.254" x2="0.0" y1="-10.16" x1="30.48"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="2.54" y1="-10.16" x1="2.54"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="5.08" y1="-10.16" x1="5.08"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="7.62" y1="-10.16" x1="7.62"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="10.16" y1="-10.16" x1="10.16"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="12.7" y1="-10.16" x1="12.7"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="15.24" y1="-10.16" x1="15.24"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="17.78" y1="-10.16" x1="17.78"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="20.32" y1="-10.16" x1="20.32"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="25.4" y1="-10.16" x1="25.4"/>
+                    <wire layer="94" y2="-10.16" width="0.15" x2="27.94" y1="-10.16" x1="27.94"/>
+                    <text layer="95" align="top-left" y="-2.54" x="0.0" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-15.24" x="0.0" rot="R0" size="2.54">51296-0894</text>
+                    <pin direction="pas" name="1" visible="pad" length="middle" y="-15.24" x="2.54" rot="R90"/>
+                    <pin direction="pas" name="2" visible="pad" length="middle" y="-15.24" x="5.08" rot="R90"/>
+                    <pin direction="pas" name="3" visible="pad" length="middle" y="-15.24" x="7.62" rot="R90"/>
+                    <pin direction="pas" name="4" visible="pad" length="middle" y="-15.24" x="10.16" rot="R90"/>
+                    <pin direction="pas" name="5" visible="pad" length="middle" y="-15.24" x="12.7" rot="R90"/>
+                    <pin direction="pas" name="6" visible="pad" length="middle" y="-15.24" x="15.24" rot="R90"/>
+                    <pin direction="pas" name="7" visible="pad" length="middle" y="-15.24" x="17.78" rot="R90"/>
+                    <pin direction="pas" name="8" visible="pad" length="middle" y="-15.24" x="20.32" rot="R90"/>
+                    <pin direction="pas" name="MP1" visible="pad" length="middle" y="-15.24" x="25.4" rot="R90"/>
+                    <pin direction="pas" name="MP2" visible="pad" length="middle" y="-15.24" x="27.94" rot="R90"/>
+                    <circle y="-7.62" x="20.32" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="17.78" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="15.24" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="12.7" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="10.16" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="7.62" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="5.08" layer="94" radius="0.762" width="0.254"/>
+                    <circle y="-7.62" x="2.54" layer="94" radius="0.762" width="0.254"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="J" name="MOLEX_51296-0894">
+                    <description>MOLX-51296-0894</description>
+                    <gates>
+                        <gate name="G$0" symbol="MOLEX_51296-0894_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="MOLEX_51296-0894_0_0" package="MOLEX_51296-0894_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="1"/>
+                                <connect gate="G$0" pad="2" pin="2"/>
+                                <connect gate="G$0" pad="3" pin="3"/>
+                                <connect gate="G$0" pad="4" pin="4"/>
+                                <connect gate="G$0" pad="5" pin="5"/>
+                                <connect gate="G$0" pad="6" pin="6"/>
+                                <connect gate="G$0" pad="7" pin="7"/>
+                                <connect gate="G$0" pad="8" pin="8"/>
+                                <connect gate="G$0" pad="MP1" pin="MP1"/>
+                                <connect gate="G$0" pad="MP2" pin="MP2"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="ciiva_ids" value="3409071"/>
+                                    <attribute name="Mated_Height" value="1.30mm"/>
+                                    <attribute name="Package_Version" value="Rev. G, 02/2011"/>
+                                    <attribute name="PCB_Locator" value="No"/>
+                                    <attribute name="vault_guid" value="2937BB50-6008-42CC-8559-B100ADC953FA"/>
+                                    <attribute name="Entry_Angle" value="90degrees Angle"/>
+                                    <attribute name="Current_Max_per_Contact" value="0.5A"/>
+                                    <attribute name="Number_of_Rows" value="1"/>
+                                    <attribute name="Circuits_Loaded" value="8"/>
+                                    <attribute name="Mounting_Technology" value="Surface Mount"/>
+                                    <attribute name="vault_revision" value="0B9025CA-EB6C-49A6-9111-C6D027E69005"/>
+                                    <attribute name="Pitch___Mating_Interface" value="0.50mm"/>
+                                    <attribute name="Component_Link_1_URL" value="http://www.molex.com/molex/index.jsp"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="J"/>
+                                    <attribute name="import_ts" value="1521842456"/>
+                                    <attribute name="Packing" value="Tape and Reel"/>
+                                    <attribute name="Orientation" value="Right Angle"/>
+                                    <attribute name="release_date" value="1411372363"/>
+                                    <attribute name="datasheet" value="http://www.molex.com/webdocs/datasheets/pdf/en-us/0512960894_FFC_FPC_CONNECTORS.pdf"/>
+                                    <attribute name="Material___Plating_Mating" value="Gold"/>
+                                    <attribute name="Polarized_to_PCB" value="Yes"/>
+                                    <attribute name="MPN" value="51296-0894"/>
+                                    <attribute name="Component_Link_1_Description" value="Manufacturer URL"/>
+                                    <attribute name="Material___Plating_Termination" value="Gold"/>
+                                    <attribute name="Durability_mating_cycles_max" value="20"/>
+                                    <attribute name="Contact_Position" value="Bottom"/>
+                                    <attribute name="footprint_variant_name_0" value="Manufacturer Recommended"/>
+                                    <attribute name="Package_Description" value="8-Lead FPC Connector, Pitch 0.5 mm"/>
+                                    <attribute name="Stackable" value="No"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="Voltage_Max" value="50V AC (RMS)/DC"/>
+                                    <attribute name="rohs" value="Yes"/>
+                                    <attribute name="Component_Link_3_Description" value="Package Specification"/>
+                                    <attribute name="PCB_Retention" value="Yes"/>
+                                    <attribute name="Material___Metal" value="Phosphor Bronze"/>
+                                    <attribute name="MF" value="Molex"/>
+                                    <attribute name="package" value="51296-0894"/>
+                                    <attribute name="Component_Link_3_URL" value="http://www.molex.com/pdm_docs/sd/512960894_sd.pdf"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
