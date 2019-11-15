@@ -2463,6 +2463,40 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="140K" prefix="R" uservalue="yes">
+<description>&lt;h3&gt;140KΩ resistor&lt;/h3&gt;
+&lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-0402-1/10W-1%" package="0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:39657/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="140K"/>
+</technology>
+</technologies>
+</device>
+<device name="" package="0402-TIGHT">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="140K" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="150K" prefix="R" uservalue="yes">
 <description>&lt;h3&gt;150KΩ resistor&lt;/h3&gt;
 &lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
@@ -2497,8 +2531,8 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="39K" prefix="R" uservalue="yes">
-<description>&lt;h3&gt;39KΩ resistor&lt;/h3&gt;
+<deviceset name="20K" prefix="R" uservalue="yes">
+<description>&lt;h3&gt;20KΩ resistor&lt;/h3&gt;
 &lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
@@ -2514,7 +2548,7 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="VALUE" value="39K"/>
+<attribute name="VALUE" value="20K"/>
 </technology>
 </technologies>
 </device>
@@ -2525,7 +2559,7 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="VALUE" value="39K" constant="no"/>
+<attribute name="VALUE" value="20K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -2588,8 +2622,8 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="2M" prefix="R" uservalue="yes">
-<description>&lt;h3&gt;2MΩ resistor&lt;/h3&gt;
+<deviceset name="875K" prefix="R" uservalue="yes">
+<description>&lt;h3&gt;875KΩ resistor&lt;/h3&gt;
 &lt;p&gt;A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. Resistors act to reduce current flow, and, at the same time, act to lower voltage levels within circuits. - Wikipedia&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
@@ -2605,7 +2639,7 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </package3dinstances>
 <technologies>
 <technology name="">
-<attribute name="VALUE" value="2M"/>
+<attribute name="VALUE" value="875K"/>
 </technology>
 </technologies>
 </device>
@@ -2616,7 +2650,7 @@ the space saving, 8-lead, wide body SOIC_IC.</description>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="VALUE" value="2M" constant="no"/>
+<attribute name="VALUE" value="875K" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -3801,15 +3835,15 @@ Created by Upverter.com</description>
 <part name="U$28" library="supply1" deviceset="DVDD_ISO" device=""/>
 <part name="C24" library="novaXR" deviceset="0.1UF" device="-0402T-16V-10%" value="0.1uF"/>
 <part name="C25" library="novaXR" deviceset="0.1UF" device="-0402T-16V-10%" value="0.1uF"/>
-<part name="R7" library="novaXR" deviceset="39K" device="" value="39K"/>
-<part name="R8" library="novaXR" deviceset="150K" device="" value="150K"/>
+<part name="R7" library="novaXR" deviceset="20K" device="" value="20K"/>
+<part name="R8" library="novaXR" deviceset="140K" device="" value="140K"/>
 <part name="C26" library="novaXR" deviceset="1UF" device="-0402T-16V-10%" value="1uF"/>
 <part name="U$29" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="U$30" library="supply1" deviceset="DVDD_ISO" device=""/>
 <part name="C27" library="novaXR" deviceset="47UF" device="-0603-25V-5%" value="47uF"/>
 <part name="U$31" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="U$19" library="supply1" deviceset="DVDD_ISO" device=""/>
-<part name="R9" library="novaXR" deviceset="2M" device="" value="2M"/>
+<part name="R9" library="novaXR" deviceset="875K" device="" value="875K"/>
 <part name="R10" library="novaXR" deviceset="75K" device="" value="75K"/>
 <part name="R11" library="novaXR" deviceset="150K" device="" value="150K"/>
 <part name="U$34" library="supply1" deviceset="GND_ISO" device=""/>
@@ -5373,11 +5407,11 @@ Created by Upverter.com</description>
 <label x="41.148" y="250.444" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<wire x1="233.5784" y1="170.18" x2="228.6" y2="170.18" width="0.1524" layer="91"/>
-<label x="234.696" y="170.18" size="1.016" layer="95" xref="yes"/>
-<wire x1="228.6" y1="170.18" x2="234.696" y2="170.18" width="0.1524" layer="91"/>
-<junction x="228.6" y="170.18"/>
-<pinref part="J3" gate="G$0" pin="3"/>
+<wire x1="233.5784" y1="185.42" x2="228.6" y2="185.42" width="0.1524" layer="91"/>
+<label x="234.696" y="185.42" size="1.016" layer="95" xref="yes"/>
+<wire x1="228.6" y1="185.42" x2="234.696" y2="185.42" width="0.1524" layer="91"/>
+<junction x="228.6" y="185.42"/>
+<pinref part="J3" gate="G$0" pin="9"/>
 </segment>
 </net>
 <net name="8N" class="0">
@@ -5394,11 +5428,11 @@ Created by Upverter.com</description>
 <pinref part="RN1" gate="G$1" pin="P$3"/>
 </segment>
 <segment>
-<wire x1="233.5784" y1="185.42" x2="228.6" y2="185.42" width="0.1524" layer="91"/>
-<label x="234.696" y="185.42" size="1.016" layer="95" xref="yes"/>
-<wire x1="228.6" y1="185.42" x2="234.696" y2="185.42" width="0.1524" layer="91"/>
-<junction x="228.6" y="185.42"/>
-<pinref part="J3" gate="G$0" pin="9"/>
+<wire x1="233.5784" y1="170.18" x2="228.6" y2="170.18" width="0.1524" layer="91"/>
+<label x="234.696" y="170.18" size="1.016" layer="95" xref="yes"/>
+<wire x1="228.6" y1="170.18" x2="234.696" y2="170.18" width="0.1524" layer="91"/>
+<junction x="228.6" y="170.18"/>
+<pinref part="J3" gate="G$0" pin="3"/>
 </segment>
 </net>
 <net name="8P" class="0">
