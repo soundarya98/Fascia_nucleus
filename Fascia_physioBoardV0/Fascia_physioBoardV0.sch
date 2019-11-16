@@ -3918,7 +3918,6 @@ Created by Upverter.com</description>
 <text x="170.18" y="121.92" size="1.778" layer="97">EDA follows the circuit shown in this paper https://www.mdpi.com/1424-8220/17/10/2324/htm#B25-sensors-17-02324 </text>
 <wire x1="327.66" y1="124.46" x2="327.66" y2="100.24" width="0.1524" layer="94"/>
 <wire x1="327.66" y1="100.24" x2="429.26" y2="100.24" width="0.1524" layer="94"/>
-<text x="332.74" y="25.4" size="5.08" layer="97">OPENBCI </text>
 <text x="198.12" y="53.34" size="2.1844" layer="95">ADUM5028</text>
 </plain>
 <instances>
