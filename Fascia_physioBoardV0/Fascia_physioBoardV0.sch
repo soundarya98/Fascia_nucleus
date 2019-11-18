@@ -4490,6 +4490,11 @@ Created by Upverter.com</description>
 <label x="233.68" y="193.04" size="1.016" layer="95" xref="yes"/>
 <pinref part="J3" gate="G$0" pin="12"/>
 </segment>
+<segment>
+<pinref part="U11" gate="G$1" pin="IO2"/>
+<wire x1="80.01" y1="17.78" x2="76.454" y2="17.78" width="0.1524" layer="91"/>
+<label x="76.454" y="17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="AVSS" class="0">
 <segment>
@@ -6244,11 +6249,6 @@ Created by Upverter.com</description>
 <label x="165.1" y="167.64" size="1.016" layer="95" xref="yes"/>
 <pinref part="J2" gate="G$0" pin="13"/>
 <wire x1="157.48" y1="167.64" x2="165.1" y2="167.64" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U11" gate="G$1" pin="IO2"/>
-<wire x1="80.01" y1="17.78" x2="76.454" y2="17.78" width="0.1524" layer="91"/>
-<label x="76.454" y="17.78" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <label x="165.1" y="170.18" size="1.016" layer="95" xref="yes"/>
