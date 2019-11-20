@@ -4262,8 +4262,8 @@ Created by Upverter.com</description>
 <instance part="GND2" gate="1" x="415.29" y="168.656" smashed="yes">
 <attribute name="VALUE" x="415.29" y="167.132" size="1.778" layer="96" align="top-center"/>
 </instance>
-<instance part="GND3" gate="1" x="404.638" y="58.496" smashed="yes">
-<attribute name="VALUE" x="404.638" y="56.972" size="1.778" layer="96" align="top-center"/>
+<instance part="GND3" gate="1" x="414.798" y="61.036" smashed="yes">
+<attribute name="VALUE" x="414.798" y="59.512" size="1.778" layer="96" align="top-center"/>
 </instance>
 <instance part="U$1" gate="G$1" x="401.352" y="77.37" smashed="yes">
 <attribute name="VALUE" x="398.812" y="77.37" size="1.778" layer="96" rot="R90"/>
@@ -4333,9 +4333,9 @@ Created by Upverter.com</description>
 <attribute name="NAME" x="239.71" y="66.57" size="1.778" layer="95"/>
 <attribute name="VALUE" x="254.95" y="80.54" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="U5" gate="A" x="398.78" y="68.58" smashed="yes">
-<attribute name="NAME" x="402.59" y="72.39" size="1.778" layer="95"/>
-<attribute name="VALUE" x="402.59" y="63.5" size="1.778" layer="96"/>
+<instance part="U5" gate="A" x="401.32" y="68.58" smashed="yes">
+<attribute name="NAME" x="405.13" y="72.39" size="1.778" layer="95"/>
+<attribute name="VALUE" x="405.13" y="63.5" size="1.778" layer="96"/>
 </instance>
 <instance part="U12" gate="A" x="311.658" y="73.66" smashed="yes">
 <attribute name="NAME" x="315.468" y="77.47" size="1.778" layer="95"/>
@@ -4970,7 +4970,7 @@ Created by Upverter.com</description>
 <segment>
 <pinref part="U$1" gate="G$1" pin="DVDD"/>
 <pinref part="U5" gate="A" pin="V+"/>
-<wire x1="401.32" y1="73.66" x2="401.352" y2="73.914" width="0.1524" layer="91"/>
+<wire x1="403.86" y1="73.66" x2="401.352" y2="73.914" width="0.1524" layer="91"/>
 <wire x1="401.352" y1="73.914" x2="401.352" y2="77.37" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -5780,12 +5780,9 @@ Created by Upverter.com</description>
 </segment>
 <segment>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="404.638" y1="61.036" x2="404.66" y2="61.036" width="0.1524" layer="91"/>
-<wire x1="404.66" y1="61.036" x2="404.66" y2="62.76" width="0.1524" layer="91"/>
 <pinref part="U5" gate="A" pin="V-"/>
-<wire x1="401.32" y1="63.5" x2="404.638" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="404.638" y1="63.5" x2="404.638" y2="61.036" width="0.1524" layer="91"/>
-<junction x="404.638" y="61.036"/>
+<wire x1="403.86" y1="63.5" x2="404.638" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="404.638" y1="63.5" x2="414.798" y2="63.576" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND26" gate="1" pin="GND"/>
@@ -5812,11 +5809,11 @@ Created by Upverter.com</description>
 <wire x1="397.018" y1="61.036" x2="393.446" y2="61.036" width="0.1524" layer="91"/>
 <wire x1="393.446" y1="61.036" x2="393.446" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U4" gate="G$1" pin="PD2_ANODE"/>
-<wire x1="381" y1="66.04" x2="393.7" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="381" y1="66.04" x2="396.24" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="U5" gate="A" pin="IN+"/>
-<wire x1="393.7" y1="66.04" x2="393.446" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="66.04" x2="393.446" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="393.446" y1="66.04" x2="393.446" y2="60.96" width="0.1524" layer="91"/>
-<junction x="393.7" y="66.04"/>
+<junction x="396.24" y="66.04"/>
 <junction x="393.446" y="60.96"/>
 </segment>
 <segment>
@@ -6043,14 +6040,13 @@ Created by Upverter.com</description>
 <wire x1="146.208" y1="71.36" x2="146.208" y2="68.82" width="0.1524" layer="91"/>
 <junction x="154.844" y="71.36"/>
 <pinref part="U2" gate="G$1" pin="+INA"/>
-<wire x1="166.04" y1="71.38" x2="154.844" y2="71.38" width="0.1524" layer="91"/>
-<wire x1="154.844" y1="71.38" x2="154.844" y2="72.63" width="0.1524" layer="91"/>
+<wire x1="166.04" y1="71.38" x2="166.02" y2="72.65" width="0.1524" layer="91"/>
+<wire x1="166.02" y1="72.65" x2="154.844" y2="72.63" width="0.1524" layer="91"/>
 <junction x="154.844" y="72.63"/>
 </segment>
 </net>
 <net name="DVDD_ISO" class="0">
 <segment>
-<wire x1="173.64" y1="78.98" x2="173.64" y2="86.6" width="0.1524" layer="91"/>
 <pinref part="U$19" gate="G$1" pin="DVDD_ISO"/>
 <pinref part="DVDD_ISO" gate="G$1" pin="P$1"/>
 <wire x1="174.752" y1="86.614" x2="174.752" y2="86.6" width="0.1524" layer="91"/>
@@ -6217,7 +6213,7 @@ Created by Upverter.com</description>
 <junction x="417.576" y="68.072"/>
 <pinref part="U5" gate="A" pin="OUT"/>
 <wire x1="414.274" y1="68.58" x2="414.274" y2="83.566" width="0.1524" layer="91"/>
-<wire x1="408.94" y1="68.58" x2="414.274" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="411.48" y1="68.58" x2="414.274" y2="68.58" width="0.1524" layer="91"/>
 <junction x="414.274" y="68.58"/>
 </segment>
 </net>
@@ -6299,24 +6295,17 @@ Created by Upverter.com</description>
 <segment>
 <pinref part="U4" gate="G$1" pin="PD2_CATHODE"/>
 <wire x1="381" y1="68.58" x2="391.16" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="391.96" y1="71.142" x2="391.16" y2="71.142" width="0.1524" layer="91"/>
 <pinref part="C16" gate="G$1" pin="1"/>
-<wire x1="391.16" y1="71.142" x2="391.16" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="391.16" y1="71.12" x2="391.16" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="401.574" y1="83.566" x2="391.16" y2="83.566" width="0.1524" layer="91"/>
-<wire x1="391.16" y1="83.566" x2="391.16" y2="71.142" width="0.1524" layer="91"/>
+<wire x1="391.16" y1="83.566" x2="391.16" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="391.668" y1="93.218" x2="391.16" y2="93.218" width="0.1524" layer="91"/>
 <wire x1="391.16" y1="93.218" x2="391.16" y2="83.566" width="0.1524" layer="91"/>
 <junction x="391.16" y="83.566"/>
 <pinref part="U5" gate="A" pin="IN-"/>
-<wire x1="393.7" y1="71.12" x2="391.16" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="396.24" y1="71.12" x2="391.16" y2="71.12" width="0.1524" layer="91"/>
 <junction x="391.16" y="71.12"/>
-</segment>
-</net>
-<net name="N$8" class="0">
-<segment>
-<wire x1="154.8" y1="71.38" x2="154.8" y2="71.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -6445,18 +6434,7 @@ Created by Upverter.com</description>
 </sheet>
 </sheets>
 <errors>
-<approved hash="104,1,43.434,205.74,U7,GND,AGND,,,"/>
-<approved hash="104,1,43.942,254.508,U6,GND,AGND,,,"/>
-<approved hash="104,1,43.942,156.972,U8,GND,AGND,,,"/>
-<approved hash="104,1,48.514,105.664,U9,GND,AGND,,,"/>
-<approved hash="104,1,48.514,57.912,U10,GND,AGND,,,"/>
 <approved hash="104,1,80.01,15.24,U11,GND,AGND,,,"/>
-<approved hash="108,1,205.028,62.978,GND_ISO,,,,,"/>
-<approved hash="108,1,196.5,62.978,GND_ISO,,,,,"/>
-<approved hash="108,1,261.55,72.884,N$1,,,,,"/>
-<approved hash="108,1,210.724,76.44,N$12,,,,,"/>
-<approved hash="108,1,205.028,76.44,N$12,,,,,"/>
-<approved hash="108,1,289.3,94.5,N$4,,,,,"/>
 <approved hash="113,1,218.336,139.596,FRAME3,,,,,"/>
 </errors>
 </schematic>
