@@ -9070,13 +9070,6 @@ Created by Upverter.com</description>
 <label x="13.97" y="241.3" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="PB02_DRDY" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB02(AIN10/SER5:0)"/>
-<wire x1="276.86" y1="200.66" x2="266.7" y2="200.66" width="0.1524" layer="91"/>
-<label x="266.7" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="DVDD_ISO" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA06(AIN6/SER0:2/TC1:0)"/>
@@ -9150,15 +9143,6 @@ Created by Upverter.com</description>
 <wire x1="299.5676" y1="68.58" x2="302.006" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="PA07_DRDY" class="0">
-<segment>
-<label x="287.02" y="58.42" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="58.42" x2="297.18" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="18"/>
-<wire x1="297.18" y1="58.42" x2="287.02" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="299.5676" y1="58.42" x2="302.006" y2="58.42" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="PA20_CS" class="0">
 <segment>
 <label x="287.02" y="66.04" size="1.016" layer="95" rot="R180" xref="yes"/>
@@ -9171,6 +9155,20 @@ Created by Upverter.com</description>
 <pinref part="U1" gate="G$1" pin="PA20(SER5:2+)"/>
 <wire x1="345.44" y1="213.36" x2="350.52" y2="213.36" width="0.1524" layer="91"/>
 <label x="350.52" y="213.36" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PA07_DRDY" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA07(AIN7/SER0:3/TC1:1)"/>
+<wire x1="276.86" y1="203.2" x2="266.7" y2="203.2" width="0.1524" layer="91"/>
+<label x="266.7" y="203.2" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<label x="287.02" y="58.42" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="58.42" x2="297.18" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="18"/>
+<wire x1="297.18" y1="58.42" x2="287.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="58.42" x2="302.006" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
