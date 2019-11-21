@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -8375,9 +8375,9 @@ Created by Upverter.com</description>
 </net>
 <net name="VBAT_LVL" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PA05(AIN5/SER0:1/TC0:1)"/>
-<wire x1="276.86" y1="208.28" x2="264.16" y2="208.28" width="0.1524" layer="91"/>
-<label x="264.16" y="208.28" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PB02(AIN10/SER5:0)"/>
+<wire x1="276.86" y1="200.66" x2="266.7" y2="200.66" width="0.1524" layer="91"/>
+<label x="266.7" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -9091,7 +9091,7 @@ Created by Upverter.com</description>
 <label x="353.06" y="238.76" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="PB03_A2" class="0">
+<net name="MPU_INT" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PB03(AIN11/SER5:1)"/>
 <wire x1="276.86" y1="198.12" x2="266.7" y2="198.12" width="0.1524" layer="91"/>
@@ -10098,6 +10098,13 @@ and analog sensors</text>
 <pinref part="R27" gate="G$1" pin="2"/>
 <wire x1="236.22" y1="208.28" x2="231.648" y2="208.28" width="0.1524" layer="91"/>
 <wire x1="231.648" y1="208.28" x2="231.648" y2="210.312" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="MPU_INT" class="0">
+<segment>
+<pinref part="U17" gate="G$1" pin="INT"/>
+<wire x1="339.09" y1="220.98" x2="335.28" y2="220.98" width="0.1524" layer="91"/>
+<label x="335.28" y="220.98" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
