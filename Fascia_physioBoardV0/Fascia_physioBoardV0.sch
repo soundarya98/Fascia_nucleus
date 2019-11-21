@@ -5016,11 +5016,6 @@ Created by Upverter.com</description>
 <wire x1="334.01" y1="234.188" x2="313.182" y2="234.188" width="0.1524" layer="91"/>
 <label x="313.182" y="234.188" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
-<segment>
-<wire x1="157.48" y1="195.58" x2="167.64" y2="195.58" width="0.1524" layer="91"/>
-<label x="167.64" y="195.58" size="1.016" layer="95" xref="yes"/>
-<pinref part="J2" gate="G$0" pin="24"/>
-</segment>
 </net>
 <net name="IN8N" class="0">
 <segment>
@@ -6106,7 +6101,7 @@ Created by Upverter.com</description>
 <wire x1="228.022" y1="115.048" x2="233.61" y2="115.048" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="PA20_CS2" class="0">
+<net name="PA20_CS" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="!CS"/>
 <wire x1="372.11" y1="180.34" x2="386.842" y2="180.34" width="0.1524" layer="91"/>
@@ -6254,7 +6249,7 @@ Created by Upverter.com</description>
 <label x="261.62" y="152.4" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="ADS_RESET2" class="0">
+<net name="ADS_RESET" class="0">
 <segment>
 <label x="172.72" y="139.7" size="1.016" layer="95" xref="yes"/>
 <wire x1="162.56" y1="139.7" x2="172.72" y2="139.7" width="0.1524" layer="91"/>

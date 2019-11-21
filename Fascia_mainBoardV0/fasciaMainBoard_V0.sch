@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -8593,21 +8593,6 @@ Created by Upverter.com</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="PA21(SER5:3+)"/>
 <wire x1="345.44" y1="210.82" x2="350.52" y2="210.82" width="0.1524" layer="91"/>
-<label x="350.52" y="210.82" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PA20_CS2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PA20(SER5:2+)"/>
-<wire x1="345.44" y1="213.36" x2="350.52" y2="213.36" width="0.1524" layer="91"/>
-<label x="350.52" y="213.36" size="1.27" layer="95" xref="yes"/>
-</segment>
-<segment>
-<label x="287.02" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="68.58" x2="302.006" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="22"/>
-<wire x1="302.006" y1="68.58" x2="287.02" y2="68.58" width="0.1524" layer="91"/>
-<junction x="302.006" y="68.58"/>
 </segment>
 </net>
 <net name="PA18_OTG" class="0">
@@ -8624,11 +8609,11 @@ Created by Upverter.com</description>
 <label x="350.52" y="215.9" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="287.02" y="58.42" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="58.42" x2="302.006" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="18"/>
-<wire x1="302.006" y1="58.42" x2="287.02" y2="58.42" width="0.1524" layer="91"/>
-<junction x="302.006" y="58.42"/>
+<label x="287.02" y="60.96" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="60.96" x2="297.18" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="19"/>
+<wire x1="297.18" y1="60.96" x2="287.02" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="60.96" x2="302.006" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA17_S1_SCK" class="0">
@@ -8638,11 +8623,11 @@ Created by Upverter.com</description>
 <label x="350.52" y="220.98" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="287.02" y="60.96" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="60.96" x2="302.006" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="19"/>
-<wire x1="302.006" y1="60.96" x2="287.02" y2="60.96" width="0.1524" layer="91"/>
-<junction x="302.006" y="60.96"/>
+<label x="287.02" y="63.5" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="63.5" x2="297.18" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="20"/>
+<wire x1="297.18" y1="63.5" x2="287.02" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="63.5" x2="302.006" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA16_S1_MOSI" class="0">
@@ -8652,11 +8637,11 @@ Created by Upverter.com</description>
 <label x="350.52" y="223.52" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<label x="287.02" y="66.04" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="66.04" x2="302.006" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="21"/>
-<wire x1="302.006" y1="66.04" x2="287.02" y2="66.04" width="0.1524" layer="91"/>
-<junction x="302.006" y="66.04"/>
+<label x="287.02" y="73.66" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="73.66" x2="297.18" y2="73.66" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="24"/>
+<wire x1="297.18" y1="73.66" x2="287.02" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="73.66" x2="302.006" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA15_S2_CTS_SCK" class="0">
@@ -8820,6 +8805,11 @@ Created by Upverter.com</description>
 <wire x1="302.006" y1="33.02" x2="294.64" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="8"/>
 </segment>
+<segment>
+<label x="294.64" y="30.48" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="302.006" y1="30.48" x2="294.64" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="7"/>
+</segment>
 </net>
 <net name="N$17" class="0">
 <segment>
@@ -8920,6 +8910,13 @@ Created by Upverter.com</description>
 <wire x1="345.44" y1="205.74" x2="350.52" y2="205.74" width="0.1524" layer="91"/>
 <pinref part="U1" gate="G$1" pin="PA23(I2C/SER3:0+)"/>
 <label x="350.52" y="205.74" size="1.016" layer="95" xref="yes"/>
+</segment>
+<segment>
+<label x="287.02" y="71.12" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="71.12" x2="297.18" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="23"/>
+<wire x1="297.18" y1="71.12" x2="287.02" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="71.12" x2="302.006" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -9040,6 +9037,11 @@ Created by Upverter.com</description>
 <wire x1="302.006" y1="43.18" x2="294.64" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="12"/>
 </segment>
+<segment>
+<label x="294.64" y="40.64" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="302.006" y1="40.64" x2="294.64" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="11"/>
+</segment>
 </net>
 <net name="RESETN" class="0">
 <segment>
@@ -9068,32 +9070,11 @@ Created by Upverter.com</description>
 <label x="13.97" y="241.3" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="PB10_DRDY" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB10(SER4:2+)"/>
-<wire x1="345.44" y1="185.42" x2="353.06" y2="185.42" width="0.1524" layer="91"/>
-<label x="353.06" y="185.42" size="1.016" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="PB02_DRDY2" class="0">
+<net name="PB02_DRDY" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PB02(AIN10/SER5:0)"/>
 <wire x1="276.86" y1="200.66" x2="266.7" y2="200.66" width="0.1524" layer="91"/>
 <label x="266.7" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="ADS_RESET2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PA22(I2C/SER3:0+)"/>
-<wire x1="345.44" y1="208.28" x2="350.52" y2="208.28" width="0.1524" layer="91"/>
-<label x="350.52" y="208.28" size="1.016" layer="95" xref="yes"/>
-</segment>
-<segment>
-<label x="287.02" y="63.5" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="63.5" x2="302.006" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="20"/>
-<wire x1="302.006" y1="63.5" x2="287.02" y2="63.5" width="0.1524" layer="91"/>
-<junction x="302.006" y="63.5"/>
 </segment>
 </net>
 <net name="DVDD_ISO" class="0">
@@ -9130,12 +9111,22 @@ Created by Upverter.com</description>
 <wire x1="302.006" y1="22.86" x2="294.64" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="4"/>
 </segment>
+<segment>
+<label x="294.64" y="20.32" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="302.006" y1="20.32" x2="294.64" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="3"/>
+</segment>
 </net>
 <net name="AVSS" class="0">
 <segment>
 <label x="294.64" y="25.4" size="1.016" layer="95" rot="R180" xref="yes"/>
 <wire x1="302.006" y1="25.4" x2="294.64" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="5"/>
+</segment>
+<segment>
+<label x="294.64" y="27.94" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="302.006" y1="27.94" x2="294.64" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="6"/>
 </segment>
 </net>
 <net name="DVDD" class="0">
@@ -9144,67 +9135,42 @@ Created by Upverter.com</description>
 <wire x1="302.006" y1="38.1" x2="294.64" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="10"/>
 </segment>
-</net>
-<net name="BIAS_INV" class="0">
-<segment>
-<label x="292.1" y="15.24" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="15.24" x2="302.006" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="1"/>
-<wire x1="302.006" y1="15.24" x2="292.1" y2="15.24" width="0.1524" layer="91"/>
-<junction x="302.006" y="15.24"/>
-</segment>
-</net>
-<net name="ADS_CLK" class="0">
-<segment>
-<label x="287.02" y="73.66" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="73.66" x2="302.006" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="24"/>
-<wire x1="302.006" y1="73.66" x2="287.02" y2="73.66" width="0.1524" layer="91"/>
-<junction x="302.006" y="73.66"/>
-</segment>
-</net>
-<net name="PA07_DRDY2" class="0">
-<segment>
-<label x="287.02" y="71.12" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="71.12" x2="302.006" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="23"/>
-<wire x1="302.006" y1="71.12" x2="287.02" y2="71.12" width="0.1524" layer="91"/>
-<junction x="302.006" y="71.12"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<label x="294.64" y="30.48" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="302.006" y1="30.48" x2="294.64" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="7"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<label x="294.64" y="40.64" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="302.006" y1="40.64" x2="294.64" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="11"/>
-</segment>
-</net>
-<net name="N$22" class="0">
-<segment>
-<label x="294.64" y="20.32" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="302.006" y1="20.32" x2="294.64" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="3"/>
-</segment>
-</net>
-<net name="N$24" class="0">
-<segment>
-<label x="294.64" y="27.94" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="302.006" y1="27.94" x2="294.64" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="6"/>
-</segment>
-</net>
-<net name="N$26" class="0">
 <segment>
 <label x="294.64" y="35.56" size="1.016" layer="95" rot="R180" xref="yes"/>
 <wire x1="302.006" y1="35.56" x2="294.64" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="9"/>
+</segment>
+</net>
+<net name="ADS_CLK" class="0">
+<segment>
+<label x="287.02" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="68.58" x2="297.18" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="22"/>
+<wire x1="297.18" y1="68.58" x2="287.02" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="68.58" x2="302.006" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PA07_DRDY" class="0">
+<segment>
+<label x="287.02" y="58.42" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="58.42" x2="297.18" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="18"/>
+<wire x1="297.18" y1="58.42" x2="287.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="58.42" x2="302.006" y2="58.42" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PA20_CS" class="0">
+<segment>
+<label x="287.02" y="66.04" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="66.04" x2="297.18" y2="66.04" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="21"/>
+<wire x1="297.18" y1="66.04" x2="287.02" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="66.04" x2="302.006" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="PA20(SER5:2+)"/>
+<wire x1="345.44" y1="213.36" x2="350.52" y2="213.36" width="0.1524" layer="91"/>
+<label x="350.52" y="213.36" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>

@@ -3,7 +3,7 @@
 <eagle version="9.5.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mm"/>
@@ -2374,11 +2374,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="BIAS_INV">
 <contactref element="U1" pad="61"/>
-<contactref element="J2" pad="24"/>
 <wire x1="21.557309375" y1="18.481715625" x2="24.57559375" y2="21.5" width="0.25" layer="1"/>
-<wire x1="33.1" y1="19.55" x2="32.45" y2="19.55" width="0.25" layer="1"/>
-<wire x1="30.5" y1="21.5" x2="24.57559375" y2="21.5" width="0.25" layer="1"/>
-<wire x1="32.45" y1="19.55" x2="30.5" y2="21.5" width="0.25" layer="1"/>
+<wire x1="24.57559375" y1="21.5" x2="29.6" y2="21.5" width="0.25" layer="1"/>
+<wire x1="29.6" y1="21.5" x2="33.1" y2="25" width="0.25" layer="1"/>
+<wire x1="33.1" y1="25" x2="33.1" y2="26.7" width="0.25" layer="1"/>
+<wire x1="33.1" y1="26.7" x2="34.8" y2="28.4" width="0.25" layer="1"/>
+<wire x1="34.8" y1="28.4" x2="35.1" y2="28.4" width="0.25" layer="1"/>
 </signal>
 <signal name="IN8N">
 <contactref element="U1" pad="1"/>
@@ -3389,7 +3390,7 @@ design rules under a new name.</description>
 <wire x1="8.5" y1="38.5" x2="7.6" y2="37.6" width="0.3048" layer="1"/>
 <wire x1="38.6" y1="36.7" x2="36.8" y2="38.5" width="0.3048" layer="1"/>
 </signal>
-<signal name="PA20_CS2">
+<signal name="PA20_CS">
 <contactref element="U1" pad="39"/>
 <wire x1="23.5364" y1="7.16365" x2="25.73185" y2="4.9682" width="0.3048" layer="1"/>
 <wire x1="22.61796875" y1="8.2456375" x2="23.5364" y2="7.32720625" width="0.3048" layer="1"/>
@@ -3500,7 +3501,7 @@ design rules under a new name.</description>
 <wire x1="37.7" y1="36.2" x2="36.1" y2="37.8" width="0.6096" layer="1"/>
 <wire x1="8.1" y1="32.554" x2="8.6" y2="32.554" width="0.3048" layer="1"/>
 </signal>
-<signal name="ADS_RESET2">
+<signal name="ADS_RESET">
 <contactref element="U1" pad="36"/>
 <contactref element="J2" pad="2"/>
 <wire x1="22.4952" y1="4.9941375" x2="24.6211375" y2="2.8682" width="0.3048" layer="1"/>
