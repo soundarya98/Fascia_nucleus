@@ -7718,6 +7718,13 @@ Created by Upverter.com</description>
 <part name="C19" library="Lp5912Q3.3DRV" deviceset="CL10B106MQ8NRNC" device="CAP_CL10-L" value="10uF"/>
 <part name="R27" library="novaXR" deviceset="10K" device="" value="10K"/>
 <part name="J1" library="Molex - 52437-2471" deviceset="MOLEX_52437-2471" device="MOLEX_52437-2471_0_0"/>
+<part name="FD4" library="Arduino-utility" deviceset="FIDUCIAL" device="-1.5MM" value="DNP"/>
+<part name="FD5" library="Arduino-utility" deviceset="FIDUCIAL" device="-1.5MM" value="DNP"/>
+<part name="FD6" library="Arduino-utility" deviceset="FIDUCIAL" device="-1.5MM" value="DNP"/>
+<part name="MISO" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
+<part name="CS" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
+<part name="SCK" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
+<part name="MOSI" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
 </parts>
 <sheets>
 <sheet>
@@ -8061,6 +8068,18 @@ Created by Upverter.com</description>
 </instance>
 <instance part="J1" gate="G$0" x="317.246" y="12.7" smashed="yes" rot="MR90">
 <attribute name="NAME" x="314.706" y="12.7" size="2.54" layer="95" rot="R90" align="top-left"/>
+</instance>
+<instance part="MISO" gate="G$1" x="375.92" y="216.662" smashed="yes">
+<attribute name="NAME" x="375.92" y="217.678" size="1.778" layer="95" align="bottom-center"/>
+</instance>
+<instance part="CS" gate="G$1" x="381" y="214.122" smashed="yes">
+<attribute name="NAME" x="381" y="215.138" size="1.778" layer="95" align="bottom-center"/>
+</instance>
+<instance part="SCK" gate="G$1" x="381" y="224.282" smashed="yes">
+<attribute name="NAME" x="381" y="225.298" size="1.778" layer="95" align="bottom-center"/>
+</instance>
+<instance part="MOSI" gate="G$1" x="375.92" y="226.822" smashed="yes">
+<attribute name="NAME" x="375.92" y="227.838" size="1.778" layer="95" align="bottom-center"/>
 </instance>
 </instances>
 <busses>
@@ -8605,8 +8624,11 @@ Created by Upverter.com</description>
 <net name="PA19_S1_MISO" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA19(SER1:3+)"/>
-<wire x1="345.44" y1="215.9" x2="350.52" y2="215.9" width="0.1524" layer="91"/>
 <label x="350.52" y="215.9" size="1.27" layer="95" xref="yes"/>
+<wire x1="345.44" y1="215.9" x2="370.84" y2="215.9" width="0.1524" layer="91"/>
+<pinref part="MISO" gate="G$1" pin="P$1"/>
+<wire x1="370.84" y1="215.9" x2="370.84" y2="214.122" width="0.1524" layer="91"/>
+<wire x1="370.84" y1="214.122" x2="375.92" y2="214.122" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="287.02" y="60.96" size="1.016" layer="95" rot="R180" xref="yes"/>
@@ -8619,8 +8641,10 @@ Created by Upverter.com</description>
 <net name="PA17_S1_SCK" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA17(I2C/SER1:1+)"/>
-<wire x1="345.44" y1="220.98" x2="350.52" y2="220.98" width="0.1524" layer="91"/>
 <label x="350.52" y="220.98" size="1.27" layer="95" xref="yes"/>
+<pinref part="SCK" gate="G$1" pin="P$1"/>
+<wire x1="345.44" y1="220.98" x2="381" y2="220.98" width="0.1524" layer="91"/>
+<wire x1="381" y1="220.98" x2="381" y2="221.742" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="287.02" y="63.5" size="1.016" layer="95" rot="R180" xref="yes"/>
@@ -8633,8 +8657,10 @@ Created by Upverter.com</description>
 <net name="PA16_S1_MOSI" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="PA16(I2C/SER1:0+)"/>
-<wire x1="345.44" y1="223.52" x2="350.52" y2="223.52" width="0.1524" layer="91"/>
 <label x="350.52" y="223.52" size="1.27" layer="95" xref="yes"/>
+<pinref part="MOSI" gate="G$1" pin="P$1"/>
+<wire x1="345.44" y1="223.52" x2="375.92" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="375.92" y1="223.52" x2="375.92" y2="224.282" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <label x="287.02" y="73.66" size="1.016" layer="95" rot="R180" xref="yes"/>
@@ -9153,8 +9179,12 @@ Created by Upverter.com</description>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PA20(SER5:2+)"/>
-<wire x1="345.44" y1="213.36" x2="350.52" y2="213.36" width="0.1524" layer="91"/>
 <label x="350.52" y="213.36" size="1.27" layer="95" xref="yes"/>
+<wire x1="345.44" y1="213.36" x2="368.3" y2="213.36" width="0.1524" layer="91"/>
+<wire x1="368.3" y1="213.36" x2="368.3" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="CS" gate="G$1" pin="P$1"/>
+<wire x1="368.3" y1="210.82" x2="381" y2="210.82" width="0.1524" layer="91"/>
+<wire x1="381" y1="210.82" x2="381" y2="211.582" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA07_DRDY" class="0">
@@ -9485,6 +9515,9 @@ and analog sensors</text>
 <attribute name="NAME" x="229.616" y="219.964" size="1.778" layer="95" font="vector" rot="R270" align="bottom-center"/>
 <attribute name="VALUE" x="231.14" y="210.82" size="1.778" layer="96" font="vector" rot="R270" align="top-center"/>
 </instance>
+<instance part="FD4" gate="G$1" x="34.29" y="5.08" smashed="yes"/>
+<instance part="FD5" gate="G$1" x="40.64" y="5.08" smashed="yes"/>
+<instance part="FD6" gate="G$1" x="46.99" y="5.08" smashed="yes"/>
 </instances>
 <busses>
 </busses>
