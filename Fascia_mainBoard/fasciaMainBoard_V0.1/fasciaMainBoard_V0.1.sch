@@ -8392,13 +8392,6 @@ Created by Upverter.com</description>
 <pinref part="U1" gate="G$1" pin="VDDANA"/>
 </segment>
 </net>
-<net name="VBAT_LVL" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB02(AIN10/SER5:0)"/>
-<wire x1="276.86" y1="200.66" x2="266.7" y2="200.66" width="0.1524" layer="91"/>
-<label x="266.7" y="200.66" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="VDDCORE"/>
@@ -9187,11 +9180,11 @@ Created by Upverter.com</description>
 <wire x1="381" y1="210.82" x2="381" y2="211.582" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="PA07_DRDY" class="0">
+<net name="PB10_DRDY" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PA07(AIN7/SER0:3/TC1:1)"/>
-<wire x1="276.86" y1="203.2" x2="266.7" y2="203.2" width="0.1524" layer="91"/>
-<label x="266.7" y="203.2" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="U1" gate="G$1" pin="PB10(SER4:2+)"/>
+<wire x1="345.44" y1="185.42" x2="353.06" y2="185.42" width="0.1524" layer="91"/>
+<label x="353.06" y="185.42" size="0.8128" layer="95" xref="yes"/>
 </segment>
 <segment>
 <label x="287.02" y="58.42" size="1.016" layer="95" rot="R180" xref="yes"/>
@@ -9199,6 +9192,13 @@ Created by Upverter.com</description>
 <pinref part="J1" gate="G$0" pin="18"/>
 <wire x1="297.18" y1="58.42" x2="287.02" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="299.5676" y1="58.42" x2="302.006" y2="58.42" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VBAT_LVL" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PA03(AIN1/REFA)"/>
+<wire x1="276.86" y1="213.36" x2="274.32" y2="213.36" width="0.1524" layer="91"/>
+<label x="274.32" y="213.36" size="0.8128" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
@@ -9500,8 +9500,8 @@ and analog sensors</text>
 <attribute name="VALUE" x="284.48" y="228.854" size="1.778" layer="96" align="bottom-center"/>
 </instance>
 <instance part="U18" gate="G$1" x="233.68" y="223.52" smashed="yes">
-<attribute name="NAME" x="249.2756" y="232.6386" size="2.0828" layer="95" ratio="6" rot="SR0"/>
-<attribute name="VALUE" x="248.6406" y="230.0986" size="2.0828" layer="96" ratio="6" rot="SR0"/>
+<attribute name="NAME" x="239.1156" y="232.6386" size="2.0828" layer="95" ratio="6" rot="SR0"/>
+<attribute name="VALUE" x="241.0206" y="230.0986" size="2.0828" layer="96" ratio="6" rot="SR0"/>
 </instance>
 <instance part="C18" gate="A" x="223.52" y="213.36" smashed="yes" rot="R90">
 <attribute name="VALUE" x="226.5172" y="218.3638" size="1.778" layer="96" font="vector" rot="R270" align="top-center"/>
@@ -9656,8 +9656,8 @@ and analog sensors</text>
 </segment>
 <segment>
 <pinref part="U18" gate="G$1" pin="PAD"/>
-<wire x1="271.78" y1="223.52" x2="274.32" y2="223.52" width="0.1524" layer="91"/>
-<label x="274.32" y="223.52" size="1.778" layer="95" rot="R90" xref="yes"/>
+<wire x1="271.78" y1="223.52" x2="279.4" y2="223.52" width="0.1524" layer="91"/>
+<label x="279.4" y="223.52" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 </net>
 <net name="N$30" class="0">
@@ -9701,6 +9701,16 @@ and analog sensors</text>
 <pinref part="SUPPLY4" gate="G$1" pin="V_BATT"/>
 <wire x1="284.48" y1="220.98" x2="284.48" y2="226.06" width="0.1524" layer="91"/>
 <junction x="284.48" y="220.98"/>
+</segment>
+<segment>
+<pinref part="U9" gate="G$1" pin="EN"/>
+<wire x1="271.78" y1="248.92" x2="271.78" y2="243.84" width="0.1524" layer="91"/>
+<label x="271.78" y="243.84" size="0.8128" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U18" gate="G$1" pin="EN"/>
+<wire x1="271.78" y1="215.9" x2="271.78" y2="210.82" width="0.1524" layer="91"/>
+<label x="271.78" y="210.82" size="0.8128" layer="95" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="N$31" class="0">
