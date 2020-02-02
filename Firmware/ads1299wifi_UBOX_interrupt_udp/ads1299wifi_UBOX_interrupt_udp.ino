@@ -12,7 +12,7 @@
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 
 const int pCS = PA21; //chip select pin
-const int pDRDY = PA10; //data ready pin
+const int pDRDY = PB10; //data ready pin
 const int pRESET = PA23;
 const int pCLKSEL = PB11;
 const int LED =PA04 ;
@@ -220,7 +220,7 @@ void loop()
             //No interrupt
             //noInterrupts();
 
-            Udp.beginPacket("192.168.0.102", 8899);
+            Udp.beginPacket("192.168.0.100", 8899);
 
             Udp.write(sendBuf, PACKET_SIZE*SEND_SIZE);
             Udp.endPacket();

@@ -7,7 +7,7 @@
 #define PA06 20 // =========== NXR1: D8 
 #define PA07 21 // =========== NXR1: ADS1299 #0 - CLK
 #define PB09 32 // =========== NXR1: A2
-#define PA10 2  // =========== NXR1: DRDY
+#define PB10 4  // =========== NXR1: DRDY
 #define PA16 8  // =========== NXR1: ADS1299 #0/#1 - SPI MOSI
 #define PA17 9  // =========== NXR1: ADS1299 #0/#1 - SPI SCK
 #define PA18 24 // =========== NXR1: USB OTG sense
