@@ -1,0 +1,4 @@
+<map id="print_Single_Shot" name="print_Single_Shot">
+<area shape="rect" id="node1" title="Prints a single shot RAW data." alt="" coords="5,5,132,31"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#ab09c1af4e63a218ddcd4c6e74dbd2c1d" title="Single Shot Mode &#45; Get Data in shared Union Structure: &quot;ADC_data&quot;." alt="" coords="180,5,316,31"/>
+</map>

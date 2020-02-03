@@ -1,0 +1,6 @@
+<map id="Send_UDP_swBuffer" name="Send_UDP_swBuffer">
+<area shape="rect" id="node1" title="Sends a Switch Output Buffer over UDP." alt="" coords="563,5,710,31"/>
+<area shape="rect" id="node2" href="$_n_x_r___data_exchange_8h.html#a6d5d931c4bc8429968def4689fe15d65" title="Data Exchange with UDP Client using Switch Buffers." alt="" coords="342,5,515,31"/>
+<area shape="rect" id="node3" href="$_n_x_r___data_exchange_8h.html#a6b03dd7845b6e16ee9ea8b29263cce7e" title="Test UDP and TCP data communication." alt="" coords="100,5,294,31"/>
+<area shape="rect" id="node4" href="$_open_b_c_i___nova_x_r___firmware___v1__debug_v1__15_8ino.html#afe461d27b9c48d5921c00d521181f12f" title=" " alt="" coords="5,5,52,31"/>
+</map>

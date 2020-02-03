@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['battvolt_1297',['BATTVOLT',['../_n_x_r___a_u_x___sensors_8h.html#ad76cdee85882847c2ae4c988a546d7f8',1,'NXR_AUX_Sensors.h']]],
+  ['bias_1298',['BIAS',['../_open_b_c_i___nova_x_r_8cpp.html#adbb32e6744a151dde6686dbc26bdd342',1,'OpenBCI_NovaXR.cpp']]],
+  ['bias_5floff_5fsens_5foff_1299',['BIAS_LOFF_SENS_OFF',['../_a_d_s1299__lib_8h.html#a6411a9c8260fa8e8c2193c9e5a21b38a',1,'ADS1299_lib.h']]],
+  ['bias_5floff_5fsens_5fon_1300',['BIAS_LOFF_SENS_ON',['../_a_d_s1299__lib_8h.html#a4e76e2a2d8e0d0163852eafd62b72e86',1,'ADS1299_lib.h']]],
+  ['bias_5fmeas_5fconn_1301',['BIAS_MEAS_CONN',['../_a_d_s1299__lib_8h.html#a21d48708873b7063cb04e2ee19a53ffa',1,'ADS1299_lib.h']]],
+  ['bias_5fmeas_5fopen_1302',['BIAS_MEAS_OPEN',['../_a_d_s1299__lib_8h.html#a89fd1c38ff24326191365f727d681439',1,'ADS1299_lib.h']]],
+  ['bias_5fsensn_1303',['BIAS_SENSN',['../_a_d_s1299__lib_8h.html#ac8197f544e39562ab0b4e67ad7d4410b',1,'BIAS_SENSN():&#160;ADS1299_lib.h'],['../_open_b_c_i___nova_x_r___definitions_8h.html#ac8197f544e39562ab0b4e67ad7d4410b',1,'BIAS_SENSN():&#160;OpenBCI_NovaXR_Definitions.h']]],
+  ['bias_5fsensp_1304',['BIAS_SENSP',['../_a_d_s1299__lib_8h.html#adee1ef2aa548da6eb85a1f103bd50471',1,'BIAS_SENSP():&#160;ADS1299_lib.h'],['../_open_b_c_i___nova_x_r___definitions_8h.html#adee1ef2aa548da6eb85a1f103bd50471',1,'BIAS_SENSP():&#160;OpenBCI_NovaXR_Definitions.h']]],
+  ['bias_5fset_1305',['BIAS_SET',['../_a_d_s1299__lib_8h.html#aa24e8cc3ecb302b3430bdd9def28fef2',1,'BIAS_SET():&#160;ADS1299_lib.h'],['../_open_b_c_i___nova_x_r___definitions_8h.html#aa24e8cc3ecb302b3430bdd9def28fef2',1,'BIAS_SET():&#160;OpenBCI_NovaXR_Definitions.h']]],
+  ['biasref_5fint_5ffed_5fext_1306',['BIASREF_INT_FED_EXT',['../_a_d_s1299__lib_8h.html#a8c19284a355fcd27b393952c5482df89',1,'ADS1299_lib.h']]],
+  ['biasref_5fint_5ffed_5fint_1307',['BIASREF_INT_FED_INT',['../_a_d_s1299__lib_8h.html#a72e1a9487b82b58304d7ead5d972c69f',1,'ADS1299_lib.h']]],
+  ['board_5fads_1308',['BOARD_ADS',['../_open_b_c_i___nova_x_r___definitions_8h.html#a00b00a77ec0833201721a60e77c1589e',1,'OpenBCI_NovaXR_Definitions.h']]],
+  ['board_5fmode_5fdebug_1309',['BOARD_MODE_DEBUG',['../_open_b_c_i___nova_x_r_8h.html#a5e027bbe05150b155219c92166173165',1,'OpenBCI_NovaXR.h']]],
+  ['board_5fv1_1310',['BOARD_V1',['../_nova_x_r___library_8cpp.html#a24d02331825badba952cc41fbb415207',1,'NovaXR_Library.cpp']]],
+  ['board_5fv1_5f1_1311',['BOARD_V1_1',['../_nova_x_r___library_8cpp.html#aa953bb803121ad8fec4cba3af8b544cc',1,'NovaXR_Library.cpp']]],
+  ['board_5fv1_5f1_5fs1_1312',['BOARD_V1_1_S1',['../_nova_x_r___library_8cpp.html#afd3d3761af30b3d210fbea5b70e90338',1,'NovaXR_Library.cpp']]],
+  ['board_5fv2_1313',['BOARD_V2',['../_nova_x_r___library_8cpp.html#accd9dcfa512613b09beb6e0cc3cdabb2',1,'NovaXR_Library.cpp']]],
+  ['both_5fads_1314',['BOTH_ADS',['../_open_b_c_i___nova_x_r___definitions_8h.html#aadd2d23e89f5cb1196176cee428631a7',1,'OpenBCI_NovaXR_Definitions.h']]],
+  ['buffpool_5fsize_1315',['BUFFPOOL_SIZE',['../_data___handler_8h.html#a73fa565c141cafc198f9a077f9ee38e6',1,'Data_Handler.h']]]
+];

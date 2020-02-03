@@ -1,0 +1,4 @@
+<map id="show_standBy_State" name="show_standBy_State">
+<area shape="rect" id="node1" title="Shows the stand by state." alt="" coords="5,5,152,31"/>
+<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="200,5,294,31"/>
+</map>

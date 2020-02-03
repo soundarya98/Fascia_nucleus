@@ -1,0 +1,22 @@
+<map id="start_HTMLserver" name="start_HTMLserver">
+<area shape="rect" id="node1" title="Start HTML based User Inτεreface Screen for Initial WiFi setup." alt="" coords="5,167,133,192"/>
+<area shape="rect" id="node2" href="$_wi_fi___management_8cpp.html#aafcf0f049760d4ffeefa69e3dba66864" title="Creates a WiFi Access Point." alt="" coords="181,61,316,87"/>
+<area shape="rect" id="node5" href="$_h_t_m_l___server_8cpp.html#a3b1f5b7dfd40b4c77b45ffed710590f6" title="WiFi Server Class Instance." alt="" coords="419,117,512,143"/>
+<area shape="rect" id="node6" href="$_h_t_m_l___server_8cpp.html#a22f7b233763aece48fe4591157914c7a" title="Register a New WiFi in your device and save it in the device flash memory." alt="" coords="182,216,316,241"/>
+<area shape="rect" id="node19" href="$_h_t_m_l___server_8cpp.html#ae900660b563f54e6cbc1c64311464ae1" title="Wait for a Client to be connected." alt="" coords="194,340,303,365"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8cpp.html#a1857d3854a20c586ad6b70b7a54aac88" title="Check if any WiFi client is connected to NovaXR device." alt="" coords="387,55,543,93"/>
+<area shape="rect" id="node4" href="$_wi_fi___management_8cpp.html#a50e0014b556683f2e8910be4b2974797" title="Prints a WiFi status." alt="" coords="409,5,521,31"/>
+<area shape="rect" id="node7" href="$_wi_fi___management_8cpp.html#aaeccd91fa5a727285b2d00235e62c4d1" title="Connects to a given WiFi network." alt="" coords="408,265,523,291"/>
+<area shape="rect" id="node11" href="$_n_x_r___flash_8cpp.html#ae4ea4f4d1421d0b630cc89d02946964d" title="Print the entire WiFi list." alt="" coords="364,315,566,340"/>
+<area shape="rect" id="node12" href="$_h_t_m_l___server_8cpp.html#a3132241eabe85e5702a8fd44dc89f926" title="Post HTML&#45;Based User Interface &#45; Setup Page." alt="" coords="431,364,499,389"/>
+<area shape="rect" id="node13" href="$_h_t_m_l___server_8cpp.html#aa2fe0a7311351d986772661f94a5fe6f" title="Parse the user entered WiFi credentials from the HTML UI page." alt="" coords="416,167,514,192"/>
+<area shape="rect" id="node16" href="$_n_x_r___flash_8cpp.html#a4370c5212a2037ad809c46853c830f98" title="Add a new Wifi in the Credentials List." alt="" coords="405,216,525,241"/>
+<area shape="rect" id="node8" href="$_l_e_d___indication_8cpp.html#ad029e779e08de03d6ea8a09815dd4f80" title="Blink Blue Once as somehting is being in progress." alt="" coords="614,308,770,347"/>
+<area shape="rect" id="node9" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="818,317,935,343"/>
+<area shape="rect" id="node10" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="829,368,923,393"/>
+<area shape="rect" id="node14" href="$_h_t_m_l___server_8cpp.html#a3fffc2f63fa82819c1f99d349b67e9e9" title="Decode the URL user data." alt="" coords="652,167,732,192"/>
+<area shape="rect" id="node15" href="$_h_t_m_l___server_8cpp.html#a79a5136696b1b701361fd29aaad51070" title="trnaslate a HEX Character to a real ASCII character" alt="" coords="851,167,901,192"/>
+<area shape="rect" id="node17" href="$_n_x_r___flash_8cpp.html#ac449c76691b242a5f0662fd49bca3dc7" title="Finds empty space position in the WiFi list." alt="" coords="635,216,749,241"/>
+<area shape="rect" id="node18" href="$_n_x_r___flash_8cpp.html#a69a50329cabb824a93972c519e641341" title="Get the memory position of the last Stored WiFi network." alt="" coords="831,216,921,241"/>
+<area shape="rect" id="node20" href="$_l_e_d___indication_8cpp.html#a003a4e557400f918e793628dd4e22b31" title="Blink Blue Once as somehting is being in progress." alt="" coords="617,371,767,396"/>
+</map>

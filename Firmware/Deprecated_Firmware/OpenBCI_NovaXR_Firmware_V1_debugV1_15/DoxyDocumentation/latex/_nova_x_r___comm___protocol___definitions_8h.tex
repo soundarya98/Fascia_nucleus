@@ -1,0 +1,1691 @@
+\hypertarget{_nova_x_r___comm___protocol___definitions_8h}{}\doxysection{Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h File Reference}
+\label{_nova_x_r___comm___protocol___definitions_8h}\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol___definitions_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a86c5a11a8753d671088d5eee03d3d622}{S\+T\+O\+P\+\_\+\+S\+T\+R\+E\+A\+M\+I\+NG}}~0
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_adccccae9aa3cf9ee0424df4e7a3cbbe0}{S\+T\+A\+R\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+NG}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a80b5331f20633c01502e6d63cd7256e5}{O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+A\+U\+D\+\_\+\+R\+A\+TE}}~115200
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab657c1c3ec1b621933f83310dadeead1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+M\+I\+N\+\_\+\+N\+O\+\_\+\+A\+VG}}~200000
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7004238ac20b8bf06c1e860f5fbbd55b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+OP}}~\textquotesingle{}A\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a896203454203665e65efed4b405ab522}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+1}}~\textquotesingle{}1\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Turning channels off. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a3553b29f198e83a0d438525b47006398}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+2}}~\textquotesingle{}2\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ad2fa233e5e002c023c511b0531a84c6b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+3}}~\textquotesingle{}3\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6826f8e5dc74f40d82d429be90dc385d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+4}}~\textquotesingle{}4\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a8ebe1f11c4bd09e448085cbd1dbcdf82}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+5}}~\textquotesingle{}5\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a0c92b1369525075524ce1c6a8773a679}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+6}}~\textquotesingle{}6\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6ce6faa8818d6969f9d3e6fd011d2f53}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+7}}~\textquotesingle{}7\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a991bb1cde09226b7c13c2008f1d100d4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+8}}~\textquotesingle{}8\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a5474d4c0403560aed65a67a572b1e13b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+9}}~\textquotesingle{}q\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a05adc858c4517c61c6350d3d5235de4a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+10}}~\textquotesingle{}w\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a33b660f24b1eb9aa4d9f905b39fb2743}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+11}}~\textquotesingle{}e\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_af622f51b34bab0af29b22ebc3aaae6e7}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+12}}~\textquotesingle{}r\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a4e3fbb078a93e165c43d5ecc03e3f5c3}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+13}}~\textquotesingle{}t\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a3d85da6d99382f219b73125c4046a198}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+14}}~\textquotesingle{}y\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a05f6bfe217ac364c7780eed7ee24064e}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+15}}~\textquotesingle{}u\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a81b2a6f22bef0c6f6d176d33348aa95b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+16}}~\textquotesingle{}\mbox{\hyperlink{_h_t_m_l___server_8cpp_acb559820d9ca11295b4500f179ef6392}{i}}\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6af05db956fe9673707cf24a57644030}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+1}}~\textquotesingle{}!\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Turn channels on. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a9cb0fac75032364f6b7b7db4c643d4ba}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+2}}~\textquotesingle{}@\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a807e5b820814e8527f805e3943ccf738}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+3}}~\textquotesingle{}\#\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a51abbf73a6555757e9951ebb9c0ca28b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+4}}~\textquotesingle{}\$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a975da95cb1b9a326da8cd55f9cfdd980}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+5}}~\textquotesingle{}\%\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a480d6058947965ba645e3712d160a41b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+6}}~\textquotesingle{}$^\wedge$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac96962b2cfee56dca1fa140b4a6eeeea}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+7}}~\textquotesingle{}\&\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_af52a8401252e07cb99708e3876f76bdf}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+8}}~\textquotesingle{}$\ast$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab1d17f51ce3ff60db690b46f20aff711}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+9}}~\textquotesingle{}Q\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7b1acfa2099197819e3d99d5c8bb93b6}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+10}}~\textquotesingle{}W\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac03dcb3105f39001f71e041ce5f9a93d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+11}}~\textquotesingle{}E\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a4099b62974f17ee413e6b8819a946d75}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+12}}~\textquotesingle{}R\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a9068199f8edbd6451e9015baba7ceda1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+13}}~\textquotesingle{}T\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac9ed71583166a586fbc8ee151817124d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+14}}~\textquotesingle{}Y\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a01f9511792af61cd83576338987a8e2a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+15}}~\textquotesingle{}U\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6e0eed865aeec74610ebc6ea5920b799}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+16}}~\textquotesingle{}I\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a1234535fac8b2390cd8fad2315f96cd2}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+DC}}~\textquotesingle{}p\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Test Signal Control Commands 1x -\/ Voltage will be 1 $\ast$ (V\+R\+E\+FP -\/ V\+R\+E\+FN) / 2.\+4 mV 2x -\/ Voltage will be 2 $\ast$ (V\+R\+E\+FP -\/ V\+R\+E\+FN) / 2.\+4 mV. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a8dbe642679da85686aeb64589f7e8667}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+G\+R\+O\+U\+ND}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab2d6d80848d31542630948a97b6027e1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+1\+X\+\_\+\+F\+A\+ST}}~\textquotesingle{}=\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_aa6f3494734ca7dac0347239b818b2acb}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+1\+X\+\_\+\+S\+L\+OW}}~\textquotesingle{}-\/\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab69ad5b6ddf0dc79d4c985676e7bfee6}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+2\+X\+\_\+\+F\+A\+ST}}~\textquotesingle{}\mbox{]}\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a55448b345e8a3b6ab873420c4f02be83}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+2\+X\+\_\+\+S\+L\+OW}}~\textquotesingle{}\mbox{[}\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ad9e165b9780977fce5f8c939a64c0dd0}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Normal}}~\textquotesingle{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Channel Setting Commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a04f34f41fe74a32fca5f4d595b4e7169}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Shorted}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac59a9e0cb428035ab4b9952c7a4a1e55}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+D\+RP}}~\textquotesingle{}6\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_afee946e6f163d2c9965ebe370f589231}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+D\+RN}}~\textquotesingle{}7\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac1e524a8bcae74023f6a476d94a84ec8}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+Method}}~\textquotesingle{}2\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a37858033ada025393fee32e01f223805}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+M\+V\+DD}}~\textquotesingle{}3\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a403cf9bfb51cbe2a39f9fc958e1965cf}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Temp}}~\textquotesingle{}4\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac2c6111f69a21a2c2e931e8f52c295e5}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Test\+Sig}}~\textquotesingle{}5\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a594ce66b2e8333b294e8e51dcc09268f}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+\+I\+N\+C\+L\+U\+DE}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_acb50d611d4f1be74199b77cc215a03b4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+\+R\+E\+M\+O\+VE}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a1a61234d67abd7f2975179cbd23350de}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_abf570964e26ff7a3ae54c98ef4c12afc}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2}}~\textquotesingle{}2\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a89c28363a5ce6314aaefeca980c5e6b1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3}}~\textquotesingle{}3\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a260dd304ff6e396b168362f02d7574cf}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+4}}~\textquotesingle{}4\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a940ce6823a99cb0aab334d37accbff20}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+5}}~\textquotesingle{}5\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a43f7454eef934b9fa7925200e42ccb50}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+6}}~\textquotesingle{}6\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a959fe2e7db209ed0f1e75dc78beff7d2}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+7}}~\textquotesingle{}7\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a8811968fbc203b79a9cf6c59a2a8b880}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+8}}~\textquotesingle{}8\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7f623ce02bece4f6561761931178a089}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+9}}~\textquotesingle{}Q\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ae9eae2b6142d7ef8eab6f14d146e54bd}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+10}}~\textquotesingle{}W\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_abfdf3320114c797617b6e783a58acb8e}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+11}}~\textquotesingle{}E\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a5411ca6e3e79212e8e373f7444ba629d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+12}}~\textquotesingle{}R\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_acfa3f43e6df3556306158715431fa09c}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+13}}~\textquotesingle{}T\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac3b2406c1117767d5ebbb6e5b932f97b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+14}}~\textquotesingle{}Y\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6621f3e55d78019d8ec3bbc837e7c552}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+15}}~\textquotesingle{}U\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a3effc320d6271389984a5d870ccecb93}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+16}}~\textquotesingle{}I\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_abaee86c5efa407367779547c27fb1596}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+1}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_adcdef4d1238b9b14bfb3e11845888769}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+2}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a07b08aeb642a559f8326fd4cf78f72fd}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+4}}~\textquotesingle{}2\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a1221ba10b0c92151531752235d5f0bd4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+6}}~\textquotesingle{}3\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a117d1f7333759073818ec9ecad296e88}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+8}}~\textquotesingle{}4\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a1cb5b5fd334d425bed2f30a7bce022ff}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+12}}~\textquotesingle{}5\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a94a1a9b02f42e969ad6b42f23e212866}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+24}}~\textquotesingle{}6\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a382bd6d2af0995f739d6831772aac181}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+L\+A\+T\+CH}}~\textquotesingle{}X\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_afb99f4a803a00918a72321d38376fe5d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+FF}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a1a678fd445047925aec04f78f17f83db}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+ON}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a22399e33d8d6b3b14d92dd51a47f113a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+ET}}~\textquotesingle{}x\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7f53624bf56ee6029fe1e4e3083bc241}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B1\+\_\+\+C\+O\+N\+N\+E\+CT}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_adb4807b7df6a5744726241bef85018a8}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B1\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+CT}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a20696bf636b9fc209168ef4f350cf9d1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B2\+\_\+\+C\+O\+N\+N\+E\+CT}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_acf0d8c98dc98ecbe77f9320c3c7bf21a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B2\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+CT}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_aa1a344e6839ea6c835cf44e7794e04f8}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+L\+L\+\_\+\+S\+ET}}~\textquotesingle{}d\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Default Channel Settings. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a83193297785a5c281537cb6469565e5d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+L\+L\+\_\+\+R\+E\+P\+O\+RT}}~\textquotesingle{}D\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a43fc604d86a8f62d46493c1cb0dc12b4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+L\+A\+T\+CH}}~\textquotesingle{}Z\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Lead\+Off Impedance Commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a856c1866dc1eba490a113495fcc07136}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+S\+ET}}~\textquotesingle{}z\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a65ee96b79c60e4be79dcdc96b9576a30}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+A\+P\+P\+L\+I\+ED}}~\textquotesingle{}1\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a8053efc2a211170b252810620263aafa}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+A\+P\+P\+L\+I\+E\+D\+\_\+\+N\+OT}}~\textquotesingle{}0\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a360cdaa5c8f7e4ee20dd8a7ebcee7028}{O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+T\+A\+RT}}~\textquotesingle{}b\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em SD card Commands -\/ reserver for cyton. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a318e9c505fc0746eed212c6d6f7574c3}{O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+T\+OP}}~\textquotesingle{}s\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a58cbbf7d3b59805cb65643d484b801d1}{O\+P\+E\+N\+B\+C\+I\+\_\+\+M\+I\+S\+C\+\_\+\+Q\+U\+E\+R\+Y\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}~\textquotesingle{}?\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Miscellaneous. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_aa2aaa4e4f492f1dba595beffe4d6c5f3}{O\+P\+E\+N\+B\+C\+I\+\_\+\+M\+I\+S\+C\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET}}~\textquotesingle{}v\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a81bd62ac73e98a91d2363dbcaa34c485}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+8}}~\textquotesingle{}c\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em 16 Channel Commands \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a416402043e3da6fa4ab0c155f21e61a8}{O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+16}}~\textquotesingle{}C\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab33543b114994c128e4214c80d806543}{O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+O\+A\+R\+D\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET}}~\textquotesingle{}/\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ae47933b8f1acbd8e1316a67888f1660f}{O\+P\+E\+N\+B\+C\+I\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON}}~\textquotesingle{}V\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac9bdec2177ef35fcb57d6adb171b6077}{O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+S\+ET}}~\textquotesingle{}$\sim$\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Set sample rate. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab0d106b601e8b20f84d8b6340c6b6848}{O\+P\+E\+N\+B\+C\+I\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+A\+R\+K\+ER}}~\textquotesingle{}\`{}\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Insert marker into the stream. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a30876bf7fb564d5abfa7a1958977d0b9}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+S\+ET}}~\textquotesingle{}$<$\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Sync Clocks. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a43b3bb27dbf6278c895814146b5fd362}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+OP}}~\textquotesingle{}$>$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6cdaf1f23a74b918b6c48a514c56d596}{O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+A\+T\+T\+A\+CH}}~\textquotesingle{}\{\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Wifi Stuff reserved for Cyton. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a4dc9f3e47c2b4d39ee8e51bc1150246d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+R\+E\+M\+O\+VE}}~\textquotesingle{}\}\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ae716fe6bfe3148895837d9cad97c8522}{O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+US}}~\textquotesingle{}\+:\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a11257f821555a47ad80f3ee721439d50}{O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+R\+E\+S\+ET}}~\textquotesingle{};\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab2b864b8a4d98acba6f87483ed43aa9a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+A\+I\+SY}}~16
+\begin{DoxyCompactList}\small\item\em Possible number of channels. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_af8fc17d31ec9d4decd59633c73be604f}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT}}~8
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab997e39910444c16808d4dc1e66c7bd7}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+O\+A\+R\+D\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}~1
+\begin{DoxyCompactList}\small\item\em Helpful numbers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ad3985850da6435a143523721466c0c2b}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}~6
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a033d91f0f9946d263fab229bace20204}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}~2
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a543d4172de1933cbaa8e27290db17f3a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+125}}~125
+\begin{DoxyCompactList}\small\item\em Possible Sample Rates. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a8f4023976ff8e9f4f16942d2251ae85d}{O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+250}}~250
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a745de5e114760764b99cb2c60d26cda2}{M\+U\+L\+T\+I\+\_\+\+C\+H\+A\+R\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+MS}}~1000
+\begin{DoxyCompactList}\small\item\em Time out for multi char commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a5b27258e850135b07e98574e67c636c4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+ZE}}~33
+\begin{DoxyCompactList}\small\item\em Packet Size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ae29af4eaf906a96802e2c7fced396818}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+A\+D\+S\+\_\+\+S\+A\+M\+P\+LE}}~24
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a9dc7f70d014105e7a531a966fb9eb658}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+A\+D\+S\+\_\+\+S\+A\+M\+P\+LE}}~24
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a359b9e58eb913c6d6e09b1d6e694e960}{O\+P\+E\+N\+B\+C\+I\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+D\+R\+I\+V\+E\+\_\+\+A\+M\+PS}}~0.\+000000006
+\begin{DoxyCompactList}\small\item\em Impedance Calculation Variables. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a91a51209e2f3eba670b5ed70bf1b9225}{O\+P\+E\+N\+B\+C\+I\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+HZ}}~31
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a22c37ebb5b89103cd00e6b19930aa40e}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+O\+U\+T\+\_\+\+M\+S\+\_\+1}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a650184b3600b8e9bc6186b33071dceee}{O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+O\+U\+T\+\_\+\+M\+S\+\_\+3}}~3
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a12d1cdc90911a5abac2446f35b479f7f}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+C\+H\+A\+N\+N\+EL}}~9
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a33fa1b8957debd8a1c659c9b7846a541}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+L\+E\+A\+D\+\_\+\+O\+FF}}~5
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ae122135a5a15fac66f560e02e2d28560}{O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+A\+UX}}~6
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_aa76a7e9e1e80aac52a9bac5d8297474a}{O\+P\+E\+N\+B\+C\+I\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+V1}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7007e910873b8bf4f6c84a84fb21d068}{O\+P\+E\+N\+B\+C\+I\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+V2}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a683d64dd5333f671dc2da9b360ba68e4}{O\+P\+E\+N\+B\+C\+I\+\_\+\+A\+D\+S\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AN}}~3
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ad833b0fd59655d8560f301ccb6852566}{O\+P\+E\+N\+B\+C\+I\+\_\+\+A\+D\+S\+\_\+\+C\+H\+A\+N\+S\+\_\+\+P\+E\+R\+\_\+\+B\+O\+A\+RD}}~8
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a44ba4a0ee52084d984646020b398fdf9}{U\+D\+P\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+C\+K\+ET}}~20
+\begin{DoxyCompactList}\small\item\em U\+DP Packet Information. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7ee6fc339b78795c771d34686ead4f11}{U\+D\+P\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+LE}}~6
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_acc1353312dabb9a914db90f9e85c4c56}{U\+D\+P\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+C\+K\+ET}}~3
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a5fafc6441be7c5d36f16b0720eec67ab}{U\+D\+P\+\_\+\+T\+O\+T\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+B\+Y\+T\+ES}}~18
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab62c7366e9efcf71243fcdefbee2a407}{U\+D\+P\+\_\+\+R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}~50
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a745de5e114760764b99cb2c60d26cda2}\label{_nova_x_r___comm___protocol___definitions_8h_a745de5e114760764b99cb2c60d26cda2}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS@{MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS}}
+\index{MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS@{MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS}{MULTI\_CHAR\_COMMAND\_TIMEOUT\_MS}}
+{\footnotesize\ttfamily \#define M\+U\+L\+T\+I\+\_\+\+C\+H\+A\+R\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+MS~1000}
+
+
+
+Time out for multi char commands. 
+
+
+
+Definition at line 194 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a683d64dd5333f671dc2da9b360ba68e4}\label{_nova_x_r___comm___protocol___definitions_8h_a683d64dd5333f671dc2da9b360ba68e4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_ADS\_BYTES\_PER\_CHAN@{OPENBCI\_ADS\_BYTES\_PER\_CHAN}}
+\index{OPENBCI\_ADS\_BYTES\_PER\_CHAN@{OPENBCI\_ADS\_BYTES\_PER\_CHAN}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_ADS\_BYTES\_PER\_CHAN}{OPENBCI\_ADS\_BYTES\_PER\_CHAN}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+A\+D\+S\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+C\+H\+AN~3}
+
+
+
+Definition at line 211 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ad833b0fd59655d8560f301ccb6852566}\label{_nova_x_r___comm___protocol___definitions_8h_ad833b0fd59655d8560f301ccb6852566}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_ADS\_CHANS\_PER\_BOARD@{OPENBCI\_ADS\_CHANS\_PER\_BOARD}}
+\index{OPENBCI\_ADS\_CHANS\_PER\_BOARD@{OPENBCI\_ADS\_CHANS\_PER\_BOARD}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_ADS\_CHANS\_PER\_BOARD}{OPENBCI\_ADS\_CHANS\_PER\_BOARD}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+A\+D\+S\+\_\+\+C\+H\+A\+N\+S\+\_\+\+P\+E\+R\+\_\+\+B\+O\+A\+RD~8}
+
+
+
+Definition at line 212 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a80b5331f20633c01502e6d63cd7256e5}\label{_nova_x_r___comm___protocol___definitions_8h_a80b5331f20633c01502e6d63cd7256e5}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_BAUD\_RATE@{OPENBCI\_BAUD\_RATE}}
+\index{OPENBCI\_BAUD\_RATE@{OPENBCI\_BAUD\_RATE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_BAUD\_RATE}{OPENBCI\_BAUD\_RATE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+A\+U\+D\+\_\+\+R\+A\+TE~115200}
+
+
+
+Definition at line 24 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab657c1c3ec1b621933f83310dadeead1}\label{_nova_x_r___comm___protocol___definitions_8h_ab657c1c3ec1b621933f83310dadeead1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG@{OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG}}
+\index{OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG@{OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG}{OPENBCI\_BAUD\_RATE\_MIN\_NO\_AVG}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+A\+U\+D\+\_\+\+R\+A\+T\+E\+\_\+\+M\+I\+N\+\_\+\+N\+O\+\_\+\+A\+VG~200000}
+
+
+
+Definition at line 25 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab33543b114994c128e4214c80d806543}\label{_nova_x_r___comm___protocol___definitions_8h_ab33543b114994c128e4214c80d806543}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_BOARD\_MODE\_SET@{OPENBCI\_BOARD\_MODE\_SET}}
+\index{OPENBCI\_BOARD\_MODE\_SET@{OPENBCI\_BOARD\_MODE\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_BOARD\_MODE\_SET}{OPENBCI\_BOARD\_MODE\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+O\+A\+R\+D\+\_\+\+M\+O\+D\+E\+\_\+\+S\+ET~\textquotesingle{}/\textquotesingle{}}
+
+
+
+Definition at line 156 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7004238ac20b8bf06c1e860f5fbbd55b}\label{_nova_x_r___comm___protocol___definitions_8h_a7004238ac20b8bf06c1e860f5fbbd55b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_BOP@{OPENBCI\_BOP}}
+\index{OPENBCI\_BOP@{OPENBCI\_BOP}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_BOP}{OPENBCI\_BOP}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+B\+OP~\textquotesingle{}A\textquotesingle{}}
+
+
+
+Definition at line 28 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_afee946e6f163d2c9965ebe370f589231}\label{_nova_x_r___comm___protocol___definitions_8h_afee946e6f163d2c9965ebe370f589231}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN}{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRN}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+D\+RN~\textquotesingle{}7\textquotesingle{}}
+
+
+
+Definition at line 81 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac59a9e0cb428035ab4b9952c7a4a1e55}\label{_nova_x_r___comm___protocol___definitions_8h_ac59a9e0cb428035ab4b9952c7a4a1e55}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP}{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasDRP}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+D\+RP~\textquotesingle{}6\textquotesingle{}}
+
+
+
+Definition at line 80 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac1e524a8bcae74023f6a476d94a84ec8}\label{_nova_x_r___comm___protocol___definitions_8h_ac1e524a8bcae74023f6a476d94a84ec8}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod@{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod}{OPENBCI\_CHANNEL\_CMD\_ADC\_BiasMethod}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Bias\+Method~\textquotesingle{}2\textquotesingle{}}
+
+
+
+Definition at line 82 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a37858033ada025393fee32e01f223805}\label{_nova_x_r___comm___protocol___definitions_8h_a37858033ada025393fee32e01f223805}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD@{OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD@{OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD}{OPENBCI\_CHANNEL\_CMD\_ADC\_MVDD}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+M\+V\+DD~\textquotesingle{}3\textquotesingle{}}
+
+
+
+Definition at line 83 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ad9e165b9780977fce5f8c939a64c0dd0}\label{_nova_x_r___comm___protocol___definitions_8h_ad9e165b9780977fce5f8c939a64c0dd0}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_Normal@{OPENBCI\_CHANNEL\_CMD\_ADC\_Normal}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_Normal@{OPENBCI\_CHANNEL\_CMD\_ADC\_Normal}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_Normal}{OPENBCI\_CHANNEL\_CMD\_ADC\_Normal}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Normal~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Channel Setting Commands. 
+
+
+
+Definition at line 78 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a04f34f41fe74a32fca5f4d595b4e7169}\label{_nova_x_r___comm___protocol___definitions_8h_a04f34f41fe74a32fca5f4d595b4e7169}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted@{OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted@{OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted}{OPENBCI\_CHANNEL\_CMD\_ADC\_Shorted}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Shorted~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 79 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a403cf9bfb51cbe2a39f9fc958e1965cf}\label{_nova_x_r___comm___protocol___definitions_8h_a403cf9bfb51cbe2a39f9fc958e1965cf}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_Temp@{OPENBCI\_CHANNEL\_CMD\_ADC\_Temp}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_Temp@{OPENBCI\_CHANNEL\_CMD\_ADC\_Temp}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_Temp}{OPENBCI\_CHANNEL\_CMD\_ADC\_Temp}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Temp~\textquotesingle{}4\textquotesingle{}}
+
+
+
+Definition at line 84 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac2c6111f69a21a2c2e931e8f52c295e5}\label{_nova_x_r___comm___protocol___definitions_8h_ac2c6111f69a21a2c2e931e8f52c295e5}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig@{OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig}}
+\index{OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig@{OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig}{OPENBCI\_CHANNEL\_CMD\_ADC\_TestSig}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+A\+D\+C\+\_\+\+Test\+Sig~\textquotesingle{}5\textquotesingle{}}
+
+
+
+Definition at line 85 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a594ce66b2e8333b294e8e51dcc09268f}\label{_nova_x_r___comm___protocol___definitions_8h_a594ce66b2e8333b294e8e51dcc09268f}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE@{OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE}}
+\index{OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE@{OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE}{OPENBCI\_CHANNEL\_CMD\_BIAS\_INCLUDE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+\+I\+N\+C\+L\+U\+DE~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 86 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_acb50d611d4f1be74199b77cc215a03b4}\label{_nova_x_r___comm___protocol___definitions_8h_acb50d611d4f1be74199b77cc215a03b4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE@{OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE}}
+\index{OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE@{OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE}{OPENBCI\_CHANNEL\_CMD\_BIAS\_REMOVE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+B\+I\+A\+S\+\_\+\+R\+E\+M\+O\+VE~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 87 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a1a61234d67abd7f2975179cbd23350de}\label{_nova_x_r___comm___protocol___definitions_8h_a1a61234d67abd7f2975179cbd23350de}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 88 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ae9eae2b6142d7ef8eab6f14d146e54bd}\label{_nova_x_r___comm___protocol___definitions_8h_ae9eae2b6142d7ef8eab6f14d146e54bd}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_10}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+10~\textquotesingle{}W\textquotesingle{}}
+
+
+
+Definition at line 97 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_abfdf3320114c797617b6e783a58acb8e}\label{_nova_x_r___comm___protocol___definitions_8h_abfdf3320114c797617b6e783a58acb8e}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_11}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+11~\textquotesingle{}E\textquotesingle{}}
+
+
+
+Definition at line 98 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a5411ca6e3e79212e8e373f7444ba629d}\label{_nova_x_r___comm___protocol___definitions_8h_a5411ca6e3e79212e8e373f7444ba629d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_12}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+12~\textquotesingle{}R\textquotesingle{}}
+
+
+
+Definition at line 99 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_acfa3f43e6df3556306158715431fa09c}\label{_nova_x_r___comm___protocol___definitions_8h_acfa3f43e6df3556306158715431fa09c}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_13}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+13~\textquotesingle{}T\textquotesingle{}}
+
+
+
+Definition at line 100 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac3b2406c1117767d5ebbb6e5b932f97b}\label{_nova_x_r___comm___protocol___definitions_8h_ac3b2406c1117767d5ebbb6e5b932f97b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_14}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+14~\textquotesingle{}Y\textquotesingle{}}
+
+
+
+Definition at line 101 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6621f3e55d78019d8ec3bbc837e7c552}\label{_nova_x_r___comm___protocol___definitions_8h_a6621f3e55d78019d8ec3bbc837e7c552}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_15}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+15~\textquotesingle{}U\textquotesingle{}}
+
+
+
+Definition at line 102 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a3effc320d6271389984a5d870ccecb93}\label{_nova_x_r___comm___protocol___definitions_8h_a3effc320d6271389984a5d870ccecb93}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_16}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+16~\textquotesingle{}I\textquotesingle{}}
+
+
+
+Definition at line 103 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_abf570964e26ff7a3ae54c98ef4c12afc}\label{_nova_x_r___comm___protocol___definitions_8h_abf570964e26ff7a3ae54c98ef4c12afc}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_2}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+2~\textquotesingle{}2\textquotesingle{}}
+
+
+
+Definition at line 89 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a89c28363a5ce6314aaefeca980c5e6b1}\label{_nova_x_r___comm___protocol___definitions_8h_a89c28363a5ce6314aaefeca980c5e6b1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_3}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+3~\textquotesingle{}3\textquotesingle{}}
+
+
+
+Definition at line 90 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a260dd304ff6e396b168362f02d7574cf}\label{_nova_x_r___comm___protocol___definitions_8h_a260dd304ff6e396b168362f02d7574cf}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_4}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+4~\textquotesingle{}4\textquotesingle{}}
+
+
+
+Definition at line 91 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a940ce6823a99cb0aab334d37accbff20}\label{_nova_x_r___comm___protocol___definitions_8h_a940ce6823a99cb0aab334d37accbff20}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_5}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+5~\textquotesingle{}5\textquotesingle{}}
+
+
+
+Definition at line 92 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a43f7454eef934b9fa7925200e42ccb50}\label{_nova_x_r___comm___protocol___definitions_8h_a43f7454eef934b9fa7925200e42ccb50}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_6}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+6~\textquotesingle{}6\textquotesingle{}}
+
+
+
+Definition at line 93 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a959fe2e7db209ed0f1e75dc78beff7d2}\label{_nova_x_r___comm___protocol___definitions_8h_a959fe2e7db209ed0f1e75dc78beff7d2}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_7}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+7~\textquotesingle{}7\textquotesingle{}}
+
+
+
+Definition at line 94 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a8811968fbc203b79a9cf6c59a2a8b880}\label{_nova_x_r___comm___protocol___definitions_8h_a8811968fbc203b79a9cf6c59a2a8b880}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_8}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+8~\textquotesingle{}8\textquotesingle{}}
+
+
+
+Definition at line 95 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7f623ce02bece4f6561761931178a089}\label{_nova_x_r___comm___protocol___definitions_8h_a7f623ce02bece4f6561761931178a089}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9}}
+\index{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9@{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9}{OPENBCI\_CHANNEL\_CMD\_CHANNEL\_9}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+9~\textquotesingle{}Q\textquotesingle{}}
+
+
+
+Definition at line 96 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_abaee86c5efa407367779547c27fb1596}\label{_nova_x_r___comm___protocol___definitions_8h_abaee86c5efa407367779547c27fb1596}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_1@{OPENBCI\_CHANNEL\_CMD\_GAIN\_1}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_1@{OPENBCI\_CHANNEL\_CMD\_GAIN\_1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_1}{OPENBCI\_CHANNEL\_CMD\_GAIN\_1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+1~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 104 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a1cb5b5fd334d425bed2f30a7bce022ff}\label{_nova_x_r___comm___protocol___definitions_8h_a1cb5b5fd334d425bed2f30a7bce022ff}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_12@{OPENBCI\_CHANNEL\_CMD\_GAIN\_12}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_12@{OPENBCI\_CHANNEL\_CMD\_GAIN\_12}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_12}{OPENBCI\_CHANNEL\_CMD\_GAIN\_12}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+12~\textquotesingle{}5\textquotesingle{}}
+
+
+
+Definition at line 109 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_adcdef4d1238b9b14bfb3e11845888769}\label{_nova_x_r___comm___protocol___definitions_8h_adcdef4d1238b9b14bfb3e11845888769}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_2@{OPENBCI\_CHANNEL\_CMD\_GAIN\_2}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_2@{OPENBCI\_CHANNEL\_CMD\_GAIN\_2}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_2}{OPENBCI\_CHANNEL\_CMD\_GAIN\_2}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+2~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 105 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a94a1a9b02f42e969ad6b42f23e212866}\label{_nova_x_r___comm___protocol___definitions_8h_a94a1a9b02f42e969ad6b42f23e212866}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_24@{OPENBCI\_CHANNEL\_CMD\_GAIN\_24}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_24@{OPENBCI\_CHANNEL\_CMD\_GAIN\_24}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_24}{OPENBCI\_CHANNEL\_CMD\_GAIN\_24}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+24~\textquotesingle{}6\textquotesingle{}}
+
+
+
+Definition at line 110 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a07b08aeb642a559f8326fd4cf78f72fd}\label{_nova_x_r___comm___protocol___definitions_8h_a07b08aeb642a559f8326fd4cf78f72fd}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_4@{OPENBCI\_CHANNEL\_CMD\_GAIN\_4}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_4@{OPENBCI\_CHANNEL\_CMD\_GAIN\_4}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_4}{OPENBCI\_CHANNEL\_CMD\_GAIN\_4}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+4~\textquotesingle{}2\textquotesingle{}}
+
+
+
+Definition at line 106 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a1221ba10b0c92151531752235d5f0bd4}\label{_nova_x_r___comm___protocol___definitions_8h_a1221ba10b0c92151531752235d5f0bd4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_6@{OPENBCI\_CHANNEL\_CMD\_GAIN\_6}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_6@{OPENBCI\_CHANNEL\_CMD\_GAIN\_6}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_6}{OPENBCI\_CHANNEL\_CMD\_GAIN\_6}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+6~\textquotesingle{}3\textquotesingle{}}
+
+
+
+Definition at line 107 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a117d1f7333759073818ec9ecad296e88}\label{_nova_x_r___comm___protocol___definitions_8h_a117d1f7333759073818ec9ecad296e88}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_GAIN\_8@{OPENBCI\_CHANNEL\_CMD\_GAIN\_8}}
+\index{OPENBCI\_CHANNEL\_CMD\_GAIN\_8@{OPENBCI\_CHANNEL\_CMD\_GAIN\_8}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_GAIN\_8}{OPENBCI\_CHANNEL\_CMD\_GAIN\_8}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+G\+A\+I\+N\+\_\+8~\textquotesingle{}4\textquotesingle{}}
+
+
+
+Definition at line 108 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a382bd6d2af0995f739d6831772aac181}\label{_nova_x_r___comm___protocol___definitions_8h_a382bd6d2af0995f739d6831772aac181}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_LATCH@{OPENBCI\_CHANNEL\_CMD\_LATCH}}
+\index{OPENBCI\_CHANNEL\_CMD\_LATCH@{OPENBCI\_CHANNEL\_CMD\_LATCH}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_LATCH}{OPENBCI\_CHANNEL\_CMD\_LATCH}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+L\+A\+T\+CH~\textquotesingle{}X\textquotesingle{}}
+
+
+
+Definition at line 111 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_afb99f4a803a00918a72321d38376fe5d}\label{_nova_x_r___comm___protocol___definitions_8h_afb99f4a803a00918a72321d38376fe5d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_POWER\_OFF@{OPENBCI\_CHANNEL\_CMD\_POWER\_OFF}}
+\index{OPENBCI\_CHANNEL\_CMD\_POWER\_OFF@{OPENBCI\_CHANNEL\_CMD\_POWER\_OFF}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_POWER\_OFF}{OPENBCI\_CHANNEL\_CMD\_POWER\_OFF}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+O\+FF~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 112 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a1a678fd445047925aec04f78f17f83db}\label{_nova_x_r___comm___protocol___definitions_8h_a1a678fd445047925aec04f78f17f83db}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_POWER\_ON@{OPENBCI\_CHANNEL\_CMD\_POWER\_ON}}
+\index{OPENBCI\_CHANNEL\_CMD\_POWER\_ON@{OPENBCI\_CHANNEL\_CMD\_POWER\_ON}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_POWER\_ON}{OPENBCI\_CHANNEL\_CMD\_POWER\_ON}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+P\+O\+W\+E\+R\+\_\+\+ON~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 113 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a22399e33d8d6b3b14d92dd51a47f113a}\label{_nova_x_r___comm___protocol___definitions_8h_a22399e33d8d6b3b14d92dd51a47f113a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_SET@{OPENBCI\_CHANNEL\_CMD\_SET}}
+\index{OPENBCI\_CHANNEL\_CMD\_SET@{OPENBCI\_CHANNEL\_CMD\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_SET}{OPENBCI\_CHANNEL\_CMD\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+ET~\textquotesingle{}x\textquotesingle{}}
+
+
+
+Definition at line 114 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7f53624bf56ee6029fe1e4e3083bc241}\label{_nova_x_r___comm___protocol___definitions_8h_a7f53624bf56ee6029fe1e4e3083bc241}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT}}
+\index{OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT}{OPENBCI\_CHANNEL\_CMD\_SRB1\_CONNECT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B1\+\_\+\+C\+O\+N\+N\+E\+CT~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 115 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_adb4807b7df6a5744726241bef85018a8}\label{_nova_x_r___comm___protocol___definitions_8h_adb4807b7df6a5744726241bef85018a8}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT}}
+\index{OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT}{OPENBCI\_CHANNEL\_CMD\_SRB1\_DISCONNECT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B1\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+CT~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 116 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a20696bf636b9fc209168ef4f350cf9d1}\label{_nova_x_r___comm___protocol___definitions_8h_a20696bf636b9fc209168ef4f350cf9d1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT}}
+\index{OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT}{OPENBCI\_CHANNEL\_CMD\_SRB2\_CONNECT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B2\+\_\+\+C\+O\+N\+N\+E\+CT~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 117 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_acf0d8c98dc98ecbe77f9320c3c7bf21a}\label{_nova_x_r___comm___protocol___definitions_8h_acf0d8c98dc98ecbe77f9320c3c7bf21a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT}}
+\index{OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT@{OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT}{OPENBCI\_CHANNEL\_CMD\_SRB2\_DISCONNECT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+C\+M\+D\+\_\+\+S\+R\+B2\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+CT~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 118 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a83193297785a5c281537cb6469565e5d}\label{_nova_x_r___comm___protocol___definitions_8h_a83193297785a5c281537cb6469565e5d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT@{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT}}
+\index{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT@{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT}{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_REPORT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+L\+L\+\_\+\+R\+E\+P\+O\+RT~\textquotesingle{}D\textquotesingle{}}
+
+
+
+Definition at line 122 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_aa1a344e6839ea6c835cf44e7794e04f8}\label{_nova_x_r___comm___protocol___definitions_8h_aa1a344e6839ea6c835cf44e7794e04f8}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET@{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET}}
+\index{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET@{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET}{OPENBCI\_CHANNEL\_DEFAULT\_ALL\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+L\+L\+\_\+\+S\+ET~\textquotesingle{}d\textquotesingle{}}
+
+
+
+Default Channel Settings. 
+
+
+
+Definition at line 121 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a43fc604d86a8f62d46493c1cb0dc12b4}\label{_nova_x_r___comm___protocol___definitions_8h_a43fc604d86a8f62d46493c1cb0dc12b4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH@{OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH}}
+\index{OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH@{OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH}{OPENBCI\_CHANNEL\_IMPEDANCE\_LATCH}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+L\+A\+T\+CH~\textquotesingle{}Z\textquotesingle{}}
+
+
+
+Lead\+Off Impedance Commands. 
+
+
+
+Definition at line 125 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a856c1866dc1eba490a113495fcc07136}\label{_nova_x_r___comm___protocol___definitions_8h_a856c1866dc1eba490a113495fcc07136}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_IMPEDANCE\_SET@{OPENBCI\_CHANNEL\_IMPEDANCE\_SET}}
+\index{OPENBCI\_CHANNEL\_IMPEDANCE\_SET@{OPENBCI\_CHANNEL\_IMPEDANCE\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_IMPEDANCE\_SET}{OPENBCI\_CHANNEL\_IMPEDANCE\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+S\+ET~\textquotesingle{}z\textquotesingle{}}
+
+
+
+Definition at line 126 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a65ee96b79c60e4be79dcdc96b9576a30}\label{_nova_x_r___comm___protocol___definitions_8h_a65ee96b79c60e4be79dcdc96b9576a30}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED@{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED}}
+\index{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED@{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED}{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+A\+P\+P\+L\+I\+ED~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Definition at line 127 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a8053efc2a211170b252810620263aafa}\label{_nova_x_r___comm___protocol___definitions_8h_a8053efc2a211170b252810620263aafa}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT@{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT}}
+\index{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT@{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT}{OPENBCI\_CHANNEL\_IMPEDANCE\_TEST\_SIGNAL\_APPLIED\_NOT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+I\+M\+P\+E\+D\+A\+N\+C\+E\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+A\+P\+P\+L\+I\+E\+D\+\_\+\+N\+OT~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 128 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a416402043e3da6fa4ab0c155f21e61a8}\label{_nova_x_r___comm___protocol___definitions_8h_a416402043e3da6fa4ab0c155f21e61a8}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_MAX\_NUMBER\_16@{OPENBCI\_CHANNEL\_MAX\_NUMBER\_16}}
+\index{OPENBCI\_CHANNEL\_MAX\_NUMBER\_16@{OPENBCI\_CHANNEL\_MAX\_NUMBER\_16}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_MAX\_NUMBER\_16}{OPENBCI\_CHANNEL\_MAX\_NUMBER\_16}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+16~\textquotesingle{}C\textquotesingle{}}
+
+
+
+Definition at line 155 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a81bd62ac73e98a91d2363dbcaa34c485}\label{_nova_x_r___comm___protocol___definitions_8h_a81bd62ac73e98a91d2363dbcaa34c485}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_MAX\_NUMBER\_8@{OPENBCI\_CHANNEL\_MAX\_NUMBER\_8}}
+\index{OPENBCI\_CHANNEL\_MAX\_NUMBER\_8@{OPENBCI\_CHANNEL\_MAX\_NUMBER\_8}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_MAX\_NUMBER\_8}{OPENBCI\_CHANNEL\_MAX\_NUMBER\_8}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+8~\textquotesingle{}c\textquotesingle{}}
+
+
+
+16 Channel Commands 
+
+
+
+Definition at line 154 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a896203454203665e65efed4b405ab522}\label{_nova_x_r___comm___protocol___definitions_8h_a896203454203665e65efed4b405ab522}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_1@{OPENBCI\_CHANNEL\_OFF\_1}}
+\index{OPENBCI\_CHANNEL\_OFF\_1@{OPENBCI\_CHANNEL\_OFF\_1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_1}{OPENBCI\_CHANNEL\_OFF\_1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+1~\textquotesingle{}1\textquotesingle{}}
+
+
+
+Turning channels off. 
+
+
+
+Definition at line 31 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a05adc858c4517c61c6350d3d5235de4a}\label{_nova_x_r___comm___protocol___definitions_8h_a05adc858c4517c61c6350d3d5235de4a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_10@{OPENBCI\_CHANNEL\_OFF\_10}}
+\index{OPENBCI\_CHANNEL\_OFF\_10@{OPENBCI\_CHANNEL\_OFF\_10}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_10}{OPENBCI\_CHANNEL\_OFF\_10}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+10~\textquotesingle{}w\textquotesingle{}}
+
+
+
+Definition at line 40 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a33b660f24b1eb9aa4d9f905b39fb2743}\label{_nova_x_r___comm___protocol___definitions_8h_a33b660f24b1eb9aa4d9f905b39fb2743}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_11@{OPENBCI\_CHANNEL\_OFF\_11}}
+\index{OPENBCI\_CHANNEL\_OFF\_11@{OPENBCI\_CHANNEL\_OFF\_11}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_11}{OPENBCI\_CHANNEL\_OFF\_11}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+11~\textquotesingle{}e\textquotesingle{}}
+
+
+
+Definition at line 41 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_af622f51b34bab0af29b22ebc3aaae6e7}\label{_nova_x_r___comm___protocol___definitions_8h_af622f51b34bab0af29b22ebc3aaae6e7}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_12@{OPENBCI\_CHANNEL\_OFF\_12}}
+\index{OPENBCI\_CHANNEL\_OFF\_12@{OPENBCI\_CHANNEL\_OFF\_12}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_12}{OPENBCI\_CHANNEL\_OFF\_12}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+12~\textquotesingle{}r\textquotesingle{}}
+
+
+
+Definition at line 42 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a4e3fbb078a93e165c43d5ecc03e3f5c3}\label{_nova_x_r___comm___protocol___definitions_8h_a4e3fbb078a93e165c43d5ecc03e3f5c3}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_13@{OPENBCI\_CHANNEL\_OFF\_13}}
+\index{OPENBCI\_CHANNEL\_OFF\_13@{OPENBCI\_CHANNEL\_OFF\_13}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_13}{OPENBCI\_CHANNEL\_OFF\_13}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+13~\textquotesingle{}t\textquotesingle{}}
+
+
+
+Definition at line 43 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a3d85da6d99382f219b73125c4046a198}\label{_nova_x_r___comm___protocol___definitions_8h_a3d85da6d99382f219b73125c4046a198}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_14@{OPENBCI\_CHANNEL\_OFF\_14}}
+\index{OPENBCI\_CHANNEL\_OFF\_14@{OPENBCI\_CHANNEL\_OFF\_14}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_14}{OPENBCI\_CHANNEL\_OFF\_14}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+14~\textquotesingle{}y\textquotesingle{}}
+
+
+
+Definition at line 44 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a05f6bfe217ac364c7780eed7ee24064e}\label{_nova_x_r___comm___protocol___definitions_8h_a05f6bfe217ac364c7780eed7ee24064e}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_15@{OPENBCI\_CHANNEL\_OFF\_15}}
+\index{OPENBCI\_CHANNEL\_OFF\_15@{OPENBCI\_CHANNEL\_OFF\_15}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_15}{OPENBCI\_CHANNEL\_OFF\_15}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+15~\textquotesingle{}u\textquotesingle{}}
+
+
+
+Definition at line 45 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a81b2a6f22bef0c6f6d176d33348aa95b}\label{_nova_x_r___comm___protocol___definitions_8h_a81b2a6f22bef0c6f6d176d33348aa95b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_16@{OPENBCI\_CHANNEL\_OFF\_16}}
+\index{OPENBCI\_CHANNEL\_OFF\_16@{OPENBCI\_CHANNEL\_OFF\_16}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_16}{OPENBCI\_CHANNEL\_OFF\_16}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+16~\textquotesingle{}\mbox{\hyperlink{_h_t_m_l___server_8cpp_acb559820d9ca11295b4500f179ef6392}{i}}\textquotesingle{}}
+
+
+
+Definition at line 46 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a3553b29f198e83a0d438525b47006398}\label{_nova_x_r___comm___protocol___definitions_8h_a3553b29f198e83a0d438525b47006398}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_2@{OPENBCI\_CHANNEL\_OFF\_2}}
+\index{OPENBCI\_CHANNEL\_OFF\_2@{OPENBCI\_CHANNEL\_OFF\_2}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_2}{OPENBCI\_CHANNEL\_OFF\_2}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+2~\textquotesingle{}2\textquotesingle{}}
+
+
+
+Definition at line 32 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ad2fa233e5e002c023c511b0531a84c6b}\label{_nova_x_r___comm___protocol___definitions_8h_ad2fa233e5e002c023c511b0531a84c6b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_3@{OPENBCI\_CHANNEL\_OFF\_3}}
+\index{OPENBCI\_CHANNEL\_OFF\_3@{OPENBCI\_CHANNEL\_OFF\_3}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_3}{OPENBCI\_CHANNEL\_OFF\_3}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+3~\textquotesingle{}3\textquotesingle{}}
+
+
+
+Definition at line 33 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6826f8e5dc74f40d82d429be90dc385d}\label{_nova_x_r___comm___protocol___definitions_8h_a6826f8e5dc74f40d82d429be90dc385d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_4@{OPENBCI\_CHANNEL\_OFF\_4}}
+\index{OPENBCI\_CHANNEL\_OFF\_4@{OPENBCI\_CHANNEL\_OFF\_4}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_4}{OPENBCI\_CHANNEL\_OFF\_4}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+4~\textquotesingle{}4\textquotesingle{}}
+
+
+
+Definition at line 34 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a8ebe1f11c4bd09e448085cbd1dbcdf82}\label{_nova_x_r___comm___protocol___definitions_8h_a8ebe1f11c4bd09e448085cbd1dbcdf82}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_5@{OPENBCI\_CHANNEL\_OFF\_5}}
+\index{OPENBCI\_CHANNEL\_OFF\_5@{OPENBCI\_CHANNEL\_OFF\_5}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_5}{OPENBCI\_CHANNEL\_OFF\_5}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+5~\textquotesingle{}5\textquotesingle{}}
+
+
+
+Definition at line 35 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a0c92b1369525075524ce1c6a8773a679}\label{_nova_x_r___comm___protocol___definitions_8h_a0c92b1369525075524ce1c6a8773a679}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_6@{OPENBCI\_CHANNEL\_OFF\_6}}
+\index{OPENBCI\_CHANNEL\_OFF\_6@{OPENBCI\_CHANNEL\_OFF\_6}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_6}{OPENBCI\_CHANNEL\_OFF\_6}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+6~\textquotesingle{}6\textquotesingle{}}
+
+
+
+Definition at line 36 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6ce6faa8818d6969f9d3e6fd011d2f53}\label{_nova_x_r___comm___protocol___definitions_8h_a6ce6faa8818d6969f9d3e6fd011d2f53}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_7@{OPENBCI\_CHANNEL\_OFF\_7}}
+\index{OPENBCI\_CHANNEL\_OFF\_7@{OPENBCI\_CHANNEL\_OFF\_7}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_7}{OPENBCI\_CHANNEL\_OFF\_7}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+7~\textquotesingle{}7\textquotesingle{}}
+
+
+
+Definition at line 37 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a991bb1cde09226b7c13c2008f1d100d4}\label{_nova_x_r___comm___protocol___definitions_8h_a991bb1cde09226b7c13c2008f1d100d4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_8@{OPENBCI\_CHANNEL\_OFF\_8}}
+\index{OPENBCI\_CHANNEL\_OFF\_8@{OPENBCI\_CHANNEL\_OFF\_8}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_8}{OPENBCI\_CHANNEL\_OFF\_8}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+8~\textquotesingle{}8\textquotesingle{}}
+
+
+
+Definition at line 38 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a5474d4c0403560aed65a67a572b1e13b}\label{_nova_x_r___comm___protocol___definitions_8h_a5474d4c0403560aed65a67a572b1e13b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_OFF\_9@{OPENBCI\_CHANNEL\_OFF\_9}}
+\index{OPENBCI\_CHANNEL\_OFF\_9@{OPENBCI\_CHANNEL\_OFF\_9}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_OFF\_9}{OPENBCI\_CHANNEL\_OFF\_9}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+F\+F\+\_\+9~\textquotesingle{}q\textquotesingle{}}
+
+
+
+Definition at line 39 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6af05db956fe9673707cf24a57644030}\label{_nova_x_r___comm___protocol___definitions_8h_a6af05db956fe9673707cf24a57644030}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_1@{OPENBCI\_CHANNEL\_ON\_1}}
+\index{OPENBCI\_CHANNEL\_ON\_1@{OPENBCI\_CHANNEL\_ON\_1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_1}{OPENBCI\_CHANNEL\_ON\_1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+1~\textquotesingle{}!\textquotesingle{}}
+
+
+
+Turn channels on. 
+
+
+
+Definition at line 49 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7b1acfa2099197819e3d99d5c8bb93b6}\label{_nova_x_r___comm___protocol___definitions_8h_a7b1acfa2099197819e3d99d5c8bb93b6}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_10@{OPENBCI\_CHANNEL\_ON\_10}}
+\index{OPENBCI\_CHANNEL\_ON\_10@{OPENBCI\_CHANNEL\_ON\_10}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_10}{OPENBCI\_CHANNEL\_ON\_10}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+10~\textquotesingle{}W\textquotesingle{}}
+
+
+
+Definition at line 58 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac03dcb3105f39001f71e041ce5f9a93d}\label{_nova_x_r___comm___protocol___definitions_8h_ac03dcb3105f39001f71e041ce5f9a93d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_11@{OPENBCI\_CHANNEL\_ON\_11}}
+\index{OPENBCI\_CHANNEL\_ON\_11@{OPENBCI\_CHANNEL\_ON\_11}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_11}{OPENBCI\_CHANNEL\_ON\_11}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+11~\textquotesingle{}E\textquotesingle{}}
+
+
+
+Definition at line 59 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a4099b62974f17ee413e6b8819a946d75}\label{_nova_x_r___comm___protocol___definitions_8h_a4099b62974f17ee413e6b8819a946d75}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_12@{OPENBCI\_CHANNEL\_ON\_12}}
+\index{OPENBCI\_CHANNEL\_ON\_12@{OPENBCI\_CHANNEL\_ON\_12}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_12}{OPENBCI\_CHANNEL\_ON\_12}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+12~\textquotesingle{}R\textquotesingle{}}
+
+
+
+Definition at line 60 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a9068199f8edbd6451e9015baba7ceda1}\label{_nova_x_r___comm___protocol___definitions_8h_a9068199f8edbd6451e9015baba7ceda1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_13@{OPENBCI\_CHANNEL\_ON\_13}}
+\index{OPENBCI\_CHANNEL\_ON\_13@{OPENBCI\_CHANNEL\_ON\_13}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_13}{OPENBCI\_CHANNEL\_ON\_13}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+13~\textquotesingle{}T\textquotesingle{}}
+
+
+
+Definition at line 61 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac9ed71583166a586fbc8ee151817124d}\label{_nova_x_r___comm___protocol___definitions_8h_ac9ed71583166a586fbc8ee151817124d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_14@{OPENBCI\_CHANNEL\_ON\_14}}
+\index{OPENBCI\_CHANNEL\_ON\_14@{OPENBCI\_CHANNEL\_ON\_14}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_14}{OPENBCI\_CHANNEL\_ON\_14}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+14~\textquotesingle{}Y\textquotesingle{}}
+
+
+
+Definition at line 62 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a01f9511792af61cd83576338987a8e2a}\label{_nova_x_r___comm___protocol___definitions_8h_a01f9511792af61cd83576338987a8e2a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_15@{OPENBCI\_CHANNEL\_ON\_15}}
+\index{OPENBCI\_CHANNEL\_ON\_15@{OPENBCI\_CHANNEL\_ON\_15}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_15}{OPENBCI\_CHANNEL\_ON\_15}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+15~\textquotesingle{}U\textquotesingle{}}
+
+
+
+Definition at line 63 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6e0eed865aeec74610ebc6ea5920b799}\label{_nova_x_r___comm___protocol___definitions_8h_a6e0eed865aeec74610ebc6ea5920b799}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_16@{OPENBCI\_CHANNEL\_ON\_16}}
+\index{OPENBCI\_CHANNEL\_ON\_16@{OPENBCI\_CHANNEL\_ON\_16}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_16}{OPENBCI\_CHANNEL\_ON\_16}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+16~\textquotesingle{}I\textquotesingle{}}
+
+
+
+Definition at line 64 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a9cb0fac75032364f6b7b7db4c643d4ba}\label{_nova_x_r___comm___protocol___definitions_8h_a9cb0fac75032364f6b7b7db4c643d4ba}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_2@{OPENBCI\_CHANNEL\_ON\_2}}
+\index{OPENBCI\_CHANNEL\_ON\_2@{OPENBCI\_CHANNEL\_ON\_2}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_2}{OPENBCI\_CHANNEL\_ON\_2}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+2~\textquotesingle{}@\textquotesingle{}}
+
+
+
+Definition at line 50 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a807e5b820814e8527f805e3943ccf738}\label{_nova_x_r___comm___protocol___definitions_8h_a807e5b820814e8527f805e3943ccf738}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_3@{OPENBCI\_CHANNEL\_ON\_3}}
+\index{OPENBCI\_CHANNEL\_ON\_3@{OPENBCI\_CHANNEL\_ON\_3}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_3}{OPENBCI\_CHANNEL\_ON\_3}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+3~\textquotesingle{}\#\textquotesingle{}}
+
+
+
+Definition at line 51 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a51abbf73a6555757e9951ebb9c0ca28b}\label{_nova_x_r___comm___protocol___definitions_8h_a51abbf73a6555757e9951ebb9c0ca28b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_4@{OPENBCI\_CHANNEL\_ON\_4}}
+\index{OPENBCI\_CHANNEL\_ON\_4@{OPENBCI\_CHANNEL\_ON\_4}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_4}{OPENBCI\_CHANNEL\_ON\_4}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+4~\textquotesingle{}\$\textquotesingle{}}
+
+
+
+Definition at line 52 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a975da95cb1b9a326da8cd55f9cfdd980}\label{_nova_x_r___comm___protocol___definitions_8h_a975da95cb1b9a326da8cd55f9cfdd980}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_5@{OPENBCI\_CHANNEL\_ON\_5}}
+\index{OPENBCI\_CHANNEL\_ON\_5@{OPENBCI\_CHANNEL\_ON\_5}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_5}{OPENBCI\_CHANNEL\_ON\_5}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+5~\textquotesingle{}\%\textquotesingle{}}
+
+
+
+Definition at line 53 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a480d6058947965ba645e3712d160a41b}\label{_nova_x_r___comm___protocol___definitions_8h_a480d6058947965ba645e3712d160a41b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_6@{OPENBCI\_CHANNEL\_ON\_6}}
+\index{OPENBCI\_CHANNEL\_ON\_6@{OPENBCI\_CHANNEL\_ON\_6}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_6}{OPENBCI\_CHANNEL\_ON\_6}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+6~\textquotesingle{}$^\wedge$\textquotesingle{}}
+
+
+
+Definition at line 54 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac96962b2cfee56dca1fa140b4a6eeeea}\label{_nova_x_r___comm___protocol___definitions_8h_ac96962b2cfee56dca1fa140b4a6eeeea}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_7@{OPENBCI\_CHANNEL\_ON\_7}}
+\index{OPENBCI\_CHANNEL\_ON\_7@{OPENBCI\_CHANNEL\_ON\_7}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_7}{OPENBCI\_CHANNEL\_ON\_7}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+7~\textquotesingle{}\&\textquotesingle{}}
+
+
+
+Definition at line 55 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_af52a8401252e07cb99708e3876f76bdf}\label{_nova_x_r___comm___protocol___definitions_8h_af52a8401252e07cb99708e3876f76bdf}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_8@{OPENBCI\_CHANNEL\_ON\_8}}
+\index{OPENBCI\_CHANNEL\_ON\_8@{OPENBCI\_CHANNEL\_ON\_8}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_8}{OPENBCI\_CHANNEL\_ON\_8}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+8~\textquotesingle{}$\ast$\textquotesingle{}}
+
+
+
+Definition at line 56 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab1d17f51ce3ff60db690b46f20aff711}\label{_nova_x_r___comm___protocol___definitions_8h_ab1d17f51ce3ff60db690b46f20aff711}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_CHANNEL\_ON\_9@{OPENBCI\_CHANNEL\_ON\_9}}
+\index{OPENBCI\_CHANNEL\_ON\_9@{OPENBCI\_CHANNEL\_ON\_9}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_CHANNEL\_ON\_9}{OPENBCI\_CHANNEL\_ON\_9}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+O\+N\+\_\+9~\textquotesingle{}Q\textquotesingle{}}
+
+
+
+Definition at line 57 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_aa76a7e9e1e80aac52a9bac5d8297474a}\label{_nova_x_r___comm___protocol___definitions_8h_aa76a7e9e1e80aac52a9bac5d8297474a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_FIRMWARE\_VERSION\_V1@{OPENBCI\_FIRMWARE\_VERSION\_V1}}
+\index{OPENBCI\_FIRMWARE\_VERSION\_V1@{OPENBCI\_FIRMWARE\_VERSION\_V1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_FIRMWARE\_VERSION\_V1}{OPENBCI\_FIRMWARE\_VERSION\_V1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+V1~1}
+
+
+
+Definition at line 209 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7007e910873b8bf4f6c84a84fb21d068}\label{_nova_x_r___comm___protocol___definitions_8h_a7007e910873b8bf4f6c84a84fb21d068}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_FIRMWARE\_VERSION\_V2@{OPENBCI\_FIRMWARE\_VERSION\_V2}}
+\index{OPENBCI\_FIRMWARE\_VERSION\_V2@{OPENBCI\_FIRMWARE\_VERSION\_V2}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_FIRMWARE\_VERSION\_V2}{OPENBCI\_FIRMWARE\_VERSION\_V2}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+V2~1}
+
+
+
+Definition at line 210 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ae47933b8f1acbd8e1316a67888f1660f}\label{_nova_x_r___comm___protocol___definitions_8h_ae47933b8f1acbd8e1316a67888f1660f}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_GET\_VERSION@{OPENBCI\_GET\_VERSION}}
+\index{OPENBCI\_GET\_VERSION@{OPENBCI\_GET\_VERSION}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_GET\_VERSION}{OPENBCI\_GET\_VERSION}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+G\+E\+T\+\_\+\+V\+E\+R\+S\+I\+ON~\textquotesingle{}V\textquotesingle{}}
+
+
+
+Definition at line 157 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab0d106b601e8b20f84d8b6340c6b6848}\label{_nova_x_r___comm___protocol___definitions_8h_ab0d106b601e8b20f84d8b6340c6b6848}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_INSERT\_MARKER@{OPENBCI\_INSERT\_MARKER}}
+\index{OPENBCI\_INSERT\_MARKER@{OPENBCI\_INSERT\_MARKER}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_INSERT\_MARKER}{OPENBCI\_INSERT\_MARKER}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+M\+A\+R\+K\+ER~\textquotesingle{}\`{}\textquotesingle{}}
+
+
+
+Insert marker into the stream. 
+
+
+
+Definition at line 163 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a359b9e58eb913c6d6e09b1d6e694e960}\label{_nova_x_r___comm___protocol___definitions_8h_a359b9e58eb913c6d6e09b1d6e694e960}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS@{OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS}}
+\index{OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS@{OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS}{OPENBCI\_LEAD\_OFF\_DRIVE\_AMPS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+D\+R\+I\+V\+E\+\_\+\+A\+M\+PS~0.\+000000006}
+
+
+
+Impedance Calculation Variables. 
+
+
+
+Definition at line 202 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a91a51209e2f3eba670b5ed70bf1b9225}\label{_nova_x_r___comm___protocol___definitions_8h_a91a51209e2f3eba670b5ed70bf1b9225}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ@{OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ}}
+\index{OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ@{OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ}{OPENBCI\_LEAD\_OFF\_FREQUENCY\_HZ}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+\+HZ~31}
+
+
+
+Definition at line 203 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a58cbbf7d3b59805cb65643d484b801d1}\label{_nova_x_r___comm___protocol___definitions_8h_a58cbbf7d3b59805cb65643d484b801d1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS@{OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS}}
+\index{OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS@{OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS}{OPENBCI\_MISC\_QUERY\_REGISTER\_SETTINGS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+M\+I\+S\+C\+\_\+\+Q\+U\+E\+R\+Y\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+S\+E\+T\+T\+I\+N\+GS~\textquotesingle{}?\textquotesingle{}}
+
+
+
+Miscellaneous. 
+
+
+
+Definition at line 150 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_aa2aaa4e4f492f1dba595beffe4d6c5f3}\label{_nova_x_r___comm___protocol___definitions_8h_aa2aaa4e4f492f1dba595beffe4d6c5f3}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_MISC\_SOFT\_RESET@{OPENBCI\_MISC\_SOFT\_RESET}}
+\index{OPENBCI\_MISC\_SOFT\_RESET@{OPENBCI\_MISC\_SOFT\_RESET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_MISC\_SOFT\_RESET}{OPENBCI\_MISC\_SOFT\_RESET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+M\+I\+S\+C\+\_\+\+S\+O\+F\+T\+\_\+\+R\+E\+S\+ET~\textquotesingle{}v\textquotesingle{}}
+
+
+
+Definition at line 151 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ae29af4eaf906a96802e2c7fced396818}\label{_nova_x_r___comm___protocol___definitions_8h_ae29af4eaf906a96802e2c7fced396818}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE@{OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE}}
+\index{OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE@{OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE}{OPENBCI\_NUMBER\_BYTES\_PER\_ADS\_SAMPLE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+A\+D\+S\+\_\+\+S\+A\+M\+P\+LE~24}
+
+
+
+Definition at line 198 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a9dc7f70d014105e7a531a966fb9eb658}\label{_nova_x_r___comm___protocol___definitions_8h_a9dc7f70d014105e7a531a966fb9eb658}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE@{OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE}}
+\index{OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE@{OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE}{OPENBCI\_NUMBER\_CHANNELS\_PER\_ADS\_SAMPLE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+P\+E\+R\+\_\+\+A\+D\+S\+\_\+\+S\+A\+M\+P\+LE~24}
+
+
+
+Definition at line 199 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab997e39910444c16808d4dc1e66c7bd7}\label{_nova_x_r___comm___protocol___definitions_8h_ab997e39910444c16808d4dc1e66c7bd7}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS@{OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS}}
+\index{OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS@{OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS}{OPENBCI\_NUMBER\_OF\_BOARD\_SETTINGS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+O\+A\+R\+D\+\_\+\+S\+E\+T\+T\+I\+N\+GS~1}
+
+
+
+Helpful numbers. 
+
+
+
+Definition at line 183 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ae122135a5a15fac66f560e02e2d28560}\label{_nova_x_r___comm___protocol___definitions_8h_ae122135a5a15fac66f560e02e2d28560}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_BYTES\_AUX@{OPENBCI\_NUMBER\_OF\_BYTES\_AUX}}
+\index{OPENBCI\_NUMBER\_OF\_BYTES\_AUX@{OPENBCI\_NUMBER\_OF\_BYTES\_AUX}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_BYTES\_AUX}{OPENBCI\_NUMBER\_OF\_BYTES\_AUX}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+A\+UX~6}
+
+
+
+Definition at line 208 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a12d1cdc90911a5abac2446f35b479f7f}\label{_nova_x_r___comm___protocol___definitions_8h_a12d1cdc90911a5abac2446f35b479f7f}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL@{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL}}
+\index{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL@{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL}{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_CHANNEL}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+C\+H\+A\+N\+N\+EL~9}
+
+
+
+Definition at line 206 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a33fa1b8957debd8a1c659c9b7846a541}\label{_nova_x_r___comm___protocol___definitions_8h_a33fa1b8957debd8a1c659c9b7846a541}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF@{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF}}
+\index{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF@{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF}{OPENBCI\_NUMBER\_OF\_BYTES\_SETTINGS\_LEAD\_OFF}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+L\+E\+A\+D\+\_\+\+O\+FF~5}
+
+
+
+Definition at line 207 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ad3985850da6435a143523721466c0c2b}\label{_nova_x_r___comm___protocol___definitions_8h_ad3985850da6435a143523721466c0c2b}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS@{OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS}}
+\index{OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS@{OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS}{OPENBCI\_NUMBER\_OF\_CHANNEL\_SETTINGS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+S\+E\+T\+T\+I\+N\+GS~6}
+
+
+
+Definition at line 184 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab2b864b8a4d98acba6f87483ed43aa9a}\label{_nova_x_r___comm___protocol___definitions_8h_ab2b864b8a4d98acba6f87483ed43aa9a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY@{OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY}}
+\index{OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY@{OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY}{OPENBCI\_NUMBER\_OF\_CHANNELS\_DAISY}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+A\+I\+SY~16}
+
+
+
+Possible number of channels. 
+
+
+
+Definition at line 179 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_af8fc17d31ec9d4decd59633c73be604f}\label{_nova_x_r___comm___protocol___definitions_8h_af8fc17d31ec9d4decd59633c73be604f}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT@{OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT}}
+\index{OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT@{OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT}{OPENBCI\_NUMBER\_OF\_CHANNELS\_DEFAULT}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+E\+F\+A\+U\+LT~8}
+
+
+
+Definition at line 180 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a033d91f0f9946d263fab229bace20204}\label{_nova_x_r___comm___protocol___definitions_8h_a033d91f0f9946d263fab229bace20204}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS@{OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS}}
+\index{OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS@{OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS}{OPENBCI\_NUMBER\_OF\_LEAD\_OFF\_SETTINGS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+S\+E\+T\+T\+I\+N\+GS~2}
+
+
+
+Definition at line 185 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a5b27258e850135b07e98574e67c636c4}\label{_nova_x_r___comm___protocol___definitions_8h_a5b27258e850135b07e98574e67c636c4}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_PACKET\_SIZE@{OPENBCI\_PACKET\_SIZE}}
+\index{OPENBCI\_PACKET\_SIZE@{OPENBCI\_PACKET\_SIZE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_PACKET\_SIZE}{OPENBCI\_PACKET\_SIZE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+ZE~33}
+
+
+
+Packet Size. 
+
+
+
+Definition at line 197 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a543d4172de1933cbaa8e27290db17f3a}\label{_nova_x_r___comm___protocol___definitions_8h_a543d4172de1933cbaa8e27290db17f3a}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_SAMPLE\_RATE\_125@{OPENBCI\_SAMPLE\_RATE\_125}}
+\index{OPENBCI\_SAMPLE\_RATE\_125@{OPENBCI\_SAMPLE\_RATE\_125}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_SAMPLE\_RATE\_125}{OPENBCI\_SAMPLE\_RATE\_125}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+125~125}
+
+
+
+Possible Sample Rates. 
+
+
+
+Definition at line 189 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a8f4023976ff8e9f4f16942d2251ae85d}\label{_nova_x_r___comm___protocol___definitions_8h_a8f4023976ff8e9f4f16942d2251ae85d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_SAMPLE\_RATE\_250@{OPENBCI\_SAMPLE\_RATE\_250}}
+\index{OPENBCI\_SAMPLE\_RATE\_250@{OPENBCI\_SAMPLE\_RATE\_250}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_SAMPLE\_RATE\_250}{OPENBCI\_SAMPLE\_RATE\_250}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+250~250}
+
+
+
+Definition at line 190 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ac9bdec2177ef35fcb57d6adb171b6077}\label{_nova_x_r___comm___protocol___definitions_8h_ac9bdec2177ef35fcb57d6adb171b6077}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_SAMPLE\_RATE\_SET@{OPENBCI\_SAMPLE\_RATE\_SET}}
+\index{OPENBCI\_SAMPLE\_RATE\_SET@{OPENBCI\_SAMPLE\_RATE\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_SAMPLE\_RATE\_SET}{OPENBCI\_SAMPLE\_RATE\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+\+S\+ET~\textquotesingle{}$\sim$\textquotesingle{}}
+
+
+
+Set sample rate. 
+
+
+
+Definition at line 160 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a360cdaa5c8f7e4ee20dd8a7ebcee7028}\label{_nova_x_r___comm___protocol___definitions_8h_a360cdaa5c8f7e4ee20dd8a7ebcee7028}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_STREAM\_START@{OPENBCI\_STREAM\_START}}
+\index{OPENBCI\_STREAM\_START@{OPENBCI\_STREAM\_START}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_STREAM\_START}{OPENBCI\_STREAM\_START}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+T\+A\+RT~\textquotesingle{}b\textquotesingle{}}
+
+
+
+SD card Commands -\/ reserver for cyton. 
+
+Stream Data Commands 
+
+Definition at line 146 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a318e9c505fc0746eed212c6d6f7574c3}\label{_nova_x_r___comm___protocol___definitions_8h_a318e9c505fc0746eed212c6d6f7574c3}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_STREAM\_STOP@{OPENBCI\_STREAM\_STOP}}
+\index{OPENBCI\_STREAM\_STOP@{OPENBCI\_STREAM\_STOP}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_STREAM\_STOP}{OPENBCI\_STREAM\_STOP}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+S\+T\+OP~\textquotesingle{}s\textquotesingle{}}
+
+
+
+Definition at line 147 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a1234535fac8b2390cd8fad2315f96cd2}\label{_nova_x_r___comm___protocol___definitions_8h_a1234535fac8b2390cd8fad2315f96cd2}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_DC}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+DC~\textquotesingle{}p\textquotesingle{}}
+
+
+
+Test Signal Control Commands 1x -\/ Voltage will be 1 $\ast$ (V\+R\+E\+FP -\/ V\+R\+E\+FN) / 2.\+4 mV 2x -\/ Voltage will be 2 $\ast$ (V\+R\+E\+FP -\/ V\+R\+E\+FN) / 2.\+4 mV. 
+
+
+
+Definition at line 70 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a8dbe642679da85686aeb64589f7e8667}\label{_nova_x_r___comm___protocol___definitions_8h_a8dbe642679da85686aeb64589f7e8667}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_GROUND}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+G\+R\+O\+U\+ND~\textquotesingle{}0\textquotesingle{}}
+
+
+
+Definition at line 71 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab2d6d80848d31542630948a97b6027e1}\label{_nova_x_r___comm___protocol___definitions_8h_ab2d6d80848d31542630948a97b6027e1}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_FAST}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+1\+X\+\_\+\+F\+A\+ST~\textquotesingle{}=\textquotesingle{}}
+
+
+
+Definition at line 72 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_aa6f3494734ca7dac0347239b818b2acb}\label{_nova_x_r___comm___protocol___definitions_8h_aa6f3494734ca7dac0347239b818b2acb}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_1X\_SLOW}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+1\+X\+\_\+\+S\+L\+OW~\textquotesingle{}-\/\textquotesingle{}}
+
+
+
+Definition at line 73 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab69ad5b6ddf0dc79d4c985676e7bfee6}\label{_nova_x_r___comm___protocol___definitions_8h_ab69ad5b6ddf0dc79d4c985676e7bfee6}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_FAST}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+2\+X\+\_\+\+F\+A\+ST~\textquotesingle{}\mbox{]}\textquotesingle{}}
+
+
+
+Definition at line 74 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a55448b345e8a3b6ab873420c4f02be83}\label{_nova_x_r___comm___protocol___definitions_8h_a55448b345e8a3b6ab873420c4f02be83}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW}}
+\index{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW@{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW}{OPENBCI\_TEST\_SIGNAL\_CONNECT\_TO\_PULSE\_2X\_SLOW}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+C\+O\+N\+N\+E\+C\+T\+\_\+\+T\+O\+\_\+\+P\+U\+L\+S\+E\+\_\+2\+X\+\_\+\+S\+L\+OW~\textquotesingle{}\mbox{[}\textquotesingle{}}
+
+
+
+Definition at line 75 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a22c37ebb5b89103cd00e6b19930aa40e}\label{_nova_x_r___comm___protocol___definitions_8h_a22c37ebb5b89103cd00e6b19930aa40e}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TIME\_OUT\_MS\_1@{OPENBCI\_TIME\_OUT\_MS\_1}}
+\index{OPENBCI\_TIME\_OUT\_MS\_1@{OPENBCI\_TIME\_OUT\_MS\_1}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TIME\_OUT\_MS\_1}{OPENBCI\_TIME\_OUT\_MS\_1}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+O\+U\+T\+\_\+\+M\+S\+\_\+1~1}
+
+
+
+Definition at line 204 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a650184b3600b8e9bc6186b33071dceee}\label{_nova_x_r___comm___protocol___definitions_8h_a650184b3600b8e9bc6186b33071dceee}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TIME\_OUT\_MS\_3@{OPENBCI\_TIME\_OUT\_MS\_3}}
+\index{OPENBCI\_TIME\_OUT\_MS\_3@{OPENBCI\_TIME\_OUT\_MS\_3}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TIME\_OUT\_MS\_3}{OPENBCI\_TIME\_OUT\_MS\_3}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+O\+U\+T\+\_\+\+M\+S\+\_\+3~3}
+
+
+
+Definition at line 205 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a30876bf7fb564d5abfa7a1958977d0b9}\label{_nova_x_r___comm___protocol___definitions_8h_a30876bf7fb564d5abfa7a1958977d0b9}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TIME\_SET@{OPENBCI\_TIME\_SET}}
+\index{OPENBCI\_TIME\_SET@{OPENBCI\_TIME\_SET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TIME\_SET}{OPENBCI\_TIME\_SET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+S\+ET~\textquotesingle{}$<$\textquotesingle{}}
+
+
+
+Sync Clocks. 
+
+
+
+Definition at line 166 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a43b3bb27dbf6278c895814146b5fd362}\label{_nova_x_r___comm___protocol___definitions_8h_a43b3bb27dbf6278c895814146b5fd362}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_TIME\_STOP@{OPENBCI\_TIME\_STOP}}
+\index{OPENBCI\_TIME\_STOP@{OPENBCI\_TIME\_STOP}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_TIME\_STOP}{OPENBCI\_TIME\_STOP}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+OP~\textquotesingle{}$>$\textquotesingle{}}
+
+
+
+Definition at line 167 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a6cdaf1f23a74b918b6c48a514c56d596}\label{_nova_x_r___comm___protocol___definitions_8h_a6cdaf1f23a74b918b6c48a514c56d596}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_WIFI\_ATTACH@{OPENBCI\_WIFI\_ATTACH}}
+\index{OPENBCI\_WIFI\_ATTACH@{OPENBCI\_WIFI\_ATTACH}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_WIFI\_ATTACH}{OPENBCI\_WIFI\_ATTACH}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+A\+T\+T\+A\+CH~\textquotesingle{}\{\textquotesingle{}}
+
+
+
+Wifi Stuff reserved for Cyton. 
+
+
+
+Definition at line 171 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a4dc9f3e47c2b4d39ee8e51bc1150246d}\label{_nova_x_r___comm___protocol___definitions_8h_a4dc9f3e47c2b4d39ee8e51bc1150246d}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_WIFI\_REMOVE@{OPENBCI\_WIFI\_REMOVE}}
+\index{OPENBCI\_WIFI\_REMOVE@{OPENBCI\_WIFI\_REMOVE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_WIFI\_REMOVE}{OPENBCI\_WIFI\_REMOVE}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+R\+E\+M\+O\+VE~\textquotesingle{}\}\textquotesingle{}}
+
+
+
+Definition at line 172 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a11257f821555a47ad80f3ee721439d50}\label{_nova_x_r___comm___protocol___definitions_8h_a11257f821555a47ad80f3ee721439d50}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_WIFI\_RESET@{OPENBCI\_WIFI\_RESET}}
+\index{OPENBCI\_WIFI\_RESET@{OPENBCI\_WIFI\_RESET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_WIFI\_RESET}{OPENBCI\_WIFI\_RESET}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+R\+E\+S\+ET~\textquotesingle{};\textquotesingle{}}
+
+
+
+Definition at line 174 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ae716fe6bfe3148895837d9cad97c8522}\label{_nova_x_r___comm___protocol___definitions_8h_ae716fe6bfe3148895837d9cad97c8522}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!OPENBCI\_WIFI\_STATUS@{OPENBCI\_WIFI\_STATUS}}
+\index{OPENBCI\_WIFI\_STATUS@{OPENBCI\_WIFI\_STATUS}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{OPENBCI\_WIFI\_STATUS}{OPENBCI\_WIFI\_STATUS}}
+{\footnotesize\ttfamily \#define O\+P\+E\+N\+B\+C\+I\+\_\+\+W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+US~\textquotesingle{}\+:\textquotesingle{}}
+
+
+
+Definition at line 173 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_adccccae9aa3cf9ee0424df4e7a3cbbe0}\label{_nova_x_r___comm___protocol___definitions_8h_adccccae9aa3cf9ee0424df4e7a3cbbe0}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!START\_STREAMING@{START\_STREAMING}}
+\index{START\_STREAMING@{START\_STREAMING}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{START\_STREAMING}{START\_STREAMING}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+S\+T\+R\+E\+A\+M\+I\+NG~1}
+
+
+
+Definition at line 21 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a86c5a11a8753d671088d5eee03d3d622}\label{_nova_x_r___comm___protocol___definitions_8h_a86c5a11a8753d671088d5eee03d3d622}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!STOP\_STREAMING@{STOP\_STREAMING}}
+\index{STOP\_STREAMING@{STOP\_STREAMING}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{STOP\_STREAMING}{STOP\_STREAMING}}
+{\footnotesize\ttfamily \#define S\+T\+O\+P\+\_\+\+S\+T\+R\+E\+A\+M\+I\+NG~0}
+
+
+
+Definition at line 20 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a44ba4a0ee52084d984646020b398fdf9}\label{_nova_x_r___comm___protocol___definitions_8h_a44ba4a0ee52084d984646020b398fdf9}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!UDP\_BYTES\_PER\_PACKET@{UDP\_BYTES\_PER\_PACKET}}
+\index{UDP\_BYTES\_PER\_PACKET@{UDP\_BYTES\_PER\_PACKET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{UDP\_BYTES\_PER\_PACKET}{UDP\_BYTES\_PER\_PACKET}}
+{\footnotesize\ttfamily \#define U\+D\+P\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+C\+K\+ET~20}
+
+
+
+U\+DP Packet Information. 
+
+
+
+Definition at line 215 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a7ee6fc339b78795c771d34686ead4f11}\label{_nova_x_r___comm___protocol___definitions_8h_a7ee6fc339b78795c771d34686ead4f11}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!UDP\_BYTES\_PER\_SAMPLE@{UDP\_BYTES\_PER\_SAMPLE}}
+\index{UDP\_BYTES\_PER\_SAMPLE@{UDP\_BYTES\_PER\_SAMPLE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{UDP\_BYTES\_PER\_SAMPLE}{UDP\_BYTES\_PER\_SAMPLE}}
+{\footnotesize\ttfamily \#define U\+D\+P\+\_\+\+B\+Y\+T\+E\+S\+\_\+\+P\+E\+R\+\_\+\+S\+A\+M\+P\+LE~6}
+
+
+
+Definition at line 216 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_ab62c7366e9efcf71243fcdefbee2a407}\label{_nova_x_r___comm___protocol___definitions_8h_ab62c7366e9efcf71243fcdefbee2a407}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!UDP\_RING\_BUFFER\_SIZE@{UDP\_RING\_BUFFER\_SIZE}}
+\index{UDP\_RING\_BUFFER\_SIZE@{UDP\_RING\_BUFFER\_SIZE}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{UDP\_RING\_BUFFER\_SIZE}{UDP\_RING\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define U\+D\+P\+\_\+\+R\+I\+N\+G\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE~50}
+
+
+
+Definition at line 219 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_acc1353312dabb9a914db90f9e85c4c56}\label{_nova_x_r___comm___protocol___definitions_8h_acc1353312dabb9a914db90f9e85c4c56}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!UDP\_SAMPLES\_PER\_PACKET@{UDP\_SAMPLES\_PER\_PACKET}}
+\index{UDP\_SAMPLES\_PER\_PACKET@{UDP\_SAMPLES\_PER\_PACKET}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{UDP\_SAMPLES\_PER\_PACKET}{UDP\_SAMPLES\_PER\_PACKET}}
+{\footnotesize\ttfamily \#define U\+D\+P\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+P\+E\+R\+\_\+\+P\+A\+C\+K\+ET~3}
+
+
+
+Definition at line 217 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol___definitions_8h_a5fafc6441be7c5d36f16b0720eec67ab}\label{_nova_x_r___comm___protocol___definitions_8h_a5fafc6441be7c5d36f16b0720eec67ab}} 
+\index{NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}!UDP\_TOTAL\_DATA\_BYTES@{UDP\_TOTAL\_DATA\_BYTES}}
+\index{UDP\_TOTAL\_DATA\_BYTES@{UDP\_TOTAL\_DATA\_BYTES}!NovaXR\_Comm\_Protocol\_Definitions.h@{NovaXR\_Comm\_Protocol\_Definitions.h}}
+\doxysubsubsection{\texorpdfstring{UDP\_TOTAL\_DATA\_BYTES}{UDP\_TOTAL\_DATA\_BYTES}}
+{\footnotesize\ttfamily \#define U\+D\+P\+\_\+\+T\+O\+T\+A\+L\+\_\+\+D\+A\+T\+A\+\_\+\+B\+Y\+T\+ES~18}
+
+
+
+Definition at line 218 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol\+\_\+\+Definitions.\+h.
+

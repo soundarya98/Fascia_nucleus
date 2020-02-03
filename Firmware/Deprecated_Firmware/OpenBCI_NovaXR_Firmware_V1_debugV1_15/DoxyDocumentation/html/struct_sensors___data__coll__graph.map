@@ -1,0 +1,6 @@
+<map id="Sensors_Data" name="Sensors_Data">
+<area shape="rect" id="node1" title="Aggregated All Sensory Data." alt="" coords="99,92,205,117"/>
+<area shape="rect" id="node2" href="$struct_b_i_o___data.html" title="&lt; Keep Precise Byte Count" alt="" coords="5,5,85,31"/>
+<area shape="rect" id="node3" href="$struct_a_u_x___data.html" title="Auxilary Data Structure." alt="" coords="110,5,194,31"/>
+<area shape="rect" id="node4" href="$struct_a_d_s___data.html" title="ADS1299 EEG and EMG Data." alt="" coords="218,5,302,31"/>
+</map>

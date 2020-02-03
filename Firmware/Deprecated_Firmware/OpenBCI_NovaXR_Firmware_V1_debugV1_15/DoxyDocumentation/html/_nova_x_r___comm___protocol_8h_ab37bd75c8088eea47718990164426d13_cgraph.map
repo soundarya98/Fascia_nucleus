@@ -1,0 +1,8 @@
+<map id="config_BIAS_LOFF" name="config_BIAS_LOFF">
+<area shape="rect" id="node1" title="Config BIAS or LOFF per channel." alt="" coords="5,55,142,80"/>
+<area shape="rect" id="node2" href="$_nova_x_r___comm___protocol_8cpp.html#aeed4a4713194b7693ca08d9936cba81f" title="BIAS or LOFF channel Disable/ Enable action." alt="" coords="190,5,358,31"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#a9ce4752411a8916cf7b81547a8f11f2f" title="Configure an ADS1299 Register." alt="" coords="200,55,348,80"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="201,104,347,129"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="406,55,491,80"/>
+<area shape="rect" id="node6" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="408,104,490,129"/>
+</map>

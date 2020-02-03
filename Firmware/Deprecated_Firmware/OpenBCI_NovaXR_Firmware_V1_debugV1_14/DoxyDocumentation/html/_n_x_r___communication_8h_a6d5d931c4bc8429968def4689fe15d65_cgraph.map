@@ -1,0 +1,47 @@
+<map id="UDP_DataSW_Exchange" name="UDP_DataSW_Exchange">
+<area shape="rect" id="node1" title="Data Exchange with UDP Client using Switch Buffers." alt="" coords="5,612,179,637"/>
+<area shape="rect" id="node2" href="$_data___handler_8cpp.html#ab758a8db2d255e8ffbe60e5e945047af" title="Assemble a full Switch Output Buffer." alt="" coords="242,104,379,129"/>
+<area shape="rect" id="node11" href="$_l_e_d___indication_8cpp.html#a8f78b85477a3e04ad96d9c1cf0867027" title="Unexpected TCP Client Disonnection." alt="" coords="243,475,378,513"/>
+<area shape="rect" id="node13" href="$_data___handler_8cpp.html#a320bda42e2fda1ee208a589465a9125e" title="Gets the ID of one available empty buffer." alt="" coords="232,587,389,612"/>
+<area shape="rect" id="node14" href="$_data___handler_8cpp.html#ad7ead52873c88852222106c5610d9972" title="Gets the ID of one available full switch buffer." alt="" coords="240,636,381,661"/>
+<area shape="rect" id="node15" href="$_n_x_r___communication_8cpp.html#a20449cf61537a24187ab69f6cb315547" title="Get Remote Client ID info." alt="" coords="269,685,352,711"/>
+<area shape="rect" id="node16" href="$_data___handler_8cpp.html#aa8d33b42622036a60f0b17e13668090b" title="Mark a Switch Buffer as Empty." alt="" coords="237,735,385,760"/>
+<area shape="rect" id="node17" href="$_data___handler_8cpp.html#a4eda3b58dc6c93a5a280526ef87d2155" title="Mark a Switch Buffer as Full." alt="" coords="245,784,376,809"/>
+<area shape="rect" id="node18" href="$_data___handler_8cpp.html#aa31a0af8c2861b1d358f58f3d6a5bc3f" title="Prints a Battery Charge Level." alt="" coords="258,833,364,859"/>
+<area shape="rect" id="node22" href="$_data___handler_8cpp.html#acacd93e8e4bb6eb11ae1b8c2abcb6a52" title="Reset both switch buffers state." alt="" coords="252,883,369,908"/>
+<area shape="rect" id="node23" href="$_n_x_r___communication_8cpp.html#ac54e097e673686238b2d5be63cab16c2" title="Sends a Switch Output Buffer over UDP." alt="" coords="237,932,384,957"/>
+<area shape="rect" id="node24" href="$_l_e_d___indication_8cpp.html#acb653f64366b90f597daa67b7212598d" title="Shows the stand by state." alt="" coords="237,376,384,401"/>
+<area shape="rect" id="node25" href="$_l_e_d___indication_8cpp.html#a141c3d76bbbb13fdbfc6f022768db55b" title="Shows the streamming state." alt="" coords="227,425,395,451"/>
+<area shape="rect" id="node26" href="$_l_e_d___indication_8cpp.html#a59465ebabc82fa3e752715432004f25f" title="Enter StandBy Mode." alt="" coords="255,537,366,563"/>
+<area shape="rect" id="node28" href="$_n_x_r___communication_8cpp.html#ae0f390a4e50056ce3aff4c906ad7b325" title="Check Incoming Commands over UDP." alt="" coords="238,327,384,352"/>
+<area shape="rect" id="node3" href="$_data___handler_8cpp.html#ac6650a21fe94e744d42598232968497f" title="Fills a data pacekt of a switch buffer with sensory data." alt="" coords="468,31,584,56"/>
+<area shape="rect" id="node5" href="$_data___handler_8cpp.html#a05ac889f44934d1195f3977ae5e04e37" title="Updates the local Sensors_Data structure with updated sensory data." alt="" coords="443,104,610,129"/>
+<area shape="rect" id="node4" href="$_data___handler_8cpp.html#ae8bbead6cea3c61dda2c0f70af7aaa96" title="Create a local timestamp." alt="" coords="694,5,802,31"/>
+<area shape="rect" id="node6" href="$_data___handler_8cpp.html#af3ae45319384b3442d4ef1a9a242ef49" title="Stores the ADS1299 raw data in the instace of the ADC_data structure." alt="" coords="682,153,814,179"/>
+<area shape="rect" id="node9" href="$_data___handler_8cpp.html#a0e1e3bfdd7e1366cf81adb5bacfbfe5a" title=" " alt="" coords="685,104,811,129"/>
+<area shape="rect" id="node10" href="$_data___handler_8cpp.html#ad8521ec07bbe828216886b203cb77faf" title="Gets Auxilary Raw Data data." alt="" coords="684,55,812,80"/>
+<area shape="rect" id="node7" href="$_a_d_s1299__lib_8cpp.html#ab09c1af4e63a218ddcd4c6e74dbd2c1d" title="Single Shot Mode &#45; Get Data in shared Union Structure: &quot;ADC_data&quot;." alt="" coords="899,103,1035,128"/>
+<area shape="rect" id="node8" href="$_a_d_s1299__lib_8cpp.html#a5ce329181e609c3d23a4ebd8c754b810" title="Select ADC to Control." alt="" coords="1130,229,1221,255"/>
+<area shape="rect" id="node12" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="479,455,574,480"/>
+<area shape="rect" id="node19" href="$_n_x_r___a_u_x___sensors_8cpp.html#aa67fd27fcbbc40bcc903450f133eabe1" title="Get the percentile Battery Charge Level." alt="" coords="444,833,609,859"/>
+<area shape="rect" id="node20" href="$_n_x_r___a_u_x___sensors_8cpp.html#a7bca354bf3b9118ef558c900e7f137d2" title="Calculates the sensory output regarding the reference voltage we set." alt="" coords="674,808,822,833"/>
+<area shape="rect" id="node21" href="$_n_x_r___a_u_x___sensors_8cpp.html#a26456581ec4bae87e59ef764e3d56322" title="Gets the analog sense level with averaging." alt="" coords="665,857,831,883"/>
+<area shape="rect" id="node27" href="$_l_e_d___indication_8cpp.html#a5163d45c1af814fc9ea0cca80f001657" title="Fade&#45;in Turning On any LED at certain PWM speed." alt="" coords="482,537,570,563"/>
+<area shape="rect" id="node29" href="$_open_b_c_i___nova_x_r_8cpp.html#a3288fb0114b19b1a0a0860c51efadc4d" title="Process incomming command character." alt="" coords="478,353,575,379"/>
+<area shape="rect" id="node30" href="$_open_b_c_i___nova_x_r_8cpp.html#a8a1019693140e7529258bcbbb0354b78" title="Check for valid on multi char commands." alt="" coords="661,579,835,604"/>
+<area shape="rect" id="node32" href="$_open_b_c_i___nova_x_r_8cpp.html#a00311c67c0858bb46ee764f977ba1a40" title="Check if the incoming command is a multichar command." alt="" coords="661,280,835,305"/>
+<area shape="rect" id="node33" href="$_a_d_s1299__lib_8cpp.html#a4529fc9cc6740d80d18a98b38693d51b" title="Display Current Registers Settings." alt="" coords="658,505,838,531"/>
+<area shape="rect" id="node37" href="$_open_b_c_i___nova_x_r_8cpp.html#a7d8cfc3480da6dcf2038ff365b0411a8" title="Gets the active multi char command." alt="" coords="669,329,827,355"/>
+<area shape="rect" id="node38" href="$_open_b_c_i___nova_x_r_8cpp.html#a61c213b429d09cbe8f69c2e724a648d9" title="Process a Multi&#45;Char incoming Command." alt="" coords="685,379,811,404"/>
+<area shape="rect" id="node43" href="$_a_d_s1299__lib_8cpp.html#a19ddd46e12309441db0cdda5e076f628" title="Stops and Sets configurations for selected input channel and board." alt="" coords="893,456,1042,481"/>
+<area shape="rect" id="node31" href="$_open_b_c_i___nova_x_r_8cpp.html#a55f9a76f1e0330b60da0457d3cca0e6c" title="End the timer on multi char commands." alt="" coords="886,604,1048,629"/>
+<area shape="rect" id="node34" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="897,555,1037,580"/>
+<area shape="rect" id="node35" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="894,505,1040,531"/>
+<area shape="rect" id="node36" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="1134,529,1217,555"/>
+<area shape="rect" id="node39" href="$_open_b_c_i___nova_x_r_8cpp.html#ade01502530bd39f049c51231cf11b858" title="Convert ASCII Characters to integers." alt="" coords="904,305,1030,331"/>
+<area shape="rect" id="node40" href="$_a_d_s1299__lib_8cpp.html#a9ce4752411a8916cf7b81547a8f11f2f" title="Configure an ADS1299 Register." alt="" coords="1101,381,1250,407"/>
+<area shape="rect" id="node42" href="$_open_b_c_i___nova_x_r_8cpp.html#a2e703b1b0c861e9e1e1723b2be7672b0" title="Translate the Incoming Channel Command to ADS input ID for Sisterboard." alt="" coords="895,355,1039,380"/>
+<area shape="rect" id="node41" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="1303,407,1388,432"/>
+<area shape="rect" id="node44" href="$_a_d_s1299__lib_8cpp.html#a46e58fd33706f92cbf0a8376e5f4aefe" title="Stop ADC Conversion Operation." alt="" coords="1096,480,1255,505"/>
+<area shape="rect" id="node45" href="$_a_d_s1299__lib_8cpp.html#afc1f487ddcd83ccc92dda2e169bf04fa" title="Configure a single ADS1299 Input." alt="" coords="1111,431,1240,456"/>
+</map>

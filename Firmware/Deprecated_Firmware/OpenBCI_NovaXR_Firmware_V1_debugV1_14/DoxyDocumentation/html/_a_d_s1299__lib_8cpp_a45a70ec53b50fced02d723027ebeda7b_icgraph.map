@@ -1,0 +1,4 @@
+<map id="flipBit" name="flipBit">
+<area shape="rect" id="node1" title="Flips a bit state in a given register." alt="" coords="174,5,228,31"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a70b12f2e1f4880d9b9c34c20ebf26976" title="Apply Configuration to an ADS1299 Register." alt="" coords="5,5,126,31"/>
+</map>

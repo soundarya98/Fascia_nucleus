@@ -1,0 +1,8 @@
+<map id="apply_bit_Config" name="apply_bit_Config">
+<area shape="rect" id="node1" title="Apply Configuration to an ADS1299 Register." alt="" coords="5,55,126,80"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a9ce4752411a8916cf7b81547a8f11f2f" title="Configure an ADS1299 Register." alt="" coords="174,5,323,31"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#a45a70ec53b50fced02d723027ebeda7b" title="Flips a bit state in a given register." alt="" coords="221,55,275,80"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="175,104,321,129"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="371,5,456,31"/>
+<area shape="rect" id="node6" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="372,104,454,129"/>
+</map>

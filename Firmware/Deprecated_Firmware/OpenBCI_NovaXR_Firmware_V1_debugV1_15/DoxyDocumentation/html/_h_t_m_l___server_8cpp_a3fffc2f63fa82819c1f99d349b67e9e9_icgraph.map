@@ -1,0 +1,10 @@
+<map id="urldecode" name="urldecode">
+<area shape="rect" id="node1" title="Decode the URL user data." alt="" coords="1212,5,1292,31"/>
+<area shape="rect" id="node2" href="$_h_t_m_l___server_8h.html#aa2fe0a7311351d986772661f94a5fe6f" title="Parse the user entered WiFi credentials from the HTML UI page." alt="" coords="1066,5,1164,31"/>
+<area shape="rect" id="node3" href="$_h_t_m_l___server_8h.html#a22f7b233763aece48fe4591157914c7a" title="Register a New WiFi in your device and save it in the device flash memory." alt="" coords="884,5,1018,31"/>
+<area shape="rect" id="node4" href="$_h_t_m_l___server_8h.html#afcd25428b3be6b6386240ceb1628e022" title="Start HTML based User Inτεreface Screen for Initial WiFi setup." alt="" coords="708,5,836,31"/>
+<area shape="rect" id="node5" href="$_wi_fi___management_8h.html#aff4f01952845e059feb598739a947708" title="Initialize the WiFi of the NovaXR device." alt="" coords="502,5,660,31"/>
+<area shape="rect" id="node6" href="$_wi_fi___management_8h.html#a1ff0b5a8d8dd833569d5e8fe2aaca659" title="User can choose in which mode the device will operate." alt="" coords="289,5,454,31"/>
+<area shape="rect" id="node7" href="$_nova_x_r___library_8h.html#a2d9fc48b2232263d4ea14397d3c815a3" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="107,5,241,31"/>
+<area shape="rect" id="node8" href="$_open_b_c_i___nova_x_r___firmware___v1__debug_v1__15_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,59,31"/>
+</map>

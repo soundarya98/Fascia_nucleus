@@ -1,0 +1,8 @@
+<map id="CreatePASS" name="CreatePASS">
+<area shape="rect" id="node1" title="Creates a WiFi password based on the device serial number." alt="" coords="733,31,829,56"/>
+<area shape="rect" id="node2" href="$_wi_fi___management_8h.html#a8b4495efcc1850e18edc4c8e3616a532" title="NovaXR WiFi Access Point Initialization." alt="" coords="502,5,685,31"/>
+<area shape="rect" id="node6" href="$_wi_fi___management_8h.html#aff4f01952845e059feb598739a947708" title="Initialize the WiFi of the NovaXR device." alt="" coords="514,55,673,80"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8h.html#a1ff0b5a8d8dd833569d5e8fe2aaca659" title="User can choose in which mode the device will operate." alt="" coords="289,31,454,56"/>
+<area shape="rect" id="node4" href="$_nova_x_r___library_8h.html#a2d9fc48b2232263d4ea14397d3c815a3" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="107,31,241,56"/>
+<area shape="rect" id="node5" href="$_open_b_c_i___nova_x_r___firmware___v1__debug_v1__14_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,31,59,56"/>
+</map>
