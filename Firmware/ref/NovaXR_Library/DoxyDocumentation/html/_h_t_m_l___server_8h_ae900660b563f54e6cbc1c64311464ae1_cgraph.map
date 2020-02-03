@@ -1,0 +1,6 @@
+<map id="wait_for_Client" name="wait_for_Client">
+<area shape="rect" id="node1" title="Wait for a Client to be connected." alt="" coords="5,31,115,56"/>
+<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#a003a4e557400f918e793628dd4e22b31" title="Blink Blue Once as somehting is being in progress." alt="" coords="163,31,312,56"/>
+<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="360,5,477,31"/>
+<area shape="rect" id="node4" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="372,55,466,80"/>
+</map>

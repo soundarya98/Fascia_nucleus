@@ -1,0 +1,4 @@
+<map id="get_ADC_Data_SSAlt" name="get_ADC_Data_SSAlt">
+<area shape="rect" id="node1" title="Single Shot Mode &#45; Get Data in shared Union Structure: &quot;ADC_data&quot;." alt="" coords="5,5,157,31"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="205,5,345,31"/>
+</map>

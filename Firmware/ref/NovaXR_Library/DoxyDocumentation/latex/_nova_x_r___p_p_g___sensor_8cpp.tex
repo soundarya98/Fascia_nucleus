@@ -1,0 +1,676 @@
+\hypertarget{_nova_x_r___p_p_g___sensor_8cpp}{}\doxysection{src/\+Peripherals/\+Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.cpp File Reference}
+\label{_nova_x_r___p_p_g___sensor_8cpp}\index{src/Peripherals/NovaXR\_PPG\_Sensor.cpp@{src/Peripherals/NovaXR\_PPG\_Sensor.cpp}}
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}M\+A\+X30105.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}heart\+Rate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+h\char`\"{}}\newline
+Include dependency graph for Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_aa76f44a666acbb14fbfb16a789f9f480}{plot\+IR}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_aa9f6599748e33619812aa4d415df31d9}{P\+P\+G\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a586ed1dd49778c23de689b28f9625f0f}{P\+P\+G\+\_\+\+Presence\+\_\+\+Sense\+\_\+\+Init}} (void)
+\item 
+bool \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac3bd7a0dc15438f386087a9f208725ec}{get\+Presence}} (void)
+\item 
+float \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ad5c1a57702e860314a5b37976bd55d92}{get\+\_\+\+Skin\+\_\+\+Temp}} (bool Celcious\+Format)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a18e905d072e153629afd00661811c7ac}{get\+\_\+\+Heart\+\_\+\+Rate}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ae4403b167ccf68ad4c48961bdc834bd3}{get\+\_\+\+R\+A\+W\+\_\+\+I\+R\+\_\+\+Reflection}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac19820fe059b8b96fc0630911a48a08f}{get\+\_\+calculated\+\_\+\+HR}} (long I\+R\+\_\+\+Value)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a2c5c987e531dcb2a41f1e6fa4c22068e}{H\+R\+\_\+config\+\_\+\+Default}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a7e0ec4005de3cd297a93ae7d5c053c48}{H\+R\+\_\+config}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_abb868d878b9a2abd06607e82611a284c}{H\+R\+\_\+config\+\_\+4}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_adf61da08797934386f4696b182677f4d}{P\+P\+G\+\_\+\+Presence\+\_\+\+Config}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a6e439e17e6682575aab95f69627635db}{P\+P\+G\+\_\+\+Temp\+\_\+\+Config}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a5835b4126c241c3403fa01f655c083fc}{En\+\_\+\+Int\+\_\+\+F\+I\+F\+O\+\_\+config}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ae09d1c3ae86342b03fb087049f617035}{P\+P\+G\+\_\+\+Temp\+\_\+\+Sense\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_acf3489bd2e001210a20e9ee3a3e2e946}{P\+P\+G\+\_\+\+H\+R\+\_\+\+Sense\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a5d4868239aa6d9488d9ff2b4f2c30857}{adjust\+\_\+configs}} (uint16\+\_\+t config\+Val, char factor)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_af351878a1299d539f940714687bcfb86}{print\+P\+P\+G\+\_\+\+Configs}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_abed512aa8522367c50cea5d5e7f53862}{read\+\_\+return\+\_\+int}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a340b8eb42acec33e3250176b7e568257}{Real\+Time\+\_\+\+Sensor\+\_\+\+Calibration}} ()
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a567fb93be84cb532100d57a64473fe82}{print\+Info}} (void)
+\item 
+void \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a4fa0bb3b737489198b4e87629c6c4930}{Config\+\_\+and\+\_\+\+Calibrate}} (uint16\+\_\+t Min, uint16\+\_\+t Max, char command)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_m_a_x30105}{M\+A\+X30105}} \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a2d18bd4f5e268c0ea3fab814cabc7adf}{particle\+Sensor}}
+\item 
+long \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac8a50ff971ce33bff956168d52ee61e5}{samples\+Taken}} = 0
+\item 
+long \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a639c25a6b30b46519847f6cacf61a4ed}{unblocked\+Value}}
+\item 
+long \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a8ad49a66e91d8658c5f1f7dbcbcbbd2f}{start\+Time}}
+\item 
+const byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac80b6534b64626fd7d4fc92e452faab5}{R\+A\+T\+E\+\_\+\+S\+I\+ZE}} = 4
+\item 
+byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a5be4ed6a366fb72c4ae168a9ad5f8ba8}{rates}} \mbox{[}\mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac80b6534b64626fd7d4fc92e452faab5}{R\+A\+T\+E\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a27972f8a7ab52059be105f343424f15c}{rate\+Spot}} = 0
+\item 
+long \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_aeb3f835683fe296bbc04886d551dbd4a}{last\+Beat}} = 0
+\item 
+float \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a22155a0d10f9fceddce65f96454f99e4}{beats\+Per\+Minute}}
+\item 
+int \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_aff1b81ede6112ba52687b831ac3a4e83}{beat\+Avg}}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ad1b905a02b224f63e9a6c273a807b79a}{led\+Brightness}} = 0
+\item 
+byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a7ff236f1c8241a7a5cc62a2ec7f2ae95}{sample\+Average}} = 0
+\item 
+byte \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_aef9e89b52dc9a788a725cafdacb1724c}{led\+Mode}} = 0
+\item 
+int \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ad16762d495115c2606417076f062c39d}{sample\+Rate}} = 0
+\item 
+int \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a2458cb363c4e88b698ca067fafba196e}{pulse\+Width}} = 0
+\item 
+int \mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_a22d2ab24ecd4e43eec367551bdff1841}{adc\+Range}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_aa76f44a666acbb14fbfb16a789f9f480}\label{_nova_x_r___p_p_g___sensor_8cpp_aa76f44a666acbb14fbfb16a789f9f480}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!plotIR@{plotIR}}
+\index{plotIR@{plotIR}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{plotIR}{plotIR}}
+{\footnotesize\ttfamily \#define plot\+IR}
+
+
+
+Definition at line 19 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a5d4868239aa6d9488d9ff2b4f2c30857}\label{_nova_x_r___p_p_g___sensor_8cpp_a5d4868239aa6d9488d9ff2b4f2c30857}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!adjust\_configs@{adjust\_configs}}
+\index{adjust\_configs@{adjust\_configs}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{adjust\_configs()}{adjust\_configs()}}
+{\footnotesize\ttfamily void adjust\+\_\+configs (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{config\+Val,  }\item[{char}]{factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line 326 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a5d4868239aa6d9488d9ff2b4f2c30857_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a5d4868239aa6d9488d9ff2b4f2c30857_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a4fa0bb3b737489198b4e87629c6c4930}\label{_nova_x_r___p_p_g___sensor_8cpp_a4fa0bb3b737489198b4e87629c6c4930}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!Config\_and\_Calibrate@{Config\_and\_Calibrate}}
+\index{Config\_and\_Calibrate@{Config\_and\_Calibrate}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{Config\_and\_Calibrate()}{Config\_and\_Calibrate()}}
+{\footnotesize\ttfamily void Config\+\_\+and\+\_\+\+Calibrate (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Min,  }\item[{uint16\+\_\+t}]{Max,  }\item[{char}]{command }\end{DoxyParamCaption})}
+
+
+
+Definition at line 476 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a4fa0bb3b737489198b4e87629c6c4930_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a4fa0bb3b737489198b4e87629c6c4930_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a5835b4126c241c3403fa01f655c083fc}\label{_nova_x_r___p_p_g___sensor_8cpp_a5835b4126c241c3403fa01f655c083fc}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!En\_Int\_FIFO\_config@{En\_Int\_FIFO\_config}}
+\index{En\_Int\_FIFO\_config@{En\_Int\_FIFO\_config}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{En\_Int\_FIFO\_config()}{En\_Int\_FIFO\_config()}}
+{\footnotesize\ttfamily void En\+\_\+\+Int\+\_\+\+F\+I\+F\+O\+\_\+config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 285 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a5835b4126c241c3403fa01f655c083fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ac19820fe059b8b96fc0630911a48a08f}\label{_nova_x_r___p_p_g___sensor_8cpp_ac19820fe059b8b96fc0630911a48a08f}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!get\_calculated\_HR@{get\_calculated\_HR}}
+\index{get\_calculated\_HR@{get\_calculated\_HR}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_calculated\_HR()}{get\_calculated\_HR()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+calculated\+\_\+\+HR (\begin{DoxyParamCaption}\item[{long}]{I\+R\+\_\+\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 172 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ac19820fe059b8b96fc0630911a48a08f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ac19820fe059b8b96fc0630911a48a08f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a18e905d072e153629afd00661811c7ac}\label{_nova_x_r___p_p_g___sensor_8cpp_a18e905d072e153629afd00661811c7ac}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!get\_Heart\_Rate@{get\_Heart\_Rate}}
+\index{get\_Heart\_Rate@{get\_Heart\_Rate}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_Heart\_Rate()}{get\_Heart\_Rate()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+\+Heart\+\_\+\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 145 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a18e905d072e153629afd00661811c7ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a18e905d072e153629afd00661811c7ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ae4403b167ccf68ad4c48961bdc834bd3}\label{_nova_x_r___p_p_g___sensor_8cpp_ae4403b167ccf68ad4c48961bdc834bd3}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!get\_RAW\_IR\_Reflection@{get\_RAW\_IR\_Reflection}}
+\index{get\_RAW\_IR\_Reflection@{get\_RAW\_IR\_Reflection}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_RAW\_IR\_Reflection()}{get\_RAW\_IR\_Reflection()}}
+{\footnotesize\ttfamily uint16\+\_\+t get\+\_\+\+R\+A\+W\+\_\+\+I\+R\+\_\+\+Reflection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 160 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ae4403b167ccf68ad4c48961bdc834bd3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ad5c1a57702e860314a5b37976bd55d92}\label{_nova_x_r___p_p_g___sensor_8cpp_ad5c1a57702e860314a5b37976bd55d92}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!get\_Skin\_Temp@{get\_Skin\_Temp}}
+\index{get\_Skin\_Temp@{get\_Skin\_Temp}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_Skin\_Temp()}{get\_Skin\_Temp()}}
+{\footnotesize\ttfamily float get\+\_\+\+Skin\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{bool}]{Celcious\+Format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ad5c1a57702e860314a5b37976bd55d92_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ac3bd7a0dc15438f386087a9f208725ec}\label{_nova_x_r___p_p_g___sensor_8cpp_ac3bd7a0dc15438f386087a9f208725ec}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!getPresence@{getPresence}}
+\index{getPresence@{getPresence}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{getPresence()}{getPresence()}}
+{\footnotesize\ttfamily bool get\+Presence (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ac3bd7a0dc15438f386087a9f208725ec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a7e0ec4005de3cd297a93ae7d5c053c48}\label{_nova_x_r___p_p_g___sensor_8cpp_a7e0ec4005de3cd297a93ae7d5c053c48}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!HR\_config@{HR\_config}}
+\index{HR\_config@{HR\_config}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{HR\_config()}{HR\_config()}}
+{\footnotesize\ttfamily void H\+R\+\_\+config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 220 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a7e0ec4005de3cd297a93ae7d5c053c48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{_nova_x_r___p_p_g___sensor_8cpp_a7e0ec4005de3cd297a93ae7d5c053c48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_abb868d878b9a2abd06607e82611a284c}\label{_nova_x_r___p_p_g___sensor_8cpp_abb868d878b9a2abd06607e82611a284c}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!HR\_config\_4@{HR\_config\_4}}
+\index{HR\_config\_4@{HR\_config\_4}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{HR\_config\_4()}{HR\_config\_4()}}
+{\footnotesize\ttfamily void H\+R\+\_\+config\+\_\+4 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 238 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a2c5c987e531dcb2a41f1e6fa4c22068e}\label{_nova_x_r___p_p_g___sensor_8cpp_a2c5c987e531dcb2a41f1e6fa4c22068e}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!HR\_config\_Default@{HR\_config\_Default}}
+\index{HR\_config\_Default@{HR\_config\_Default}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{HR\_config\_Default()}{HR\_config\_Default()}}
+{\footnotesize\ttfamily void H\+R\+\_\+config\+\_\+\+Default (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a2c5c987e531dcb2a41f1e6fa4c22068e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{_nova_x_r___p_p_g___sensor_8cpp_a2c5c987e531dcb2a41f1e6fa4c22068e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_acf3489bd2e001210a20e9ee3a3e2e946}\label{_nova_x_r___p_p_g___sensor_8cpp_acf3489bd2e001210a20e9ee3a3e2e946}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_HR\_Sense\_Init@{PPG\_HR\_Sense\_Init}}
+\index{PPG\_HR\_Sense\_Init@{PPG\_HR\_Sense\_Init}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_HR\_Sense\_Init()}{PPG\_HR\_Sense\_Init()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+H\+R\+\_\+\+Sense\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 310 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_acf3489bd2e001210a20e9ee3a3e2e946_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_aa9f6599748e33619812aa4d415df31d9}\label{_nova_x_r___p_p_g___sensor_8cpp_aa9f6599748e33619812aa4d415df31d9}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_Init@{PPG\_Init}}
+\index{PPG\_Init@{PPG\_Init}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_Init()}{PPG\_Init()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_aa9f6599748e33619812aa4d415df31d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_adf61da08797934386f4696b182677f4d}\label{_nova_x_r___p_p_g___sensor_8cpp_adf61da08797934386f4696b182677f4d}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_Presence\_Config@{PPG\_Presence\_Config}}
+\index{PPG\_Presence\_Config@{PPG\_Presence\_Config}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_Presence\_Config()}{PPG\_Presence\_Config()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+Presence\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 253 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_adf61da08797934386f4696b182677f4d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a586ed1dd49778c23de689b28f9625f0f}\label{_nova_x_r___p_p_g___sensor_8cpp_a586ed1dd49778c23de689b28f9625f0f}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_Presence\_Sense\_Init@{PPG\_Presence\_Sense\_Init}}
+\index{PPG\_Presence\_Sense\_Init@{PPG\_Presence\_Sense\_Init}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_Presence\_Sense\_Init()}{PPG\_Presence\_Sense\_Init()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+Presence\+\_\+\+Sense\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a586ed1dd49778c23de689b28f9625f0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a6e439e17e6682575aab95f69627635db}\label{_nova_x_r___p_p_g___sensor_8cpp_a6e439e17e6682575aab95f69627635db}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_Temp\_Config@{PPG\_Temp\_Config}}
+\index{PPG\_Temp\_Config@{PPG\_Temp\_Config}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_Temp\_Config()}{PPG\_Temp\_Config()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+Temp\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 273 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a6e439e17e6682575aab95f69627635db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_nova_x_r___p_p_g___sensor_8cpp_a6e439e17e6682575aab95f69627635db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ae09d1c3ae86342b03fb087049f617035}\label{_nova_x_r___p_p_g___sensor_8cpp_ae09d1c3ae86342b03fb087049f617035}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!PPG\_Temp\_Sense\_Init@{PPG\_Temp\_Sense\_Init}}
+\index{PPG\_Temp\_Sense\_Init@{PPG\_Temp\_Sense\_Init}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{PPG\_Temp\_Sense\_Init()}{PPG\_Temp\_Sense\_Init()}}
+{\footnotesize\ttfamily void P\+P\+G\+\_\+\+Temp\+\_\+\+Sense\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 295 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_ae09d1c3ae86342b03fb087049f617035_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a567fb93be84cb532100d57a64473fe82}\label{_nova_x_r___p_p_g___sensor_8cpp_a567fb93be84cb532100d57a64473fe82}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily void print\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 460 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_af351878a1299d539f940714687bcfb86}\label{_nova_x_r___p_p_g___sensor_8cpp_af351878a1299d539f940714687bcfb86}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!printPPG\_Configs@{printPPG\_Configs}}
+\index{printPPG\_Configs@{printPPG\_Configs}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{printPPG\_Configs()}{printPPG\_Configs()}}
+{\footnotesize\ttfamily void print\+P\+P\+G\+\_\+\+Configs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 365 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_af351878a1299d539f940714687bcfb86_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_abed512aa8522367c50cea5d5e7f53862}\label{_nova_x_r___p_p_g___sensor_8cpp_abed512aa8522367c50cea5d5e7f53862}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!read\_return\_int@{read\_return\_int}}
+\index{read\_return\_int@{read\_return\_int}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_return\_int()}{read\_return\_int()}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+\_\+return\+\_\+int (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 380 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{_nova_x_r___p_p_g___sensor_8cpp_abed512aa8522367c50cea5d5e7f53862_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_abed512aa8522367c50cea5d5e7f53862_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a340b8eb42acec33e3250176b7e568257}\label{_nova_x_r___p_p_g___sensor_8cpp_a340b8eb42acec33e3250176b7e568257}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!RealTime\_Sensor\_Calibration@{RealTime\_Sensor\_Calibration}}
+\index{RealTime\_Sensor\_Calibration@{RealTime\_Sensor\_Calibration}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{RealTime\_Sensor\_Calibration()}{RealTime\_Sensor\_Calibration()}}
+{\footnotesize\ttfamily void Real\+Time\+\_\+\+Sensor\+\_\+\+Calibration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 407 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___p_p_g___sensor_8cpp_a340b8eb42acec33e3250176b7e568257_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a22d2ab24ecd4e43eec367551bdff1841}\label{_nova_x_r___p_p_g___sensor_8cpp_a22d2ab24ecd4e43eec367551bdff1841}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!adcRange@{adcRange}}
+\index{adcRange@{adcRange}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{adcRange}{adcRange}}
+{\footnotesize\ttfamily int adc\+Range = 0}
+
+
+
+Definition at line 44 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_aff1b81ede6112ba52687b831ac3a4e83}\label{_nova_x_r___p_p_g___sensor_8cpp_aff1b81ede6112ba52687b831ac3a4e83}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!beatAvg@{beatAvg}}
+\index{beatAvg@{beatAvg}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{beatAvg}{beatAvg}}
+{\footnotesize\ttfamily int beat\+Avg}
+
+
+
+Definition at line 36 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a22155a0d10f9fceddce65f96454f99e4}\label{_nova_x_r___p_p_g___sensor_8cpp_a22155a0d10f9fceddce65f96454f99e4}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!beatsPerMinute@{beatsPerMinute}}
+\index{beatsPerMinute@{beatsPerMinute}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{beatsPerMinute}{beatsPerMinute}}
+{\footnotesize\ttfamily float beats\+Per\+Minute}
+
+
+
+Definition at line 35 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_aeb3f835683fe296bbc04886d551dbd4a}\label{_nova_x_r___p_p_g___sensor_8cpp_aeb3f835683fe296bbc04886d551dbd4a}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!lastBeat@{lastBeat}}
+\index{lastBeat@{lastBeat}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{lastBeat}{lastBeat}}
+{\footnotesize\ttfamily long last\+Beat = 0}
+
+
+
+Definition at line 34 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ad1b905a02b224f63e9a6c273a807b79a}\label{_nova_x_r___p_p_g___sensor_8cpp_ad1b905a02b224f63e9a6c273a807b79a}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!ledBrightness@{ledBrightness}}
+\index{ledBrightness@{ledBrightness}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{ledBrightness}{ledBrightness}}
+{\footnotesize\ttfamily byte led\+Brightness = 0}
+
+
+
+Definition at line 39 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_aef9e89b52dc9a788a725cafdacb1724c}\label{_nova_x_r___p_p_g___sensor_8cpp_aef9e89b52dc9a788a725cafdacb1724c}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!ledMode@{ledMode}}
+\index{ledMode@{ledMode}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{ledMode}{ledMode}}
+{\footnotesize\ttfamily byte led\+Mode = 0}
+
+
+
+Definition at line 41 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a2d18bd4f5e268c0ea3fab814cabc7adf}\label{_nova_x_r___p_p_g___sensor_8cpp_a2d18bd4f5e268c0ea3fab814cabc7adf}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!particleSensor@{particleSensor}}
+\index{particleSensor@{particleSensor}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{particleSensor}{particleSensor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_m_a_x30105}{M\+A\+X30105}} particle\+Sensor}
+
+
+
+Definition at line 23 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a2458cb363c4e88b698ca067fafba196e}\label{_nova_x_r___p_p_g___sensor_8cpp_a2458cb363c4e88b698ca067fafba196e}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!pulseWidth@{pulseWidth}}
+\index{pulseWidth@{pulseWidth}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{pulseWidth}{pulseWidth}}
+{\footnotesize\ttfamily int pulse\+Width = 0}
+
+
+
+Definition at line 43 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ac80b6534b64626fd7d4fc92e452faab5}\label{_nova_x_r___p_p_g___sensor_8cpp_ac80b6534b64626fd7d4fc92e452faab5}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!RATE\_SIZE@{RATE\_SIZE}}
+\index{RATE\_SIZE@{RATE\_SIZE}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{RATE\_SIZE}{RATE\_SIZE}}
+{\footnotesize\ttfamily const byte R\+A\+T\+E\+\_\+\+S\+I\+ZE = 4}
+
+
+
+Definition at line 31 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a5be4ed6a366fb72c4ae168a9ad5f8ba8}\label{_nova_x_r___p_p_g___sensor_8cpp_a5be4ed6a366fb72c4ae168a9ad5f8ba8}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!rates@{rates}}
+\index{rates@{rates}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{rates}{rates}}
+{\footnotesize\ttfamily byte rates\mbox{[}\mbox{\hyperlink{_nova_x_r___p_p_g___sensor_8cpp_ac80b6534b64626fd7d4fc92e452faab5}{R\+A\+T\+E\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 32 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a27972f8a7ab52059be105f343424f15c}\label{_nova_x_r___p_p_g___sensor_8cpp_a27972f8a7ab52059be105f343424f15c}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!rateSpot@{rateSpot}}
+\index{rateSpot@{rateSpot}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{rateSpot}{rateSpot}}
+{\footnotesize\ttfamily byte rate\+Spot = 0}
+
+
+
+Definition at line 33 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a7ff236f1c8241a7a5cc62a2ec7f2ae95}\label{_nova_x_r___p_p_g___sensor_8cpp_a7ff236f1c8241a7a5cc62a2ec7f2ae95}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!sampleAverage@{sampleAverage}}
+\index{sampleAverage@{sampleAverage}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{sampleAverage}{sampleAverage}}
+{\footnotesize\ttfamily byte sample\+Average = 0}
+
+
+
+Definition at line 40 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ad16762d495115c2606417076f062c39d}\label{_nova_x_r___p_p_g___sensor_8cpp_ad16762d495115c2606417076f062c39d}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!sampleRate@{sampleRate}}
+\index{sampleRate@{sampleRate}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{sampleRate}{sampleRate}}
+{\footnotesize\ttfamily int sample\+Rate = 0}
+
+
+
+Definition at line 42 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_ac8a50ff971ce33bff956168d52ee61e5}\label{_nova_x_r___p_p_g___sensor_8cpp_ac8a50ff971ce33bff956168d52ee61e5}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!samplesTaken@{samplesTaken}}
+\index{samplesTaken@{samplesTaken}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{samplesTaken}{samplesTaken}}
+{\footnotesize\ttfamily long samples\+Taken = 0}
+
+
+
+Definition at line 26 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a8ad49a66e91d8658c5f1f7dbcbcbbd2f}\label{_nova_x_r___p_p_g___sensor_8cpp_a8ad49a66e91d8658c5f1f7dbcbcbbd2f}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!startTime@{startTime}}
+\index{startTime@{startTime}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily long start\+Time}
+
+
+
+Definition at line 28 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___p_p_g___sensor_8cpp_a639c25a6b30b46519847f6cacf61a4ed}\label{_nova_x_r___p_p_g___sensor_8cpp_a639c25a6b30b46519847f6cacf61a4ed}} 
+\index{NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}!unblockedValue@{unblockedValue}}
+\index{unblockedValue@{unblockedValue}!NovaXR\_PPG\_Sensor.cpp@{NovaXR\_PPG\_Sensor.cpp}}
+\doxysubsubsection{\texorpdfstring{unblockedValue}{unblockedValue}}
+{\footnotesize\ttfamily long unblocked\+Value}
+
+
+
+Definition at line 27 of file Nova\+X\+R\+\_\+\+P\+P\+G\+\_\+\+Sensor.\+cpp.
+

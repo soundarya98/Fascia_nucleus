@@ -1,0 +1,9 @@
+<map id="Connect_to_AP" name="Connect_to_AP">
+<area shape="rect" id="node1" title="Connects to a given WiFi network." alt="" coords="884,29,999,55"/>
+<area shape="rect" id="node2" href="$_n_x_r___flash_8h.html#a8556cc4e746513d805737c04ac56ab9f" title="Connects to the last wifi network listed in the EEPROM MEMORY of the device." alt="" coords="529,5,651,31"/>
+<area shape="rect" id="node6" href="$_h_t_m_l___server_8h.html#a22f7b233763aece48fe4591157914c7a" title="Register a New WiFi in your device and save it in the device flash memory." alt="" coords="702,55,836,80"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8h.html#aff4f01952845e059feb598739a947708" title="Initialize the WiFi of the NovaXR device." alt="" coords="320,31,478,56"/>
+<area shape="rect" id="node4" href="$_wi_fi___management_8h.html#a1ff0b5a8d8dd833569d5e8fe2aaca659" title="User can choose in which mode the device will operate." alt="" coords="107,31,272,56"/>
+<area shape="rect" id="node5" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,31,59,56"/>
+<area shape="rect" id="node7" href="$_h_t_m_l___server_8h.html#afcd25428b3be6b6386240ceb1628e022" title="Start HTML based User Inτεreface Screen for Initial WiFi setup." alt="" coords="526,55,654,80"/>
+</map>

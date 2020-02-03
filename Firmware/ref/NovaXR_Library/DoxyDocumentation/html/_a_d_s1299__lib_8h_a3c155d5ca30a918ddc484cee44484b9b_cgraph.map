@@ -1,0 +1,8 @@
+<map id="display_Both_ADS_setings" name="display_Both_ADS_setings">
+<area shape="rect" id="node1" title="Diplay All ADS1299 Devices Configurations." alt="" coords="5,55,188,80"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a4529fc9cc6740d80d18a98b38693d51b" title="Display Current Registers Settings." alt="" coords="236,29,415,55"/>
+<area shape="rect" id="node6" href="$_a_d_s1299__lib_8cpp.html#a5ce329181e609c3d23a4ebd8c754b810" title="Select ADS1299 to Control." alt="" coords="280,79,371,104"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="466,5,606,31"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="463,55,609,80"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="657,55,739,80"/>
+</map>

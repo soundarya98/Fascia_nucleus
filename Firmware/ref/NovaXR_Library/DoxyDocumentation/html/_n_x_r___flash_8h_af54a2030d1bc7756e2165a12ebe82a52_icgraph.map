@@ -1,0 +1,7 @@
+<map id="update_DeviceInfo" name="update_DeviceInfo">
+<area shape="rect" id="node1" title="Update NovaXR Device Information." alt="" coords="620,5,752,31"/>
+<area shape="rect" id="node2" href="$_n_x_r___flash_8h.html#a0141be812ef7dbe793c800b0870d6a9a" title="Write the Flash Memory with standard information about the current device." alt="" coords="415,5,572,31"/>
+<area shape="rect" id="node3" href="$_n_x_r___flash_8h.html#a748b88561c6dcef166c49a6f946af67e" title="EEPROM &#45; Device ROM Initialization." alt="" coords="289,5,367,31"/>
+<area shape="rect" id="node4" href="$_nova_x_r___library_8h.html#a4d69ff28910f2d26aeb8f8acc3ecf5c7" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="107,5,241,31"/>
+<area shape="rect" id="node5" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,59,31"/>
+</map>

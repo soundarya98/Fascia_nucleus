@@ -1,0 +1,13 @@
+<map id="get_sisterADS_Input" name="get_sisterADS_Input">
+<area shape="rect" id="node1" title="Translate the Incoming Channel Command to ADS input ID for Sisterboard." alt="" coords="1075,80,1219,105"/>
+<area shape="rect" id="node2" href="$_nova_x_r___comm___protocol_8h.html#a61c213b429d09cbe8f69c2e724a648d9" title="Process a Multi&#45;Char incoming Command." alt="" coords="902,80,1027,105"/>
+<area shape="rect" id="node3" href="$_nova_x_r___comm___protocol_8h.html#a3288fb0114b19b1a0a0860c51efadc4d" title="Process incomming command character." alt="" coords="757,80,854,105"/>
+<area shape="rect" id="node4" href="$_n_x_r___data_exchange_8h.html#a3088a3cfcad30749415fcf71f15a3e70" title="Check Incoming Commands over TCP." alt="" coords="564,55,708,80"/>
+<area shape="rect" id="node9" href="$_n_x_r___data_exchange_8h.html#ae0f390a4e50056ce3aff4c906ad7b325" title="Check Incoming Commands over UDP." alt="" coords="563,104,709,129"/>
+<area shape="rect" id="node5" href="$_n_x_r___data_exchange_8h.html#a7cfd71f1cec0fcf51e3126c97c5bda61" title="Data Exchange with TCP Client." alt="" coords="353,5,504,31"/>
+<area shape="rect" id="node8" href="$_n_x_r___data_exchange_8h.html#a3aab200f94b578270bb8dcb6e58bcc10" title="Data Exchange with TCP Client Switch Buffers." alt="" coords="343,55,514,80"/>
+<area shape="rect" id="node6" href="$_n_x_r___data_exchange_8h.html#a6b03dd7845b6e16ee9ea8b29263cce7e" title="Test UDP and TCP data communication." alt="" coords="100,80,294,105"/>
+<area shape="rect" id="node7" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#afe461d27b9c48d5921c00d521181f12f" title=" " alt="" coords="5,80,52,105"/>
+<area shape="rect" id="node10" href="$_n_x_r___data_exchange_8h.html#a79ad6fcbb821464d34af63f4a30058e7" title="Data Exchange with UDP Client." alt="" coords="353,104,504,129"/>
+<area shape="rect" id="node11" href="$_n_x_r___data_exchange_8h.html#a6d5d931c4bc8429968def4689fe15d65" title="Data Exchange with UDP Client using Switch Buffers." alt="" coords="342,153,515,179"/>
+</map>

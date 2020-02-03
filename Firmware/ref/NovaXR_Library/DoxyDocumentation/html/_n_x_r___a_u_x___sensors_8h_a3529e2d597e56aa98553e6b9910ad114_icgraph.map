@@ -1,0 +1,9 @@
+<map id="readVDD_Level" name="readVDD_Level">
+<area shape="rect" id="node1" title="Reads the Real VDD Voltgae Level." alt="" coords="841,56,957,81"/>
+<area shape="rect" id="node2" href="$_n_x_r___a_u_x___sensors_8h.html#a914f69d8f5df1646deecf088e676649b" title="Perform Gain Correction." alt="" coords="667,5,782,31"/>
+<area shape="rect" id="node3" href="$_n_x_r___a_u_x___sensors_8h.html#acd29d7c766ff59600fb5da3e56e66d34" title="Calbrate 12Bit ADC of SAMD21." alt="" coords="450,56,608,81"/>
+<area shape="rect" id="node7" href="$_n_x_r___a_u_x___sensors_8h.html#a62acd2cc2003fcc43c1c743196ab7a4a" title="Set Default ADC Settigns Initially." alt="" coords="656,107,793,132"/>
+<area shape="rect" id="node4" href="$_n_x_r___a_u_x___sensors_8h.html#afe04664726a3b4f279476a2f2193a56c" title="Initialize SAMD21 ADC Configs" alt="" coords="289,56,402,81"/>
+<area shape="rect" id="node5" href="$_nova_x_r___library_8h.html#a4d69ff28910f2d26aeb8f8acc3ecf5c7" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="107,56,241,81"/>
+<area shape="rect" id="node6" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,56,59,81"/>
+</map>

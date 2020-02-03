@@ -1,0 +1,33 @@
+<map id="Config_Board_Rev" name="Config_Board_Rev">
+<area shape="rect" id="node1" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="5,452,139,477"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a6088edd483f7e2e1141823df741b1720" title="Build your ASD1299 Configuration List and Apply it." alt="" coords="187,205,307,231"/>
+<area shape="rect" id="node15" href="$_a_d_s1299__lib_8cpp.html#ab8e6e66e304cc15a50a3fa5b49075e6e" title="Begins NovaXR Custom SPI Module." alt="" coords="202,403,292,428"/>
+<area shape="rect" id="node17" href="$_n_x_r___a_u_x___sensors_8cpp.html#afe04664726a3b4f279476a2f2193a56c" title="Initialize SAMD21 ADC Configs" alt="" coords="191,452,304,477"/>
+<area shape="rect" id="node25" href="$_n_x_r___flash_8cpp.html#a748b88561c6dcef166c49a6f946af67e" title="EEPROM &#45; Device ROM Initialization." alt="" coords="208,501,286,527"/>
+<area shape="rect" id="node31" href="$_n_x_r___a_u_x___sensors_8cpp.html#a69820f627ba3d25ebc4b9b2cb5966c00" title="Initialization Test Method for SAMD21 ADC." alt="" coords="196,551,299,576"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#aab3a44596b75d6f5f627fc139aba2ee7" title="Check id ADS1299 device is present on the board." alt="" coords="397,156,515,181"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#a5f211d0f1d5eb2bbdb6dd04c2f994428" title="Prints a board id." alt="" coords="627,131,729,156"/>
+<area shape="rect" id="node8" href="$_a_d_s1299__lib_8cpp.html#a9ce4752411a8916cf7b81547a8f11f2f" title="Configure an ADS1299 Register." alt="" coords="382,55,531,80"/>
+<area shape="rect" id="node10" href="$_a_d_s1299__lib_8cpp.html#ae319817637388acc86b1b423929d0fd5" title="Configure all ADC Inputs at once." alt="" coords="377,5,535,31"/>
+<area shape="rect" id="node11" href="$_a_d_s1299__lib_8cpp.html#a4529fc9cc6740d80d18a98b38693d51b" title="Display Current Registers Settings." alt="" coords="366,353,546,379"/>
+<area shape="rect" id="node12" href="$_a_d_s1299__lib_8cpp.html#ad31ec5a9add8086f5dd739a00e0c6fc0" title="Enable ADS1299 Hardware." alt="" coords="393,205,519,231"/>
+<area shape="rect" id="node13" href="$_a_d_s1299__lib_8cpp.html#aa1ead4a65c659d08667f72ae75b31b87" title="Send Reset Command to an active ADS1299." alt="" coords="410,255,502,280"/>
+<area shape="rect" id="node14" href="$_a_d_s1299__lib_8cpp.html#a5ce329181e609c3d23a4ebd8c754b810" title="Select ADS1299 to Control." alt="" coords="410,304,502,329"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="608,277,748,303"/>
+<area shape="rect" id="node6" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="605,217,751,243"/>
+<area shape="rect" id="node7" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="833,217,915,243"/>
+<area shape="rect" id="node9" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="636,31,721,56"/>
+<area shape="rect" id="node16" href="$_a_d_s1299__lib_8cpp.html#ac39a837ad6e83714e21d0d690180d9de" title="Initialize SPI Pins for SERCOM." alt="" coords="376,403,537,428"/>
+<area shape="rect" id="node18" href="$_n_x_r___a_u_x___sensors_8cpp.html#acd29d7c766ff59600fb5da3e56e66d34" title="Calbrate 12Bit ADC of SAMD21." alt="" coords="377,452,536,477"/>
+<area shape="rect" id="node19" href="$_n_x_r___a_u_x___sensors_8cpp.html#a914f69d8f5df1646deecf088e676649b" title="Perform Gain Correction." alt="" coords="621,401,736,427"/>
+<area shape="rect" id="node20" href="$_n_x_r___a_u_x___sensors_8cpp.html#a3529e2d597e56aa98553e6b9910ad114" title="Reads the Real VDD Voltgae Level." alt="" coords="816,401,931,427"/>
+<area shape="rect" id="node21" href="$_n_x_r___a_u_x___sensors_8cpp.html#a62acd2cc2003fcc43c1c743196ab7a4a" title="Set Default ADC Settigns Initially." alt="" coords="610,451,747,476"/>
+<area shape="rect" id="node23" href="$_n_x_r___a_u_x___sensors_8cpp.html#a22f619fdc80e44126ab72e6ff9260d2e" title="Reads the Real Ground Voltgae Level." alt="" coords="815,501,932,527"/>
+<area shape="rect" id="node24" href="$_n_x_r___a_u_x___sensors_8cpp.html#a267b97d294f6cc72e9b0b2fc44cd6614" title="Perform OffSet Correction." alt="" coords="616,552,741,577"/>
+<area shape="rect" id="node22" href="$_n_x_r___a_u_x___sensors_8cpp.html#a7bca354bf3b9118ef558c900e7f137d2" title="Calculates the sensory output regarding the reference voltage we set." alt="" coords="799,451,948,476"/>
+<area shape="rect" id="node26" href="$_n_x_r___flash_8cpp.html#adce33a37878b541aa7e06baa18389de7" title="Print saved Hardware Information from the NovaXR device EEPROM memory." alt="" coords="385,501,528,527"/>
+<area shape="rect" id="node27" href="$_n_x_r___flash_8cpp.html#ae4ea4f4d1421d0b630cc89d02946964d" title="Print the entire WiFi list." alt="" coords="355,551,557,576"/>
+<area shape="rect" id="node28" href="$_n_x_r___flash_8cpp.html#a0141be812ef7dbe793c800b0870d6a9a" title="Write the Flash Memory with standard information about the current device." alt="" coords="378,600,535,625"/>
+<area shape="rect" id="node29" href="$_n_x_r___flash_8cpp.html#af54a2030d1bc7756e2165a12ebe82a52" title="Update NovaXR Device Information." alt="" coords="612,601,745,627"/>
+<area shape="rect" id="node30" href="$_n_x_r___flash_8cpp.html#a8b236cb930b43226dd6733751197e5ca" title="Get Unique SMAD21 Chip ID and Create a Unique Serial Numner." alt="" coords="803,601,945,627"/>
+</map>

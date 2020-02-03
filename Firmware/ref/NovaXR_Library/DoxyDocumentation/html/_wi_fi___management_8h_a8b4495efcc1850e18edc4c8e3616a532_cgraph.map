@@ -1,0 +1,8 @@
+<map id="WiFi_Management_AP_Init" name="WiFi_Management_AP_Init">
+<area shape="rect" id="node1" title="NovaXR WiFi Access Point Initialization." alt="" coords="5,89,189,115"/>
+<area shape="rect" id="node2" href="$_wi_fi___management_8cpp.html#aafcf0f049760d4ffeefa69e3dba66864" title="Creates a WiFi Access Point." alt="" coords="237,40,372,65"/>
+<area shape="rect" id="node5" href="$_n_x_r___flash_8cpp.html#a7dd1fbc4b767ffb32fe08c4324fb813d" title="Creates a WiFi password based on the device serial number." alt="" coords="256,89,352,115"/>
+<area shape="rect" id="node6" href="$_n_x_r___flash_8cpp.html#ad242d2fcb5a82d2da7a18fd89308d315" title="Creates a WiFi SSID network based on the device serial number." alt="" coords="258,139,351,164"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8cpp.html#a1857d3854a20c586ad6b70b7a54aac88" title="Check if any WiFi client is connected to NovaXR device." alt="" coords="420,5,575,44"/>
+<area shape="rect" id="node4" href="$_wi_fi___management_8cpp.html#a50e0014b556683f2e8910be4b2974797" title="Prints a WiFi status." alt="" coords="442,68,553,93"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="eraseAllFlashContnent" name="eraseAllFlashContnent">
+<area shape="rect" id="node1" title="Erase all EEPROM Content from the NovaXR device." alt="" coords="5,31,162,56"/>
+<area shape="rect" id="node2" href="$_n_x_r___flash_8cpp.html#adc943d403894041eabebd64b785ef041" title="Erase Device information , Initialize all data to Zero." alt="" coords="211,5,319,31"/>
+<area shape="rect" id="node3" href="$_n_x_r___flash_8cpp.html#ac6285f7a8041d90719cbf9d7bd641b76" title="Erase all stored WiFi network credentials." alt="" coords="210,55,321,80"/>
+</map>

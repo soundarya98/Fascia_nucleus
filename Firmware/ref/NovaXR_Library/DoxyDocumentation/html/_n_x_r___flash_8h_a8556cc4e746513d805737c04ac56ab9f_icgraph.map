@@ -1,0 +1,6 @@
+<map id="connect_lastWiFi" name="connect_lastWiFi">
+<area shape="rect" id="node1" title="Connects to the last wifi network listed in the EEPROM MEMORY of the device." alt="" coords="526,5,649,31"/>
+<area shape="rect" id="node2" href="$_wi_fi___management_8h.html#aff4f01952845e059feb598739a947708" title="Initialize the WiFi of the NovaXR device." alt="" coords="320,5,478,31"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8h.html#a1ff0b5a8d8dd833569d5e8fe2aaca659" title="User can choose in which mode the device will operate." alt="" coords="107,5,272,31"/>
+<area shape="rect" id="node4" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,59,31"/>
+</map>
