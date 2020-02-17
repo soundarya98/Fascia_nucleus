@@ -8923,6 +8923,13 @@ Created by Upverter.com</description>
 <wire x1="345.44" y1="182.88" x2="353.06" y2="182.88" width="0.1524" layer="91"/>
 <label x="353.06" y="182.88" size="1.016" layer="95" xref="yes"/>
 </segment>
+<segment>
+<label x="287.02" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="299.5676" y1="68.58" x2="297.18" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="J1" gate="G$0" pin="22"/>
+<wire x1="297.18" y1="68.58" x2="287.02" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="299.5676" y1="68.58" x2="302.006" y2="68.58" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="ADS_RESET" class="0">
 <segment>
@@ -9151,15 +9158,6 @@ Created by Upverter.com</description>
 <label x="294.64" y="35.56" size="1.016" layer="95" rot="R180" xref="yes"/>
 <wire x1="302.006" y1="35.56" x2="294.64" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$0" pin="9"/>
-</segment>
-</net>
-<net name="ADS_CLK" class="0">
-<segment>
-<label x="287.02" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
-<wire x1="299.5676" y1="68.58" x2="297.18" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$0" pin="22"/>
-<wire x1="297.18" y1="68.58" x2="287.02" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="299.5676" y1="68.58" x2="302.006" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PA20_CS" class="0">

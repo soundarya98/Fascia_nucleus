@@ -30,7 +30,6 @@
 #define PB22 14 // =========== NXR1: uBlox - TX
 #define PB23 13 // =========== NXR1: uBlox - RX
 
-#define PB02 16 
 
 
 #ifdef MKR1010
