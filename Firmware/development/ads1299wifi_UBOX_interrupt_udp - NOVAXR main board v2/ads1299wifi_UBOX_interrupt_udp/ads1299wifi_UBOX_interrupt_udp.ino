@@ -11,7 +11,7 @@
 
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 
-const int pCS = PA21; //chip select pin
+const int pCS = PA20; //chip select pin
 const int pDRDY = PB10; //data ready pin
 const int pRESET = PA23;
 const int pCLKSEL = PB11;

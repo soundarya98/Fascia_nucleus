@@ -1,8 +1,9 @@
 //
+//#define SECRET_SSID "raspi_wifi"
+//#define SECRET_PASS "fluidfluid"
+
 #define SECRET_SSID "raspi_wifi"
 #define SECRET_PASS "fluidfluid"
-//#define SECRET_SSID "OpenBCI"
-//#define SECRET_PASS "00000000"
 
 #define int32_t unsigned long
 #define SIGN_EXT_24(VAL)    ((int32_t)((uint32_t)(VAL) ^ (1UL<<(23))) - (1L<<(23)))

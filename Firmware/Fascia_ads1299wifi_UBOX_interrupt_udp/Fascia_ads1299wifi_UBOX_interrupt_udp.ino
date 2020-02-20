@@ -11,12 +11,12 @@
 
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 
-const int pCS = PA21; //chip select, pin 7 in  MKR1010 board
-const int pDRDY = PB10; //data ready pin 4 in the MKR1010 board
-//const int pRESET = PA23;
+const int pCS = PA20; //chip select pin
+const int pDRDY = PA07; //data ready pin
+const int pRESET = PA23;
 //const int pCLKSEL = PB11;
 const int LED =PA04 ;
-//const float tCLK = 0.000666;
+const float tCLK = 0.000666;
 
 //Over clocked spi of the ADS1299 to 40M Hz
 const int SPI_CLK = 2000000 ; //originally 4000000
@@ -25,7 +25,7 @@ boolean deviceIDReturned = false;
 boolean continuousRead = false ;
 boolean startRead = false ;
 
-long ch[9];
+long ch[8];
 int cnt = 0;
 
 //There are two buffer used for wifi data sending.
@@ -162,7 +162,7 @@ void drdyIRS()
     cnt++ ;
 }
 
- void printWiFiStatus() {
+void printWiFiStatus() {
   // print the SSID of the network you're attached to:
   Serial.print("SSID: ");
   Serial.println(WiFi.SSID());
@@ -202,7 +202,7 @@ void setupWifi()
     status = WiFi.begin(ssid, pass);
 
     // wait 10 seconds for connection:
-    delay(2000);
+    delay(10000);
   }
   Serial.println("Connected to wifi");
   printWiFiStatus();
@@ -249,11 +249,11 @@ void loop()
 
         if( sendBuf != 0)
         {
-            //Serial.println("Sending:"+ String(cnt));
+            Serial.println("Sending:"+ String(cnt));
             //No interrupt
             //noInterrupts();
 
-            Udp.beginPacket("192.168.0.102", 8899);
+            Udp.beginPacket("192.168.0.100", 8899);
 
             Udp.write(sendBuf, PACKET_SIZE*SEND_SIZE);
             Udp.endPacket();
@@ -276,11 +276,11 @@ void ADS_INIT()
     pinMode(pDRDY, INPUT);
     pinMode(pCS, OUTPUT);
 
-    //pinMode(pCLKSEL,OUTPUT);
-    //pinMode(pRESET,OUTPUT);
+   // pinMode(pCLKSEL,OUTPUT);
+    pinMode(pRESET,OUTPUT);
     //digitalWrite(pCLKSEL,HIGH);
     delay(1);
-    //digitalWrite(pRESET,HIGH);
+    digitalWrite(pRESET,HIGH);
     digitalWrite(pCS, HIGH);
     delay(1000);  //delay to ensure connection
     digitalWrite(pCS, LOW);
@@ -310,13 +310,13 @@ void ADS_INIT()
 
     ADS_WREG(ADS1299_REGADDR_CONFIG3, ADS1299_REG_CONFIG3_RESERVED_VALUE|
     ADS1299_REG_CONFIG3_REFBUF_ENABLED |
-    ADS1299_REG_CONFIG3_BIASREF_INT    |
+    ADS1299_REG_CONFIG3_BIASREF_EXT    | //INT internal or EXT external bias ref
     ADS1299_REG_CONFIG3_BIASBUF_ENABLED);
-//
-//    ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, ADS1299_REG_BIAS_SENSP_BIASP1);
-//    ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, ADS1299_REG_BIAS_SENSN_BIASN1);
-//    ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, ADS1299_REG_BIAS_SENSP_BIASP2);
-//    ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, ADS1299_REG_BIAS_SENSN_BIASN2);
+
+    ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, ADS1299_REG_BIAS_SENSP_BIASP1);
+    ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, ADS1299_REG_BIAS_SENSN_BIASN1);
+    ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, ADS1299_REG_BIAS_SENSP_BIASP2);
+    ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, ADS1299_REG_BIAS_SENSN_BIASN2);
 
 
 //    ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, 0xFF);
@@ -328,37 +328,37 @@ void ADS_INIT()
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH2, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH2, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH3, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH3, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH4, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH4, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH5, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH5, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH6, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH6, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH7, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH7, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
 
-    ADS_WREG(CH8, ADS1299_REG_CHNSET_CHANNEL_ON          |
+    ADS_WREG(CH8, ADS1299_REG_CHNSET_CHANNEL_OFF          |
     ADS1299_REG_CHNSET_GAIN_24          |
     ADS1299_REG_CHNSET_SRB2_DISCONNECTED    |
     ADS1299_REG_CHNSET_NORMAL_ELECTRODE);
@@ -421,6 +421,4 @@ void ADS_STOP()
     digitalWrite(pCS, HIGH);
     continuousRead = false ;
   }
-  
-
 }
