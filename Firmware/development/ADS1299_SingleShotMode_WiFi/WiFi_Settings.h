@@ -4,7 +4,7 @@
 
 #define SECRET_SSID "raspi_wifi"
 #define SECRET_PASS "fluidfluid"
-#define HOST_ID     "192.168.0.101"
+#define HOST_ID     "192.168.0.100"
 #define PORT_NUM    8899
 
 #define SEND_SIZE 25

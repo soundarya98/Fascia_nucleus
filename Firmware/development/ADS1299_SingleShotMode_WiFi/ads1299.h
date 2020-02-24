@@ -90,6 +90,14 @@ typedef int ads1299_error_t;
 #define ADS1299_REGADDR_MISC2        0x16           ///< Miscellaneous 2. No functionality in current revision of ADS1299.
 #define ADS1299_REGADDR_CONFIG4      0x17           ///< Configuration register 4. Enables/disables single-shot mode and controls lead-off comparator power.
 
+byte CHANNELS[8] = {ADS1299_REGADDR_CH1SET,
+                    ADS1299_REGADDR_CH2SET,
+                    ADS1299_REGADDR_CH3SET,
+                    ADS1299_REGADDR_CH4SET,
+                    ADS1299_REGADDR_CH5SET,
+                    ADS1299_REGADDR_CH6SET,
+                    ADS1299_REGADDR_CH7SET,
+                    ADS1299_REGADDR_CH8SET};
 /**
  *  \brief ADS1299 SPI communication opcodes.
  *
@@ -331,6 +339,14 @@ typedef int ads1299_error_t;
 #define ADS1299_REG_CHNSET_GAIN_12              (5<<4)          ///< PGA gain = 12.
 #define ADS1299_REG_CHNSET_GAIN_24              (6<<4)          ///< PGA gain = 24.
 
+byte gain_mask = 0b111<<4;
+byte GAINS[7] = {ADS1299_REG_CHNSET_GAIN_1,
+                 ADS1299_REG_CHNSET_GAIN_2,
+                 ADS1299_REG_CHNSET_GAIN_4,
+                 ADS1299_REG_CHNSET_GAIN_6,
+                 ADS1299_REG_CHNSET_GAIN_8,
+                 ADS1299_REG_CHNSET_GAIN_12,
+                 ADS1299_REG_CHNSET_GAIN_24};
 /**
  *  \brief Bit mask definitions for CHnSET.SRB2 (channel internal connection to SRB2 pin).
  */

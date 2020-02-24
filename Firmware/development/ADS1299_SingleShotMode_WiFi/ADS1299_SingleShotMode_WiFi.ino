@@ -15,8 +15,8 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
 #define CONNECT_WIFI 1
-#define BOARD_V FASCIA_V0_0
-#define DATA_MODE RDATA_SS_MODE
+#define BOARD_V NOVA_XR_V2_MAIN
+#define DATA_MODE RDATA_CC_MODE
 #define RUN_MODE GEN_TEST_SIGNAL
 
 // Setup for SPI communications
@@ -28,7 +28,8 @@ const int pRESET = PA23;    // reset pin
 int pCS;              // chip select pin
 int pDRDY;            // data ready pin
 
-
+// define variables
+int print_ch = -1;
 
 void select_board_pins(void) {
     switch (BOARD_V){
@@ -170,9 +171,9 @@ void ADS_start(void) {
   digitalWrite(pCS, LOW);
   mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
   mySPI.transfer(START);
-  if (RUN_MODE == RDATA_SS_MODE) {
+  if (DATA_MODE == RDATA_SS_MODE) {
     mySPI.transfer(RDATA);
-  } else if (RUN_MODE == RDATA_CC_MODE) {
+  } else if (DATA_MODE == RDATA_CC_MODE) {
     mySPI.transfer(RDATAC);
   }
 }
@@ -203,10 +204,19 @@ void setup() {
   Serial.println("Done with setup.");
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH);
+  Serial.println("Type the channel number to print that channel's data [1-8] (and plot, if you switch to Serial Plotter)");
+  Serial.println("Or type '0' to stop printing the data.");
+  Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
+  Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
 }
 
 void loop() {
+  if(Serial.available()>1){ 
+    parse_serial_input();
+  }
+
   if (DATA_MODE == RDATA_SS_MODE) {
+    // Serial.println("calling drdy isr");
     DRDY_ISR();
   }
 
@@ -218,14 +228,17 @@ void loop() {
 
 void DRDY_ISR(void) {
   //figure out where best to call START single shot data conversion
-  while(digitalRead(pDRDY)) ;//{Serial.println("waiting for drdy to go low");}
-  // Serial.println("DRDY just went low!");
   //get all data before sign extending etc
+  // Serial.println("entering drdy isr");
   digitalWrite(pCS, LOW);
   byte DOUT[27];
   int32_t conv_data[9];
-  mySPI.transfer(START);
-  mySPI.transfer(RDATA);
+  if (DATA_MODE == RDATA_SS_MODE) {
+    while(digitalRead(pDRDY)) ;//{Serial.println("waiting for drdy to go low");}
+    // Serial.println("DRDY just went low!");
+    mySPI.transfer(START);
+    mySPI.transfer(RDATA);
+  }
 
   for (int i = 0; i < 27; i++) {
     DOUT[i] = mySPI.transfer(0x00);
@@ -244,7 +257,7 @@ void DRDY_ISR(void) {
         // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
         // STATUS Bits
       } else {
-        if (i/3 == 1) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
+        if (i/3 == (print_ch+1)) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
         // Serial.print(ed);Serial.print(" , ");
         // Serial.print("32 bit CH#");Serial.print(i/3);Serial.print(": "); Serial.print(d,HEX);Serial.print("\t");Serial.print(ed,HEX);Serial.print("\t");Serial.println((int)ed);
         // channel data
@@ -316,6 +329,123 @@ void ADS_WREG(byte r, byte d) {
   }
 }
 
+void parse_serial_input() {
+  char c = Serial.read();
+  // if char is '0' - '8'
+  if (c >= 0x30 && c <= 0x38) {
+    print_ch = (c -0x30) -1;
+    //         ('#'-> #) -1 -> #-1 to index channels
+    Serial.print("changed printing channel to ");Serial.println(print_ch);
+    return;
+  }
+  switch (c) {
+  // case '0':
+  //   print_ch = -1;
+  //   break;
+  // case '1':
+  //   print_ch = 0;
+  //   break;
+  // case '2':
+  //   print_ch = 1;
+  //   break;
+  // case '3':
+  //   print_ch = 2;
+  //   break;
+  // case '4':
+  //   print_ch = 3;
+  //   break;
+  // case '5':
+  //   print_ch = 4;
+  //   break;
+  // case '6':
+  //   print_ch = 5;
+  //   break;  
+  // case '7':
+  //   print_ch = 6;
+  //   break;
+  // case '8':
+    print_ch = 7;
+    break;
+  case 'B':
+    c = Serial.read();
+    if (c >= 0x31 && c <= 0x38) {
+      change_channel_bias(c-0x30-1);
+    }
+    break;
+  case 'G':
+    c = Serial.read();
+    if (c >= 0x31 && c <= 0x38) {
+      change_channel_gain(c-0x30-1);
+    }
+    break;
+  case 'S':
+    break;
+  case 0xA:
+    break;
+  default:
+    Serial.println(c, HEX);
+    Serial.println("!!invalid input");
+    break;
+  }
+}
+
+void change_channel_bias(int chan){
+  char c = Serial.read();
+  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  byte old_val = ADS_RREG(CHANNELS[chan], 1);
+  byte change = 0;
+  byte new_val;
+  if (c == '1') {
+    change = ADS1299_REG_CHNSET_SRB2_CONNECTED; //1 << chan;
+    new_val = old_val | change;
+  } else if (c == '0'){
+    change = 0xFF ^ ADS1299_REG_CHNSET_SRB2_CONNECTED;//(1 << chan);
+    new_val = old_val & change;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("changing bias of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.println(change,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(CHANNELS[chan], new_val);
+  //TODO START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void change_channel_gain(int chan){
+  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  char c = Serial.read();
+  byte old_val = ADS_RREG(CHANNELS[chan], 1);
+  byte gain = 0;
+  byte new_val;
+  if (c >= 0x30 && c <= 0x36) {
+    gain = GAINS[c-0x30];
+    new_val = (old_val & (~gain_mask)) | gain;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("changing gain of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c-0x30,BIN);
+  Serial.println(gain,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(CHANNELS[chan], new_val);
+  //TODO START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    Serial.println("starting continuous read again");
+    mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void change_channel_short(int chan){}
+
+/////////////////////////////////// WIFI STUFF //////////////////////////////////////
 // long ch[8];
 int cnt = 0;
 
