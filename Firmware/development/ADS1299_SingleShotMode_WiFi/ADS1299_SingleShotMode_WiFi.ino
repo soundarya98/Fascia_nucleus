@@ -339,33 +339,6 @@ void parse_serial_input() {
     return;
   }
   switch (c) {
-  // case '0':
-  //   print_ch = -1;
-  //   break;
-  // case '1':
-  //   print_ch = 0;
-  //   break;
-  // case '2':
-  //   print_ch = 1;
-  //   break;
-  // case '3':
-  //   print_ch = 2;
-  //   break;
-  // case '4':
-  //   print_ch = 3;
-  //   break;
-  // case '5':
-  //   print_ch = 4;
-  //   break;
-  // case '6':
-  //   print_ch = 5;
-  //   break;  
-  // case '7':
-  //   print_ch = 6;
-  //   break;
-  // case '8':
-    print_ch = 7;
-    break;
   case 'B':
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
@@ -408,9 +381,8 @@ void change_channel_bias(int chan){
   Serial.println(change,BIN);
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(CHANNELS[chan], new_val);
-  //TODO START CONVERSION AGAIN
+  // START CONVERSION AGAIN
   if (DATA_MODE == RDATA_CC_MODE) {
-    mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
     digitalWrite(pCS, LOW);
     mySPI.transfer(START);
     mySPI.transfer(RDATAC);
@@ -433,10 +405,8 @@ void change_channel_gain(int chan){
   Serial.println(gain,BIN);
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(CHANNELS[chan], new_val);
-  //TODO START CONVERSION AGAIN
+  // START CONVERSION AGAIN
   if (DATA_MODE == RDATA_CC_MODE) {
-    Serial.println("starting continuous read again");
-    mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
     digitalWrite(pCS, LOW);
     mySPI.transfer(START);
     mySPI.transfer(RDATAC);
