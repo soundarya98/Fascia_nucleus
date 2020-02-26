@@ -15,9 +15,9 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
 #define CONNECT_WIFI 1
-#define BOARD_V NOVA_XR_V2_MAIN
-#define DATA_MODE RDATA_CC_MODE
-#define RUN_MODE GEN_TEST_SIGNAL
+#define BOARD_V NOVA_XR_V2_SISTER
+#define DATA_MODE RDATA_SS_MODE /*check issue with continuous NOVA_XR_V2_MAIN / sister normal electrodes*/
+#define RUN_MODE NORMAL_ELECTRODES
 
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
@@ -79,7 +79,7 @@ void initialize_pin_modes(void) {
   pinPeripheral(PA19, PIO_SERCOM);
   pinPeripheral(PA17, PIO_SERCOM);
   pinPeripheral(PA16, PIO_SERCOM);
-  if (RUN_MODE == RDATA_CC_MODE) {
+  if (DATA_MODE == RDATA_CC_MODE) {
     attachInterrupt(pDRDY, DRDY_ISR, FALLING);
   }
 }
@@ -119,7 +119,7 @@ void ADS_init(void) {
   }
 
   //initialize to single shot mode
-  ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010101);//0xB0);//0b10110000 //0b10010101);
+  ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010110);//0xB0);//0b10110000 //0b10010101);
   // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11010000);//0x04);//0b00000100 //0b11000000);
   // ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11000000);//0x04);//0b00000100 //0b11000000);
   // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG3, 0b11100000);//0xEC);//0b11101100 //0b01100000);
@@ -133,36 +133,36 @@ void ADS_init(void) {
   delay(10);
   ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                   channel_mode |
-                                  //  /* test signal */ ADS1299_REG_CHNSET_TEST_SIGNAL |
+                                  //  /* test signal */ channel_mode |
                                   //  ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH4SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH5SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH6SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON|
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH7SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH8SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
 }
