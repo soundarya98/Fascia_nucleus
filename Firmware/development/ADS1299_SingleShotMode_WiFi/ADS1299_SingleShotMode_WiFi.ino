@@ -16,7 +16,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // settings
 #define CONNECT_WIFI 1
 #define BOARD_V NOVA_XR_V2_SISTER
-#define DATA_MODE RDATA_SS_MODE /*check issue with continuous NOVA_XR_V2_MAIN / sister normal electrodes*/
+#define DATA_MODE RDATA_CC_MODE
 #define RUN_MODE NORMAL_ELECTRODES
 
 // Setup for SPI communications
@@ -120,10 +120,6 @@ void ADS_init(void) {
 
   //initialize to single shot mode
   ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010110);//0xB0);//0b10110000 //0b10010101);
-  // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11010000);//0x04);//0b00000100 //0b11000000);
-  // ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11000000);//0x04);//0b00000100 //0b11000000);
-  // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG3, 0b11100000);//0xEC);//0b11101100 //0b01100000);
-  // ADS_WREG(ADS1299_REGADDR_CONFIG3, 0b11101100);//0xEC);//0b11101100 //0b01100000);
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -206,6 +202,7 @@ void setup() {
   Serial.println("Or type '0' to stop printing the data.");
   Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
   Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
+  Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
 }
 
 void loop() {
@@ -214,7 +211,6 @@ void loop() {
   }
 
   if (DATA_MODE == RDATA_SS_MODE) {
-    // Serial.println("calling drdy isr");
     DRDY_ISR();
   }
 
@@ -225,9 +221,7 @@ void loop() {
 }
 
 void DRDY_ISR(void) {
-  //figure out where best to call START single shot data conversion
   //get all data before sign extending etc
-  // Serial.println("entering drdy isr");
   digitalWrite(pCS, LOW);
   byte DOUT[27];
   int32_t conv_data[9];
@@ -252,13 +246,13 @@ void DRDY_ISR(void) {
       conv_data[i/3] = d;
       packet[i/3+1] = ed;
       if (i/3 == 0) {
-        // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
         // STATUS Bits
+        // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
       } else {
+        // channel data
         if (i/3 == (print_ch+1)) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
         // Serial.print(ed);Serial.print(" , ");
         // Serial.print("32 bit CH#");Serial.print(i/3);Serial.print(": "); Serial.print(d,HEX);Serial.print("\t");Serial.print(ed,HEX);Serial.print("\t");Serial.println((int)ed);
-        // channel data
       }
     }
   }
@@ -328,6 +322,8 @@ void ADS_WREG(byte r, byte d) {
 }
 
 void parse_serial_input() {
+  //TODO consider this
+  // char* s = Serial.readStringUntil('\n');
   char c = Serial.read();
   // if char is '0' - '8'
   if (c >= 0x30 && c <= 0x38) {
@@ -373,10 +369,10 @@ void change_channel_bias(int chan){
   byte change = 0;
   byte new_val;
   if (c == '1') {
-    change = ADS1299_REG_CHNSET_SRB2_CONNECTED; //1 << chan;
+    change = ADS1299_REG_CHNSET_SRB2_CONNECTED;
     new_val = old_val | change;
   } else if (c == '0'){
-    change = 0xFF ^ ADS1299_REG_CHNSET_SRB2_CONNECTED;//(1 << chan);
+    change = 0xFF ^ ADS1299_REG_CHNSET_SRB2_CONNECTED;
     new_val = old_val & change;
   } else {
     Serial.println("invalid input");return;
@@ -445,7 +441,6 @@ void toggle_channel(int chan){
 void change_channel_short(int chan){}
 
 /////////////////////////////////// WIFI STUFF //////////////////////////////////////
-// long ch[8];
 int cnt = 0;
 
 //There are two buffer used for wifi data sending.
