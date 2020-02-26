@@ -133,36 +133,34 @@ void ADS_init(void) {
   delay(10);
   ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                   channel_mode |
-                                  //  /* test signal */ channel_mode |
-                                  //  ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH4SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH5SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH6SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON|
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH7SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH8SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
 }
@@ -351,6 +349,12 @@ void parse_serial_input() {
       change_channel_gain(c-0x30-1);
     }
     break;
+  case 'T':
+    c = Serial.read();
+    if (c >= 0x31 && c <= 0x38) {
+      toggle_channel(c-0x30-1);
+    }
+    break;
   case 'S':
     break;
   case 0xA:
@@ -403,6 +407,31 @@ void change_channel_gain(int chan){
   }
   Serial.print("changing gain of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c-0x30,BIN);
   Serial.println(gain,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(CHANNELS[chan], new_val);
+  // START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void toggle_channel(int chan){
+  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  char c = Serial.read();
+  byte old_val = ADS_RREG(CHANNELS[chan], 1);
+  byte new_val;
+  if (c == '1') {
+    new_val = old_val & 0x7F;
+  } else if (c == '0'){
+    new_val = old_val | 0x80;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("turning channel "); Serial.print(chan);Serial.print(" to be ");
+  if(c=='1') Serial.println("on");
+  else       Serial.println("off");
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(CHANNELS[chan], new_val);
   // START CONVERSION AGAIN
