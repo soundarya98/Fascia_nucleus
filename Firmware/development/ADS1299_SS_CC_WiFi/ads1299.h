@@ -24,7 +24,7 @@
 **************************************************************************************************************************************************/
 
 
-#define SIGN_EXT_24(VAL)                        ((int32_t)((uint32_t)(VAL) ^ (1UL<<(23))) - (1L<<(23)))
+#define SIGN_EXT_24(VAL)   ((int32_t)((uint32_t)(VAL) ^ (1UL<<(23))) - (1L<<(23)))n// from Junqing inital code, it works but can't understand how it works  
 
 #define ADS_data_MSB_mask 0x00800000L
 #define sign_extend_bytes 0xFF000000L
