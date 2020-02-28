@@ -2,11 +2,9 @@
 #include "SAMD_AnalogCorrection.h"
 #include <SPI.h>
 #include "wiring_private.h"
-#include <Wire.h>
 // header files
 #include "Pin_Table_Defs.h"
 #include "WiFi_Settings.h"
-// #include "WiFi_Helpers.cpp"
 #include "ads1299.h"
 
 // define enum for boards and data retrieval types
@@ -23,23 +21,12 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 const int SPI_CLK = 4*pow(10,6) ; //4MHz
-// Setup for I2C communications
-// PA08: SDA
-// PA09: SCL
-// MPU6050 I2C address: 0x110100X where X is the logic level in pin AD0
-// and last bit is r/w
-#define MPU_ADDR 0b11010000
 
 // define pins depending on boards
 // ADS1299 ADC pins
 const int pRESET = PA23;    // reset pin
 int pCS;              // chip select pin
 int pDRDY;            // data ready pin
-// EDA
-const int pEDA = PA02;
-// MPU6050 IMU pins
-const int pMPUint = PB03;
-// PPG & temperature pins
 
 // define variables
 int print_ch = -1;
@@ -192,9 +179,9 @@ void setup() {
   Serial.begin(115200);
   Wire.begin();
   Wire.setClock();//TODO investigate this
-  #ifdef CONNECT_WIFI
+  if (CONNECT_WIFI) {
     setupWifi();
-  #endif
+  }
 
   // initialize board and settings
   // make sure settings are compatible
@@ -229,10 +216,9 @@ void loop() {
     DRDY_ISR();
   }
 
-  #ifdef CONNECT_WIFI
+  if (CONNECT_WIFI) {
     sendWiFiDataPacket();
-  #endif
-
+  }
 }
 
 void DRDY_ISR(void) {
@@ -265,17 +251,14 @@ void DRDY_ISR(void) {
         // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
       } else {
         // channel data
-        if (i/3 == (print_ch+1)) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
-        // Serial.print(ed);Serial.print(" , ");
-        // Serial.print("32 bit CH#");Serial.print(i/3);Serial.print(": "); Serial.print(d,HEX);Serial.print("\t");Serial.print(ed,HEX);Serial.print("\t");Serial.println((int)ed);
+        if (i/3 == (print_ch+1)) {Serial.println(ed);}
       }
     }
   }
   //Push packet to buffer
-  #ifdef CONNECT_WIFI
+  if (CONNECT_WIFI) {
     pushToBuf((char *)packet);
-  #endif
-  // Serial.print("\n");
+  }
 }
 
 float convert_ADC_volts(int raw_data, int gain) {
@@ -310,19 +293,6 @@ byte ADS_RREG(byte r , int n) {
 void ADS_WREG(byte r, byte d) { 
   if (r == 0 || r == 18 || r == 19)
     Serial.println("Error: Read-Only Register");
-  // else if (n == 0xFF)
-  // { digitalWrite(pCS, LOW);
-  //   mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
-  //   mySPI.transfer(SDATAC);
-  //   for (int i = 5; i < 13; i++)
-  //   { mySPI.transfer(WREG | i); //RREG
-  //     mySPI.transfer(0x00);
-  //     mySPI.transfer(t);
-  //   }
-  //   mySPI.endTransaction();
-  //   digitalWrite(pCS, HIGH);
-  //   Serial.println("Written All Channels");
-  // }
   else
   { digitalWrite(pCS, LOW);
     mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
@@ -579,19 +549,10 @@ void setupWifi()
 void sendWiFiDataPacket() {
     byte* sendBuf = (byte*)getSendBuf();
     if( sendBuf != 0){
-        // Serial.println("Sending:"+ String(cnt));
-        //No interrupt
-        //noInterrupts();
-
         Udp.beginPacket(HOST_ID, PORT_NUM);
 
         Udp.write(sendBuf, PACKET_SIZE*SEND_SIZE);
         Udp.endPacket();
 
-        //interrupts();
-        // Serial.println(((long int*)(sendBuf))[0]);
-        // Serial.println(((long int*)(sendBuf))[4]);
-
-        // Serial.println("Sent:"+ String(cnt));
     }
 }
