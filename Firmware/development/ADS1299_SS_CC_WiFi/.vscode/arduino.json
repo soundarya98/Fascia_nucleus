@@ -1,5 +1,0 @@
-{
-    "board": "arduino:samd:mkrwifi1010",
-    "sketch": "ADS1299_SingleShotMode.ino",
-    "port": "/dev/cu.usbmodem141201"
-}
