@@ -109,17 +109,34 @@ void ADS_connect(void) {
 }
 
 void ADS_init(void) {
-  byte config2_data = 0b11000000;
-  byte config3_data = 0b11101100;
+  // register map on page 44 of the data sheet; 
+  // pages expading on register descriptions follow in the next pages
+  byte config2_data = ADS1299_REG_CONFIG2_RESERVED_VALUE | //0b11000000;
+                      ADS1299_REG_CONFIG2_CAL_PULSE_FCLK_DIV_2_21;
+  byte config3_data = ADS1299_REG_CONFIG3_REFBUF_ENABLED | //0b11101100;
+                      ADS1299_REG_CONFIG3_RESERVED_VALUE |
+                      ADS1299_REG_CONFIG3_BIAS_MEAS_DISABLED |
+                      ADS1299_REG_CONFIG3_BIASREF_INT |
+                      ADS1299_REG_CONFIG3_BIASBUF_ENABLED |
+                      ADS1299_REG_CONFIG3_BIAS_LOFF_SENSE_DISABLED;
   byte channel_mode = ADS1299_REG_CHNSET_NORMAL_ELECTRODE;
 
   if (RUN_MODE == GEN_TEST_SIGNAL) {
-    config2_data = 0b11010000;
-    config3_data = 0b11100000;
+    config2_data = ADS1299_REG_CONFIG2_RESERVED_VALUE | //0b11010000;
+                   ADS1299_REG_CONFIG2_CAL_INT |
+                   ADS1299_REG_CONFIG2_CAL_AMP_2VREF_DIV_2_4_MV |
+                   ADS1299_REG_CONFIG2_CAL_PULSE_FCLK_DIV_2_21;
+    config3_data = ADS1299_REG_CONFIG3_REFBUF_ENABLED | //0b11100000;
+                   ADS1299_REG_CONFIG3_RESERVED_VALUE |
+                   ADS1299_REG_CONFIG3_BIAS_MEAS_DISABLED |
+                   ADS1299_REG_CONFIG3_BIASREF_EXT |
+                   ADS1299_REG_CONFIG3_BIASBUF_DISABLED |
+                   ADS1299_REG_CONFIG3_BIAS_LOFF_SENSE_DISABLED;
     channel_mode = ADS1299_REG_CHNSET_TEST_SIGNAL;
   }
 
-  ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010110); // last three bits is the data rate page 46 of data sheet
+  ADS_WREG(ADS1299_REGADDR_CONFIG1, ADS1299_REG_CONFIG1_RESERVED_VALUE |
+                                    ADS1299_REG_CONFIG1_1kSPS); // last three bits is the data rate page 46 of data sheet
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);

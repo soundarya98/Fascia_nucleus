@@ -149,13 +149,13 @@ byte CHANNELS[8] = {ADS1299_REGADDR_CH1SET,
  *
  * FMOD = FCLK/2, where FCLK is the clock frequency of the ADS1299. This is normally 2.048 MHz.
  */
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_64           0      ///< Data is output at FMOD/64, or 16 kHz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_128          1      ///< Data is output at FMOD/128, or 8 kHz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_256          2      ///< Data is output at FMOD/256, or 4 kHz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_512          3      ///< Data is output at FMOD/512, or 2 kHz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_1024         4      ///< Data is output at FMOD/1024, or 1 kHz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_2048         5      ///< Data is output at FMOD/2048, or 500 Hz at 2.048 MHz.
-#define ADS1299_REG_CONFIG1_FMOD_DIV_BY_4096         6      ///< Data is output at FMOD/4096, or 250 Hz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_16kSPS         0      ///< Data is output at FMOD/64, or 16 kHz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_8kSPS          1      ///< Data is output at FMOD/128, or 8 kHz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_4kSPS          2      ///< Data is output at FMOD/256, or 4 kHz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_2kSPS          3      ///< Data is output at FMOD/512, or 2 kHz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_1kSPS          4      ///< Data is output at FMOD/1024, or 1 kHz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_500SPS         5      ///< Data is output at FMOD/2048, or 500 Hz at 2.048 MHz.
+#define ADS1299_REG_CONFIG1_250SPS         6      ///< Data is output at FMOD/4096, or 250 Hz at 2.048 MHz.
 
 /**
  *  \brief Combined value of reserved bits in CONFIG1 register.
