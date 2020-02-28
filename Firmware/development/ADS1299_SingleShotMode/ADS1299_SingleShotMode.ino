@@ -2,7 +2,6 @@
 #include "SAMD_AnalogCorrection.h"
 #include <SPI.h>
 #include "wiring_private.h"
-#include <Wire.h>
 // header files
 #include "Pin_Table_Defs.h"
 #include "WiFi_Settings.h"
@@ -18,31 +17,18 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 #define CONNECT_WIFI 1
 #define BOARD_V FASCIA_V0_0
 #define DATA_MODE RDATA_SS_MODE
-#define RUN_MODE NORMAL_ELECTRODES
+#define RUN_MODE GEN_TEST_SIGNAL
 
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 const int SPI_CLK = 4*pow(10,6) ; //4MHz
-// Setup for I2C communications
-// PA08: SDA
-// PA09: SCL
-// MPU6050 I2C address: 0x110100X where X is the logic level in pin AD0
-// and last bit is r/w
-#define MPU_ADDR 0b11010000
 
 // define pins depending on boards
-// ADS1299 ADC pins
 const int pRESET = PA23;    // reset pin
 int pCS;              // chip select pin
 int pDRDY;            // data ready pin
-// EDA
-const int pEDA = PA02;
-// MPU6050 IMU pins
-const int pMPUint = PB03;
-// PPG & temperature pins
 
-// define variables
-int print_ch = -1;
+
 
 void select_board_pins(void) {
     switch (BOARD_V){
@@ -92,10 +78,9 @@ void initialize_pin_modes(void) {
   pinPeripheral(PA19, PIO_SERCOM);
   pinPeripheral(PA17, PIO_SERCOM);
   pinPeripheral(PA16, PIO_SERCOM);
-  if (DATA_MODE == RDATA_CC_MODE) {
+  if (RUN_MODE == RDATA_CC_MODE) {
     attachInterrupt(pDRDY, DRDY_ISR, FALLING);
   }
-  attachInterrupt(pMPUint, get_gyro_data, MODEDEODEOD);
 }
 
 void ADS_connect(void) {
@@ -132,7 +117,12 @@ void ADS_init(void) {
     channel_mode = ADS1299_REG_CHNSET_TEST_SIGNAL;
   }
 
-  ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010110); // last three bits is the data rate page 46 of data sheet
+  //initialize to single shot mode
+  ADS_WREG(ADS1299_REGADDR_CONFIG1, 0b10010101);//0xB0);//0b10110000 //0b10010101);
+  // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11010000);//0x04);//0b00000100 //0b11000000);
+  // ADS_WREG(ADS1299_REGADDR_CONFIG2, 0b11000000);//0x04);//0b00000100 //0b11000000);
+  // /* test signal */ ADS_WREG(ADS1299_REGADDR_CONFIG3, 0b11100000);//0xEC);//0b11101100 //0b01100000);
+  // ADS_WREG(ADS1299_REGADDR_CONFIG3, 0b11101100);//0xEC);//0b11101100 //0b01100000);
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -141,35 +131,37 @@ void ADS_init(void) {
 
   delay(10);
   ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
+                                  channel_mode |
+                                  //  /* test signal */ ADS1299_REG_CHNSET_TEST_SIGNAL |
+                                  //  ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH4SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH5SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH6SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON|
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH7SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH8SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
+                                   ADS1299_REG_CHNSET_TEST_SIGNAL | //ADS1299_REG_CHNSET_NORMAL_ELECTRODE |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
 }
@@ -178,20 +170,18 @@ void ADS_start(void) {
   digitalWrite(pCS, LOW);
   mySPI.beginTransaction(SPISettings(SPI_CLK, MSBFIRST, SPI_MODE1));
   mySPI.transfer(START);
-  if (DATA_MODE == RDATA_SS_MODE) {
+  if (RUN_MODE == RDATA_SS_MODE) {
     mySPI.transfer(RDATA);
-  } else if (DATA_MODE == RDATA_CC_MODE) {
+  } else if (RUN_MODE == RDATA_CC_MODE) {
     mySPI.transfer(RDATAC);
   }
 }
 
 void setup() {
   delay(500);
-  // initialize communications: spi, I2C, serial, and wifi if applicable
+  // initialize communications: spi, serial, and wifi if applicable
   mySPI.begin();
   Serial.begin(115200);
-  Wire.begin();
-  Wire.setClock();//TODO investigate this
   #ifdef CONNECT_WIFI
     setupWifi();
   #endif
@@ -213,18 +203,9 @@ void setup() {
   Serial.println("Done with setup.");
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH);
-  Serial.println("Type the channel number to print that channel's data [1-8] (and plot, if you switch to Serial Plotter)");
-  Serial.println("Or type '0' to stop printing the data.");
-  Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
-  Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
-  Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
 }
 
 void loop() {
-  if(Serial.available()>1){ 
-    parse_serial_input();
-  }
-
   if (DATA_MODE == RDATA_SS_MODE) {
     DRDY_ISR();
   }
@@ -236,16 +217,15 @@ void loop() {
 }
 
 void DRDY_ISR(void) {
+  //figure out where best to call START single shot data conversion
+  while(digitalRead(pDRDY)) ;//{Serial.println("waiting for drdy to go low");}
+  // Serial.println("DRDY just went low!");
   //get all data before sign extending etc
   digitalWrite(pCS, LOW);
   byte DOUT[27];
   int32_t conv_data[9];
-  if (DATA_MODE == RDATA_SS_MODE) {
-    while(digitalRead(pDRDY)) ;//{Serial.println("waiting for drdy to go low");}
-    // Serial.println("DRDY just went low!");
-    mySPI.transfer(START);
-    mySPI.transfer(RDATA);
-  }
+  mySPI.transfer(START);
+  mySPI.transfer(RDATA);
 
   for (int i = 0; i < 27; i++) {
     DOUT[i] = mySPI.transfer(0x00);
@@ -261,13 +241,13 @@ void DRDY_ISR(void) {
       conv_data[i/3] = d;
       packet[i/3+1] = ed;
       if (i/3 == 0) {
-        // STATUS Bits
         // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
+        // STATUS Bits
       } else {
-        // channel data
-        if (i/3 == (print_ch+1)) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
+        if (i/3 == 1) {/*Serial.print(cd*1000, DEC); Serial.print(" , ");*/Serial.println(ed);}
         // Serial.print(ed);Serial.print(" , ");
         // Serial.print("32 bit CH#");Serial.print(i/3);Serial.print(": "); Serial.print(d,HEX);Serial.print("\t");Serial.print(ed,HEX);Serial.print("\t");Serial.println((int)ed);
+        // channel data
       }
     }
   }
@@ -336,130 +316,7 @@ void ADS_WREG(byte r, byte d) {
   }
 }
 
-void parse_serial_input() {
-  //TODO consider this
-  // char* s = Serial.readStringUntil('\n');
-  char c = Serial.read();
-  // if char is '0' - '8'
-  if (c >= 0x30 && c <= 0x38) {
-    print_ch = (c -0x30) -1;
-    //         ('#'-> #) -1 -> #-1 to index channels
-    Serial.print("changed printing channel to ");Serial.println(print_ch);
-    return;
-  }
-  switch (c) {
-  case 'B':
-    c = Serial.read();
-    if (c >= 0x31 && c <= 0x38) {
-      change_channel_bias(c-0x30-1);
-    }
-    break;
-  case 'G':
-    c = Serial.read();
-    if (c >= 0x31 && c <= 0x38) {
-      change_channel_gain(c-0x30-1);
-    }
-    break;
-  case 'T':
-    c = Serial.read();
-    if (c >= 0x31 && c <= 0x38) {
-      toggle_channel(c-0x30-1);
-    }
-    break;
-  case 'S':
-    break;
-  case 0xA:
-    break;
-  default:
-    Serial.println(c, HEX);
-    Serial.println("!!invalid input");
-    break;
-  }
-}
-
-void change_channel_bias(int chan){
-  char c = Serial.read();
-  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
-  byte old_val = ADS_RREG(CHANNELS[chan], 1);
-  byte change = 0;
-  byte new_val;
-  if (c == '1') {
-    change = ADS1299_REG_CHNSET_SRB2_CONNECTED;
-    new_val = old_val | change;
-  } else if (c == '0'){
-    change = 0xFF ^ ADS1299_REG_CHNSET_SRB2_CONNECTED;
-    new_val = old_val & change;
-  } else {
-    Serial.println("invalid input");return;
-  }
-  Serial.print("changing bias of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
-  Serial.println(change,BIN);
-  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
-  ADS_WREG(CHANNELS[chan], new_val);
-  // START CONVERSION AGAIN
-  if (DATA_MODE == RDATA_CC_MODE) {
-    digitalWrite(pCS, LOW);
-    mySPI.transfer(START);
-    mySPI.transfer(RDATAC);
-  }
-}
-
-void change_channel_gain(int chan){
-  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
-  char c = Serial.read();
-  byte old_val = ADS_RREG(CHANNELS[chan], 1);
-  byte gain = 0;
-  byte new_val;
-  if (c >= 0x30 && c <= 0x36) {
-    gain = GAINS[c-0x30];
-    new_val = (old_val & (~gain_mask)) | gain;
-  } else {
-    Serial.println("invalid input");return;
-  }
-  Serial.print("changing gain of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c-0x30,BIN);
-  Serial.println(gain,BIN);
-  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
-  ADS_WREG(CHANNELS[chan], new_val);
-  // START CONVERSION AGAIN
-  if (DATA_MODE == RDATA_CC_MODE) {
-    digitalWrite(pCS, LOW);
-    mySPI.transfer(START);
-    mySPI.transfer(RDATAC);
-  }
-}
-
-void toggle_channel(int chan){
-  Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
-  char c = Serial.read();
-  byte old_val = ADS_RREG(CHANNELS[chan], 1);
-  byte new_val;
-  if (c == '1') {
-    new_val = old_val & 0x7F;
-  } else if (c == '0'){
-    new_val = old_val | 0x80;
-  } else {
-    Serial.println("invalid input");return;
-  }
-  Serial.print("turning channel "); Serial.print(chan);Serial.print(" to be ");
-  if(c=='1') Serial.println("on");
-  else       Serial.println("off");
-  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
-  ADS_WREG(CHANNELS[chan], new_val);
-  // START CONVERSION AGAIN
-  if (DATA_MODE == RDATA_CC_MODE) {
-    digitalWrite(pCS, LOW);
-    mySPI.transfer(START);
-    mySPI.transfer(RDATAC);
-  }
-}
-
-void change_channel_short(int chan){}
-
-void get_gyro_data(){
-  Wire.requestFrom(MPU_ADDR, #, bool);
-}
-
-/////////////////////////////////// WIFI STUFF //////////////////////////////////////
+// long ch[8];
 int cnt = 0;
 
 //There are two buffer used for wifi data sending.
