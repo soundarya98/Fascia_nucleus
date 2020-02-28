@@ -82,7 +82,6 @@ void initialize_pin_modes(void) {
   if (DATA_MODE == RDATA_CC_MODE) {
     attachInterrupt(pDRDY, DRDY_ISR, FALLING);
   }
-  attachInterrupt(pMPUint, get_gyro_data, MODEDEODEOD);
 }
 
 void ADS_connect(void) {
@@ -191,11 +190,9 @@ void ADS_start(void) {
 
 void setup() {
   delay(500);
-  // initialize communications: spi, I2C, serial, and wifi if applicable
+  // initialize communications: spi, serial, and wifi if applicable
   mySPI.begin();
   Serial.begin(115200);
-  Wire.begin();
-  Wire.setClock();//TODO investigate this
   if (CONNECT_WIFI) {
     setupWifi();
   }
@@ -244,7 +241,7 @@ void DRDY_ISR(void) {
   byte DOUT[27];
   int32_t conv_data[9];
   if (DATA_MODE == RDATA_SS_MODE) {
-    while(digitalRead(pDRDY)) ;//{Serial.println("waiting for drdy to go low");}
+    while(digitalRead(pDRDY));
     // Serial.println("DRDY just went low!");
     mySPI.transfer(START);
     mySPI.transfer(RDATA);
@@ -265,7 +262,6 @@ void DRDY_ISR(void) {
       packet[i/3+1] = ed;
       if (i/3 == 0) {
         // STATUS Bits
-        // Serial.print("32 bit STAT: "); Serial.println(d,HEX);
       } else {
         // channel data
         if (i/3 == (print_ch+1)) {Serial.println(ed);}
@@ -441,10 +437,6 @@ void toggle_channel(int chan){
 }
 
 void change_channel_short(int chan){}
-
-void get_gyro_data(){
-  Wire.requestFrom(MPU_ADDR, #, bool);
-}
 
 /////////////////////////////////// WIFI STUFF //////////////////////////////////////
 int cnt = 0;
