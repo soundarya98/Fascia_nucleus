@@ -14,7 +14,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
 #define CONNECT_WIFI 1
-#define BOARD_V FASCIA_V0_0
+#define BOARD_V NOVA_XR_V2_MAIN
 #define DATA_MODE RDATA_SS_MODE
 #define RUN_MODE NORMAL_ELECTRODES
 
@@ -217,6 +217,7 @@ void setup() {
   Serial.println("Type the channel number to print that channel's data [1-8] (and plot, if you switch to Serial Plotter)");
   Serial.println("Or type '0' to stop printing the data.");
   Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
+  Serial.println("type S#0 to deactivate SRB2 for channel # and B#1 to activate it");
   Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
   Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
 }
@@ -337,6 +338,12 @@ void parse_serial_input() {
       change_channel_bias(c-0x30-1);
     }
     break;
+  case 'S':
+    c = Serial.read();
+    if (c >= 0x31 && c <= 0x38) {
+      change_channel_SRB2(c-0x30-1);
+    }
+    break;
   case 'G':
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
@@ -349,8 +356,6 @@ void parse_serial_input() {
       toggle_channel(c-0x30-1);
     }
     break;
-  case 'S':
-    break;
   case 0xA:
     break;
   default:
@@ -360,7 +365,7 @@ void parse_serial_input() {
   }
 }
 
-void change_channel_bias(int chan){
+void change_channel_SRB2(int chan){
   char c = Serial.read();
   Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
   byte old_val = ADS_RREG(CHANNELS[chan], 1);
@@ -375,10 +380,37 @@ void change_channel_bias(int chan){
   } else {
     Serial.println("invalid input");return;
   }
-  Serial.print("changing bias of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.print("changing SRB2 of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
   Serial.println(change,BIN);
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(CHANNELS[chan], new_val);
+  // START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void change_channel_bias(int chan){
+  char c = Serial.read();
+  // Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  byte old_val = ADS_RREG(ADS1299_REGADDR_BIAS_SENSN, 1);
+  byte change = 0;
+  byte new_val;
+  if (c == '1') {
+    change = BIAS_SENSN[chan];
+    new_val = old_val | change;
+  } else if (c == '0'){
+    change = 0xFF ^ BIAS_SENSN[chan];
+    new_val = old_val & change;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("changing biasN of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.println(change,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, new_val);
   // START CONVERSION AGAIN
   if (DATA_MODE == RDATA_CC_MODE) {
     digitalWrite(pCS, LOW);

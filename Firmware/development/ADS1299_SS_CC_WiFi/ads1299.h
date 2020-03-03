@@ -390,6 +390,13 @@ byte GAINS[7] = {ADS1299_REG_CHNSET_GAIN_1,
 #define ADS1299_REG_BIAS_SENSP_BIASP2   (1<<1)
 #define ADS1299_REG_BIAS_SENSP_BIASP1   (1<<0)
 
+byte BIAS_SENSP[7] = {ADS1299_REG_BIAS_SENSP_BIASP1,
+                      ADS1299_REG_BIAS_SENSP_BIASP2,
+                      ADS1299_REG_BIAS_SENSP_BIASP3,
+                      ADS1299_REG_BIAS_SENSP_BIASP4,
+                      ADS1299_REG_BIAS_SENSP_BIASP5,
+                      ADS1299_REG_BIAS_SENSP_BIASP6,
+                      ADS1299_REG_BIAS_SENSP_BIASP8};
 
 /* BIAS_SENSN REGISTER ****************************************************************************************************************************/
 
@@ -406,6 +413,14 @@ byte GAINS[7] = {ADS1299_REG_CHNSET_GAIN_1,
 #define ADS1299_REG_BIAS_SENSN_BIASN3   (1<<2)
 #define ADS1299_REG_BIAS_SENSN_BIASN2   (1<<1)
 #define ADS1299_REG_BIAS_SENSN_BIASN1   (1<<0)
+
+byte BIAS_SENSN[7] = {ADS1299_REG_BIAS_SENSN_BIASN1,
+                      ADS1299_REG_BIAS_SENSN_BIASN2,
+                      ADS1299_REG_BIAS_SENSN_BIASN3,
+                      ADS1299_REG_BIAS_SENSN_BIASN4,
+                      ADS1299_REG_BIAS_SENSN_BIASN5,
+                      ADS1299_REG_BIAS_SENSN_BIASN6,
+                      ADS1299_REG_BIAS_SENSN_BIASN8};
 
 /* LOFF_SENSP REGISTER ****************************************************************************************************************************/
 
