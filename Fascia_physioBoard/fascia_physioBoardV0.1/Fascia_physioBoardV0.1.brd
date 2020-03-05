@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.1">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -2964,15 +2964,15 @@ design rules under a new name.</description>
 <contactref element="U1" pad="11"/>
 <contactref element="CN5" pad="8"/>
 <contactref element="RN4" pad="5"/>
-<wire x1="11.9" y1="23" x2="11.9" y2="18.2565" width="0.254" layer="1"/>
+<wire x1="11.9" y1="23.1" x2="11.9" y2="18.2565" width="0.254" layer="1"/>
 <wire x1="14.149659375" y1="16.006840625" x2="11.9" y2="18.2565" width="0.254" layer="1"/>
-<wire x1="13.4" y1="25.2" x2="13.4" y2="24.5" width="0.254" layer="1"/>
-<wire x1="13.4" y1="24.5" x2="13.2" y2="24.3" width="0.254" layer="1"/>
-<wire x1="13.2" y1="24.3" x2="11.9" y2="23" width="0.254" layer="1"/>
-<wire x1="13.1" y1="24.3" x2="12.790246875" y2="23.99025625" width="0.25" layer="16"/>
-<wire x1="12.790246875" y1="23.824" x2="12.790246875" y2="23.99025625" width="0.25" layer="16"/>
-<wire x1="13.2" y1="24.3" x2="13.1" y2="24.3" width="0.25" layer="16"/>
-<via x="13.2" y="24.3" extent="1-16" drill="0.25"/>
+<wire x1="13.4" y1="25.2" x2="13.4" y2="24.6" width="0.254" layer="1"/>
+<wire x1="13.4" y1="24.6" x2="13.2" y2="24.4" width="0.254" layer="1"/>
+<wire x1="13.2" y1="24.4" x2="11.9" y2="23.1" width="0.254" layer="1"/>
+<wire x1="13.2" y1="24.4" x2="12.89999375" y2="24.4" width="0.25" layer="16"/>
+<wire x1="12.89999375" y1="24.4" x2="12.790246875" y2="24.29025625" width="0.25" layer="16"/>
+<wire x1="12.790246875" y1="23.824" x2="12.790246875" y2="24.29025625" width="0.25" layer="16"/>
+<via x="13.2" y="24.4" extent="1-16" drill="0.25"/>
 </signal>
 <signal name="IN3P">
 <contactref element="U1" pad="12"/>
