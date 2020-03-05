@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.4.2">
+<eagle version="9.5.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5112,7 +5112,6 @@ part number 2062-2P from STA</description>
 <part name="U$34" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="U$35" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="R12" library="novaXR" deviceset="10K" device="" value="10K"/>
-<part name="R13" library="novaXR" deviceset="10K" device="" value="10K"/>
 <part name="R14" library="novaXR" deviceset="110K" device="" value="110K"/>
 <part name="C28" library="novaXR" deviceset="1UF" device="-0402T-16V-10%" value="1uF"/>
 <part name="C29" library="novaXR" deviceset="1NF" device="-0402T-16V-10%" value="1nF"/>
@@ -5139,7 +5138,6 @@ part number 2062-2P from STA</description>
 <part name="RAW_EDA_SIG" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
 <part name="PA02_EDA_SIG" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
 <part name="GND_ISO" library="Arduino-utility" deviceset="TP" device="TP-0.8MM" value="DNP"/>
-<part name="U$9" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="R15" library="novaXR" deviceset="150K" device="" value="150K"/>
 <part name="U4" library="HCNR200-300E" deviceset="HCNR200-300E" device=""/>
 <part name="C10" library="novaXR" deviceset="1NF" device="-0402T-16V-10%" value="1nF"/>
@@ -5473,10 +5471,6 @@ part number 2062-2P from STA</description>
 <attribute name="NAME" x="251.39" y="87.108" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="248.85" y="84.06" size="1.778" layer="96" font="vector" align="top-center"/>
 </instance>
-<instance part="R13" gate="G$1" x="241.06" y="98.482" smashed="yes" rot="R90">
-<attribute name="NAME" x="239.536" y="101.022" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="242.584" y="98.482" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
-</instance>
 <instance part="R14" gate="G$1" x="262.82" y="72.884" smashed="yes">
 <attribute name="NAME" x="265.36" y="74.408" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="262.82" y="71.36" size="1.778" layer="96" font="vector" align="top-center"/>
@@ -5552,9 +5546,6 @@ part number 2062-2P from STA</description>
 </instance>
 <instance part="GND_ISO" gate="G$1" x="164.592" y="58.928" smashed="yes" rot="R90">
 <attribute name="NAME" x="164.084" y="58.928" size="1.778" layer="95" rot="R90" align="bottom-center"/>
-</instance>
-<instance part="U$9" gate="G$1" x="243.51" y="107.814" smashed="yes" rot="R180">
-<attribute name="VALUE" x="243.51" y="110.354" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R15" gate="G$1" x="274.828" y="70.358" smashed="yes">
 <attribute name="NAME" x="274.828" y="71.882" size="1.778" layer="95" font="vector" align="bottom-center"/>
@@ -7248,12 +7239,6 @@ part number 2062-2P from STA</description>
 <wire x1="190.596" y1="91.426" x2="190.596" y2="93.994" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="U$9" gate="G$1" pin="GND_ISO"/>
-<wire x1="241.06" y1="103.562" x2="241.06" y2="105.274" width="0.1524" layer="91"/>
-<wire x1="241.06" y1="105.274" x2="240.97" y2="105.274" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U3" gate="G$1" pin="V-"/>
 <pinref part="U$34" gate="G$1" pin="GND_ISO"/>
 <wire x1="248.6" y1="67.84" x2="248.6" y2="66.28" width="0.1524" layer="91"/>
@@ -7583,8 +7568,6 @@ part number 2062-2P from STA</description>
 <wire x1="241.04" y1="85.6" x2="241.04" y2="91.9" width="0.1524" layer="91"/>
 <wire x1="241.04" y1="91.9" x2="241.04" y2="91.934" width="0.1524" layer="91"/>
 <wire x1="241.04" y1="91.934" x2="244.786" y2="91.934" width="0.1524" layer="91"/>
-<pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="241.06" y1="93.402" x2="241.06" y2="91.934" width="0.1524" layer="91"/>
 <wire x1="241.06" y1="91.934" x2="244.786" y2="91.934" width="0.1524" layer="91"/>
 <junction x="244.786" y="91.934"/>
 <junction x="241.04" y="85.6"/>
