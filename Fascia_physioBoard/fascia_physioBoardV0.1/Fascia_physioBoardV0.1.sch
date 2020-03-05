@@ -5165,6 +5165,8 @@ part number 2062-2P from STA</description>
 <part name="GND36" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="J3" library="Molex - 51296-1294" deviceset="MOLEX_51296-1294" device="MOLEX_51296-1294_0_0"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
+<part name="R13" library="novaXR" deviceset="10K" device="" value="10K"/>
+<part name="U$8" library="supply1" deviceset="GND_ISO" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5538,8 +5540,8 @@ part number 2062-2P from STA</description>
 <instance part="DVDD_ISO" gate="G$1" x="177.292" y="86.614" smashed="yes" rot="R270">
 <attribute name="NAME" x="177.8" y="86.614" size="1.778" layer="95" rot="R270" align="bottom-center"/>
 </instance>
-<instance part="RAW_EDA_SIG" gate="G$1" x="267.97" y="84.074" smashed="yes">
-<attribute name="NAME" x="267.97" y="87.122" size="1.778" layer="95" align="bottom-center"/>
+<instance part="RAW_EDA_SIG" gate="G$1" x="267.97" y="78.994" smashed="yes">
+<attribute name="NAME" x="271.018" y="82.55" size="1.778" layer="95" rot="R90" align="bottom-center"/>
 </instance>
 <instance part="PA02_EDA_SIG" gate="G$1" x="417.576" y="73.914" smashed="yes">
 <attribute name="NAME" x="417.576" y="74.422" size="1.778" layer="95" align="bottom-center"/>
@@ -5644,6 +5646,13 @@ part number 2062-2P from STA</description>
 <instance part="J4" gate="G$1" x="198.12" y="139.7" smashed="yes">
 <attribute name="VALUE" x="195.58" y="134.874" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="195.58" y="145.288" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="R13" gate="G$1" x="264.09" y="85.584" smashed="yes">
+<attribute name="NAME" x="266.63" y="87.108" size="1.778" layer="95" font="vector" align="bottom-center"/>
+<attribute name="VALUE" x="264.09" y="84.06" size="1.778" layer="96" font="vector" align="top-center"/>
+</instance>
+<instance part="U$8" gate="G$1" x="273.882" y="95.772" smashed="yes" rot="R180">
+<attribute name="VALUE" x="273.882" y="98.312" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -7286,6 +7295,12 @@ part number 2062-2P from STA</description>
 <junction x="273.812" y="5.334"/>
 <label x="288.798" y="5.08" size="1.778" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$8" gate="G$1" pin="GND_ISO"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="271.342" y1="93.232" x2="271.342" y2="85.584" width="0.1524" layer="91"/>
+<wire x1="271.342" y1="85.584" x2="269.17" y2="85.584" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -7505,12 +7520,12 @@ part number 2062-2P from STA</description>
 <net name="N$4" class="0">
 <segment>
 <pinref part="RAW_EDA_SIG" gate="G$1" pin="P$1"/>
-<wire x1="267.9" y1="80.264" x2="267.97" y2="81.534" width="0.1524" layer="91"/>
+<wire x1="267.9" y1="75.184" x2="267.97" y2="76.454" width="0.1524" layer="91"/>
 <pinref part="C31" gate="G$1" pin="1"/>
 <wire x1="267.138" y1="72.884" x2="267.138" y2="69.09" width="0.1524" layer="91"/>
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="267.9" y1="72.884" x2="267.138" y2="72.884" width="0.1524" layer="91"/>
-<wire x1="267.9" y1="72.884" x2="267.9" y2="80.264" width="0.1524" layer="91"/>
+<wire x1="267.9" y1="72.884" x2="267.9" y2="75.184" width="0.1524" layer="91"/>
 <junction x="267.9" y="72.884"/>
 <pinref part="R15" gate="G$1" pin="1"/>
 <wire x1="269.748" y1="70.358" x2="269.748" y2="72.898" width="0.1524" layer="91"/>
@@ -7596,6 +7611,11 @@ part number 2062-2P from STA</description>
 <wire x1="257.74" y1="91.934" x2="257.74" y2="91.9" width="0.1524" layer="91"/>
 <junction x="257.74" y="91.9"/>
 <junction x="257.74" y="85.6"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<wire x1="259.01" y1="85.584" x2="257.81" y2="85.584" width="0.1524" layer="91"/>
+<wire x1="257.81" y1="85.584" x2="257.81" y2="85.598" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$14" class="0">
