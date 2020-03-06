@@ -18,11 +18,11 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
 #define CONNECT_WIFI 0
-#define BOARD_V NOVA_XR_V2_SISTER
+#define BOARD_V NOVA_XR_V2_MAIN
 #define DATA_MODE RDATA_SS_MODE
 #define RUN_MODE NORMAL_ELECTRODES
 //TODO streaming stops for BOARD_V NOVA_XR_V2_SISTER
-
+#define v 0
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 const int SPI_CLK = 4*pow(10,6) ; //4MHz
@@ -257,11 +257,18 @@ void setup() {
   Serial.println("Done with setup.");
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH);
+  print_serial_instructions();
+}
+
+void print_serial_instructions() {
   Serial.println("Type the channel number to print that channel's data [1-8] (and plot, if you switch to Serial Plotter)");
   Serial.println("Or type '0' to stop printing the data.");
   Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
+  Serial.println("type S#0 to deactivate SRB2 for channel # and B#1 to activate it");
   Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
   Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
+  Serial.println("type P to print these instructions again");
+
 }
 
 void loop() {
@@ -311,7 +318,9 @@ void DRDY_ISR(long* packet) {
       if (i/3 == 0) {
         // STATUS Bits
       } else {
-        Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed);
+        #if v 
+          Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
+        #endif
         // channel data
         if (i/3 == (print_ch+1)) {Serial.println(ed);}
       }
@@ -381,24 +390,36 @@ void parse_serial_input() {
   }
   switch (c) {
   case 'B':
+  case 'b':
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
       change_channel_bias(c-0x30-1);
     }
     break;
+  case 'S':
+  case 's':
+    c = Serial.read();
+    if (c >= 0x31 && c <= 0x38) {
+      change_channel_SRB2(c-0x30-1);
+    }
+    break;
   case 'G':
+  case 'g':
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
       change_channel_gain(c-0x30-1);
     }
     break;
   case 'T':
+  case 't':
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
       toggle_channel(c-0x30-1);
     }
     break;
-  case 'S':
+  case 'p':
+  case 'P':
+    print_serial_instructions();
     break;
   case 0xA:
     break;
@@ -409,7 +430,7 @@ void parse_serial_input() {
   }
 }
 
-void change_channel_bias(int chan){
+void change_channel_SRB2(int chan){
   char c = Serial.read();
   Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
   byte old_val = ADS_RREG(CHANNELS[chan], 1);
@@ -424,10 +445,37 @@ void change_channel_bias(int chan){
   } else {
     Serial.println("invalid input");return;
   }
-  Serial.print("changing bias of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.print("changing SRB2 of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
   Serial.println(change,BIN);
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(CHANNELS[chan], new_val);
+  // START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void change_channel_bias(int chan){
+  char c = Serial.read();
+  // Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  byte old_val = ADS_RREG(ADS1299_REGADDR_BIAS_SENSN, 1);
+  byte change = 0;
+  byte new_val;
+  if (c == '1') {
+    change = BIAS_SENSN[chan];
+    new_val = old_val | change;
+  } else if (c == '0'){
+    change = 0xFF ^ BIAS_SENSN[chan];
+    new_val = old_val & change;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("changing biasN of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.println(change,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, new_val);
   // START CONVERSION AGAIN
   if (DATA_MODE == RDATA_CC_MODE) {
     digitalWrite(pCS, LOW);
@@ -492,13 +540,16 @@ void get_IMU_data(long* packet){
   for (int i = 0; i < 9; i++) {
     packet[i_IMU+i] = i;
   }
-  Serial.println("IMU data");
+  #if v
+    Serial.println("IMU data");
+  #endif
 }
 
 void get_EDA_data(long* packet) {
   packet[i_EDA] = analogRead(pEDA);
-  Serial.print("EDA ");
-  Serial.println(packet[i_EDA]);
+  #if v
+  Serial.print("EDA "); Serial.println(packet[i_EDA]);
+  #endif
 }
 
 const byte RATE_SIZE = 4; //Increase this for more averaging. 4 is good.
@@ -546,6 +597,7 @@ void get_PPG_temp_data(long* packet) {
   float temperature = particleSensor.readTemperature();
   packet[i_TEM] = *(char*)(&temperature); //TODO make sure this casting works properly
 
+  #if v
   Serial.print("TMP ");
   Serial.println(temperature);
   // Serial.print(", IR=");
@@ -557,7 +609,7 @@ void get_PPG_temp_data(long* packet) {
   // Serial.print(beatsPerMinute);
   // Serial.print(", Avg BPM=");
   // Serial.println(beatAvg);
-
+  #endif
 }
 
 /////////////////////////////////// WIFI STUFF //////////////////////////////////////
