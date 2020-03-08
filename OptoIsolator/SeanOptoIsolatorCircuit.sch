@@ -6658,20 +6658,19 @@ Created by Upverter.com</description>
 <junction x="119.38" y="15.24"/>
 </segment>
 </net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="Q1" gate="G$0" pin="PD2_ANODE"/>
-<pinref part="U2" gate="A" pin="VINA+"/>
-<wire x1="114.3" y1="5.08" x2="114.3" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="12.7" x2="137.16" y2="12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND-ISO" class="0">
 <segment>
 <pinref part="U2" gate="A" pin="VSS"/>
 <wire x1="137.16" y1="10.16" x2="127" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="127" y1="10.16" x2="127" y2="0" width="0.1524" layer="91"/>
 <pinref part="GND-ISO1" gate="G$1" pin="GND-ISO"/>
+<pinref part="Q1" gate="G$0" pin="PD2_ANODE"/>
+<pinref part="U2" gate="A" pin="VINA+"/>
+<wire x1="114.3" y1="5.08" x2="114.3" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="12.7" x2="137.16" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="137.16" y1="10.16" x2="137.16" y2="12.7" width="0.1524" layer="91"/>
+<junction x="137.16" y="10.16"/>
+<junction x="137.16" y="12.7"/>
 </segment>
 </net>
 <net name="VCC-ISO" class="0">
