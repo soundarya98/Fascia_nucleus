@@ -918,60 +918,6 @@ touch button, slider and wheel user interfaces.&lt;/p&gt;
 <wire x1="-0.2" y1="-1.45" x2="-0.2" y2="1.45" width="0.2" layer="21"/>
 <wire x1="-1.95" y1="1.5" x2="-0.55" y2="1.5" width="0.2" layer="21"/>
 </package>
-<package name="MPU6050">
-<description>&lt;b&gt;MPU-6050-5&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="-1.975" y="1.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="2" x="-1.975" y="0.75" dx="0.85" dy="0.35" layer="1"/>
-<smd name="3" x="-1.975" y="0.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="4" x="-1.975" y="-0.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="5" x="-1.975" y="-0.75" dx="0.85" dy="0.35" layer="1"/>
-<smd name="6" x="-1.975" y="-1.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="7" x="1.975" y="-1.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="8" x="1.975" y="-0.75" dx="0.85" dy="0.35" layer="1"/>
-<smd name="9" x="1.975" y="-0.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="10" x="1.975" y="0.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="11" x="1.975" y="0.75" dx="0.85" dy="0.35" layer="1"/>
-<smd name="12" x="1.975" y="1.25" dx="0.85" dy="0.35" layer="1"/>
-<smd name="15" x="-0.25" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="14" x="-0.75" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="13" x="-1.25" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="16" x="0.25" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="17" x="0.75" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="18" x="1.25" y="-1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="19" x="1.25" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="20" x="0.75" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="21" x="0.25" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="22" x="-0.25" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="23" x="-0.75" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="24" x="-1.25" y="1.975" dx="0.85" dy="0.35" layer="1" rot="R90"/>
-<smd name="25" x="0" y="0" dx="2.7" dy="2.6" layer="1"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-2" y1="2" x2="2" y2="2" width="0.2" layer="51"/>
-<wire x1="2" y1="2" x2="2" y2="-2" width="0.2" layer="51"/>
-<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.2" layer="51"/>
-<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.2" layer="51"/>
-<wire x1="-3.4" y1="3.4" x2="3.4" y2="3.4" width="0.1" layer="51"/>
-<wire x1="3.4" y1="3.4" x2="3.4" y2="-3.4" width="0.1" layer="51"/>
-<wire x1="3.4" y1="-3.4" x2="-3.4" y2="-3.4" width="0.1" layer="51"/>
-<wire x1="-3.4" y1="-3.4" x2="-3.4" y2="3.4" width="0.1" layer="51"/>
-<wire x1="-2" y1="-1.6" x2="-2" y2="-1.975" width="0.1" layer="21"/>
-<wire x1="-2" y1="-1.975" x2="-1.6" y2="-1.975" width="0.1" layer="21"/>
-<wire x1="1.6" y1="-2" x2="1.975" y2="-2" width="0.1" layer="21"/>
-<wire x1="1.975" y1="-2" x2="1.975" y2="-2" width="0.1" layer="21"/>
-<wire x1="1.975" y1="-2" x2="2" y2="-1.975" width="0.1" layer="21"/>
-<wire x1="2" y1="-1.975" x2="2" y2="-1.6" width="0.1" layer="21"/>
-<wire x1="1.6" y1="2" x2="1.975" y2="2" width="0.1" layer="21"/>
-<wire x1="1.975" y1="2" x2="2" y2="2" width="0.1" layer="21"/>
-<wire x1="2" y1="2" x2="2" y2="1.6" width="0.1" layer="21"/>
-<wire x1="-1.6" y1="2" x2="-2" y2="2" width="0.1" layer="21"/>
-<wire x1="-2" y1="2" x2="-2" y2="1.6" width="0.1" layer="21"/>
-<wire x1="-2.8" y1="1.3" x2="-2.8" y2="1.3" width="0.1" layer="21"/>
-<wire x1="-2.8" y1="1.3" x2="-2.8" y2="1.2" width="0.1" layer="21" curve="180"/>
-<wire x1="-2.8" y1="1.2" x2="-2.8" y2="1.2" width="0.1" layer="21"/>
-<wire x1="-2.8" y1="1.2" x2="-2.8" y2="1.3" width="0.1" layer="21" curve="180"/>
-</package>
 <package name="SON50P300X200X60-9N">
 <description>&lt;b&gt;MAH  8-Lead Ultra Thin Plastic Dual Flat, No Lead Package (Q4B)&lt;/b&gt;&lt;br&gt;
 </description>
@@ -1189,39 +1135,6 @@ touch button, slider and wheel user interfaces.&lt;/p&gt;
 <pin name="VBAT" x="27.94" y="0" length="middle" rot="R180"/>
 <pin name="VDD" x="0" y="0" length="middle"/>
 <pin name="PROG" x="27.94" y="-2.54" length="middle" rot="R180"/>
-</symbol>
-<symbol name="MPU-6050">
-<wire x1="5.08" y1="2.54" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-33.02" x2="27.94" y2="2.54" width="0.254" layer="94"/>
-<wire x1="27.94" y1="-33.02" x2="5.08" y2="-33.02" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-33.02" width="0.254" layer="94"/>
-<text x="29.21" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="29.21" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="CLKIN" x="0" y="0" length="middle"/>
-<pin name="NC_1" x="0" y="-2.54" length="middle"/>
-<pin name="NC_2" x="0" y="-5.08" length="middle"/>
-<pin name="NC_3" x="0" y="-7.62" length="middle"/>
-<pin name="NC_4" x="0" y="-10.16" length="middle"/>
-<pin name="AUX_DA" x="0" y="-12.7" length="middle"/>
-<pin name="AUX_CL" x="0" y="-15.24" length="middle"/>
-<pin name="VLOGIC" x="0" y="-17.78" length="middle"/>
-<pin name="AD0" x="0" y="-20.32" length="middle"/>
-<pin name="REGOUT" x="0" y="-22.86" length="middle"/>
-<pin name="FSYNC" x="0" y="-25.4" length="middle"/>
-<pin name="INT" x="0" y="-27.94" length="middle"/>
-<pin name="VDD" x="0" y="-30.48" length="middle"/>
-<pin name="NC_5" x="33.02" y="0" length="middle" rot="R180"/>
-<pin name="NC_6" x="33.02" y="-2.54" length="middle" rot="R180"/>
-<pin name="NC_7" x="33.02" y="-5.08" length="middle" rot="R180"/>
-<pin name="NC_8" x="33.02" y="-7.62" length="middle" rot="R180"/>
-<pin name="GND" x="33.02" y="-10.16" length="middle" rot="R180"/>
-<pin name="RESV_1" x="33.02" y="-12.7" length="middle" rot="R180"/>
-<pin name="CPOUT" x="33.02" y="-15.24" length="middle" rot="R180"/>
-<pin name="RESV_2" x="33.02" y="-17.78" length="middle" rot="R180"/>
-<pin name="RESV_3" x="33.02" y="-20.32" length="middle" rot="R180"/>
-<pin name="SCL" x="33.02" y="-22.86" length="middle" rot="R180"/>
-<pin name="SDA" x="33.02" y="-25.4" length="middle" rot="R180"/>
-<pin name="EP" x="33.02" y="-27.94" length="middle" rot="R180"/>
 </symbol>
 <symbol name="ATECC508A-MAHDA-T">
 <wire x1="5.08" y1="2.54" x2="25.4" y2="2.54" width="0.254" layer="94"/>
@@ -1574,56 +1487,6 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/MCP73831T-4AD
 <attribute name="MANUFACTURER_PART_NUMBER" value="MCP73831T-4ADI/OT" constant="no"/>
 <attribute name="MOUSER_PART_NUMBER" value="579-MCP73831T4ADIOT" constant="no"/>
 <attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.com/Search/Refine.aspx?Keyword=579-MCP73831T4ADIOT" constant="no"/>
-<attribute name="RS_PART_NUMBER" value="" constant="no"/>
-<attribute name="RS_PRICE-STOCK" value="" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="MPU-6050" prefix="IC">
-<description>&lt;b&gt;IMUs - Inertial Measurement Units 6-Axis MEMS MotionTracking  Device with DMP&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://www.invensense.com/products/motion-tracking/6-axis/mpu-6050/"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="MPU-6050" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="MPU6050">
-<connects>
-<connect gate="G$1" pin="AD0" pad="9"/>
-<connect gate="G$1" pin="AUX_CL" pad="7"/>
-<connect gate="G$1" pin="AUX_DA" pad="6"/>
-<connect gate="G$1" pin="CLKIN" pad="1"/>
-<connect gate="G$1" pin="CPOUT" pad="20"/>
-<connect gate="G$1" pin="EP" pad="25"/>
-<connect gate="G$1" pin="FSYNC" pad="11"/>
-<connect gate="G$1" pin="GND" pad="18"/>
-<connect gate="G$1" pin="INT" pad="12"/>
-<connect gate="G$1" pin="NC_1" pad="2"/>
-<connect gate="G$1" pin="NC_2" pad="3"/>
-<connect gate="G$1" pin="NC_3" pad="4"/>
-<connect gate="G$1" pin="NC_4" pad="5"/>
-<connect gate="G$1" pin="NC_5" pad="14"/>
-<connect gate="G$1" pin="NC_6" pad="15"/>
-<connect gate="G$1" pin="NC_7" pad="16"/>
-<connect gate="G$1" pin="NC_8" pad="17"/>
-<connect gate="G$1" pin="REGOUT" pad="10"/>
-<connect gate="G$1" pin="RESV_1" pad="19"/>
-<connect gate="G$1" pin="RESV_2" pad="21"/>
-<connect gate="G$1" pin="RESV_3" pad="22"/>
-<connect gate="G$1" pin="SCL" pad="23"/>
-<connect gate="G$1" pin="SDA" pad="24"/>
-<connect gate="G$1" pin="VDD" pad="13"/>
-<connect gate="G$1" pin="VLOGIC" pad="8"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="IMUs - Inertial Measurement Units 6-Axis MEMS MotionTracking  Device with DMP" constant="no"/>
-<attribute name="HEIGHT" value="3mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="TDK" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MPU-6050" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="410-MPU-6050" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="" constant="no"/>
 <attribute name="RS_PART_NUMBER" value="" constant="no"/>
 <attribute name="RS_PRICE-STOCK" value="" constant="no"/>
 </technology>
@@ -6057,87 +5920,6 @@ Commonly used for small ceramic capacitors. Like our 0.1uF (http://www.sparkfun.
 </device>
 </devices>
 </deviceset>
-<deviceset name="2.2NF" prefix="C" uservalue="yes">
-<description>&lt;h3&gt;2.2uF ceramic capacitors&lt;/h3&gt;
-&lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="CAP" x="0" y="0"/>
-</gates>
-<devices>
-<device name="-0402-16V-10%" package="0402">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-12416"/>
-<attribute name="VALUE" value="2.2nF"/>
-</technology>
-</technologies>
-</device>
-<device name="-0603-25V-(+80/-20%)" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-00810"/>
-<attribute name="VALUE" value="0.1nF"/>
-</technology>
-</technologies>
-</device>
-<device name="-0603-25V-5%" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-08604"/>
-<attribute name="VALUE" value="0.1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="-KIT-EZ-50V-20%" package="CAP-PTH-SMALL-KIT">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-08370"/>
-<attribute name="VALUE" value="0.1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="-0603-100V-10%" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-08390"/>
-<attribute name="VALUE" value="0.1uF"/>
-</technology>
-</technologies>
-</device>
-<device name="-0402T-16V-10%" package="0402-TIGHT">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="PROD_ID" value="CAP-12416" constant="no"/>
-<attribute name="VALUE" value="2.2nF" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="1UF" prefix="C">
 <description>&lt;h3&gt;1µF ceramic capacitors&lt;/h3&gt;
 &lt;p&gt;A capacitor is a passive two-terminal electrical component used to store electrical energy temporarily in an electric field.&lt;/p&gt;</description>
@@ -7641,13 +7423,6 @@ Created by Upverter.com</description>
 <part name="R24" library="novaXR" deviceset="1.2M" device="-0402-1/10W-1%" package3d_urn="urn:adsk.eagle:package:39657/1" value="1.2M"/>
 <part name="GND38" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="C33" library="novaXR" deviceset="0.1UF" device="-0402T-16V-10%" value="0.1uF"/>
-<part name="U17" library="SamacSys_Parts" deviceset="MPU-6050" device=""/>
-<part name="C34" library="novaXR" deviceset="0.1UF" device="-0402T-16V-10%" value="0.1uF"/>
-<part name="GND39" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="GND40" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="C35" library="novaXR" deviceset="0.1UF" device="-0402T-16V-10%" value="0.1uF"/>
-<part name="C36" library="novaXR" deviceset="0.01UF" device="-0402T-16V-10%" value="0.01uF"/>
-<part name="C37" library="novaXR" deviceset="2.2NF" device="-0402T-16V-10%" value="2.2nF"/>
 <part name="J3" library="Arduino-connectors" deviceset="USB-MICRO" device="" value="-"/>
 <part name="D2" library="Arduino-diodes" deviceset="PRTR5V0U2X,215" device="" value="PRTR5V"/>
 <part name="GND43" library="Arduino-supply" deviceset="GND" device="" value="GND"/>
@@ -7677,7 +7452,6 @@ Created by Upverter.com</description>
 <part name="U$31" library="supply1" deviceset="-RAW" device=""/>
 <part name="U$32" library="supply1" deviceset="AVSS" device=""/>
 <part name="U$33" library="supply1" deviceset="AVDD" device=""/>
-<part name="U$35" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="U$36" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="U$37" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="U$38" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
@@ -7705,7 +7479,6 @@ Created by Upverter.com</description>
 <part name="R26" library="novaXR" deviceset="470" device="" value="470"/>
 <part name="GND8" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
-<part name="U$6" library="SparkFun-PowerSymbols" deviceset="VCC" device=""/>
 <part name="U$25" library="supply1" deviceset="DVDD" device=""/>
 <part name="U9" library="Lp5912Q3.3DRV" deviceset="LP5912Q3.3DRVRQ1" device=""/>
 <part name="U$47" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="AGND" device=""/>
@@ -9334,32 +9107,6 @@ and analog sensors</text>
 <attribute name="NAME" x="78.486" y="172.339" size="1.778" layer="95" font="vector" rot="R180"/>
 <attribute name="VALUE" x="78.486" y="177.419" size="1.778" layer="96" font="vector" rot="R180"/>
 </instance>
-<instance part="U17" gate="G$1" x="339.09" y="248.92" smashed="yes">
-<attribute name="NAME" x="344.17" y="255.27" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="344.17" y="252.73" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="C34" gate="G$1" x="317.5" y="210.82" smashed="yes" rot="R180">
-<attribute name="NAME" x="316.23" y="208.28" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="315.976" y="212.979" size="1.778" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="GND39" gate="1" x="317.5" y="200.66" smashed="yes">
-<attribute name="VALUE" x="317.5" y="199.136" size="1.778" layer="96" align="top-center"/>
-</instance>
-<instance part="GND40" gate="1" x="382.27" y="203.2" smashed="yes">
-<attribute name="VALUE" x="382.27" y="201.676" size="1.778" layer="96" align="top-center"/>
-</instance>
-<instance part="C35" gate="G$1" x="325.12" y="210.82" smashed="yes" rot="R180">
-<attribute name="NAME" x="323.85" y="208.28" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="323.596" y="212.979" size="1.778" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="C36" gate="G$1" x="334.01" y="210.82" smashed="yes" rot="R180">
-<attribute name="NAME" x="332.74" y="208.28" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="332.486" y="212.979" size="1.778" layer="96" font="vector" rot="R180"/>
-</instance>
-<instance part="C37" gate="G$1" x="379.73" y="218.44" smashed="yes" rot="R180">
-<attribute name="NAME" x="378.46" y="215.9" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="378.206" y="220.599" size="1.778" layer="96" font="vector" rot="R180"/>
-</instance>
 <instance part="J3" gate="G$1" x="17.78" y="226.06" smashed="yes">
 <attribute name="NAME" x="20.32" y="239.522" size="1.778" layer="95" align="bottom-center"/>
 <attribute name="VALUE" x="20.32" y="237.236" size="1.778" layer="96" align="bottom-center"/>
@@ -9435,9 +9182,6 @@ and analog sensors</text>
 <instance part="U$33" gate="G$1" x="274.32" y="181.864" smashed="yes">
 <attribute name="VALUE" x="274.32" y="185.928" size="1.778" layer="96"/>
 </instance>
-<instance part="U$35" gate="G$1" x="317.5" y="220.472" smashed="yes">
-<attribute name="VALUE" x="321.056" y="226.06" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="J6" gate="G$1" x="171.45" y="262.89" smashed="yes" rot="R90">
 <attribute name="NAME" x="165.735" y="256.54" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="176.53" y="256.54" size="1.778" layer="96" rot="R90"/>
@@ -9468,9 +9212,6 @@ and analog sensors</text>
 </instance>
 <instance part="SUPPLY3" gate="G$1" x="223.52" y="226.06" smashed="yes">
 <attribute name="VALUE" x="223.52" y="228.854" size="1.778" layer="96" align="bottom-center"/>
-</instance>
-<instance part="U$6" gate="G$1" x="317.5" y="235.712" smashed="yes">
-<attribute name="VALUE" x="321.056" y="241.3" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="U$25" gate="G$1" x="223.52" y="259.08" smashed="yes">
 <attribute name="VALUE" x="220.98" y="263.144" size="1.778" layer="96"/>
@@ -9559,36 +9300,6 @@ and analog sensors</text>
 <junction x="68.58" y="167.64"/>
 </segment>
 <segment>
-<pinref part="C34" gate="G$1" pin="1"/>
-<pinref part="GND39" gate="1" pin="GND"/>
-<wire x1="317.5" y1="205.74" x2="317.5" y2="203.2" width="0.1524" layer="91"/>
-<pinref part="C37" gate="G$1" pin="1"/>
-<wire x1="379.73" y1="213.36" x2="379.73" y2="205.74" width="0.1524" layer="91"/>
-<wire x1="379.73" y1="205.74" x2="334.01" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="C35" gate="G$1" pin="1"/>
-<junction x="325.12" y="205.74"/>
-<wire x1="334.01" y1="205.74" x2="325.12" y2="205.74" width="0.1524" layer="91"/>
-<wire x1="325.12" y1="205.74" x2="317.5" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="C36" gate="G$1" pin="1"/>
-<junction x="334.01" y="205.74"/>
-</segment>
-<segment>
-<pinref part="U17" gate="G$1" pin="GND"/>
-<wire x1="372.11" y1="238.76" x2="382.27" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="382.27" y1="238.76" x2="382.27" y2="205.74" width="0.1524" layer="91"/>
-<pinref part="GND40" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="U17" gate="G$1" pin="CLKIN"/>
-<wire x1="339.09" y1="248.92" x2="335.28" y2="248.92" width="0.1524" layer="91"/>
-<label x="335.28" y="248.92" size="1.778" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<wire x1="339.09" y1="223.52" x2="336.55" y2="223.52" width="0.1524" layer="91"/>
-<label x="336.55" y="223.52" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="U17" gate="G$1" pin="FSYNC"/>
-</segment>
-<segment>
 <pinref part="J3" gate="G$1" pin="5"/>
 <wire x1="25.4" y1="220.98" x2="25.4" y2="218.44" width="0.1524" layer="91"/>
 <pinref part="GND43" gate="1" pin="GND"/>
@@ -9605,11 +9316,6 @@ and analog sensors</text>
 <pinref part="GND47" gate="G$1" pin="P$1"/>
 <pinref part="GND48" gate="1" pin="GND"/>
 <wire x1="25.4" y1="242.57" x2="26.67" y2="242.57" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="339.09" y1="228.6" x2="336.55" y2="228.6" width="0.1524" layer="91"/>
-<label x="336.55" y="228.6" size="1.778" layer="95" rot="R180" xref="yes"/>
-<pinref part="U17" gate="G$1" pin="AD0"/>
 </segment>
 <segment>
 <pinref part="D5" gate="G$1" pin="C"/>
@@ -9751,36 +9457,6 @@ and analog sensors</text>
 <junction x="68.58" y="180.34"/>
 <junction x="80.01" y="180.34"/>
 <label x="80.01" y="195.58" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="C35" gate="G$1" pin="2"/>
-<pinref part="U17" gate="G$1" pin="REGOUT"/>
-<wire x1="325.12" y1="213.36" x2="325.12" y2="226.06" width="0.1524" layer="91"/>
-<wire x1="325.12" y1="226.06" x2="339.09" y2="226.06" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<pinref part="C37" gate="G$1" pin="2"/>
-<wire x1="379.73" y1="220.98" x2="379.73" y2="233.68" width="0.1524" layer="91"/>
-<pinref part="U17" gate="G$1" pin="CPOUT"/>
-<wire x1="379.73" y1="233.68" x2="372.11" y2="233.68" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="S0_I2C_SCL" class="0">
-<segment>
-<pinref part="U17" gate="G$1" pin="SCL"/>
-<wire x1="372.11" y1="226.06" x2="383.54" y2="226.06" width="0.1524" layer="91"/>
-<label x="383.54" y="226.06" size="1.778" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="S0_I2C_SDA" class="0">
-<segment>
-<pinref part="U17" gate="G$1" pin="SDA"/>
-<wire x1="372.11" y1="223.52" x2="400.05" y2="223.52" width="0.1524" layer="91"/>
-<label x="400.05" y="223.52" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="USBN" class="0">
@@ -10085,30 +9761,6 @@ and analog sensors</text>
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="C34" gate="G$1" pin="2"/>
-<wire x1="317.5" y1="213.36" x2="317.5" y2="220.472" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="220.472" x2="317.5" y2="220.98" width="0.1524" layer="91"/>
-<wire x1="340.36" y1="218.44" x2="339.09" y2="218.44" width="0.1524" layer="91"/>
-<junction x="317.5" y="213.36"/>
-<pinref part="U17" gate="G$1" pin="VDD"/>
-<wire x1="339.09" y1="218.44" x2="317.5" y2="218.44" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="218.44" x2="317.5" y2="213.36" width="0.1524" layer="91"/>
-<junction x="339.09" y="218.44"/>
-<pinref part="U$35" gate="G$1" pin="VCC"/>
-<junction x="317.5" y="220.472"/>
-<wire x1="317.5" y1="220.472" x2="317.5" y2="220.98" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="C36" gate="G$1" pin="2"/>
-<wire x1="334.01" y1="213.36" x2="334.01" y2="231.14" width="0.1524" layer="91"/>
-<pinref part="U17" gate="G$1" pin="VLOGIC"/>
-<wire x1="334.01" y1="231.14" x2="335.28" y2="231.14" width="0.1524" layer="91"/>
-<pinref part="U$6" gate="G$1" pin="VCC"/>
-<wire x1="335.28" y1="231.14" x2="339.09" y2="231.14" width="0.1524" layer="91"/>
-<wire x1="334.01" y1="231.14" x2="317.5" y2="231.14" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="231.14" x2="317.5" y2="235.712" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="U18" gate="G$1" pin="OUT"/>
 <pinref part="C18" gate="A" pin="2"/>
 <wire x1="236.22" y1="223.52" x2="231.902" y2="223.52" width="0.1524" layer="91"/>
@@ -10139,13 +9791,6 @@ and analog sensors</text>
 <pinref part="R27" gate="G$1" pin="2"/>
 <wire x1="236.22" y1="208.28" x2="231.648" y2="208.28" width="0.1524" layer="91"/>
 <wire x1="231.648" y1="208.28" x2="231.648" y2="210.312" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="MPU_INT" class="0">
-<segment>
-<pinref part="U17" gate="G$1" pin="INT"/>
-<wire x1="339.09" y1="220.98" x2="335.28" y2="220.98" width="0.1524" layer="91"/>
-<label x="335.28" y="220.98" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
