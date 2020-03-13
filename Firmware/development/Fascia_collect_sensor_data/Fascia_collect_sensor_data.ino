@@ -542,7 +542,7 @@ void change_channel_short(int chan){}
 
 void get_IMU_data(long* packet){
   // Wire.requestFrom(MPU_ADDR, #, bool);
-  for (int i = 0; i < 9; i++) {
+  for (int i = 0; i < 6; i++) {
     packet[i_IMU+i] = i;
     #if v
       Serial.println("IMU "+String(i)+" "+String(i));
