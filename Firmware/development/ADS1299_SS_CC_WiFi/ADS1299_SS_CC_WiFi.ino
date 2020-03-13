@@ -14,7 +14,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
 #define CONNECT_WIFI 1
-#define BOARD_V NOVA_XR_V2_MAIN
+#define BOARD_V FASCIA_V0_0
 #define DATA_MODE RDATA_SS_MODE
 #define RUN_MODE NORMAL_ELECTRODES
 
