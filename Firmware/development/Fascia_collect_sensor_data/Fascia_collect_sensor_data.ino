@@ -17,12 +17,14 @@ enum data_mode_t {RDATA_CC_MODE, RDATA_SS_MODE};
 enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 
 // settings
-#define CONNECT_WIFI 0
-#define BOARD_V NOVA_XR_V2_MAIN
+#define CONNECT_WIFI 1
+#define BOARD_V FASCIA_V0_0
 #define DATA_MODE RDATA_SS_MODE
 #define RUN_MODE NORMAL_ELECTRODES
+// v for verbose: lots of prints
+#define v 1
 //TODO streaming stops for BOARD_V NOVA_XR_V2_SISTER
-#define v 0
+
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
 const int SPI_CLK = 4*pow(10,6) ; //4MHz
@@ -34,6 +36,7 @@ const int SPI_CLK = 4*pow(10,6) ; //4MHz
 #define MPU_ADDR 0b11010000
 
 // define pins depending on boards
+int pLED;
 // ADS1299 ADC pins
 const int pRESET = PA23;    // reset pin
 int pCS;              // chip select pin
@@ -47,6 +50,9 @@ MAX30105 particleSensor;
 
 // define variables
 int print_ch = -1;
+bool LEDval = LOW;
+
+int cnt = 0;
 
 void select_board_pins(void) {
     switch (BOARD_V){
@@ -78,6 +84,7 @@ void select_board_pins(void) {
         Serial.println("initializing pins for Fascia V0.0");
         pCS = PA20;
         pDRDY = PA07;
+        pLED = PA04;
         break;
     }
     case FASCIA_V0_1: {
@@ -94,6 +101,7 @@ void initialize_pin_modes(void) {
   pinMode(pDRDY, INPUT);
   pinMode(pRESET, OUTPUT);
   pinMode(pEDA, INPUT);
+  pinMode(pLED, OUTPUT);
   pinPeripheral(PA19, PIO_SERCOM);
   pinPeripheral(PA17, PIO_SERCOM);
   pinPeripheral(PA16, PIO_SERCOM);
@@ -209,10 +217,8 @@ void ADS_start(void) {
 
 void setup_MAX30105() {
   if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) {//Use default I2C port, 400kHz speed
-    
     while (1){Serial.println("MAX30105 was not found. Please check wiring/power. ");}
   }
-
   //The LEDs are very low power and won't affect the temp reading much but
   //you may want to turn off the LEDs to avoid any local heating
   // can try setting data output rate (currently (default) close to the slowest)
@@ -220,10 +226,8 @@ void setup_MAX30105() {
   //particleSensor.setup(); //Configure sensor. Use 25mA for LED drive
   //TODO seems like line below is not actually necessary
   particleSensor.enableDIETEMPRDY(); //Enable the temp ready interrupt. This is required.
-    // particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
-      particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
-
-
+  // particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
+  particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
 }
 
 void setup() {
@@ -231,8 +235,11 @@ void setup() {
   // initialize communications: spi, I2C, serial, and wifi if applicable
   mySPI.begin();
   Serial.begin(115200);
-  Wire.begin();//TODO???
-  // Wire.setClock();//TODO investigate this
+  // set up indicator LED
+  select_board_pins();
+  initialize_pin_modes();
+  digitalWrite(pLED, HIGH);
+
   if (CONNECT_WIFI) {
     setupWifi();
   }
@@ -244,8 +251,6 @@ void setup() {
     Serial.println("The DRDY pin on this PCB (PA07) cannot be configured as an interrupt pin");
     while(1);
   }
-  select_board_pins();
-  initialize_pin_modes();
 
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
   setup_MAX30105();
@@ -255,8 +260,7 @@ void setup() {
   ADS_init();
   ADS_start();
   Serial.println("Done with setup.");
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(pLED, LOW);
   print_serial_instructions();
 }
 
@@ -277,6 +281,10 @@ void loop() {
   }
   long packet[23];
 
+  #if v
+    Serial.println("packet #"+String(cnt));
+  #endif
+  
   if (DATA_MODE == RDATA_SS_MODE) {
     DRDY_ISR(packet);
   }
@@ -284,10 +292,10 @@ void loop() {
   get_EDA_data(packet);
   get_PPG_temp_data(packet);
 
-  if (CONNECT_WIFI) {
+  #if CONNECT_WIFI
     pushToBuf((char *)packet);
     sendWiFiDataPacket();
-  }
+  #endif
 }
 
 void DRDY_ISR(long* packet) {
@@ -320,16 +328,13 @@ void DRDY_ISR(long* packet) {
       } else {
         #if v 
           Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
+//          Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(packet[i_ADS + i/3]); 
         #endif
         // channel data
         if (i/3 == (print_ch+1)) {Serial.println(ed);}
       }
     }
   }
-  // //Push packet to buffer
-  // if (CONNECT_WIFI) {
-  //   pushToBuf((char *)packet);
-  // }
 }
 
 float convert_ADC_volts(int raw_data, int gain) {
@@ -539,16 +544,19 @@ void get_IMU_data(long* packet){
   // Wire.requestFrom(MPU_ADDR, #, bool);
   for (int i = 0; i < 9; i++) {
     packet[i_IMU+i] = i;
+    #if v
+      Serial.println("IMU "+String(i)+" "+String(i));
+//      Serial.println("IMU "+String(i)+" "+String(packet[i_IMU+i]));    
+    #endif
   }
-  #if v
-    Serial.println("IMU data");
-  #endif
 }
 
 void get_EDA_data(long* packet) {
-  packet[i_EDA] = analogRead(pEDA);
+  int vEDA = analogRead(pEDA);
+  packet[i_EDA] = vEDA;
   #if v
-  Serial.print("EDA "); Serial.println(packet[i_EDA]);
+    Serial.print("EDA "); Serial.println(vEDA);
+//    Serial.print("EDA "); Serial.println(packet[i_EDA]);
   #endif
 }
 
@@ -564,9 +572,11 @@ void get_PPG_temp_data(long* packet) {
   particleSensor.requestTemperature();
   // maybe include both here: heart rate and raw ppg data
   long irValue = particleSensor.getIR();  //TODO make sure this casting works properly
-  packet[i_PPG] = *(char*)(&irValue);
+  packet[i_PPG] = /**(char*)(&*/irValue;//);
   if (irValue < 50000){
-    // Serial.println("No contact with sensor");
+    #if v
+      Serial.println("No contact with sensor");
+    #endif
     packet[i_PPG+1] = 0;
     return;
   }
@@ -592,28 +602,26 @@ void get_PPG_temp_data(long* packet) {
       beatAvg /= RATE_SIZE;
     }
   }
-  packet[i_PPG+1] = *(char*)(&beatAvg);
+  packet[i_PPG+1] = /**(char*)(&*/beatAvg;//);
 
   float temperature = particleSensor.readTemperature();
-  packet[i_TEM] = *(char*)(&temperature); //TODO make sure this casting works properly
+  packet[i_TEM] = *(long*)(&temperature); //TODO make sure this casting works properly
 
   #if v
-  Serial.print("TMP ");
-  Serial.println(temperature);
-  // Serial.print(", IR=");
-  // Serial.print(beat?irValue+100:irValue-100);
-  //   Serial.print(",");
-  Serial.print("PPG ");
-  Serial.println(irValue);
-  // Serial.print(", BPM=");
-  // Serial.print(beatsPerMinute);
-  // Serial.print(", Avg BPM=");
-  // Serial.println(beatAvg);
+  Serial.print("TMP ");Serial.println(temperature);
+//  Serial.print("TMP ");Serial.println(packet[i_TEM]);
+
+  Serial.print("PPG ");Serial.println(irValue);
+//  Serial.print("PPG ");Serial.println(packet[i_PPG]);
+  
+  Serial.print("BPM ");Serial.println(beatAvg);
+//  Serial.print("BPM ");Serial.println(packet[i_PPG+1]);
+
   #endif
 }
 
 /////////////////////////////////// WIFI STUFF //////////////////////////////////////
-int cnt = 0;
+//int cnt = 0;
 
 //There are two buffer used for wifi data sending.
 char sendBuf[2][PACKET_SIZE*SEND_SIZE];
@@ -657,7 +665,7 @@ char* getSendBuf()
 //Write one data packet into the buffer.
 void pushToBuf(char* packet)
 {
-    packet[0] = cnt;
+    ((int*)packet)[0] = cnt;
     cnt++;
     //When current buffer is full
     if(wCount == SEND_SIZE)
@@ -685,6 +693,9 @@ void printWiFiStatus() {
   IPAddress ip = WiFi.localIP();
   Serial.print("IP Address: ");
   Serial.println(ip);
+
+  Serial.print("Data host IP: ");
+  Serial.println(HOST_ID);
 
   // print the received signal strength:
   long rssi = WiFi.RSSI();
@@ -729,10 +740,20 @@ void setupWifi()
 
 
 void sendWiFiDataPacket() {
-    byte* sendBuf = (byte*)getSendBuf();
-    if( sendBuf != 0){
-        Udp.beginPacket(HOST_ID, PORT_NUM);
-        Udp.write(sendBuf, PACKET_SIZE*SEND_SIZE);
-        Udp.endPacket();
+  byte* sBuf = (byte*)getSendBuf();
+  
+  if(sBuf != 0){
+    Udp.beginPacket(HOST_ID, PORT_NUM);
+    int nbytes = Udp.write(sBuf, PACKET_SIZE*SEND_SIZE);
+    Udp.endPacket();
+    if (nbytes != PACKET_SIZE*SEND_SIZE) {
+      Serial.println("Failed to send packet. Sent "+String(nbytes)+" bytes only");  
+    } else { 
+      #if v 
+        Serial.println("Successfully sent full packet of "+String(nbytes)+" bytes");
+      #endif
     }
+  }
+  LEDval = (cnt%10)? LEDval : !LEDval;
+  digitalWrite(pLED, LEDval);
 }
