@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.2">
+<eagle version="9.4.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3919,6 +3919,11 @@ Created by Upverter.com</description>
 <wire x1="327.66" y1="124.46" x2="327.66" y2="100.24" width="0.1524" layer="94"/>
 <wire x1="327.66" y1="100.24" x2="429.26" y2="100.24" width="0.1524" layer="94"/>
 <text x="198.12" y="53.34" size="2.1844" layer="95">ADUM5028</text>
+<wire x1="177.8" y1="78.74" x2="177.8" y2="63.5" width="0.1524" layer="101"/>
+<wire x1="177.8" y1="63.5" x2="193.04" y2="63.5" width="0.1524" layer="101"/>
+<wire x1="193.04" y1="63.5" x2="193.04" y2="78.74" width="0.1524" layer="101"/>
+<wire x1="193.04" y1="78.74" x2="177.8" y2="78.74" width="0.1524" layer="101"/>
+<text x="175.26" y="60.96" size="1.778" layer="101">PCB is missing this trace</text>
 </plain>
 <instances>
 <instance part="FRAME3" gate="G$1" x="2.54" y="0" smashed="yes"/>
