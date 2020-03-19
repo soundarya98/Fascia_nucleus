@@ -130,9 +130,15 @@ class mainWindow(QtWidgets.QWidget):
                 temp[i] = self.BSfilters[i].inputData([temp[i]])[0]
             else:
                 temp[i] = newData[i]
+
             # temp[2+i] = self.HPfilters[i].inputData([convert_ADC_volts(newData[2+i])])[0]
             # temp[2+i] = convert_ADC_volts(newData[2+i]);
+            # print(i)
             d.append([temp[i]])
+
+            if (i == 18 and temp[i] == 0):
+                continue
+
             #For ploting
             self.plotBufs[i] = self.plotBufs[i][1:]
             self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
