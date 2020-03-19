@@ -50,7 +50,7 @@ class MAX30105 {
   boolean begin(TwoWire &wirePort = Wire, uint32_t i2cSpeed = I2C_SPEED_STANDARD, uint8_t i2caddr = MAX30105_ADDRESS);
 
   uint32_t getRed(void); //Returns immediate red value
-  uint32_t getIR(void); //Returns immediate IR value
+  uint32_t getIR(int ms); //Returns immediate IR value
   uint32_t getGreen(void); //Returns immediate green value
   bool safeCheck(uint8_t maxTimeToCheck); //Given a max amount of time, check for new data
 

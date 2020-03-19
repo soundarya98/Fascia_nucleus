@@ -543,10 +543,10 @@ uint32_t MAX30105::getRed(void)
 }
 
 //Report the most recent IR value
-uint32_t MAX30105::getIR(void)
+uint32_t MAX30105::getIR(int ms)
 {
   //Check the sensor for new data for 250ms
-  if(safeCheck(250))
+  if(safeCheck(ms))
     return (sense.IR[sense.head]);
   else
     return(0); //Sensor failed to find new data
