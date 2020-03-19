@@ -24,7 +24,6 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 #define RUN_MODE NORMAL_ELECTRODES
 // v for verbose: lots of prints
 #define v 0
-#define vt 0
 // debug: serial reads and writes
 #define debug 0
 
@@ -293,8 +292,9 @@ void loop() {
   #endif
   
   long packet[NUM_ELEMENTS];
-
-  #if v | vt
+  packet[i_VALID] = 0;
+  
+  #if v
     Serial.println("packet #"+String(cnt));
   #endif
   
@@ -305,12 +305,13 @@ void loop() {
   get_EDA_data(packet);
   if (!(cnt%10)) {
     get_PPG_temp_data(packet);
-    get_battery_v(packet);
   } else {
     // TODO make indicator bits reflect not valid data in those points  
-    packet[i_PPG] = 0;
-    packet[i_TEM] = 0;
-    packet[i_BAT] = 0;
+//    packet[i_PPG] = 0;
+//    packet[i_TEM] = 0;
+//    packet[i_BAT] = 0;
+    packet[i_VALID] |= (1<<i_PPG);
+    packet[i_VALID] |= (1<<i_TEM);
   }
   #if CONNECT_WIFI
     pushToBuf((char *)packet);
@@ -321,8 +322,6 @@ void loop() {
 void DRDY_ISR(long* packet) {
   //get all data before sign extending etc
   digitalWrite(pCS, LOW);
-  byte DOUT[27];
-  int32_t conv_data[9];
   if (DATA_MODE == RDATA_SS_MODE) {
     while(digitalRead(pDRDY));
     // Serial.println("DRDY just went low!");
@@ -330,29 +329,43 @@ void DRDY_ISR(long* packet) {
     mySPI.transfer(RDATA);
   }
 
-  for (int i = 0; i < 27; i++) {
-    DOUT[i] = mySPI.transfer(0x00);
+  // first, read status bytes
+  byte b1 = mySPI.transfer(0x00);
+  byte b2 = mySPI.transfer(0x00);
+  byte b3 = mySPI.transfer(0x00);
+//  Serial.println(b1,BIN);
+//  Serial.println(b2,BIN);
+//  Serial.println(b3,BIN);
+  // figure out if the data is valid (if so, which)
+  if ((b1 & 0xF0) == 0b11000000) {
+    byte loff_p =  (b1<<4) | (b2>>4);
+    byte loff_n =  (b2<<4) | (b3>>4);
+
+    // TODO use loff-p and loff-n to figure out which channels might be invalid
+    
+  } else {
+    Serial.println("invalid ADS1299 packet");
+    for (int i = 3; i < 27; i++){
+      mySPI.transfer(0x00);
+      packet[i_VALID] |= 1 << (i_ADS + (i/3-1));
+    }
+    return;
   }
-  // long packet[10];
+
+  // read channel data and sign extend it if valid
   byte temp[4] = {0,0,0,0};
-  for (int i = 0; i < 27; i++){
-    temp[2-((i+3)%3)] = DOUT[i];
+  for (int i = 3; i < 27; i++){
+    temp[2-((i+3)%3)] = mySPI.transfer(0x00);//DOUT[i];
     if ((i+3)%3 == 2) {
       int32_t d = *((int32_t*)temp);
-      int ed = (i/3 == 0)? d : SIGNEXTEND(d);
+      int ed = SIGN_EXT_24(d);//SIGNEXTEND(d);
       float cd = convert_ADC_volts(ed, 1);
-      conv_data[i/3] = d;
-      packet[i_ADS + i/3] = ed;
-//      if (i/3 == 0) {
-        // STATUS Bits
-//      } else {
-        #if v 
-          Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
-//          Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(packet[i_ADS + i/3]); 
-        #endif
-        // channel data
-        if (i/3 == (print_ch)) {Serial.println(ed);}
-//      }prin
+      packet[i_ADS + (i/3-1)] = ed;
+      #if v 
+        Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
+//        Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(packet[i_ADS + i/3]); 
+      #endif
+      if (i/3 == (print_ch)) {Serial.println(ed);}
     }
   }
 }
@@ -580,9 +593,9 @@ inline void get_EDA_data(long* packet) {
   #endif
 }
 
-inline void get_battery_v(long* packet) {
-    packet[i_BAT] = analogRead(pBAT);
-}
+//inline void get_battery_v(long* packet) {
+//    packet[i_BAT] = analogRead(pBAT);
+//}
 
 //const byte RATE_SIZE = 4; //Increase this for more averaging. 4 is good.
 //byte rates[RATE_SIZE]; //Array of heart rates
@@ -598,11 +611,13 @@ inline void get_PPG_temp_data(long* packet) {
   long irValue = particleSensor.getIR(5); // ms to wait TODO figure out smallest good
                                           // TODO MATCH THIS WITH DATA SAMPLE RATE IN .SETUP()
   packet[i_PPG] = irValue;
-  Serial.println(irValue);
+//  Serial.println(irValue);
   if (irValue < 50000){
      #if v
       Serial.println("No contact with sensor");
     #endif
+    packet[i_VALID] |= (1<<i_PPG);
+    packet[i_VALID] |= (1<<i_TEM); // TODO keep this here????
 //    return;
   }
 
@@ -633,7 +648,7 @@ inline void get_PPG_temp_data(long* packet) {
   float temperature = particleSensor.readTemperature();
   packet[i_TEM] = *(long*)(&temperature); //TODO make sure this casting works properly
 
-  #if v | vt
+  #if v
   Serial.print("TMP ");Serial.println(temperature);
 //  Serial.print("TMP ");Serial.println(packet[i_TEM]);
 

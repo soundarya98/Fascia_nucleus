@@ -42,12 +42,12 @@ class BCI_Data_Receiver(object):
             raise Exception("The reading thread is already running!")
     
     def processStream(self):
-        data_names = ["PKT #", "ADS S", "ADS 1", "ADS 2", "ADS 3","ADS 4", "ADS 5", "ADS 6", "ADS 7", "ADS 8",
+        data_names = ["PKT #", "VALID", "ADS 1", "ADS 2", "ADS 3","ADS 4", "ADS 5", "ADS 6", "ADS 7", "ADS 8",
                       "IMU 1", "IMU 2", "IMU 3", "IMU 4", "IMU 5", "IMU 6", #"IMU 7", "IMU 8", "IMU 9",
-                      "EDA  ", "TEMP ", "PPG  ", "HRT  "]
-        num_elements = 20
+                      "EDA  ", "TEMP ", "PPG  "]#, "BTR "]#"HRT  "]
+        num_elements = 19
         num_bytes = 4*num_elements
-        num_packets = 18
+        num_packets = 19
         while True:
             #Receive data from sensor
             data, addr = self.sock.recvfrom(num_bytes*num_packets)
@@ -65,7 +65,7 @@ class BCI_Data_Receiver(object):
                     # For Junqing ADS1299
                     # unpacked_data = struct.unpack('qiiiiiiii', data[i*40: (i+1)*40])
                     # For FluidBCI
-                    unpacked_data = struct.unpack('i'*10+'i'*6+'i'+'f'+'i'*2, data[i*num_bytes: (i+1)*num_bytes])
+                    unpacked_data = struct.unpack('i'*10+'i'*6+'i'+'f'+'i', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
                     # For Walaa: debug print

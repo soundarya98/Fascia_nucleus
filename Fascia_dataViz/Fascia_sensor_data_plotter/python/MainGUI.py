@@ -21,7 +21,7 @@ class mainWindow(QtWidgets.QWidget):
 
     def __init__(self):
 
-        self.n_plots = 20
+        self.n_plots = 19
 
         super(mainWindow,self).__init__()
         self.title = "EEG Classifier"
@@ -115,8 +115,8 @@ class mainWindow(QtWidgets.QWidget):
     def dataReadyCallback(self, newData):
         d = list()
         temp = np.zeros(len(newData))
-        temp[0] = newData[0]
-        temp[1] = newData[1]
+        invalid_arr = newData[1];
+        # newData = [newData[0]]+newData[2:]
         # print("cnt: ", newData[0])
         # print("status register: ", newData[1])
         #print(newData[10])
@@ -136,7 +136,8 @@ class mainWindow(QtWidgets.QWidget):
             # print(i)
             d.append([temp[i]])
 
-            if (i == 18 and temp[i] == 0):
+            if ((invalid_arr>>i) & 1):
+                # print("invalid data at "+str(i))
                 continue
 
             #For ploting
