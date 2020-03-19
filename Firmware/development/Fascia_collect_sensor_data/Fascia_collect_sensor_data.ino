@@ -25,7 +25,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // v for verbose: lots of prints
 #define v 0
 // debug: serial reads and writes
-#define debug 0
+#define debug 1
 
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
@@ -260,7 +260,7 @@ void setup() {
   }
 
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
-  setup_MAX30105();
+ // setup_MAX30105();
 
   // initialize ads1299
   ADS_connect();
@@ -304,7 +304,7 @@ void loop() {
   get_IMU_data(packet);
   get_EDA_data(packet);
   if (!(cnt%10)) {
-    get_PPG_temp_data(packet);
+    //get_PPG_temp_data(packet);
   } else {
     // TODO make indicator bits reflect not valid data in those points  
 //    packet[i_PPG] = 0;
@@ -608,7 +608,7 @@ inline void get_EDA_data(long* packet) {
 inline void get_PPG_temp_data(long* packet) {
   particleSensor.requestTemperature();
   // maybe include both here: heart rate and raw ppg data
-  long irValue = particleSensor.getIR(5); // ms to wait TODO figure out smallest good
+    long irValue = particleSensor.getIR(5); // ms to wait TODO figure out smallest good
                                           // TODO MATCH THIS WITH DATA SAMPLE RATE IN .SETUP()
   packet[i_PPG] = irValue;
 //  Serial.println(irValue);
