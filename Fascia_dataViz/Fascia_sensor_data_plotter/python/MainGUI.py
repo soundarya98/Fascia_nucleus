@@ -37,7 +37,7 @@ class mainWindow(QtWidgets.QWidget):
 
         #The ip of user's machine
         # self.ip = '18.30.22.83'
-        self.ip = '192.168.0.13' # '192.168.0.101'  # '192.168.0.13'
+        self.ip = '10.0.0.242'# '192.168.0.101'  # '192.168.0.13'
         # self.ip = '172.30.1.251'
         # self.port_number = 35295
         self.port_number = 8899
@@ -60,8 +60,8 @@ class mainWindow(QtWidgets.QWidget):
         self.BPfilters = []
         for i in range(0,self.n_plots):
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EMG
-            self.BPfilters.append(CausalButter(8,5,50,data_rate,0))
-            #self.HPfilters.append(CausalButter(4,10,500,1000,0))
+            #self.BPfilters.append(CausalButter(4,10,500,data_rate,0))
+            self.HPfilters.append(CausalButter(4,10,500,1000,0))
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EEG1w
             #self.HPfilters.append(CausalButter(4,2,100,1000,0))
             #self.HPfilters.append(CausalButter(4,10,500,1000,0))

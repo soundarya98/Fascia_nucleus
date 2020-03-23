@@ -4,9 +4,9 @@
 
 // #define SECRET_SSID "raspi_wifi"
 // #define SECRET_PASS "fluidfluid"
-#define SECRET_SSID "gitgudbruh"
-#define SECRET_PASS "giganticorchestra203"
-#define HOST_ID     "192.168.0.13" /*"192.168.0.101"*/
+#define SECRET_SSID "Rotaryguru2"
+#define SECRET_PASS "rx7turbo2"
+#define HOST_ID     "10.0.0.242" /*"192.168.0.101"*/
 #define PORT_NUM    8899
 
 #define SEND_SIZE 19

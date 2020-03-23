@@ -1,7 +1,7 @@
 // library includes
 #include "SAMD_AnalogCorrection.h"
-#include <SPI.h>
-#include "wiring_private.h"
+	#include <SPI.h>
+	#include "wiring_private.h"
 // #include <MPU6050.h>
 #include <Wire.h>
 #include "MAX30105.h"
@@ -25,7 +25,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // v for verbose: lots of prints
 #define v 0
 // debug: serial reads and writes
-#define debug 0
+#define debug 1
 
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
@@ -274,7 +274,7 @@ void setup() {
   Arduino_ADC_setup();
   
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
-  setup_MAX30105();
+ // setup_MAX30105();
 
   // initialize ads1299
   ADS_connect();
