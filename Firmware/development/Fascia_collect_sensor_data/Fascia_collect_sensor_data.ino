@@ -167,7 +167,7 @@ void ADS_init(void) {
   }
 
   ADS_WREG(ADS1299_REGADDR_CONFIG1, ADS1299_REG_CONFIG1_RESERVED_VALUE |
-                                    ADS1299_REG_CONFIG1_1kSPS); // last three bits is the data rate page 46 of data sheet
+                                    ADS1299_REG_CONFIG1_4kSPS); // last three bits is the data rate page 46 of data sheet
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -220,6 +220,17 @@ void ADS_start(void) {
   }
 }
 
+void Arduino_ADC_setup() {
+  //https://forum.arduino.cc/index.php?topic=443173.0
+  //http://yaab-arduino.blogspot.com/2015/02/fast-sampling-from-analog-input.html
+  //https://forum.arduino.cc/index.php?topic=6549.0
+
+    // original SAMD bootloader code set to:
+    //  ADC->CTRLB.reg = ADC_CTRLB_PRESCALER_DIV512 |    // Divide Clock by 512.
+    //                 ADC_CTRLB_RESSEL_10BIT;         // 10 bits resolution as default
+    ADC->CTRLB.reg = ADC_CTRLB_PRESCALER_DIV16 | ADC_CTRLB_RESSEL_12BIT;
+}
+
 void setup_MAX30105() {
   if (!particleSensor.begin(Wire, I2C_SPEED_FAST)) {//Use default I2C port, 400kHz speed
     while (1){Serial.println("MAX30105 was not found. Please check wiring/power. ");}
@@ -227,7 +238,7 @@ void setup_MAX30105() {
   //The LEDs are very low power and won't affect the temp reading much but
   //you may want to turn off the LEDs to avoid any local heating
   // can try setting data output rate (currently (default) close to the slowest)
-  particleSensor.setup(/*byte powerLevel = */0x1F, /*byte sampleAverage = */4, /*byte ledMode =*/ 3, /*int sampleRate =*/1000); //Configure sensor. Turn off LEDs
+  particleSensor.setup(/*byte powerLevel = */0x1F, /*byte sampleAverage = */4, /*byte ledMode =*/ 3, /*int sampleRate =*/1600); //Configure sensor. Turn off LEDs
   // TODO increase sampling rate here!!!!
   
   //particleSensor.setup(); //Configure sensor. Use 25mA for LED drive
@@ -238,7 +249,7 @@ void setup_MAX30105() {
 }
 
 void setup() {
-  delay(2000);
+  delay(1000);
   // initialize communications: spi, I2C, serial, and wifi if applicable
   mySPI.begin();
   Serial.begin(115200);
@@ -259,6 +270,9 @@ void setup() {
     while(1);
   }
 
+  // speed up analog read speed
+  Arduino_ADC_setup();
+  
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
   setup_MAX30105();
 
@@ -302,17 +316,16 @@ void loop() {
     DRDY_ISR(packet);
   #endif
   get_IMU_data(packet);
-  get_EDA_data(packet);
+//  get_EDA_data(packet);
   if (!(cnt%10)) {
     get_PPG_temp_data(packet);
+    get_EDA_data(packet);
   } else {
-    // TODO make indicator bits reflect not valid data in those points  
-//    packet[i_PPG] = 0;
-//    packet[i_TEM] = 0;
-//    packet[i_BAT] = 0;
     packet[i_VALID] |= (1<<i_PPG);
     packet[i_VALID] |= (1<<i_TEM);
+    packet[i_VALID] |= (1<<i_EDA);
   }
+
   #if CONNECT_WIFI
     pushToBuf((char *)packet);
     sendWiFiDataPacket();
@@ -607,8 +620,7 @@ inline void get_EDA_data(long* packet) {
 
 inline void get_PPG_temp_data(long* packet) {
   particleSensor.requestTemperature();
-  // maybe include both here: heart rate and raw ppg data
-  long irValue = particleSensor.getIR(5); // ms to wait TODO figure out smallest good
+  long irValue = particleSensor.getIR(1); // ms to wait TODO figure out smallest good
                                           // TODO MATCH THIS WITH DATA SAMPLE RATE IN .SETUP()
   packet[i_PPG] = irValue;
 //  Serial.println(irValue);
@@ -649,11 +661,11 @@ inline void get_PPG_temp_data(long* packet) {
   packet[i_TEM] = *(long*)(&temperature); //TODO make sure this casting works properly
 
   #if v
-  Serial.print("TMP ");Serial.println(temperature);
-//  Serial.print("TMP ");Serial.println(packet[i_TEM]);
-
-  Serial.print("PPG ");Serial.println(irValue);
-//  Serial.print("PPG ");Serial.println(packet[i_PPG]);
+    Serial.print("TMP ");Serial.println(temperature);
+  //  Serial.print("TMP ");Serial.println(packet[i_TEM]);
+  
+    Serial.print("PPG ");Serial.println(irValue);
+  //  Serial.print("PPG ");Serial.println(packet[i_PPG]);
   #endif
 }
 
