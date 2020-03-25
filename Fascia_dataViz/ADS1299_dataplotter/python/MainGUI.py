@@ -13,6 +13,7 @@ from CausalButter import *
 # from scipy.fftpack import fft
 # from numpy import fft
 import numpy as np
+import threading
 
 class mainWindow(QtWidgets.QWidget):
 
@@ -35,6 +36,8 @@ class mainWindow(QtWidgets.QWidget):
         # self.ip = '172.30.1.251'
         # self.port_number = 35295
         self.port_number = 8899
+
+        self.fft_lock = threading.Lock();
 
         self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
@@ -109,6 +112,11 @@ class mainWindow(QtWidgets.QWidget):
         temp[0] = newData[0]
         temp[1] = newData[1]
         #print(newData[10])
+
+        FFT_CHANNEL = 1;
+        fft_thread = threading.Thread(target = self.fft_calc, args = (FFT_CHANNEL,) );
+        fft_thread.start()
+
         for i in range(8):
             #apply filters to newData
             temp[2+i] = newData[2+i]
@@ -118,26 +126,41 @@ class mainWindow(QtWidgets.QWidget):
             # d[i] = powerLineButterFilters[i].inputData(d[i])
             # d[i] = highpassFilters[i].inputData(d[i])
             #For ploting
-            self.plotBufs[i] = self.plotBufs[i][1:]
-            self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
-
-        #FFT stuff here
-        FFT_CHANNEL = 1;
-        bins = np.fft.rfft(self.plotBufs[FFT_CHANNEL])
-        bins = [np.abs(v) for v in bins]
-        bins[0] = 0 # first element is DC element
-        size = len(self.plotBufs[0])
-        timestep = 1/self.data_rate
-        freq = np.fft.rfftfreq(size, timestep);
-        # TODO: convert from cycles / unit-sample to Hz
-        self.plotBufs[8] = bins,freq;
-        # print("fft freq", freq)
-        # print("fft bins", bins)
+            if (i == FFT_CHANNEL):
+                self.fft_lock.acquire()
+                self.plotBufs[i] = self.plotBufs[i][1:]
+                self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
+                self.fft_lock.release()
+            else:
+                self.plotBufs[i] = self.plotBufs[i][1:]
+                self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
 
         if(self.isRecording == True):
             #save new data to the recordingBuf
             self.recordingBuf.append(temp)
-            
+
+        fft_thread.join()
+
+    def fft_calc(self, channel):
+        #FFT stuff here
+        # FFT_CHANNEL = 1;
+        self.fft_lock.acquire()
+        bins = np.fft.rfft(self.plotBufs[channel])
+        size = len(self.plotBufs[channel])
+        self.fft_lock.release()
+        bins = [np.abs(v) for v in bins]
+        bins[0] = 0 # first element is DC element
+        timestep = 1/self.data_rate
+        freq = np.fft.rfftfreq(size, timestep);
+
+        # TODO: convert from cycles / unit-sample to Hz
+        # TODO: figure out if its already Hz (i think so)
+        # freq = [f for f in freq]
+        self.plotBufs[8] = bins,freq;
+        # print("fft freq", freq)
+        # print("fft bins", bins)
+        # print(len(bins), len(freq))
+
 
     def start(self):
         self.timer.start(30)

@@ -17,6 +17,7 @@ class BCI_Data_Receiver(object):
         self.dataReadyCallback = None
         self.readingThread = None
         self.address = (self.ip, self.port)
+        self.prev_time_stamp = 0
 
     def startConnection(self):
         """Start the socket connection"""
@@ -43,6 +44,10 @@ class BCI_Data_Receiver(object):
             #Receive data from sensor
             data, addr = self.sock.recvfrom(40*25)
             #print(data, addr)
+            cur_time_stamp = time.time()
+            print("data rate: "+str(int(25/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
+            self.prev_time_stamp = time.time()
+
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
             self.receiveBuff = self.receiveBuff + data
         
