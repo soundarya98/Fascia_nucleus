@@ -41,7 +41,22 @@ class floatingCurves(QtWidgets.QWidget):
                        "IMU 1", "IMU 2","IMU 3", "IMU 4","IMU 5", "IMU 6",#"IMU 7", "IMU 8","IMU 9",
                        "EDA","temperature", "PPG raw data"]#,"battery voltage level"]#"heart rate arduino"]
         self.generateGraphsArray(channelNum)
-    
+        self.addText()
+
+    def addText(self):
+        PN = QtWidgets.QLabel()
+        PN.setText("Packet #: ")
+        self.layout.addWidget(PN)
+        self.PN = PN
+        DR = QtWidgets.QLabel()
+        DR.setText("Data Rate: ")
+        self.layout.addWidget(DR) #pg.TextItem("Data Rate: ")
+        self.DR = DR
+        HR = QtWidgets.QLabel()
+        HR.setText("Heart Rate: ")
+        self.layout.addWidget(HR)
+        self.HR = HR
+
     def addCurve(self, newCurve:pg.PlotDataItem, x, y, t):
         self.curveList.append(newCurve)
         plotWidget = pg.PlotWidget(title=t)

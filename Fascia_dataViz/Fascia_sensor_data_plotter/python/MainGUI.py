@@ -10,12 +10,18 @@ from BCI_Data_Receiver  import *
 import floatingCurves as fc
 from CausalButter import *
 
-"""
-BUGMAN 12/20/2018
-"""
+import heartpy as hp
+import math
 
 
 
+i_CNT = 0
+i_VAL = i_CNT + 1
+i_ADS = i_VAL + 1
+i_IMU = i_ADS + 8
+i_EDA = i_IMU + 6
+i_TEM = i_EDA + 1
+i_PPG = i_TEM + 1
 
 class mainWindow(QtWidgets.QWidget):
 
@@ -37,12 +43,12 @@ class mainWindow(QtWidgets.QWidget):
 
         #The ip of user's machine
         # self.ip = '18.30.22.83'
-        self.ip = '10.0.0.242'# '192.168.0.101'  # '192.168.0.13'
+        self.ip = '10.0.0.77'#'192.168.0.13' # '192.168.0.101'  # '192.168.0.13'
         # self.ip = '172.30.1.251'
         # self.port_number = 35295
         self.port_number = 8899
 
-        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number)
+        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlotingWidget)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
 
         for i in range(self.n_plots):
@@ -57,11 +63,12 @@ class mainWindow(QtWidgets.QWidget):
         #For filters
         #Init the filters
         data_rate = 1000
+        self.data_rate = data_rate
         self.BPfilters = []
         for i in range(0,self.n_plots):
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EMG
-            #self.BPfilters.append(CausalButter(4,10,500,data_rate,0))
-            self.HPfilters.append(CausalButter(4,10,500,1000,0))
+            self.BPfilters.append(CausalButter(8, 5, 50, data_rate, 0)) # EEG
+            #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) # EMG
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EEG1w
             #self.HPfilters.append(CausalButter(4,2,100,1000,0))
             #self.HPfilters.append(CausalButter(4,10,500,1000,0))
@@ -69,9 +76,11 @@ class mainWindow(QtWidgets.QWidget):
             # for EOG FIR
         self.BSfilters = []
         for i in range(0,self.n_plots):
-            self.BSfilters.append(CausalButter(8,55,65,data_rate,1))
+            self.BSfilters.append(CausalButter(8, 55, 65, data_rate, 1)) # EEG
 
 
+        self.heart_sig_arr  = []
+        self.heartbeat_ts   = []
 
 
     def initUI(self):
@@ -120,6 +129,8 @@ class mainWindow(QtWidgets.QWidget):
         # print("cnt: ", newData[0])
         # print("status register: ", newData[1])
         #print(newData[10])
+        t = "Packet #: " + str(newData[i_CNT])
+        self.dataPlotingWidget.PN.setText(t)
         for i in range(self.n_plots):
             #apply filters to newData
             # temp[2+i] = newData[2+i]
@@ -143,6 +154,50 @@ class mainWindow(QtWidgets.QWidget):
             #For ploting
             self.plotBufs[i] = self.plotBufs[i][1:]
             self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
+
+        # calculate heart rate
+        # me: if it drops 400 counts in 5 samples -> heart beat
+        # if not ((invalid_arr >> 18) & 1):
+        #     try:
+        #         working_data, measures = hp.process(self.plotBufs[18], self.data_rate/10);
+        #         heart_rate = measures['bpm']
+        #         if not math.isnan(heart_rate):
+        #             print("heart rate: ", int(heart_rate)," bpm")
+        #         else:
+        #             print("hp nan")
+        #     except hp.exceptions.BadSignalWarning:
+        #         print("hp exception")
+        #         pass
+
+        # below would probably be good if the data is invalid due to lack of connection or incorrect data, instead of
+        # the sampling rate issue where i am only sampling the PPG data once every 10 packets.
+        # if ((invalid_arr >> i_PPG) & 1):
+        #     self.heart_sig_arr = []
+        #     self.heartbeat_ts = []
+        # else:
+        if not ((invalid_arr >> i_PPG) & 1):
+            ppg_sig = newData[i_PPG]
+            for i in range(int(len(self.heart_sig_arr)/2)):
+                if ppg_sig - self.heart_sig_arr[i] >= 250:
+                    # print (ppg_sig,"-",self.heart_sig_arr[i])
+                    print("heart beat!",newData[i_CNT])
+                    self.heartbeat_ts.append(newData[i_CNT])
+                    # calculate heart rate
+                    if len(self.heartbeat_ts) > 1:
+                        delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[0]
+                        delta_sec = delta_ts * 1/(self.data_rate)#/10) #not /10 because using the count of packets which is at regular data rate
+                        bpm = len(self.heartbeat_ts)/(delta_sec/60)
+                        # print("heart rate:",int(bpm), "bpm, ",len(self.heartbeat_ts),"/ (",delta_ts,"/(data rate/60))")
+                        t = "Heart Rate: " + str(int(bpm)) + " BPM"
+                        self.dataPlotingWidget.HR.setText(t)
+                    self.heart_sig_arr = []
+                    break
+            self.heart_sig_arr.append(ppg_sig)
+            # trim arrays to max lengths
+            if len(self.heart_sig_arr) > 25:
+                self.heart_sig_arr = self.heart_sig_arr[1:]
+            if len(self.heartbeat_ts) > 50:
+                self.heartbeat_ts = self.heartbeat_ts[1:]
 
         if(self.isRecording == True):
             #save new data to the recordingBuf

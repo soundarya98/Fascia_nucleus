@@ -9,7 +9,7 @@ import time
 
 class BCI_Data_Receiver(object):
 
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, data_plotting_widget):
         self.ip = ip
         self.port = port
         self.sock = None
@@ -19,6 +19,9 @@ class BCI_Data_Receiver(object):
         self.readingThread = None
         self.address = (self.ip, self.port)
         self.prev_time_stamp = 0
+        self.prev_EDA_time_stamp = 0
+        # self.prev_PPG_time_stamp = 0
+        self.dataPlotingWidget = data_plotting_widget
 
     def startConnection(self):
         """Start the socket connection"""
@@ -52,7 +55,9 @@ class BCI_Data_Receiver(object):
             #Receive data from sensor
             data, addr = self.sock.recvfrom(num_bytes*num_packets)
             cur_time_stamp = time.time()
-            print("data rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
+            # print("data rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
+            t = "Data Rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp)))+" Hz"
+            self.dataPlotingWidget.DR.setText(t)
             self.prev_time_stamp = time.time()
             # print(data, addr)
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
@@ -71,6 +76,12 @@ class BCI_Data_Receiver(object):
                     # For Walaa: debug print
                     # for j in range(num_elements):
                     #     print(data_names[j] + ' ' + str(unpacked_data[j]))
+
+                    # if (unpacked_data[1] & (1<<16)) == 0:
+                    #     # EDA is valid
+                    #     print("EDA rate: " + str(int(1 / (cur_time_stamp - self.prev_EDA_time_stamp))) + " Hz")
+                    #     self.prev_EDA_time_stamp = self.prev_time_stamp
+
                     # For Foc.us BCI
                     # unpacked_data = struct.unpack('iiffffffff', data[i*40: (i+1)*40])
                     self.dataReadyCallback(unpacked_data)
