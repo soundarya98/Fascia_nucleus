@@ -36,10 +36,10 @@ void loop() {
   EDApin = getSkinConductance();
   R_skin = getSkinResistance();
  //Serial.print("EDA :");
-  Serial.print(EDApin);
-  Serial.print(",");
+  Serial.println(EDApin);
+  //Serial.print(",");
   //Serial.print("R_Skin :");
-  Serial.println(R_skin);
+  //Serial.println(R_skin);
   
   
 
