@@ -84,3 +84,21 @@ float getSkinResistance(){
   else return -1.0;
   
 }
+
+float getRskin() {
+  analogReadResolution(12);
+  float sensorValue = analogRead(A0);
+  float Vout = (sensorValue * 3.3)/4095;
+
+  // these are constants- should not change between iterations
+  // values are from the PCB layout/schematic in Fascia Physio Board V0
+  int Rref = 875000; // reference resistor between - opamp and gnd
+  // Rref might actually be 2M or 820K -- undocumented board build value
+  int Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
+  float i = (float)Vref / (float)Rref;
+
+  float Rskin = (Vout - Vref) / i;
+  float Cskin = 1./Rskin;
+
+  return Rskin;
+}
