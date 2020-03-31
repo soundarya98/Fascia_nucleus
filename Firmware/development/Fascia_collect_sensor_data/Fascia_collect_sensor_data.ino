@@ -25,7 +25,8 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // v for verbose: lots of prints
 #define v 0
 // debug: serial reads and writes
-#define debug 1
+#define debug 0
+// REMEMBER: comment out lines in setup() and loop() for the sensors you do not have.
 
 // Setup for SPI communications
 SPIClass mySPI (&sercom1, PA19, PA17, PA16, SPI_PAD_0_SCK_1, SERCOM_RX_PAD_3);
@@ -167,7 +168,7 @@ void ADS_init(void) {
   }
 
   ADS_WREG(ADS1299_REGADDR_CONFIG1, ADS1299_REG_CONFIG1_RESERVED_VALUE |
-                                    ADS1299_REG_CONFIG1_4kSPS); // last three bits is the data rate page 46 of data sheet
+                                    ADS1299_REG_CONFIG1_2kSPS); // last three bits is the data rate page 46 of data sheet
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -238,7 +239,7 @@ void setup_MAX30105() {
   //The LEDs are very low power and won't affect the temp reading much but
   //you may want to turn off the LEDs to avoid any local heating
   // can try setting data output rate (currently (default) close to the slowest)
-  particleSensor.setup(/*byte powerLevel = */0x1F, /*byte sampleAverage = */4, /*byte ledMode =*/ 3, /*int sampleRate =*/1600); //Configure sensor. Turn off LEDs
+  particleSensor.setup(/*byte powerLevel = */0x1F, /*byte sampleAverage = */4, /*byte ledMode =*/ 3, /*int sampleRate =*/3200); //Configure sensor. Turn off LEDs
   // TODO increase sampling rate here!!!!
   
   //particleSensor.setup(); //Configure sensor. Use 25mA for LED drive
@@ -274,7 +275,7 @@ void setup() {
   Arduino_ADC_setup();
   
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
- // setup_MAX30105();
+  setup_MAX30105();
 
   // initialize ads1299
   ADS_connect();
@@ -290,12 +291,12 @@ void setup() {
 void print_serial_instructions() {
   Serial.println("Type the channel number to print that channel's data [1-8] (and plot, if you switch to Serial Plotter)");
   Serial.println("Or type '0' to stop printing the data.");
-  Serial.println("type B#0 to deactivate bias for channel # and B#1 to activate it");
+  Serial.println("type BN#0 to deactivate biasN for channel # and BN#1 to activate it");
+  Serial.println("type BP#0 to deactivate biasP for channel # and BP#1 to activate it");
   Serial.println("type S#0 to deactivate SRB2 for channel # and B#1 to activate it");
   Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
   Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
-  Serial.println("type P to print these instructions again");
-
+  Serial.println("type 'P' or 'p' to print these instructions again");
 }
 
 void loop() {
@@ -432,6 +433,7 @@ void parse_serial_input() {
   //TODO consider this
   // char* s = Serial.readStringUntil('\n');
   char c = Serial.read();
+  char p;
   // if char is '0' - '8'
   if (c >= 0x30 && c <= 0x38) {
     print_ch = (c -0x30);
@@ -442,9 +444,11 @@ void parse_serial_input() {
   switch (c) {
   case 'B':
   case 'b':
+    p = Serial.read();
     c = Serial.read();
     if (c >= 0x31 && c <= 0x38) {
-      change_channel_bias(c-0x30-1);
+      if (p == 'p' || p == 'P') change_channel_biasP(c-0x30-1);
+      if (p == 'n' || p == 'N') change_channel_biasN(c-0x30-1);
     }
     break;
   case 'S':
@@ -508,7 +512,7 @@ void change_channel_SRB2(int chan){
   }
 }
 
-void change_channel_bias(int chan){
+void change_channel_biasN(int chan){
   char c = Serial.read();
   // Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
   byte old_val = ADS_RREG(ADS1299_REGADDR_BIAS_SENSN, 1);
@@ -527,6 +531,33 @@ void change_channel_bias(int chan){
   Serial.println(change,BIN);
   Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
   ADS_WREG(ADS1299_REGADDR_BIAS_SENSN, new_val);
+  // START CONVERSION AGAIN
+  if (DATA_MODE == RDATA_CC_MODE) {
+    digitalWrite(pCS, LOW);
+    mySPI.transfer(START);
+    mySPI.transfer(RDATAC);
+  }
+}
+
+void change_channel_biasP(int chan){
+  char c = Serial.read();
+  // Serial.print("CHANNELS[chan] ");Serial.println(CHANNELS[chan],HEX);
+  byte old_val = ADS_RREG(ADS1299_REGADDR_BIAS_SENSP, 1);
+  byte change = 0;
+  byte new_val;
+  if (c == '1') {
+    change = BIAS_SENSP[chan];
+    new_val = old_val | change;
+  } else if (c == '0'){
+    change = 0xFF ^ BIAS_SENSP[chan];
+    new_val = old_val & change;
+  } else {
+    Serial.println("invalid input");return;
+  }
+  Serial.print("changing biasP of channel "); Serial.print(chan);Serial.print(" to be ");Serial.println(c);
+  Serial.println(change,BIN);
+  Serial.print(old_val, BIN);Serial.print(" -> ");Serial.println(new_val, BIN);
+  ADS_WREG(ADS1299_REGADDR_BIAS_SENSP, new_val);
   // START CONVERSION AGAIN
   if (DATA_MODE == RDATA_CC_MODE) {
     digitalWrite(pCS, LOW);
@@ -625,11 +656,12 @@ inline void get_PPG_temp_data(long* packet) {
   packet[i_PPG] = irValue;
 //  Serial.println(irValue);
   if (irValue < 50000){
-     #if v
-      Serial.println("No contact with sensor");
+    #if v
+      Serial.println("No contact with sensor "+String(irValue));
     #endif
     packet[i_VALID] |= (1<<i_PPG);
     packet[i_VALID] |= (1<<i_TEM); // TODO keep this here????
+    if (irValue != 0) packet[i_VALID] |= (1<<i_TIM);
 //    return;
   }
 
@@ -715,6 +747,8 @@ inline char* getSendBuf()
 inline void pushToBuf(char* packet)
 {
     ((int*)packet)[0] = cnt;
+    ((int*)packet)[i_TIM] = millis();
+//    Serial.println(((int*)packet)[i_TIM]); 
     cnt++;
     //When current buffer is full
     if(wCount == SEND_SIZE)
