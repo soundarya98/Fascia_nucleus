@@ -92,9 +92,9 @@ float getRskin() {
 
   // these are constants- should not change between iterations
   // values are from the PCB layout/schematic in Fascia Physio Board V0
-  int Rref = 875000; // reference resistor between - opamp and gnd
+  float Rref = 875000.; // reference resistor between - opamp and gnd
   // Rref might actually be 2M or 820K -- undocumented board build value
-  int Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
+  float Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
   float i = (float)Vref / (float)Rref;
 
   float Rskin = (Vout - Vref) / i;
