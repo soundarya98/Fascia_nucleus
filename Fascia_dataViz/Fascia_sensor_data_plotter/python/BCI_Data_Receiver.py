@@ -21,7 +21,8 @@ class BCI_Data_Receiver(object):
         self.prev_time_stamp = 0
         self.prev_EDA_time_stamp = 0
         # self.prev_PPG_time_stamp = 0
-        self.dataPlotingWidget = data_plotting_widget
+        self.dataPlottingWidget = data_plotting_widget
+        self.current_data_rate = 1
 
     def startConnection(self):
         """Start the socket connection"""
@@ -48,16 +49,17 @@ class BCI_Data_Receiver(object):
         data_names = ["PKT #", "VALID", "ADS 1", "ADS 2", "ADS 3","ADS 4", "ADS 5", "ADS 6", "ADS 7", "ADS 8",
                       "IMU 1", "IMU 2", "IMU 3", "IMU 4", "IMU 5", "IMU 6", #"IMU 7", "IMU 8", "IMU 9",
                       "EDA  ", "TEMP ", "PPG  "]#, "BTR "]#"HRT  "]
-        num_elements = 19
+        num_elements = 20#19
         num_bytes = 4*num_elements
-        num_packets = 19
+        num_packets = 18
         while True:
             #Receive data from sensor
             data, addr = self.sock.recvfrom(num_bytes*num_packets)
             cur_time_stamp = time.time()
             # print("data rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
-            t = "Data Rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp)))+" Hz"
-            self.dataPlotingWidget.DR.setText(t)
+            self.current_data_rate = int(num_packets/(cur_time_stamp-self.prev_time_stamp))
+            t = "Data Rate: "+str(self.current_data_rate)+" Hz"
+            self.dataPlottingWidget.DR.setText(t)
             self.prev_time_stamp = time.time()
             # print(data, addr)
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
@@ -70,7 +72,7 @@ class BCI_Data_Receiver(object):
                     # For Junqing ADS1299
                     # unpacked_data = struct.unpack('qiiiiiiii', data[i*40: (i+1)*40])
                     # For FluidBCI
-                    unpacked_data = struct.unpack('i'*10+'i'*6+'i'+'f'+'i', data[i*num_bytes: (i+1)*num_bytes])
+                    unpacked_data = struct.unpack('i'*10+'i'*6+'i'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
                     # For Walaa: debug print

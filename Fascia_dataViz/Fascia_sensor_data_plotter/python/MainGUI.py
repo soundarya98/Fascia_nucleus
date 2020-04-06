@@ -22,6 +22,7 @@ i_IMU = i_ADS + 8
 i_EDA = i_IMU + 6
 i_TEM = i_EDA + 1
 i_PPG = i_TEM + 1
+i_TIM = i_PPG + 1
 
 class mainWindow(QtWidgets.QWidget):
 
@@ -48,7 +49,7 @@ class mainWindow(QtWidgets.QWidget):
         # self.port_number = 35295
         self.port_number = 8899
 
-        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlotingWidget)
+        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
 
         for i in range(self.n_plots):
@@ -81,6 +82,7 @@ class mainWindow(QtWidgets.QWidget):
 
         self.heart_sig_arr  = []
         self.heartbeat_ts   = []
+        self.heartrate_avg  = []
 
 
     def initUI(self):
@@ -94,9 +96,9 @@ class mainWindow(QtWidgets.QWidget):
         #Add the graph arrays
         
         #Perpare the array
-        self.dataPlotingWidget = fc.floatingCurves(self.n_plots)
+        self.dataPlottingWidget = fc.floatingCurves(self.n_plots)
 
-        hbox.addWidget(self.dataPlotingWidget)
+        hbox.addWidget(self.dataPlottingWidget)
 
         # #Add the button panel
         # self.button_panel = QtWidgets.QWidget(self)
@@ -129,8 +131,8 @@ class mainWindow(QtWidgets.QWidget):
         # print("cnt: ", newData[0])
         # print("status register: ", newData[1])
         #print(newData[10])
-        t = "Packet #: " + str(newData[i_CNT])
-        self.dataPlotingWidget.PN.setText(t)
+        # t = "Packet #: " + str(newData[i_CNT])
+        # self.dataPlottingWidget.PN.setText(t)
         for i in range(self.n_plots):
             #apply filters to newData
             # temp[2+i] = newData[2+i]
@@ -177,31 +179,45 @@ class mainWindow(QtWidgets.QWidget):
         # else:
         if not ((invalid_arr >> i_PPG) & 1):
             ppg_sig = newData[i_PPG]
-            for i in range(int(len(self.heart_sig_arr)/2)):
-                if ppg_sig - self.heart_sig_arr[i] >= 250:
-                    # print (ppg_sig,"-",self.heart_sig_arr[i])
-                    print("heart beat!",newData[i_CNT])
-                    self.heartbeat_ts.append(newData[i_CNT])
+            l = len(self.heart_sig_arr);
+            for i in range(min(10, l)):#len(self.heart_sig_arr[])):
+                if self.heart_sig_arr[l-1-i] - ppg_sig >= 250 and self.heart_sig_arr[l-1-i] - ppg_sig < 700 and l>10:
+                    print (ppg_sig,"-",self.heart_sig_arr[i])
+                    print("heart beat!",newData[i_TIM])#newData[i_CNT])
+                    self.heartbeat_ts.append(newData[i_TIM])#CNT])
+                    self.plotBufs[i_PPG][-1] *=-1
                     # calculate heart rate
                     if len(self.heartbeat_ts) > 1:
-                        delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[0]
-                        delta_sec = delta_ts * 1/(self.data_rate)#/10) #not /10 because using the count of packets which is at regular data rate
-                        bpm = len(self.heartbeat_ts)/(delta_sec/60)
-                        # print("heart rate:",int(bpm), "bpm, ",len(self.heartbeat_ts),"/ (",delta_ts,"/(data rate/60))")
+                        # delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[0]
+                        delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[len(self.heartbeat_ts)-2]
+                        delta_sec = delta_ts / 1000 #* 1./(self.Data_receiver.current_data_rate)#/10) #not /10 because using the count of packets which is at regular data rate
+                        bpm = 1/(delta_sec/60)#len(self.heartbeat_ts)/(delta_sec/60)
+                        print("local heart rate: "+str(int(bpm)))
+                        self.heartrate_avg.append(bpm)
+                        bpm = np.average(self.heartrate_avg)
+                        print("heart rate:",int(bpm), "bpm, ",len(self.heartbeat_ts),"/ (",delta_ts)
                         t = "Heart Rate: " + str(int(bpm)) + " BPM"
-                        self.dataPlotingWidget.HR.setText(t)
+                        self.dataPlottingWidget.HR.setText(t)
                     self.heart_sig_arr = []
                     break
             self.heart_sig_arr.append(ppg_sig)
             # trim arrays to max lengths
             if len(self.heart_sig_arr) > 25:
                 self.heart_sig_arr = self.heart_sig_arr[1:]
-            if len(self.heartbeat_ts) > 50:
+            if len(self.heartbeat_ts) > 100:
                 self.heartbeat_ts = self.heartbeat_ts[1:]
-
-        if(self.isRecording == True):
-            #save new data to the recordingBuf
-            self.recordingBuf.append(temp)
+            if len(self.heartrate_avg) > 100:
+                self.heartrate_avg = self.heartrate_avg[1:]
+        elif ((invalid_arr >> i_TIM) & 1):
+            print("no contact with ppg sensor")
+            self.heart_sig_arr = []
+            self.heartbeat_ts = []
+            self.heartrate_avg = []
+        # else:
+        #     print("invalid heart and temp data")
+        # if(self.isRecording == True):
+        #     #save new data to the recordingBuf
+        #     self.recordingBuf.append(temp)
             
 
     def start(self):
@@ -209,7 +225,7 @@ class mainWindow(QtWidgets.QWidget):
 
     def updateGUI(self):
         for i in range(self.n_plots):
-            self.dataPlotingWidget.updateCurve(i,self.plotBufs[i])
+            self.dataPlottingWidget.updateCurve(i,self.plotBufs[i])
 
     def keyPressEvent(self, e):
         """
@@ -287,6 +303,5 @@ if __name__ == "__main__":
     ex.start()
     sys.exit(app.exec_())
 
-    while (True):
-        time.sleep(1)
-
+    # while (True):
+    #     time.sleep(1)
