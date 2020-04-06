@@ -3,6 +3,9 @@
 
 *.vscode*
 
+# python pyc files
+Fascia_dataViz/*/python/__pycache__/*.pyc
+
 # Temporary files
 *.000
 *.bak
