@@ -24,6 +24,7 @@ class mainWindow(QtWidgets.QWidget):
 
 
         PLOTWNDSIZE = 2000
+        self.PLOTWNDSIZE = PLOTWNDSIZE
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.updateGUI)
         #Init Data structures
@@ -37,24 +38,31 @@ class mainWindow(QtWidgets.QWidget):
         # self.port_number = 35295
         self.port_number = 8899
 
-        self.fft_lock = threading.Lock();
-
-        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number)
+        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
         
         for i in range(8+1):
             self.plotBufs.append(np.zeros(PLOTWNDSIZE))
 
+        self.x_arr_2000 = [i for i in range(PLOTWNDSIZE)]
+        self.x_arr_1999 = [i for i in range(PLOTWNDSIZE-1)]
 
         #For data Recording
         self.isRecording = False
         self.recordingBuf = list()
 
+        # for FFT
+        self.FFT_CHANNEL = 1;
+        self.fft_lock = threading.Lock();#Semaphore(1);
+        # self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
+        self.moreData = False;
+
+        # self.fft_thread.start()
 
         #For filters
         #Init the filters
         self.HPfilters = []
-        self.data_rate = 1000
+        self.data_rate = 250#1000 #TODO: change this to match data rate in ADS firmware
         for i in range(0,8):
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EMG
             self.HPfilters.append(CausalButter(4,10,500,self.data_rate,0))
@@ -64,6 +72,15 @@ class mainWindow(QtWidgets.QWidget):
             #self.HPfilters.append(CausalButter(4,10,500,1000,0))
             #self.HPfilters.append(CausalButter(4,10,500,1000,0))
             # for EOG FIR
+
+        self.BPfilters = []
+        for i in range(0,8):
+            self.BPfilters.append(CausalButter(8, 5, 50, self.data_rate, 0)) # EEG
+            #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) # EMG
+            # for EOG FIR
+        self.BSfilters = []
+        for i in range(0,8):
+            self.BSfilters.append(CausalButter(8, 55, 65, self.data_rate, 1)) # EEG
 
 
 
@@ -108,50 +125,58 @@ class mainWindow(QtWidgets.QWidget):
 
     def dataReadyCallback(self, newData):
         d = list()
-        temp = np.zeros(len(newData))
+        temp = np.zeros(11)#len(newData))
         temp[0] = newData[0]
         temp[1] = newData[1]
         #print(newData[10])
 
-        FFT_CHANNEL = 1;
-        fft_thread = threading.Thread(target = self.fft_calc, args = (FFT_CHANNEL,) );
-        fft_thread.start()
+        self.FFT_CHANNEL = 1
+        self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
+        self.fft_thread.start()
 
         for i in range(8):
             #apply filters to newData
-            temp[2+i] = newData[2+i]
+            # temp[2+i] = newData[2+i]
+            temp[2+i] = self.BPfilters[i].inputData([newData[2+i]])[0]
+            temp[2+i] = self.BSfilters[i].inputData([temp[2+i]])[0]
             # temp[2+i] = self.HPfilters[i].inputData([newData[2+i]])[0]
 
             d.append([temp[2+i]])
             # d[i] = powerLineButterFilters[i].inputData(d[i])
             # d[i] = highpassFilters[i].inputData(d[i])
+
             #For ploting
-            if (i == FFT_CHANNEL):
-                self.fft_lock.acquire()
-                self.plotBufs[i] = self.plotBufs[i][1:]
-                self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
-                self.fft_lock.release()
-            else:
-                self.plotBufs[i] = self.plotBufs[i][1:]
-                self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
+            # if (i == self.FFT_CHANNEL):
+            #     self.fft_lock.acquire()
+            #     self.plotBufs[i] = self.plotBufs[i][1:]
+            #     self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
+            #     self.moreData = True;
+            #     self.fft_lock.release()
+            # else:
+            self.plotBufs[i] = self.plotBufs[i][1:]
+            self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
 
         if(self.isRecording == True):
             #save new data to the recordingBuf
             self.recordingBuf.append(temp)
 
-        fft_thread.join()
+        self.fft_thread.join()
+        self.moreData = True
 
     def fft_calc(self, channel):
+        # while True:
+        #     if self.moreData:
+        #         self.moreData = False;
         #FFT stuff here
         # FFT_CHANNEL = 1;
-        self.fft_lock.acquire()
+        # self.fft_lock.acquire()
         bins = np.fft.rfft(self.plotBufs[channel])
         size = len(self.plotBufs[channel])
-        self.fft_lock.release()
-        bins = [np.abs(v) for v in bins]
+        # self.fft_lock.release()
+        bins = np.abs(bins)#[np.abs(v) for v in bins]
         bins[0] = 0 # first element is DC element
         timestep = 1/self.data_rate
-        freq = np.fft.rfftfreq(size, timestep);
+        freq = np.fft.rfftfreq(self.PLOTWNDSIZE, timestep);
 
         # TODO: convert from cycles / unit-sample to Hz
         # TODO: figure out if its already Hz (i think so)
@@ -159,16 +184,20 @@ class mainWindow(QtWidgets.QWidget):
         self.plotBufs[8] = bins,freq;
         # print("fft freq", freq)
         # print("fft bins", bins)
+        # sys.stdout.flush()
         # print(len(bins), len(freq))
 
 
     def start(self):
-        self.timer.start(30)
+        self.timer.start(1)
 
     def updateGUI(self):
-        for i in range(8):
-            self.dataPlotingWidget.updateCurve(i,self.plotBufs[i])
-        self.dataPlotingWidget.updateCurve(8,self.plotBufs[8][0],self.plotBufs[8][1])
+        if self.moreData:
+            self.moreData = False
+            for i in range(8):
+                # print(i,type(self.plotBufs[i]),self.plotBufs[i])
+                self.dataPlotingWidget.updateCurve(i,self.plotBufs[i])#, self.x_arr_2000 if len(self.plotBufs[i]) == 2000 else self.x_arr_1999)
+            self.dataPlotingWidget.updateCurve(8,self.plotBufs[8][0],self.plotBufs[8][1])
 
     def keyPressEvent(self, e):
         """
@@ -228,5 +257,5 @@ if __name__ == "__main__":
     ex.start()
     sys.exit(app.exec_())
     
-    while(True):
-        time.sleep(1)
+    # while(True):
+    #     time.sleep(1)

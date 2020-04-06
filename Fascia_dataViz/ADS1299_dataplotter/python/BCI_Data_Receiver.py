@@ -4,11 +4,11 @@ import time
 import numpy as np
 import threading
 import struct
-
+import math
 
 class BCI_Data_Receiver(object):
 
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, window):
         self.ip = ip
         self.port = port
         self.sock = None
@@ -18,6 +18,10 @@ class BCI_Data_Receiver(object):
         self.readingThread = None
         self.address = (self.ip, self.port)
         self.prev_time_stamp = 0
+
+        self.num_data_to_halt = 5000 #TODO: set to 'math.inf' or comment-out lines 48-50 to run continuously
+        self.num_data_so_far = 0;
+        self.window = window
 
     def startConnection(self):
         """Start the socket connection"""
@@ -41,12 +45,17 @@ class BCI_Data_Receiver(object):
     
     def processStream(self):
         while True:
+            if self.num_data_so_far >= self.num_data_to_halt:
+                self.window.close()
+                sys.exit()
+
             #Receive data from sensor
             data, addr = self.sock.recvfrom(40*25)
             #print(data, addr)
             cur_time_stamp = time.time()
-            print("data rate: "+str(int(25/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
+            # print("data rate: "+str(int(25/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
             self.prev_time_stamp = time.time()
+            self.num_data_so_far+=25
 
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
             self.receiveBuff = self.receiveBuff + data
@@ -62,4 +71,3 @@ class BCI_Data_Receiver(object):
                     # For Foc.us BCI 
                     # unpacked_data = struct.unpack('iiffffffff', data[i*40: (i+1)*40])
                     self.dataReadyCallback(unpacked_data)
-            

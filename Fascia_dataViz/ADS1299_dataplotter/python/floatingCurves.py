@@ -52,7 +52,9 @@ class floatingCurves(QtWidgets.QWidget):
 
     def generateGraphsArray(self, channelNum = 8):
         for i in range(channelNum):
+            # newCurve = pg.ScatterPlotItem()
             newCurve = pg.PlotDataItem()
+            # newCurve = pg.PlotCurveItem()
             y = int(i/4)
             x = i%4
             self.addCurve(newCurve ,x,y)
@@ -67,7 +69,8 @@ class floatingCurves(QtWidgets.QWidget):
         if data_x != []:
             self.curveList[index].setData(x=data_x, y=data)
         else:
-            self.curveList[index].setData(data)
+        #     # print("y only")
+            self.curveList[index].setData(y=data)#,x=[i for i in range(len(data))]
 
 
 #Used for testing
