@@ -4,7 +4,10 @@
 *.vscode*
 
 # python pyc files
+*/python/__pycache__
 Fascia_dataViz/*/python/__pycache__/*.pyc
+Fascia_dataViz/*/python/__pycache__/*.*.pyc
+
 
 # Temporary files
 *.000
