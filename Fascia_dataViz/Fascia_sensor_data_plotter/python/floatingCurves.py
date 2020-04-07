@@ -27,7 +27,7 @@ class floatingCurves_Max(QtWidgets.QMainWindow):
 
 class floatingCurves(QtWidgets.QWidget):
 
-    def __init__(self, channelNum = 0):
+    def __init__(self, channelNum, start_i):
         super(floatingCurves, self).__init__()
         self.curveList = list()
         self.plotWidgetList = list()
@@ -40,7 +40,7 @@ class floatingCurves(QtWidgets.QWidget):
                        "ADS 4: EMG 5/6", "ADS 5: EOG 1/2", "ADS 6: EMG 3/4", "ADS 7: EOG 3/4", "ADS 8: EMG 1/2",
                        "IMU 1", "IMU 2","IMU 3", "IMU 4","IMU 5", "IMU 6",#"IMU 7", "IMU 8","IMU 9",
                        "EDA","temperature", "PPG raw data"]#,"battery voltage level"]#"heart rate arduino"]
-        self.generateGraphsArray(channelNum)
+        self.generateGraphsArray(channelNum, start_i)
         self.addText()
 
     def addText(self):
@@ -68,12 +68,12 @@ class floatingCurves(QtWidgets.QWidget):
         button.resize(20,20)
         button.clicked.connect(self.make_btn_floatWnd(len(self.curveList)-1))
 
-    def generateGraphsArray(self, channelNum = 8):
+    def generateGraphsArray(self, channelNum, start_i):
         for i in range(channelNum):
             newCurve = pg.PlotDataItem()
             y = int(i/4)
             x = i%4
-            self.addCurve(newCurve ,x,y, self.titles[i])
+            self.addCurve(newCurve ,x,y, self.titles[i+start_i])
 
     def make_btn_floatWnd(self, index):
         def btn_floatWnd():

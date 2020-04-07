@@ -28,6 +28,9 @@ class mainWindow(QtWidgets.QWidget):
 
     def __init__(self):
 
+        # for plotting
+        self.start_idx = 2 #TODO: make this 0 if you want to graph all the packet data
+                           #TODO: continue implementing this..... not complete yet
         self.n_plots = 19
 
         super(mainWindow,self).__init__()
@@ -52,7 +55,7 @@ class mainWindow(QtWidgets.QWidget):
         self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
 
-        for i in range(self.n_plots):
+        for i in range(self.n_plots-self.start_idx):
             self.plotBufs.append(np.zeros(PLOTWNDSIZE))
 
 
@@ -96,7 +99,7 @@ class mainWindow(QtWidgets.QWidget):
         #Add the graph arrays
         
         #Perpare the array
-        self.dataPlottingWidget = fc.floatingCurves(self.n_plots)
+        self.dataPlottingWidget = fc.floatingCurves(self.n_plots-self.start_idx, self.start_idx)
 
         hbox.addWidget(self.dataPlottingWidget)
 
@@ -133,7 +136,7 @@ class mainWindow(QtWidgets.QWidget):
         #print(newData[10])
         # t = "Packet #: " + str(newData[i_CNT])
         # self.dataPlottingWidget.PN.setText(t)
-        for i in range(self.n_plots):
+        for i in range(self.start_idx, self.n_plots):
             #apply filters to newData
             # temp[2+i] = newData[2+i]
             # temp[2+i] = self.BPfilters[i].inputData([newData[2+i]])[0]
@@ -154,8 +157,9 @@ class mainWindow(QtWidgets.QWidget):
                 continue
 
             #For ploting
-            self.plotBufs[i] = self.plotBufs[i][1:]
-            self.plotBufs[i] = np.append(self.plotBufs[i],d[i][0])
+            idx = i - self.start_idx
+            self.plotBufs[idx] = self.plotBufs[idx][1:]
+            self.plotBufs[idx] = np.append(self.plotBufs[idx],d[idx][0])
 
         # calculate heart rate
         # me: if it drops 400 counts in 5 samples -> heart beat
@@ -181,11 +185,11 @@ class mainWindow(QtWidgets.QWidget):
             ppg_sig = newData[i_PPG]
             l = len(self.heart_sig_arr);
             for i in range(min(10, l)):#len(self.heart_sig_arr[])):
-                if self.heart_sig_arr[l-1-i] - ppg_sig >= 250 and self.heart_sig_arr[l-1-i] - ppg_sig < 700 and l>10:
+                if self.heart_sig_arr[l-1-i] - ppg_sig >= 100 and self.heart_sig_arr[l-1-i] - ppg_sig < 700 and l>20:
                     print (ppg_sig,"-",self.heart_sig_arr[i])
                     print("heart beat!",newData[i_TIM])#newData[i_CNT])
                     self.heartbeat_ts.append(newData[i_TIM])#CNT])
-                    self.plotBufs[i_PPG][-1] *=-1
+                    self.plotBufs[i_PPG - self.start_idx][-1] *=-1
                     # calculate heart rate
                     if len(self.heartbeat_ts) > 1:
                         # delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[0]
@@ -221,10 +225,10 @@ class mainWindow(QtWidgets.QWidget):
             
 
     def start(self):
-        self.timer.start(30)
+        self.timer.start(1)
 
     def updateGUI(self):
-        for i in range(self.n_plots):
+        for i in range(self.n_plots-self.start_idx):
             self.dataPlottingWidget.updateCurve(i,self.plotBufs[i])
 
     def keyPressEvent(self, e):
