@@ -373,7 +373,7 @@ void DRDY_ISR(long* packet) {
     if ((i+3)%3 == 2) {
       int32_t d = *((int32_t*)temp);
       int ed = SIGN_EXT_24(d);//SIGNEXTEND(d);
-      float cd = convert_ADC_volts(ed, 1);
+//      float cd = convert_ADC_volts(ed, 1);
       packet[i_ADS + (i/3-1)] = ed;
       #if v 
         Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
@@ -628,13 +628,54 @@ inline void get_IMU_data(long* packet){
   }
 }
 
+// number of eda data points to use to average
+int eda_avg_size = 10;
+// current index of the value being added
+int eda_idx = 0;
+// current total so far for the first eda_idx samples
+int eda_total = 0;
+//int eda_vals[eda_avg_size];
+
 inline void get_EDA_data(long* packet) {
   int vEDA = analogRead(pEDA);
-  packet[i_EDA] = vEDA;
+//  eda_vals[eda_idx] = vEDA;
+  eda_total += vEDA;
+  eda_idx = (eda_idx+1) % eda_avg_size;
+  // if we have collected enough samples to average
+  if ((eda_idx % eda_avg_size) == 0) {
+//    for (int i = 0; i < eda_avg_size; i++)
+    float avg_vEDA = eda_total / eda_avg_size;
+    float Rskin = convert_eda_adc_to_Rskin(avg_vEDA);
+    packet[i_EDA] = *((long*)(&Rskin));
+    eda_total = 0;
+  } else {
+    // if not ready to average yet, mark EDA as invalid
+    packet[i_VALID] |= (1<<i_EDA);  
+  }
+//  Serial.println(String(eda_idx)+" , "+String(eda_total));
+
+//  packet[i_EDA] = vEDA;
   #if v
     Serial.print("EDA "); Serial.println(vEDA);
 //    Serial.print("EDA "); Serial.println(packet[i_EDA]);
   #endif
+}
+
+inline float convert_eda_adc_to_Rskin(int sensorValue) {
+  float Vout = (sensorValue * 3.3)/4095;
+
+  // these are constants- should not change between iterations
+  // values are from the PCB layout/schematic in Fascia Physio Board V0
+  const int Rref = 820000; // reference resistor between - opamp and gnd
+  // Rref might actually be 2M or 820K -- undocumented board build value
+  const float Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
+  const float i = (float)Vref / (float)Rref;
+
+  float Rskin = (Vout - Vref) / i;
+  Serial.println(String(Vref)+", "+ String(Vout)+", "+String(Rskin));
+  //float Cskin = 1./Rskin;
+
+  return Rskin;
 }
 
 //inline void get_battery_v(long* packet) {
