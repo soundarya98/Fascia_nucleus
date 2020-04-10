@@ -12,7 +12,7 @@ from CausalButter import *
 
 import heartpy as hp
 import math
-
+import threading
 
 
 i_CNT = 0
@@ -28,41 +28,32 @@ class mainWindow(QtWidgets.QWidget):
 
     def __init__(self):
 
+        #Init Data structures
+        super(mainWindow,self).__init__()
+        self.plotBufs = list()
+        PLOTWNDSIZE = 2000
+        self.PLOTWNDSIZE = PLOTWNDSIZE
+
         # for plotting
         self.start_idx = 2 #TODO: make this 0 if you want to graph all the packet data
-                           #TODO: continue implementing this..... not complete yet
         self.n_plots = 19
+        self.fft_idx = self.n_plots-self.start_idx
 
-        super(mainWindow,self).__init__()
-        self.title = "EEG Classifier"
-        self.initUI()
+        # for FFT
+        self.graph_fft = 1 #TODO: change this to 1 if you dont want FFT graph
+        self.FFT_CHANNEL = 1 #TODO: make sure this is the channel you want the FFT for
+        self.fft_lock = threading.Lock();
+        # self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
+        self.moreData = False;
+        # self.fft_thread.start()
 
-
-        PLOTWNDSIZE = 2000
-        self.timer = QtCore.QTimer()
-        self.timer.timeout.connect(self.updateGUI)
-        #Init Data structures
-        self.plotBufs = list()
-
-
-        #The ip of user's machine
-        # self.ip = '18.30.22.83'
-        self.ip = '10.0.0.77'#'192.168.0.13' # '192.168.0.101'  # '192.168.0.13'
-        # self.ip = '172.30.1.251'
-        # self.port_number = 35295
-        self.port_number = 8899
-
-        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
-        self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
-
-        for i in range(self.n_plots-self.start_idx):
+        # for initial plotting
+        for i in range(self.n_plots-self.start_idx + self.graph_fft):
             self.plotBufs.append(np.zeros(PLOTWNDSIZE))
-
 
         #For data Recording
         self.isRecording = False
         self.recordingBuf = list()
-
 
         #For filters
         #Init the filters
@@ -73,19 +64,30 @@ class mainWindow(QtWidgets.QWidget):
             # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EMG
             self.BPfilters.append(CausalButter(8, 5, 50, data_rate, 0)) # EEG
             #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) # EMG
-            # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EEG1w
-            #self.HPfilters.append(CausalButter(4,2,100,1000,0))
-            #self.HPfilters.append(CausalButter(4,10,500,1000,0))
-            #self.HPfilters.append(CausalButter(4,10,500,1000,0))
-            # for EOG FIR
+            #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) #EOG
         self.BSfilters = []
         for i in range(0,self.n_plots):
             self.BSfilters.append(CausalButter(8, 55, 65, data_rate, 1)) # EEG
 
-
+        # for heart rate measuring algorithm
         self.heart_sig_arr  = []
         self.heartbeat_ts   = []
         self.heartrate_avg  = []
+
+        # initialize the UI
+        self.title = "EEG Classifier"
+        self.initUI()
+
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.updateGUI)
+
+        # The ip of user's machine
+        self.ip = '10.0.0.77'#'192.168.0.13' # '192.168.0.101'  # '192.168.0.13'
+        self.port_number = 8899
+
+        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
+        self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
+
 
 
     def initUI(self):
@@ -99,7 +101,7 @@ class mainWindow(QtWidgets.QWidget):
         #Add the graph arrays
         
         #Perpare the array
-        self.dataPlottingWidget = fc.floatingCurves(self.n_plots-self.start_idx, self.start_idx)
+        self.dataPlottingWidget = fc.floatingCurves(self.n_plots-self.start_idx+self.graph_fft, self.start_idx, self.FFT_CHANNEL)
 
         hbox.addWidget(self.dataPlottingWidget)
 
@@ -130,12 +132,18 @@ class mainWindow(QtWidgets.QWidget):
         d = list()
         temp = np.zeros(len(newData))
         invalid_arr = newData[1];
-        # newData = [newData[0]]+newData[2:]
-        # print("cnt: ", newData[0])
-        # print("status register: ", newData[1])
-        #print(newData[10])
         # t = "Packet #: " + str(newData[i_CNT])
         # self.dataPlottingWidget.PN.setText(t)
+
+        # # for recording purposes
+        # for i in range(0, self.start_idx):
+        #     temp[i] = newData[i]
+
+        if self.graph_fft:
+            self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
+            self.fft_thread.start()
+
+
         for i in range(self.start_idx, self.n_plots):
             #apply filters to newData
             # temp[2+i] = newData[2+i]
@@ -156,7 +164,7 @@ class mainWindow(QtWidgets.QWidget):
                 # print("invalid data at "+str(i))
                 continue
 
-            #For ploting
+            #For plotting
             idx = i - self.start_idx
             self.plotBufs[idx] = self.plotBufs[idx][1:]
             self.plotBufs[idx] = np.append(self.plotBufs[idx],d[idx][0])
@@ -186,20 +194,20 @@ class mainWindow(QtWidgets.QWidget):
             l = len(self.heart_sig_arr);
             for i in range(min(10, l)):#len(self.heart_sig_arr[])):
                 if self.heart_sig_arr[l-1-i] - ppg_sig >= 100 and self.heart_sig_arr[l-1-i] - ppg_sig < 700 and l>20:
-                    print (ppg_sig,"-",self.heart_sig_arr[i])
+                    # print (ppg_sig,"-",self.heart_sig_arr[i])
                     print("heart beat!",newData[i_TIM])#newData[i_CNT])
                     self.heartbeat_ts.append(newData[i_TIM])#CNT])
                     self.plotBufs[i_PPG - self.start_idx][-1] *=-1
                     # calculate heart rate
                     if len(self.heartbeat_ts) > 1:
-                        # delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[0]
+                        # delta_ts = time in ms difference between the current and most recent heart beat
                         delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[len(self.heartbeat_ts)-2]
                         delta_sec = delta_ts / 1000 #* 1./(self.Data_receiver.current_data_rate)#/10) #not /10 because using the count of packets which is at regular data rate
                         bpm = 1/(delta_sec/60)#len(self.heartbeat_ts)/(delta_sec/60)
                         print("local heart rate: "+str(int(bpm)))
                         self.heartrate_avg.append(bpm)
                         bpm = np.average(self.heartrate_avg)
-                        print("heart rate:",int(bpm), "bpm, ",len(self.heartbeat_ts),"/ (",delta_ts)
+                        print("heart rate:",int(bpm), "bpm, ",len(self.heartbeat_ts)," / ",delta_ts)
                         t = "Heart Rate: " + str(int(bpm)) + " BPM"
                         self.dataPlottingWidget.HR.setText(t)
                     self.heart_sig_arr = []
@@ -222,14 +230,44 @@ class mainWindow(QtWidgets.QWidget):
         # if(self.isRecording == True):
         #     #save new data to the recordingBuf
         #     self.recordingBuf.append(temp)
+        self.moreData = True
+
             
+    def fft_calc(self, channel):
+        # while True:
+        #     if self.moreData:
+        #         self.moreData = False;
+        #FFT stuff here
+        # FFT_CHANNEL = 1;
+        # self.fft_lock.acquire()
+        channel = i_ADS + channel
+        bins = np.fft.rfft(self.plotBufs[channel])
+        size = len(self.plotBufs[channel])
+        # self.fft_lock.release()
+        bins = np.abs(bins)#[np.abs(v) for v in bins]
+        bins[0] = 0 # first element is DC element
+        timestep = 1/self.data_rate
+        freq = np.fft.rfftfreq(self.PLOTWNDSIZE, timestep);
+
+        # TODO: convert from cycles / unit-sample to Hz
+        # TODO: figure out if its already Hz (i think so)
+        # freq = [f for f in freq]
+        self.plotBufs[self.fft_idx] = bins,freq;
+        # print("fft freq", freq)
+        # print("fft bins", bins)
+        # sys.stdout.flush()
+        # print(len(bins), len(freq))
 
     def start(self):
         self.timer.start(1)
 
     def updateGUI(self):
-        for i in range(self.n_plots-self.start_idx):
-            self.dataPlottingWidget.updateCurve(i,self.plotBufs[i])
+        if self.moreData:
+            self.moreData = False
+            for i in range(self.n_plots-self.start_idx):
+                # print(i,type(self.plotBufs[i]),self.plotBufs[i])
+                self.dataPlottingWidget.updateCurve(i,self.plotBufs[i])
+            self.dataPlottingWidget.updateCurve(self.fft_idx,self.plotBufs[self.fft_idx][0],self.plotBufs[self.fft_idx][1])
 
     def keyPressEvent(self, e):
         """

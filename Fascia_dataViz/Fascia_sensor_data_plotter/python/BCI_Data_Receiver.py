@@ -32,7 +32,6 @@ class BCI_Data_Receiver(object):
         self.sock.bind(self.address)
         print(self.address)
         # self.sock.connect(("192.168.1.10",35294))
-        # self.sock.connect(("192.168.1.10",35295))
         self.sock.settimeout(30.0)
         self.processStream()
 
@@ -48,7 +47,7 @@ class BCI_Data_Receiver(object):
     def processStream(self):
         data_names = ["PKT #", "VALID", "ADS 1", "ADS 2", "ADS 3","ADS 4", "ADS 5", "ADS 6", "ADS 7", "ADS 8",
                       "IMU 1", "IMU 2", "IMU 3", "IMU 4", "IMU 5", "IMU 6", #"IMU 7", "IMU 8", "IMU 9",
-                      "EDA  ", "TEMP ", "PPG  "]#, "BTR "]#"HRT  "]
+                      "EDA  ", "TEMP ", "PPG  ", "TIM"]#, "BTR "]#"HRT  "]
         num_elements = 20#19
         num_bytes = 4*num_elements
         num_packets = 18
@@ -69,13 +68,12 @@ class BCI_Data_Receiver(object):
                 data = self.receiveBuff[0:num_bytes*num_packets]
                 self.receiveBuff = self.receiveBuff[num_bytes*num_packets:]
                 for i in range(num_packets):
-                    # For Junqing ADS1299
-                    # unpacked_data = struct.unpack('qiiiiiiii', data[i*40: (i+1)*40])
-                    # For FluidBCI
-                    unpacked_data = struct.unpack('i'*10+'i'*6+'i'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
+                    unpacked_data = struct.unpack('i'*10+'i'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
-                    # For Walaa: debug print
+
+                    # For Walaa: debug prints
+
                     # for j in range(num_elements):
                     #     print(data_names[j] + ' ' + str(unpacked_data[j]))
 
@@ -84,6 +82,4 @@ class BCI_Data_Receiver(object):
                     #     print("EDA rate: " + str(int(1 / (cur_time_stamp - self.prev_EDA_time_stamp))) + " Hz")
                     #     self.prev_EDA_time_stamp = self.prev_time_stamp
 
-                    # For Foc.us BCI
-                    # unpacked_data = struct.unpack('iiffffffff', data[i*40: (i+1)*40])
                     self.dataReadyCallback(unpacked_data)
