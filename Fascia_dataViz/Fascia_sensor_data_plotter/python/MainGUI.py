@@ -41,7 +41,7 @@ class mainWindow(QtWidgets.QWidget):
 
         # for FFT
         self.graph_fft = 1 #TODO: change this to 1 if you dont want FFT graph
-        self.FFT_CHANNEL = 1 #TODO: make sure this is the channel you want the FFT for
+        self.FFT_CHANNEL = 1 #TODO: make sure this is the channel you want the FFT for (0 indexed)
         self.fft_lock = threading.Lock();
         # self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
         self.moreData = False;
@@ -240,18 +240,15 @@ class mainWindow(QtWidgets.QWidget):
         #FFT stuff here
         # FFT_CHANNEL = 1;
         # self.fft_lock.acquire()
-        channel = i_ADS + channel
-        bins = np.fft.rfft(self.plotBufs[channel])
-        size = len(self.plotBufs[channel])
+        channel_idx = i_ADS + channel - self.start_idx
+        # print(channel_idx)
+        bins = np.fft.rfft(self.plotBufs[channel_idx])
+        size = len(self.plotBufs[channel_idx])
         # self.fft_lock.release()
         bins = np.abs(bins)#[np.abs(v) for v in bins]
         bins[0] = 0 # first element is DC element
         timestep = 1/self.data_rate
         freq = np.fft.rfftfreq(self.PLOTWNDSIZE, timestep);
-
-        # TODO: convert from cycles / unit-sample to Hz
-        # TODO: figure out if its already Hz (i think so)
-        # freq = [f for f in freq]
         self.plotBufs[self.fft_idx] = bins,freq;
         # print("fft freq", freq)
         # print("fft bins", bins)
@@ -267,7 +264,8 @@ class mainWindow(QtWidgets.QWidget):
             for i in range(self.n_plots-self.start_idx):
                 # print(i,type(self.plotBufs[i]),self.plotBufs[i])
                 self.dataPlottingWidget.updateCurve(i,self.plotBufs[i])
-            self.dataPlottingWidget.updateCurve(self.fft_idx,self.plotBufs[self.fft_idx][0],self.plotBufs[self.fft_idx][1])
+            if self.graph_fft:
+                self.dataPlottingWidget.updateCurve(self.fft_idx,self.plotBufs[self.fft_idx][0],self.plotBufs[self.fft_idx][1])
 
     def keyPressEvent(self, e):
         """
