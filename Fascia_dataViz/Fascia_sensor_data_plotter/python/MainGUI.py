@@ -56,18 +56,26 @@ class mainWindow(QtWidgets.QWidget):
         self.recordingBuf = list()
 
         #For filters
-        #Init the filters
+        #Init/store all the required filters
         data_rate = 1000
         self.data_rate = data_rate
+        num_ADS_plots = 8
+        # Do the bandpass filters
         self.BPfilters = []
-        for i in range(0,self.n_plots):
-            # 4 order butterworth 10hz to 500hz, 0 is bandpass 1 is bandstop EMG
-            self.BPfilters.append(CausalButter(8, 5, 50, data_rate, 0)) # EEG
-            #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) # EMG
-            #self.HPfilters.append(CausalButter(4, 10, 500, data_rate, 0)) #EOG
+        # for i in range(0,num_ADS_plots):
+        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 1/2
+        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 4/3
+        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EOG 1/2
+        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 5/6
+        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 7/8
+        self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 1
+        self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 2
+        self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 3
+        self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 4
+        # and  the bandstop filters
         self.BSfilters = []
-        for i in range(0,self.n_plots):
-            self.BSfilters.append(CausalButter(8, 55, 65, data_rate, 1)) # EEG
+        for i in range(0,num_ADS_plots):
+            self.BSfilters.append(CausalButter(8, 55, 65, data_rate, 1))
 
         # for heart rate measuring algorithm
         self.heart_sig_arr  = []
@@ -150,8 +158,8 @@ class mainWindow(QtWidgets.QWidget):
             # temp[2+i] = self.BPfilters[i].inputData([newData[2+i]])[0]
             # temp[2+i] = self.BSfilters[i].inputData([temp[2+i]])[0]
             if (i >1 and i<10):
-                temp[i] = self.BPfilters[i].inputData([newData[i]])[0]
-                temp[i] = self.BSfilters[i].inputData([temp[i]])[0]
+                temp[i] = self.BPfilters[i-i_ADS].inputData([newData[i]])[0]
+                temp[i] = self.BSfilters[i-i_ADS].inputData([temp[i]])[0]
             else:
                 temp[i] = newData[i]
 
