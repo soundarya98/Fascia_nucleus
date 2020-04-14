@@ -36,8 +36,8 @@ class floatingCurves(QtWidgets.QWidget):
         self.layout = QtWidgets.QGridLayout()
 
         self.setLayout(self.layout)
-        self.titles = ["packet number", "Valid array", "ADS 1: EEG 2", "ADS 2: EEG 1", "ADS 3: EMG 7/8",
-                       "ADS 4: EMG 5/6", "ADS 5: EOG 1/2", "ADS 6: EMG 3/4", "ADS 7: EOG 3/4", "ADS 8: EMG 1/2",
+        self.titles = ["packet number", "Valid array", "ADS 1: EMG 1/2", "ADS 2: EMG 4/3", "ADS 3: EOG 1/2",
+                       "ADS 4: EMG 7/8", "ADS 5: EEG1 (PASSIVE)", "ADS 6: EEG2 (PASSIVE)", "ADS 7: EEG (ACTIVE)", "ADS 8: EEG (ACTIVE)",
                        "IMU Ax", "IMU Ay","IMU Az", "IMU Gx","IMU Gy", "IMU Gz",#"IMU 7", "IMU 8","IMU 9",
                        "EDA: Rskin","temperature", "PPG raw data", "FFT from ADS "+str(fft_chan)]#,"battery voltage level"]#"heart rate arduino"]
         self.generateGraphsArray(channelNum, start_i)

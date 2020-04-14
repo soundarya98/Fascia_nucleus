@@ -59,6 +59,17 @@ bool LEDval = LOW;
 
 int cnt = 0;
 
+// ADS gains 
+byte ADS_CHANNEL_GAINS[8] = {/*chan 1 EMG Gain 4  */ ADS1299_REG_CHNSET_GAIN_4,
+                             /*chan 2 EMG Gain 4  */ ADS1299_REG_CHNSET_GAIN_4,
+                             /*chan 3 EOG Gain 2  */ ADS1299_REG_CHNSET_GAIN_4,
+                             /*chan 4 EMG Gain 4  */ ADS1299_REG_CHNSET_GAIN_4,
+                             /*chan 5 EEG Gain 12 */ ADS1299_REG_CHNSET_GAIN_12, // Passive Electrode
+                             /*chan 6 EEG Gain 12 */ ADS1299_REG_CHNSET_GAIN_12, // Passive Electrode
+                             /*chan 7 EEG Gain 1  */ ADS1299_REG_CHNSET_GAIN_1,  // Active  Electrode
+                             /*chan 8 EEG Gain 1  */ ADS1299_REG_CHNSET_GAIN_1   // Active  Electrode
+                             };
+                     
 void select_board_pins(void) {
     switch (BOARD_V){
     case NOVA_XR_V1: {
@@ -177,38 +188,44 @@ void ADS_init(void) {
   ADS_WREG(ADS1299_REGADDR_MISC1, 0x00);
 
   delay(10);
-  ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
+  ADS_WREG(ADS1299_REGADDR_CH1SET, ADS_CHANNEL_GAINS[0] | 
                                    channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH4SET, ADS1299_REG_CHNSET_GAIN_1 | 
+  ADS_WREG(ADS1299_REGADDR_CH2SET, ADS_CHANNEL_GAINS[1] | 
                                    channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH5SET, ADS1299_REG_CHNSET_GAIN_1 | 
+  ADS_WREG(ADS1299_REGADDR_CH3SET, ADS_CHANNEL_GAINS[2] | 
+                                   channel_mode |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH4SET, ADS_CHANNEL_GAINS[3] | 
                                    channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH6SET, ADS1299_REG_CHNSET_GAIN_1 | 
+  ADS_WREG(ADS1299_REGADDR_CH5SET, ADS_CHANNEL_GAINS[4] | 
+                                   channel_mode | 
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH6SET, ADS_CHANNEL_GAINS[5] | 
                                    channel_mode | 
                                    ADS1299_REG_CHNSET_CHANNEL_ON|
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH7SET, ADS1299_REG_CHNSET_GAIN_1 | 
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH7SET, ADS_CHANNEL_GAINS[6] | 
                                    channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_ON |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH8SET, ADS1299_REG_CHNSET_GAIN_1 | 
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH8SET, ADS_CHANNEL_GAINS[7] | 
                                    channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+
+ // turn on bias for all EEG Channels (5-8)
+ ADS_WREG(ADS1299_REGADDR_BIAS_SENSN,  ADS1299_REG_BIAS_SENSN_BIASN8 |
+                                       ADS1299_REG_BIAS_SENSN_BIASN7 |
+                                       ADS1299_REG_BIAS_SENSN_BIASN6 |
+                                       ADS1299_REG_BIAS_SENSN_BIASN5 );
 }
 
 void ADS_start(void) {
@@ -420,8 +437,9 @@ void DRDY_ISR(long* packet) {
     if ((i+3)%3 == 2) {
       int32_t d = *((int32_t*)temp);
       int ed = SIGN_EXT_24(d);//SIGNEXTEND(d);
-//      float cd = convert_ADC_volts(ed, 1);
-      packet[i_ADS + (i/3-1)] = ed;
+      float cd = convert_ADC_volts(ed, ADS_GAINS[((ADS_CHANNEL_GAINS[i/3-1])>>4)]);
+//      Serial.println(String(i/3-1)+": "+String(ADS_GAINS[((ADS_CHANNEL_GAINS[i/3-1])>>4)]));
+      packet[i_ADS + (i/3-1)] = *((long*)&cd);//ed;
       #if v 
         Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(ed); 
 //        Serial.print("ADS ");Serial.print(i/3);Serial.print(" ");Serial.println(packet[i_ADS + i/3]); 

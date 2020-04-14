@@ -68,7 +68,7 @@ class BCI_Data_Receiver(object):
                 data = self.receiveBuff[0:num_bytes*num_packets]
                 self.receiveBuff = self.receiveBuff[num_bytes*num_packets:]
                 for i in range(num_packets):
-                    unpacked_data = struct.unpack('i'+'i'+'i'*8+'h'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
+                    unpacked_data = struct.unpack('i'+'i'+'f'*8+'h'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
 

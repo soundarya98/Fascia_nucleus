@@ -347,6 +347,13 @@ byte GAINS[7] = {ADS1299_REG_CHNSET_GAIN_1,
                  ADS1299_REG_CHNSET_GAIN_8,
                  ADS1299_REG_CHNSET_GAIN_12,
                  ADS1299_REG_CHNSET_GAIN_24};
+int ADS_GAINS[7] = { 1,
+                     2,
+                     4,
+                     6,
+                     8,
+                     12,
+                     24 };
 /**
  *  \brief Bit mask definitions for CHnSET.SRB2 (channel internal connection to SRB2 pin).
  */
