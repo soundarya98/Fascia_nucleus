@@ -46,11 +46,11 @@ class BCI_Data_Receiver(object):
     
     def processStream(self):
         data_names = ["PKT #", "VALID", "ADS 1", "ADS 2", "ADS 3","ADS 4", "ADS 5", "ADS 6", "ADS 7", "ADS 8",
-                      "IMU 1", "IMU 2", "IMU 3", "IMU 4", "IMU 5", "IMU 6", #"IMU 7", "IMU 8", "IMU 9",
+                      "IMU 0", "IMU 1", "IMU 2", "IMU 3", "IMU 4", "IMU 5", #"IMU 7", "IMU 8", "IMU 9",
                       "EDA  ", "TEMP ", "PPG  ", "TIM"]#, "BTR "]#"HRT  "]
-        num_elements = 20#19
+        num_elements = 17
         num_bytes = 4*num_elements
-        num_packets = 18
+        num_packets = 22
         while True:
             #Receive data from sensor
             data, addr = self.sock.recvfrom(num_bytes*num_packets)
@@ -68,7 +68,7 @@ class BCI_Data_Receiver(object):
                 data = self.receiveBuff[0:num_bytes*num_packets]
                 self.receiveBuff = self.receiveBuff[num_bytes*num_packets:]
                 for i in range(num_packets):
-                    unpacked_data = struct.unpack('i'*10+'i'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
+                    unpacked_data = struct.unpack('i'+'i'+'i'*8+'h'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
 

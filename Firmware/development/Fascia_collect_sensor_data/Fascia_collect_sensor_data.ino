@@ -1,11 +1,11 @@
 // library includes
 #include "SAMD_AnalogCorrection.h"
-	#include <SPI.h>
-	#include "wiring_private.h"
-// #include <MPU6050.h>
-#include <Wire.h>
+#include <SPI.h>
+#include "wiring_private.h"
+//#include "I2Cdev.h"//
+#include "MPU6050.h"
+#include "Wire.h"//
 #include "MAX30105.h"
-//#include "heartRate.h"
 // header files
 #include "Pin_Table_Defs.h"
 #include "WiFi_Settings.h"
@@ -48,6 +48,7 @@ int pDRDY;            // data ready pin
 // EDA
 const int pEDA = PA02;
 // MPU6050 IMU pins
+MPU6050 accelgyro;
 const int pMPUint = PB03;
 // PPG & temperature pins
 MAX30105 particleSensor;
@@ -249,10 +250,52 @@ void setup_MAX30105() {
   particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
 }
 
+void setup_MPU6050() {
+  accelgyro.initialize();
+  // Test connection
+  if (!accelgyro.testConnection()) {
+    while (1){Serial.println("Failed to connect to MPU6050");}
+  }
+  
+  // use the code below to print before/after and change accel/gyro offset values
+  /*
+  Serial.println("Updating internal sensor offsets...");
+  // -76  -2359 1688  0 0 0
+  Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
+  Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
+  Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
+  Serial.print(accelgyro.getXGyroOffset()); Serial.print("\t"); // 0
+  Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
+  Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
+  Serial.print("\n");
+  accelgyro.setXGyroOffset(220);
+  accelgyro.setYGyroOffset(76);
+  accelgyro.setZGyroOffset(-85);
+  Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
+  Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
+  Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
+  Serial.print(accelgyro.getXGyroOffset()); Serial.print("\t"); // 0
+  Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
+  Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
+  Serial.print("\n");
+  */
+  
+/* // data rate change?
+  // SMPLRT_DIV register
+  uint8_t getRate();
+  void setRate(uint8_t rate);*/
+
+  /*    // Calibration Routines
+    void CalibrateGyro(uint8_t Loops = 15); // Fine tune after setting offsets with less Loops.
+    void CalibrateAccel(uint8_t Loops = 15);// Fine tune after setting offsets with less Loops.
+    */
+}
+
 void setup() {
   delay(1000);
   // initialize communications: spi, I2C, serial, and wifi if applicable
   mySPI.begin();
+  Wire.begin();
   Serial.begin(115200);
   // set up indicator LED
   select_board_pins();
@@ -275,8 +318,11 @@ void setup() {
   Arduino_ADC_setup();
   
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
-  setup_MAX30105();
+//  setup_MAX30105();
 
+  // initialize the IMU MPU6050
+  setup_MPU6050();
+  
   // initialize ads1299
   ADS_connect();
   ADS_init();
@@ -316,15 +362,16 @@ void loop() {
   #if DATA_MODE == RDATA_SS_MODE
     DRDY_ISR(packet);
   #endif
-  get_IMU_data(packet);
 //  get_EDA_data(packet);
   if (!(cnt%10)) {
-    get_PPG_temp_data(packet);
+//    get_PPG_temp_data(packet);
     get_EDA_data(packet);
+    get_IMU_data(packet);
   } else {
-    packet[i_VALID] |= (1<<i_PPG);
-    packet[i_VALID] |= (1<<i_TEM);
-    packet[i_VALID] |= (1<<i_EDA);
+    packet[i_VALID] |= (1<<v_PPG);
+    packet[i_VALID] |= (1<<v_TEM);
+    packet[i_VALID] |= (1<<v_EDA);
+    packet[i_VALID] |= (0b111111<<v_IMU);
   }
 
   #if CONNECT_WIFI
@@ -618,14 +665,57 @@ void toggle_channel(int chan){
 void change_channel_short(int chan){}
 
 inline void get_IMU_data(long* packet){
-  // Wire.requestFrom(MPU_ADDR, #, bool);
-  for (int i = 0; i < 6; i++) {
-    packet[i_IMU+i] = i;
-    #if v
-      Serial.println("IMU "+String(i)+" "+String(i));
-//      Serial.println("IMU "+String(i)+" "+String(packet[i_IMU+i]));    
-    #endif
-  }
+  int16_t ax, ay, az, gx, gy, gz;
+  accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+  // NEED to convert from raw data to some underestandable units
+  
+  // insert imy data into packet
+  ((int16_t*)&(packet[i_IMU]))[0] = ax;
+  ((int16_t*)&(packet[i_IMU]))[1] = ay;
+  ((int16_t*)&(packet[i_IMU]))[2] = az;
+  ((int16_t*)&(packet[i_IMU]))[3] = gx;
+  ((int16_t*)&(packet[i_IMU]))[4] = gy;
+  ((int16_t*)&(packet[i_IMU]))[5] = gz;
+
+  #if v
+    for (int i = 0; i < 6; i++) {
+//      Serial.println("IMU "+String(i)+" "+String( ((int16_t*)packet)[(2*i_IMU)+i])); //wrong indexing
+      Serial.println("IMU "+String(i)+" "+String( ((int16_t*)&(packet[i_IMU]))[i]));
+    }
+  #endif
+/*
+    // ACCEL_*OUT_* registers
+  void getMotion9(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz, int16_t* mx, int16_t* my, int16_t* mz);
+  void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
+  void getAcceleration(int16_t* x, int16_t* y, int16_t* z);
+  int16_t getAccelerationX();
+  int16_t getAccelerationY();
+  int16_t getAccelerationZ();
+
+  // TEMP_OUT_* registers
+  int16_t getTemperature();
+
+  // GYRO_*OUT_* registers
+  void getRotation(int16_t* x, int16_t* y, int16_t* z);
+  int16_t getRotationX();
+  int16_t getRotationY();
+  int16_t getRotationZ();
+
+  // EXT_SENS_DATA_* registers
+  uint8_t getExternalSensorByte(int position);
+  uint16_t getExternalSensorWord(int position);
+  uint32_t getExternalSensorDWord(int position);
+
+  // MOT_DETECT_STATUS register
+  uint8_t getMotionStatus();
+  bool getXNegMotionDetected();
+  bool getXPosMotionDetected();
+  bool getYNegMotionDetected();
+  bool getYPosMotionDetected();
+  bool getZNegMotionDetected();
+  bool getZPosMotionDetected();
+      bool getZeroMotionDetected();
+*/
 }
 
 // number of eda data points to use to average
@@ -650,14 +740,13 @@ inline void get_EDA_data(long* packet) {
     eda_total = 0;
   } else {
     // if not ready to average yet, mark EDA as invalid
-    packet[i_VALID] |= (1<<i_EDA);  
+    packet[i_VALID] |= (1<<v_EDA);  
   }
 //  Serial.println(String(eda_idx)+" , "+String(eda_total));
 
-//  packet[i_EDA] = vEDA;
   #if v
-    Serial.print("EDA "); Serial.println(vEDA);
-//    Serial.print("EDA "); Serial.println(packet[i_EDA]);
+//    Serial.print("EDA "); Serial.println(vEDA);
+    Serial.print("EDA "); Serial.println(packet[i_EDA]);
   #endif
 }
 
@@ -672,7 +761,7 @@ inline float convert_eda_adc_to_Rskin(int sensorValue) {
   const float i = (float)Vref / (float)Rref;
 
   float Rskin = (Vout - Vref) / i;
-  Serial.println(String(Vref)+", "+ String(Vout)+", "+String(Rskin));
+//  Serial.println(String(Vref)+", "+ String(Vout)+", "+String(Rskin));
   //float Cskin = 1./Rskin;
 
   return Rskin;
@@ -681,14 +770,6 @@ inline float convert_eda_adc_to_Rskin(int sensorValue) {
 //inline void get_battery_v(long* packet) {
 //    packet[i_BAT] = analogRead(pBAT);
 //}
-
-//const byte RATE_SIZE = 4; //Increase this for more averaging. 4 is good.
-//byte rates[RATE_SIZE]; //Array of heart rates
-//byte rateSpot = 0;
-//long lastBeat = 0; //Time at which the last beat occurred
-//
-//float beatsPerMinute;
-//int beatAvg;
 
 inline void get_PPG_temp_data(long* packet) {
   particleSensor.requestTemperature();
@@ -700,35 +781,11 @@ inline void get_PPG_temp_data(long* packet) {
     #if v
       Serial.println("No contact with sensor "+String(irValue));
     #endif
-    packet[i_VALID] |= (1<<i_PPG);
-    packet[i_VALID] |= (1<<i_TEM); // TODO keep this here????
-    if (irValue != 0) packet[i_VALID] |= (1<<i_TIM);
+    packet[i_VALID] |= (1<<v_PPG);
+    packet[i_VALID] |= (1<<v_TEM); // TODO keep this here????
+    if (irValue != 0) packet[i_VALID] |= (1<<v_TIM);
 //    return;
   }
-
-//  // TODO calculate heart rate
-//  bool beat = false;
-//  if (checkForBeat(irValue) == true){
-//    // Serial.println("we sensed a beat!");
-//    beat = true;
-//    //We sensed a beat!
-//    long delta = millis() - lastBeat;
-//    lastBeat = millis();
-//
-//    beatsPerMinute = 60 / (delta / 1000.0);
-//
-//    if (beatsPerMinute < 255 && beatsPerMinute > 20) {
-//      rates[rateSpot++] = (byte)beatsPerMinute; //Store this reading in the array
-//      rateSpot %= RATE_SIZE; //Wrap variable
-//
-//      //Take average of readings
-//      beatAvg = 0;
-//      for (byte x = 0 ; x < RATE_SIZE ; x++)
-//        beatAvg += rates[x];
-//      beatAvg /= RATE_SIZE;
-//    }
-//  }
-//  packet[i_PPG+1] = /**(char*)(&*/beatAvg;//);
 
   float temperature = particleSensor.readTemperature();
   packet[i_TEM] = *(long*)(&temperature); //TODO make sure this casting works properly

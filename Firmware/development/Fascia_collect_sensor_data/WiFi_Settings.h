@@ -13,7 +13,7 @@
 #define HOST_ID     "10.0.0.77"/*"192.168.0.13" /*"192.168.0.101"*/
 #define PORT_NUM    8899
 
-#define SEND_SIZE 18
+#define SEND_SIZE 22
 // 1 for serial count, 
 // 1 for valid array for the data packet (1 maps to data means invalid)
 // 8 for ADS data, ( - status bits, incorporated into valid array)
@@ -21,7 +21,7 @@
 // 1 for EDA
 // 1 for temperature
 // 1 for PPG
-#define NUM_ELEMENTS 20/*19*/
+#define NUM_ELEMENTS 17
 #define ELEM_SIZE 4
 #define PACKET_SIZE (ELEM_SIZE*NUM_ELEMENTS)
 
@@ -29,7 +29,18 @@
 #define i_VALID 1
 #define i_ADS i_VALID + 1
 #define i_IMU i_ADS + 8
-#define i_EDA i_IMU + 6
+#define i_EDA i_IMU + (3) /* IMU is 6 points, each of which is only 2 bytes */
 #define i_TEM i_EDA + 1
 #define i_PPG i_TEM + 1
 #define i_TIM i_PPG + 1
+
+// Indices of the valid bit for each of these data 
+// (this is not the same as the indices above due to the size 
+//  difference between the data-- the IMU data is only 2 bytes, 
+//  but are 6 differernt data points)
+#define v_ADS 2
+#define v_IMU v_ADS + 8
+#define v_EDA v_IMU + 6
+#define v_TEM v_EDA + 1
+#define v_PPG v_TEM + 1
+#define v_TIM v_PPG + 1
