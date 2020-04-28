@@ -25,7 +25,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // v for verbose: lots of prints
 #define v 0
 // debug: serial reads and writes
-#define debug 0
+#define debug 1
 // REMEMBER: comment out lines in setup() and loop() for the sensors you do not have.
 
 // Setup for SPI communications
@@ -59,7 +59,7 @@ bool LEDval = LOW;
 
 int cnt = 0;
 
-// ADS gains 
+// ADS channel gains 
 byte ADS_CHANNEL_GAINS[8] = {/*chan 1 EMG Gain 4  */ ADS1299_REG_CHNSET_GAIN_4,
                              /*chan 2 EMG Gain 4  */ ADS1299_REG_CHNSET_GAIN_4,
                              /*chan 3 EOG Gain 2  */ ADS1299_REG_CHNSET_GAIN_4,
@@ -226,6 +226,23 @@ void ADS_init(void) {
                                        ADS1299_REG_BIAS_SENSN_BIASN7 |
                                        ADS1299_REG_BIAS_SENSN_BIASN6 |
                                        ADS1299_REG_BIAS_SENSN_BIASN5 );
+
+  // set up Lead-Off detection
+  /* from page 63 in the manual:
+   *   10.1.2.1 Lead-Off
+   *   Sample code to set dc lead-off with pull-up and pull-down resistors on all channels.
+   *     WREG LOFF       0x13  // Comparator threshold at 95% and 5%, pullup or pulldown resistor dc lead-off
+   *     WREG CONFIG4    0x02  // Turn on dc lead-off comparators
+   *     WREG LOFF_SENSP 0xFF  // Turn on the P-side of all channels for lead-off sensing
+   *     WREG LOFF_SENSN 0xFF  // Turn on the N-side of all channels for lead-off sensing
+   *   Observe the status bits of the output data stream to monitor lead-off status.
+  */
+//  ADS_WREG(ADS1299_REGADDR_LOFF,       0x13); 
+//  ADS_WREG(ADS1299_REGADDR_CONFIG4,    0x02); 
+//  ADS_WREG(ADS1299_REGADDR_LOFF_SENSP, 0x0F); 
+//  ADS_WREG(ADS1299_REGADDR_LOFF_SENSN, 0xFF); 
+//  // TODO make sure this below works
+//  ADS_WREG(ADS1299_REGADDR_LOFF_FLIP,  0xF0); // flip the EEG channels since we are connecting them to the N end 
 }
 
 void ADS_start(void) {
@@ -277,32 +294,19 @@ void setup_MPU6050() {
   // use the code below to print before/after and change accel/gyro offset values
   /*
   Serial.println("Updating internal sensor offsets...");
-  // -76  -2359 1688  0 0 0
-  Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
-  Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
-  Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
-  Serial.print(accelgyro.getXGyroOffset()); Serial.print("\t"); // 0
-  Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
-  Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
-  Serial.print("\n");
   accelgyro.setXGyroOffset(220);
   accelgyro.setYGyroOffset(76);
   accelgyro.setZGyroOffset(-85);
-  Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
-  Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
-  Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
-  Serial.print(accelgyro.getXGyroOffset()); Serial.print("\t"); // 0
-  Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
-  Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
-  Serial.print("\n");
   */
   
-/* // data rate change?
+  /* 
+  // data rate change?
   // SMPLRT_DIV register
   uint8_t getRate();
   void setRate(uint8_t rate);*/
 
-  /*    // Calibration Routines
+  /*    
+    // Calibration Routines
     void CalibrateGyro(uint8_t Loops = 15); // Fine tune after setting offsets with less Loops.
     void CalibrateAccel(uint8_t Loops = 15);// Fine tune after setting offsets with less Loops.
     */
@@ -336,7 +340,7 @@ void setup() {
   
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
 //  setup_MAX30105();
-
+  
   // initialize the IMU MPU6050
   setup_MPU6050();
   
@@ -359,6 +363,7 @@ void print_serial_instructions() {
   Serial.println("type S#0 to deactivate SRB2 for channel # and B#1 to activate it");
   Serial.println("type G#N to set the gain for channel # to N=0:1, N=1:2, N=2:4, N=3:6, N=4:8, N=5:12, N=6:24");
   Serial.println("type T#0 to toggle channel # off, and T#1 to toggle channel # on");
+  Serial.println("type 'R' or 'r' to print the current register settings of the ADS1299");
   Serial.println("type 'P' or 'p' to print these instructions again");
 }
 
@@ -418,9 +423,18 @@ void DRDY_ISR(long* packet) {
   if ((b1 & 0xF0) == 0b11000000) {
     byte loff_p =  (b1<<4) | (b2>>4);
     byte loff_n =  (b2<<4) | (b3>>4);
-
+//    Serial.print("loff_p: ");    Serial.println(loff_p,BIN);
+//    Serial.print("loff_n: ");    Serial.println(loff_n,BIN);
     // TODO use loff-p and loff-n to figure out which channels might be invalid
-    
+    // the first 4 channels are EMG and EOG- they use both leads
+    int i = 0;
+    for (i; i < 4; i++) {
+//      packet[i_VALID] |= (((loff_p | loff_n) >> i) & 1) << (v_ADS + i);
+    }
+//    Serial.print("packet[i_VALID]: ");    Serial.println(packet[i_VALID],BIN);
+    // the last 4 channels are all EEG, they use only the N inputs
+    for (i; i < 8; i++) {
+    }
   } else {
     Serial.println("invalid ADS1299 packet");
     for (int i = 3; i < 27; i++){
@@ -470,7 +484,7 @@ byte ADS_RREG(byte r , int n) {
   byte to_ret;
   for (int i = 0; i < n; i++)
   { byte temp = mySPI.transfer(0x00);
-    Serial.println(temp, HEX);
+//    Serial.println(temp, HEX);
     if ((n-i) == 1) to_ret = temp;
   }
   mySPI.endTransaction();
@@ -540,6 +554,10 @@ void parse_serial_input() {
   case 'p':
   case 'P':
     print_serial_instructions();
+    break;
+  case 'r':
+  case 'R':
+    print_ADS_reg_settings();
     break;
   case 0xA:
     break;
@@ -680,7 +698,27 @@ void toggle_channel(int chan){
   }
 }
 
-void change_channel_short(int chan){}
+void print_ADS_reg_settings() {
+  for(uint8_t address =0; address<24; address++){
+    Serial.print("Register Address: 0x"); Serial.print(address,HEX);
+    Serial.print("\t");
+    Serial.print(ADS_reg_names[address]);
+    Serial.print("\t");
+    if(!(address>12 && address <20)) Serial.print("\t");
+    byte data = ADS_RREG(address,1);
+    Serial.print("Register Data: 0x"); Serial.print(data, HEX);
+    Serial.print("\t");
+    Serial.print("0b"); Serial.print(data, BIN);
+    Serial.println();
+  }
+
+//  // START CONVERSION AGAIN
+//  if (DATA_MODE == RDATA_CC_MODE) {
+//    digitalWrite(pCS, LOW);
+//    mySPI.transfer(START);
+//    mySPI.transfer(RDATAC);
+//  }
+}
 
 inline void get_IMU_data(long* packet){
   int16_t ax, ay, az, gx, gy, gz;
@@ -701,29 +739,29 @@ inline void get_IMU_data(long* packet){
       Serial.println("IMU "+String(i)+" "+String( ((int16_t*)&(packet[i_IMU]))[i]));
     }
   #endif
+
+
+  /*  From MPU6050 register maps (pg 31), Gyroscope:
+   * 
+   * FS_SEL     Full Scale Range      LSB Sensitivity
+   *    0           ± 250 °/s           131 LSB/°/s      [DEFAULT]
+   *    1           ± 500 °/s           65.5 LSB/°/s
+   *    2           ± 1000 °/s          32.8 LSB/°/s
+   *    3           ± 2000 °/s          16.4 LSB/°/s
+   */
+  // conversion: g/131 = # °/s
+  
+  /*  From MPU6050 register maps (pg 29) , Accelerometer:
+   * 
+   * FS_SEL     Full Scale Range      LSB Sensitivity
+   *    0           ± 2 g               16384 LSB/g       [DEFAULT]
+   *    1           ± 4 g               8192 LSB/g
+   *    2           ± 8 g               4096 LSB/g
+   *    3           ± 16 g              2048 LSB/g
+   */
+  // conversion: a/16384 = #g *9.81 = # m/s^2
+  
 /*
-    // ACCEL_*OUT_* registers
-  void getMotion9(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz, int16_t* mx, int16_t* my, int16_t* mz);
-  void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);
-  void getAcceleration(int16_t* x, int16_t* y, int16_t* z);
-  int16_t getAccelerationX();
-  int16_t getAccelerationY();
-  int16_t getAccelerationZ();
-
-  // TEMP_OUT_* registers
-  int16_t getTemperature();
-
-  // GYRO_*OUT_* registers
-  void getRotation(int16_t* x, int16_t* y, int16_t* z);
-  int16_t getRotationX();
-  int16_t getRotationY();
-  int16_t getRotationZ();
-
-  // EXT_SENS_DATA_* registers
-  uint8_t getExternalSensorByte(int position);
-  uint16_t getExternalSensorWord(int position);
-  uint32_t getExternalSensorDWord(int position);
-
   // MOT_DETECT_STATUS register
   uint8_t getMotionStatus();
   bool getXNegMotionDetected();
@@ -732,7 +770,7 @@ inline void get_IMU_data(long* packet){
   bool getYPosMotionDetected();
   bool getZNegMotionDetected();
   bool getZPosMotionDetected();
-      bool getZeroMotionDetected();
+  bool getZeroMotionDetected();
 */
 }
 
