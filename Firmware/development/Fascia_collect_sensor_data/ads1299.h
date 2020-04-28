@@ -49,6 +49,10 @@
 #define ADS1299_REGDEFAULT_MISC2        0x00            ///< Register not used in this silicon; should stay at 0x00
 #define ADS1299_REGDEFAULT_CONFIG4      0x00            ///< Continuous conversion, LOFF comparator powered down
 
+String ADS_reg_names[24]= {"ID","CONFIG1","CONFIG2","CONFIG3","LOFF","CH1SET","CH2SET",
+                           "CH3SET","CH4SET","CH5SET","CH6SET","CH7SET","CH8SET",
+                           "BIAS_SENSP","BIAS_SENSN","LOFF_SENSP","LOFF_SENSN","LOFF_FLIP",
+                           "LOFF_STATP","LOFF_STATN","GPIO","MISC1","MISC2","CONFIG4"};
 
 /**************************************************************************************************************************************************
 *               Typedefs and Struct Declarations/Definitions                                                                                      *
