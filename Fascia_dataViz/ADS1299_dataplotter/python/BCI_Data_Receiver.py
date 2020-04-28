@@ -19,7 +19,7 @@ class BCI_Data_Receiver(object):
         self.address = (self.ip, self.port)
         self.prev_time_stamp = 0
 
-        self.num_data_to_halt = 5000 #TODO: set to 'math.inf' or comment-out lines 48-50 to run continuously
+        self.num_data_to_halt = math.inf #TODO: set to 'math.inf' or comment-out lines 48-50 to run continuously
         self.num_data_so_far = 0;
         self.window = window
 
