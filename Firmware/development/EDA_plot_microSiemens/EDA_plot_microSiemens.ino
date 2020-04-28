@@ -16,7 +16,7 @@ void loop(){
   float sum=0;
   for(int i=0;i<50;i++)           //Average the 50 measurements to remove 
       {
-      sensorValue=getCskin();     // use getRskin() for resistance or getCskin() for conductance
+      sensorValue=getRskin();     // use getRskin() for resistance or getCskin() for conductance
       sum += sensorValue;
 
       delay(1);
@@ -34,7 +34,9 @@ float getCskin() {
 
   // these are constants- should not change between iterations
   // values are from the PCB layout/schematic in Fascia Physio Board V0
-  int Rref = 820000; // reference resistor between - opamp and gnd
+  //int Rref = 820000; // reference resistor between - opamp and gnd
+  // values are from the PCB layout/schematic in Fascia Physio Board V1
+  int Rref = 866000; // reference resistor between - opamp and gnd
   // Rref might actually be 2M or 820K -- undocumented board build value
   float Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
   float i = (float)Vref / (float)Rref;
@@ -53,8 +55,11 @@ float getRskin() {
 
   // these are constants- should not change between iterations
   // values are from the PCB layout/schematic in Fascia Physio Board V0
-  int Rref = 820000; // reference resistor between - opamp and gnd
-  // Rref might actually be 2M or 820K -- undocumented board build value
+  //int Rref = 820000; // reference resistor between - opamp and gnd
+  // values are from the PCB layout/schematic in Fascia Physio Board V1
+  int Rref = 866000; // reference resistor between - opamp and gnd
+
+  // for V0 Rref might actually be 2M or 820K -- undocumented board build value
   float Vref = 3.3 * 20./(20.+140.); // voltage divider output (virtual gnd)
   float i = (float)Vref / (float)Rref;
 
