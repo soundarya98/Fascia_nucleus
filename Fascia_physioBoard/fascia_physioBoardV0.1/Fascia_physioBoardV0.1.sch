@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.5.1">
+<eagle version="9.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -5036,7 +5036,7 @@ part number 2062-2P from STA</description>
 <part name="C27" library="novaXR" deviceset="47UF" device="-0603-25V-5%" value="47uF"/>
 <part name="U$31" library="supply1" deviceset="GND_ISO" device=""/>
 <part name="U$19" library="supply1" deviceset="DVDD_ISO" device=""/>
-<part name="R9" library="novaXR" deviceset="875K" device="" value="875K"/>
+<part name="R9" library="novaXR" deviceset="875K" device="" value="866K"/>
 <part name="R10" library="novaXR" deviceset="75K" device="" value="75K"/>
 <part name="R11" library="novaXR" deviceset="150K" device="" value="150K"/>
 <part name="U$34" library="supply1" deviceset="GND_ISO" device=""/>
@@ -5093,8 +5093,8 @@ part number 2062-2P from STA</description>
 <part name="GND36" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="J3" library="Molex - 51296-1294" deviceset="MOLEX_51296-1294" device="MOLEX_51296-1294_0_0"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
-<part name="R7" library="novaXR" deviceset="10K" device="" value="10K"/>
-<part name="R18" library="novaXR" deviceset="110K" device="" value="110K"/>
+<part name="R7" library="novaXR" deviceset="10K" device="" value="20K"/>
+<part name="R18" library="novaXR" deviceset="110K" device="" value="140K"/>
 </parts>
 <sheets>
 <sheet>

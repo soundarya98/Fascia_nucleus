@@ -96,3 +96,7 @@ V0/novaXR_sisterBoardV0/.DS_Store
 .DS_Store
 Fascia_faceInterface/activeElectrode_adapter.cam
 Fascia_faceInterface/dxfimp.scr
+Fascia_dataViz/ADS1299_dataplotter/python/__pycache__/floatingCurves.cpython-37.pyc
+Fascia_dataViz/ADS1299_dataplotter/python/__pycache__/CausalButter.cpython-37.pyc
+Fascia_dataViz/ADS1299_dataplotter/python/__pycache__/BCI_Data_Receiver.cpython-37.pyc
+Fascia_dataViz/ADS1299_dataplotter/.idea/ADS1299_dataplotter.iml
