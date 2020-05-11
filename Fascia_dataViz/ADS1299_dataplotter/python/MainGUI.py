@@ -33,7 +33,7 @@ class mainWindow(QtWidgets.QWidget):
 
         #The ip of user's machine
         # self.ip = '18.30.22.83'
-        self.ip = '10.0.0.77'#'192.168.0.100'
+        self.ip = '10.0.0.74'#'192.168.0.100'
         # self.ip = '172.30.1.251'
         # self.port_number = 35295
         self.port_number = 8899

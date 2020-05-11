@@ -41,7 +41,7 @@ class mainWindow(QtWidgets.QWidget):
 
         # for FFT
         self.graph_fft = 1 #TODO: change this to 1 if you dont want FFT graph
-        self.FFT_CHANNEL = 1 #TODO: make sure this is the channel you want the FFT for (0 indexed)
+        self.FFT_CHANNEL = 4 #TODO: make sure this is the channel you want the FFT for (0 indexed)
         self.fft_lock = threading.Lock();
         # self.fft_thread = threading.Thread(target = self.fft_calc, args = (self.FFT_CHANNEL,) );
         self.moreData = False;
@@ -51,15 +51,15 @@ class mainWindow(QtWidgets.QWidget):
         for i in range(self.n_plots-self.start_idx + self.graph_fft):
             self.plotBufs.append(np.zeros(PLOTWNDSIZE))
 
-        #For data Recording
+        # for data Recording
         self.isRecording = False
         self.recordingBuf = list()
 
-        #For filters
-        #Init/store all the required filters
-        data_rate = 1000
+        # for filters
+        data_rate = 1000 #TODO: make sure this matches the data rate of the ADS1299 in the firmware
         self.data_rate = data_rate
         num_ADS_plots = 8
+        # Init/store all the required filters
         # Do the bandpass filters
         self.BPfilters = []
         # for i in range(0,num_ADS_plots):
@@ -83,14 +83,14 @@ class mainWindow(QtWidgets.QWidget):
         self.heartrate_avg  = []
 
         # initialize the UI
-        self.title = "EEG Classifier"
+        self.title = "Fascia Sensor Data"
         self.initUI()
 
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.updateGUI)
 
         # The ip of user's machine
-        self.ip = '10.0.0.77'#'192.168.0.13' # '192.168.0.101'  # '192.168.0.13'
+        self.ip = '10.0.0.74' #TODO make sure this matches intet in en0 in ifconfig
         self.port_number = 8899
 
         self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
@@ -200,18 +200,17 @@ class mainWindow(QtWidgets.QWidget):
         if not ((invalid_arr >> i_PPG) & 1):
             ppg_sig = newData[i_PPG]
             l = len(self.heart_sig_arr);
-            for i in range(min(10, l)):#len(self.heart_sig_arr[])):
+            for i in range(min(10, l)):
                 if self.heart_sig_arr[l-1-i] - ppg_sig >= 100 and self.heart_sig_arr[l-1-i] - ppg_sig < 700 and l>20:
-                    # print (ppg_sig,"-",self.heart_sig_arr[i])
-                    print("heart beat!",newData[i_TIM])#newData[i_CNT])
-                    self.heartbeat_ts.append(newData[i_TIM])#CNT])
-                    self.plotBufs[i_PPG - self.start_idx][-1] *=-1
+                    print("heart beat!",newData[i_TIM])
+                    self.heartbeat_ts.append(newData[i_TIM])
+                    # self.plotBufs[i_PPG - self.start_idx][-1] *=-1 #mark spot in graph where heartbeat detected
                     # calculate heart rate
                     if len(self.heartbeat_ts) > 1:
                         # delta_ts = time in ms difference between the current and most recent heart beat
                         delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[len(self.heartbeat_ts)-2]
-                        delta_sec = delta_ts / 1000 #* 1./(self.Data_receiver.current_data_rate)#/10) #not /10 because using the count of packets which is at regular data rate
-                        bpm = 1/(delta_sec/60)#len(self.heartbeat_ts)/(delta_sec/60)
+                        delta_sec = delta_ts / 1000
+                        bpm = 1/(delta_sec/60)
                         print("local heart rate: "+str(int(bpm)))
                         self.heartrate_avg.append(bpm)
                         bpm = np.average(self.heartrate_avg)

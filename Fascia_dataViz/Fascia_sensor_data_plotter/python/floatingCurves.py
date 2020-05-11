@@ -36,10 +36,10 @@ class floatingCurves(QtWidgets.QWidget):
         self.layout = QtWidgets.QGridLayout()
 
         self.setLayout(self.layout)
-        self.titles = ["packet number", "Valid array", "ADS 1: EMG 1/2", "ADS 2: EMG 4/3", "ADS 3: EOG 1/2",
-                       "ADS 4: EMG 7/8", "ADS 5: EEG1 (PASSIVE)", "ADS 6: EEG2 (PASSIVE)", "ADS 7: EEG (ACTIVE)", "ADS 8: EEG (ACTIVE)",
+        self.titles = ["packet number", "Valid array", "ADS 1: EMG 1/2 (volts)", "ADS 2: EMG 4/3 (volts)", "ADS 3: EOG 1/2 (volts)",
+                       "ADS 4: EMG 7/8 (volts)", "ADS 5: EEG1 (PASSIVE) (volts)", "ADS 6: EEG2 (PASSIVE) (volts)", "ADS 7: EEG (ACTIVE) (volts)", "ADS 8: EEG (ACTIVE) (volts)",
                        "IMU Ax", "IMU Ay","IMU Az", "IMU Gx","IMU Gy", "IMU Gz",#"IMU 7", "IMU 8","IMU 9",
-                       "EDA: Rskin","temperature", "PPG raw data", "FFT from ADS "+str(fft_chan)]#,"battery voltage level"]#"heart rate arduino"]
+                       "EDA: Rskin (Ohm)","temperature (C)", "PPG raw data", "FFT from ADS "+str(fft_chan)]#,"battery voltage level"]#"heart rate arduino"]
         self.generateGraphsArray(channelNum, start_i)
         self.addText()
 
@@ -48,10 +48,14 @@ class floatingCurves(QtWidgets.QWidget):
         PN.setText("Packet #: ")
         self.layout.addWidget(PN)
         self.PN = PN
-        DR = QtWidgets.QLabel()
-        DR.setText("Data Rate: ")
-        self.layout.addWidget(DR) #pg.TextItem("Data Rate: ")
-        self.DR = DR
+        PDR = QtWidgets.QLabel()
+        PDR.setText("P Data Rate: ")
+        self.layout.addWidget(PDR) #pg.TextItem("Data Rate: ")
+        self.PDR = PDR
+        ADR = QtWidgets.QLabel()
+        ADR.setText("A Data Rate: ")
+        self.layout.addWidget(ADR) #pg.TextItem("Data Rate: ")
+        self.ADR = ADR
         HR = QtWidgets.QLabel()
         HR.setText("Heart Rate: ")
         self.layout.addWidget(HR)

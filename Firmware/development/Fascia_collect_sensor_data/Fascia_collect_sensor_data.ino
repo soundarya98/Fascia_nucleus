@@ -25,7 +25,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // v for verbose: lots of prints
 #define v 0
 // debug: serial reads and writes
-#define debug 1
+#define debug 0
 // REMEMBER: comment out lines in setup() and loop() for the sensors you do not have.
 
 // Setup for SPI communications
@@ -210,7 +210,7 @@ void ADS_init(void) {
                                    ADS1299_REG_CHNSET_SRB2_CONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH6SET, ADS_CHANNEL_GAINS[5] | 
                                    channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON|
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
                                    ADS1299_REG_CHNSET_SRB2_CONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH7SET, ADS_CHANNEL_GAINS[6] | 
                                    channel_mode |
@@ -265,6 +265,7 @@ void Arduino_ADC_setup() {
     //  ADC->CTRLB.reg = ADC_CTRLB_PRESCALER_DIV512 |    // Divide Clock by 512.
     //                 ADC_CTRLB_RESSEL_10BIT;         // 10 bits resolution as default
     ADC->CTRLB.reg = ADC_CTRLB_PRESCALER_DIV16 | ADC_CTRLB_RESSEL_12BIT;
+    Serial.println("done setting up ADC with lower prescaler value and higher bit resolution");
 }
 
 void setup_MAX30105() {
@@ -282,6 +283,7 @@ void setup_MAX30105() {
   particleSensor.enableDIETEMPRDY(); //Enable the temp ready interrupt. This is required.
   // particleSensor.setPulseAmplitudeGreen(0); //Turn off Green LED
   particleSensor.setPulseAmplitudeRed(0x0A); //Turn Red LED to low to indicate sensor is running
+  Serial.println("done setting up MAX30105");
 }
 
 void setup_MPU6050() {
@@ -310,6 +312,7 @@ void setup_MPU6050() {
     void CalibrateGyro(uint8_t Loops = 15); // Fine tune after setting offsets with less Loops.
     void CalibrateAccel(uint8_t Loops = 15);// Fine tune after setting offsets with less Loops.
     */
+    Serial.println("Done setting up MPU6050");
 }
 
 void setup() {

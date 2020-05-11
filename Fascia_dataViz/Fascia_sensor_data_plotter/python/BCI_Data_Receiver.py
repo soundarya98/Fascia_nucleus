@@ -24,6 +24,8 @@ class BCI_Data_Receiver(object):
         self.dataPlottingWidget = data_plotting_widget
         self.current_data_rate = 1
 
+        self.prev_A_ts = 0;
+
     def startConnection(self):
         """Start the socket connection"""
         # self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
@@ -57,8 +59,8 @@ class BCI_Data_Receiver(object):
             cur_time_stamp = time.time()
             # print("data rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
             self.current_data_rate = int(num_packets/(cur_time_stamp-self.prev_time_stamp))
-            t = "Data Rate: "+str(self.current_data_rate)+" Hz"
-            self.dataPlottingWidget.DR.setText(t)
+            t = "P Data Rate: "+str(self.current_data_rate)+" Hz"
+            self.dataPlottingWidget.PDR.setText(t)
             self.prev_time_stamp = time.time()
             # print(data, addr)
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
@@ -71,6 +73,14 @@ class BCI_Data_Receiver(object):
                     unpacked_data = struct.unpack('i'+'i'+'f'*8+'h'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
                     #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
+
+                    # print(unpacked_data[19], self.prev_A_ts)
+                    if unpacked_data[19] != self.prev_A_ts:
+                        dr = 1000/(unpacked_data[19] - self.prev_A_ts)
+                        # print(dr)
+                        t = "A Data Rate: " + str(int(dr)) + " Hz"
+                        self.dataPlottingWidget.ADR.setText(t)
+                        self.prev_A_ts = unpacked_data[19] # milliseconds
 
                     # For Walaa: debug prints
 

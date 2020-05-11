@@ -135,7 +135,7 @@ void ADS_init(void) {
   }
 
   ADS_WREG(ADS1299_REGADDR_CONFIG1, ADS1299_REG_CONFIG1_RESERVED_VALUE |
-                                    ADS1299_REG_CONFIG1_1kSPS); // last three bits is the data rate page 46 of data sheet
+                                    ADS1299_REG_CONFIG1_250SPS); // last three bits is the data rate page 46 of data sheet
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -143,38 +143,41 @@ void ADS_init(void) {
   ADS_WREG(ADS1299_REGADDR_MISC1, 0x00);
 
   delay(10);
-  ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_1 | 
+  ADS_WREG(ADS1299_REGADDR_CH1SET, ADS1299_REG_CHNSET_GAIN_12 | 
+                                   channel_mode |
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_12 | 
+                                   channel_mode | 
+                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_SRB2_CONNECTED);
+  ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH2SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
-  ADS_WREG(ADS1299_REGADDR_CH3SET, ADS1299_REG_CHNSET_GAIN_1 | 
-                                   channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
-                                   ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH4SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH5SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH6SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode | 
-                                   ADS1299_REG_CHNSET_CHANNEL_ON|
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF|
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH7SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode |
-                                   ADS1299_REG_CHNSET_CHANNEL_ON |
+                                   ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
   ADS_WREG(ADS1299_REGADDR_CH8SET, ADS1299_REG_CHNSET_GAIN_1 | 
                                    channel_mode |
                                    ADS1299_REG_CHNSET_CHANNEL_OFF |
                                    ADS1299_REG_CHNSET_SRB2_DISCONNECTED);
+
+ ADS_WREG(ADS1299_REGADDR_BIAS_SENSN,  ADS1299_REG_BIAS_SENSN_BIASN1 |
+                                       ADS1299_REG_BIAS_SENSN_BIASN2 );
 }
 
 void ADS_start(void) {
