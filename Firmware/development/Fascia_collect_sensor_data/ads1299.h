@@ -407,6 +407,7 @@ byte BIAS_SENSP[7] = {ADS1299_REG_BIAS_SENSP_BIASP1,
                       ADS1299_REG_BIAS_SENSP_BIASP4,
                       ADS1299_REG_BIAS_SENSP_BIASP5,
                       ADS1299_REG_BIAS_SENSP_BIASP6,
+                      ADS1299_REG_BIAS_SENSP_BIASP7,
                       ADS1299_REG_BIAS_SENSP_BIASP8};
 
 /* BIAS_SENSN REGISTER ****************************************************************************************************************************/
@@ -431,6 +432,7 @@ byte BIAS_SENSN[7] = {ADS1299_REG_BIAS_SENSN_BIASN1,
                       ADS1299_REG_BIAS_SENSN_BIASN4,
                       ADS1299_REG_BIAS_SENSN_BIASN5,
                       ADS1299_REG_BIAS_SENSN_BIASN6,
+                      ADS1299_REG_BIAS_SENSN_BIASN7,
                       ADS1299_REG_BIAS_SENSN_BIASN8};
 
 /* LOFF_SENSP REGISTER ****************************************************************************************************************************/
