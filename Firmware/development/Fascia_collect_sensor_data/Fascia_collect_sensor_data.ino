@@ -728,7 +728,7 @@ inline void get_IMU_data(long* packet){
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
   // NEED to convert from raw data to some underestandable units
   
-  // insert imy data into packet
+  // insert imu data into packet
   ((int16_t*)&(packet[i_IMU]))[0] = ax;
   ((int16_t*)&(packet[i_IMU]))[1] = ay;
   ((int16_t*)&(packet[i_IMU]))[2] = az;
@@ -753,7 +753,10 @@ inline void get_IMU_data(long* packet){
    *    3           ± 2000 °/s          16.4 LSB/°/s
    */
   // conversion: g/131 = # °/s
-  
+  // float g_x = gx / 131.;
+  // float g_y = gy / 131.;
+  // float g_z = gz / 131.;
+
   /*  From MPU6050 register maps (pg 29) , Accelerometer:
    * 
    * FS_SEL     Full Scale Range      LSB Sensitivity
@@ -763,7 +766,18 @@ inline void get_IMU_data(long* packet){
    *    3           ± 16 g              2048 LSB/g
    */
   // conversion: a/16384 = #g *9.81 = # m/s^2
-  
+  // float a_x = ax / 16384. * 9.81;
+  // float a_y = ay / 16384. * 9.81;
+  // float a_z = az / 16384. * 9.81;
+
+  // insert converted imu data into packet
+  // ((float*)&(packet[i_IMU]))[0] = a_x;
+  // ((float*)&(packet[i_IMU]))[1] = a_y;
+  // ((float*)&(packet[i_IMU]))[2] = a_z;
+  // ((float*)&(packet[i_IMU]))[3] = g_x;
+  // ((float*)&(packet[i_IMU]))[4] = g_y;
+  // ((float*)&(packet[i_IMU]))[5] = g_z;
+
 /*
   // MOT_DETECT_STATUS register
   uint8_t getMotionStatus();
