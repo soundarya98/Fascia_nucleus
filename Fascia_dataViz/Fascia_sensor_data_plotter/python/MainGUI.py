@@ -63,11 +63,11 @@ class mainWindow(QtWidgets.QWidget):
         # Do the bandpass filters
         self.BPfilters = []
         # for i in range(0,num_ADS_plots):
-        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 1/2
-        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 4/3
-        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EOG 1/2
-        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 5/6
-        self.BPfilters.append(CausalButter(4, 10, 500, data_rate, 0))  # EMG 7/8
+        self.BPfilters.append(CausalButter(4, 10, 100, data_rate, 0))  # EMG 1/2
+        self.BPfilters.append(CausalButter(4, 10, 100, data_rate, 0))  # EMG 4/3
+        self.BPfilters.append(CausalButter(4, 10, 100, data_rate, 0))  # EOG 1/2
+        self.BPfilters.append(CausalButter(4, 10, 100, data_rate, 0))  # EMG 5/6
+        self.BPfilters.append(CausalButter(4, 10, 100, data_rate, 0))  # EMG 7/8
         self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 1
         self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 2
         self.BPfilters.append(CausalButter(8,  5,  50, data_rate, 0))  # EEG 3
@@ -90,10 +90,10 @@ class mainWindow(QtWidgets.QWidget):
         self.timer.timeout.connect(self.updateGUI)
 
         # The ip of user's machine
-        self.ip = '10.0.0.74' #TODO make sure this matches intet in en0 in ifconfig
+        self.ip = '10.0.0.74' #TODO make sure this matches inet in en0 in ifconfig
         self.port_number = 8899
 
-        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget)
+        self.Data_receiver = BCI_Data_Receiver(self.ip, self.port_number, self.dataPlottingWidget, self)
         self.Data_receiver.asyncReceiveData(self.dataReadyCallback)
 
 
@@ -209,7 +209,7 @@ class mainWindow(QtWidgets.QWidget):
                     if len(self.heartbeat_ts) > 1:
                         # delta_ts = time in ms difference between the current and most recent heart beat
                         delta_ts = self.heartbeat_ts[-1] - self.heartbeat_ts[len(self.heartbeat_ts)-2]
-                        delta_sec = delta_ts / 1000
+                        delta_sec = delta_ts / 1000000 #bc microseconds
                         bpm = 1/(delta_sec/60)
                         print("local heart rate: "+str(int(bpm)))
                         self.heartrate_avg.append(bpm)

@@ -6,10 +6,11 @@ import threading
 import struct
 
 import time
+import math
 
 class BCI_Data_Receiver(object):
 
-    def __init__(self, ip, port, data_plotting_widget):
+    def __init__(self, ip, port, data_plotting_widget, window):
         self.ip = ip
         self.port = port
         self.sock = None
@@ -18,13 +19,17 @@ class BCI_Data_Receiver(object):
         self.dataReadyCallback = None
         self.readingThread = None
         self.address = (self.ip, self.port)
-        self.prev_time_stamp = 0
-        self.prev_EDA_time_stamp = 0
-        # self.prev_PPG_time_stamp = 0
+
         self.dataPlottingWidget = data_plotting_widget
+
         self.current_data_rate = 1
 
+        self.prev_time_stamp = 0
         self.prev_A_ts = 0;
+
+        self.num_data_to_halt = math.inf#5000 #TODO: set to 'math.inf' or comment-out lines 63-65 to run continuously
+        self.num_data_so_far = 0;
+        self.window = window
 
     def startConnection(self):
         """Start the socket connection"""
@@ -52,9 +57,13 @@ class BCI_Data_Receiver(object):
                       "EDA  ", "TEMP ", "PPG  ", "TIM"]#, "BTR "]#"HRT  "]
         num_elements = 17
         num_bytes = 4*num_elements
-        num_packets = 22
+        num_packets = 20
         while True:
-            #Receive data from sensor
+            # terminate process if reached self.num_data_to_halt
+            if self.num_data_so_far >= self.num_data_to_halt:
+                self.window.close()
+                sys.exit()
+            # Receive data from sensor
             data, addr = self.sock.recvfrom(num_bytes*num_packets)
             cur_time_stamp = time.time()
             # print("data rate: "+str(int(num_packets/(cur_time_stamp-self.prev_time_stamp))) + " Hz")
@@ -63,6 +72,7 @@ class BCI_Data_Receiver(object):
             self.dataPlottingWidget.PDR.setText(t)
             self.prev_time_stamp = time.time()
             # print(data, addr)
+            self.num_data_so_far += num_packets
             #self.receiveBuff = self.receiveBuff + self.sock.recv(40)
             self.receiveBuff = self.receiveBuff + data
         
@@ -72,15 +82,17 @@ class BCI_Data_Receiver(object):
                 for i in range(num_packets):
                     unpacked_data = struct.unpack('i'+'i'+'f'*8+'h'*6+'f'+'f'+'ii', data[i*num_bytes: (i+1)*num_bytes])
                     # unpacked_data = struct.unpack('i'*num_elements, data[i*num_bytes: (i+1)*num_bytes])
-                    #from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
+                    # from manual For the 'f', 'd' and 'e' conversion codes, the packed representation uses the IEEE 754 binary32, binary64 or binary16 format (for 'f', 'd' or 'e' respectively), regardless of the floating-point format used by the platform.
 
                     # print(unpacked_data[19], self.prev_A_ts)
-                    if unpacked_data[19] != self.prev_A_ts:
-                        dr = 1000/(unpacked_data[19] - self.prev_A_ts)
-                        # print(dr)
-                        t = "A Data Rate: " + str(int(dr)) + " Hz"
-                        self.dataPlottingWidget.ADR.setText(t)
-                        self.prev_A_ts = unpacked_data[19] # milliseconds
+                    # if unpacked_data[19] != self.prev_A_ts:
+                    dr = 1000000/(unpacked_data[19] - self.prev_A_ts)
+                    # print(dr)
+                    t = "A Data Rate: " + str(int(dr)) + " Hz"
+                    self.dataPlottingWidget.ADR.setText(t)
+                    self.prev_A_ts = unpacked_data[19] # microseconds
+                    # else:
+                    #     print("same timestamp!")
 
                     # For Walaa: debug prints
 

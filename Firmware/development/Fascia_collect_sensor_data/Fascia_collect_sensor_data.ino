@@ -19,7 +19,7 @@ enum run_mode_t  {GEN_TEST_SIGNAL, NORMAL_ELECTRODES};
 // settings
 #define CONNECT_WIFI 1
 
-#define BOARD_V FASCIA_V0_0
+#define BOARD_V FASCIA_V0_1
 #define DATA_MODE RDATA_SS_MODE
 #define RUN_MODE NORMAL_ELECTRODES
 // v for verbose: lots of prints
@@ -108,6 +108,7 @@ void select_board_pins(void) {
         Serial.println("initializing pins for Fascia V0.1");
         pCS = PA20;
         pDRDY = PB10;
+        pLED = PA04;
         break;
     }
   }
@@ -180,7 +181,7 @@ void ADS_init(void) {
   }
 
   ADS_WREG(ADS1299_REGADDR_CONFIG1, ADS1299_REG_CONFIG1_RESERVED_VALUE |
-                                    ADS1299_REG_CONFIG1_2kSPS); // last three bits is the data rate page 46 of data sheet
+                                    ADS1299_REG_CONFIG1_1kSPS); // last three bits is the data rate page 46 of data sheet
   ADS_WREG(ADS1299_REGADDR_CONFIG2, config2_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG3, config3_data);
   ADS_WREG(ADS1299_REGADDR_CONFIG4, 0x00);//0b00001000);
@@ -342,7 +343,7 @@ void setup() {
   Arduino_ADC_setup();
   
   // initialize MAX30105 PPG sensor (we will also be getting temperature data from it)
-//  setup_MAX30105();
+  setup_MAX30105();
   
   // initialize the IMU MPU6050
   setup_MPU6050();
@@ -387,9 +388,8 @@ void loop() {
   #if DATA_MODE == RDATA_SS_MODE
     DRDY_ISR(packet);
   #endif
-//  get_EDA_data(packet);
   if (!(cnt%10)) {
-//    get_PPG_temp_data(packet);
+    get_PPG_temp_data(packet);
     get_EDA_data(packet);
     get_IMU_data(packet);
   } else {
@@ -918,8 +918,8 @@ inline char* getSendBuf()
 inline void pushToBuf(char* packet)
 {
     ((int*)packet)[0] = cnt;
-    ((int*)packet)[i_TIM] = millis();
-//    Serial.println(((int*)packet)[i_TIM]); 
+    ((unsigned long*)packet)[i_TIM] = micros();
+//    Serial.print(((int*)packet)[0]); Serial.print(" : "); Serial.println(((int*)packet)[i_TIM]); 
     cnt++;
     //When current buffer is full
     if(wCount == SEND_SIZE)

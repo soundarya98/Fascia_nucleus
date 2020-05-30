@@ -13,7 +13,7 @@
 #define HOST_ID     "10.0.0.74"
 #define PORT_NUM    8899
 
-#define SEND_SIZE 22
+#define SEND_SIZE 20
 // 1 for serial count, 
 // 1 for valid array for the data packet (1 maps to data means invalid)
 // 8 for ADS data, ( - status bits, incorporated into valid array)
