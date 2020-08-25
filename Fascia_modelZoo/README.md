@@ -5,7 +5,6 @@ This repository contains 2 types of files:
 The dataset that is common to both is Sleep-EDF dataset.   
 In order to download this dataset to your computer, use
 
-`mkdir data`  
 `cd data`  
 `chmod +x download_physionet.sh`  
 `./download_physionet.sh`
