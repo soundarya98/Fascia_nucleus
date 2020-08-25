@@ -117,12 +117,12 @@ def iterate_batch_seq_minibatches(inputs, targets, batch_size, seq_length):
                            dtype=targets.dtype)
 
     for i in range(batch_size):
-        seq_inputs[i] = inputs[i*batch_len:(i+1)*batch_len]
-        seq_targets[i] = targets[i*batch_len:(i+1)*batch_len]
+        seq_inputs[i] = inputs[i * batch_len:(i + 1) * batch_len]
+        seq_targets[i] = targets[i * batch_len:(i + 1) * batch_len]
 
     for i in range(epoch_size):
-        x = seq_inputs[:, i*seq_length:(i+1)*seq_length]
-        y = seq_targets[:, i*seq_length:(i+1)*seq_length]
+        x = seq_inputs[:, i * seq_length:(i + 1) * seq_length]
+        y = seq_targets[:, i * seq_length:(i + 1) * seq_length]
         flatten_x = x.reshape((-1,) + inputs.shape[1:])
         flatten_y = y.reshape((-1,) + targets.shape[1:])
         yield flatten_x, flatten_y
@@ -132,10 +132,10 @@ def iterate_list_batch_seq_minibatches(inputs, targets, batch_size, seq_length):
     for idx, each_data in enumerate(zip(inputs, targets)):
         each_x, each_y = each_data
         seq_x, seq_y = [], []
-        for x_batch, y_batch in iterate_seq_minibatches(inputs=each_x, 
-                                                        targets=each_y, 
-                                                        batch_size=1, 
-                                                        seq_length=seq_length, 
+        for x_batch, y_batch in iterate_seq_minibatches(inputs=each_x,
+                                                        targets=each_y,
+                                                        batch_size=1,
+                                                        seq_length=seq_length,
                                                         stride=1):
             seq_x.append(x_batch)
             seq_y.append(y_batch)
@@ -143,10 +143,10 @@ def iterate_list_batch_seq_minibatches(inputs, targets, batch_size, seq_length):
         seq_x = seq_x.reshape((-1, seq_length) + seq_x.shape[1:])
         seq_y = np.hstack(seq_y)
         seq_y = seq_y.reshape((-1, seq_length) + seq_y.shape[1:])
-        
-        for x_batch, y_batch in iterate_batch_seq_minibatches(inputs=seq_x, 
-                                                              targets=seq_y, 
-                                                              batch_size=batch_size, 
+
+        for x_batch, y_batch in iterate_batch_seq_minibatches(inputs=seq_x,
+                                                              targets=seq_y,
+                                                              batch_size=batch_size,
                                                               seq_length=1):
             x_batch = x_batch.reshape((-1,) + x_batch.shape[2:])
             y_batch = y_batch.reshape((-1,) + y_batch.shape[2:])

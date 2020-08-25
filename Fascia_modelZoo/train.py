@@ -3,7 +3,8 @@
 import os
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+print(tf.__version__)
 
 from deepsleep.trainer import DeepFeatureNetTrainer, DeepSleepNetTrainer
 from deepsleep.sleep_stage import (NUM_CLASSES,
@@ -92,4 +93,5 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
+    print("Hello")
     tf.compat.v1.app.run()

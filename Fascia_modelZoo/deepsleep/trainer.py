@@ -6,6 +6,7 @@ import time
 from datetime import datetime
 
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,6 +18,7 @@ from deepsleep.model import DeepFeatureNet, DeepSleepNet
 from deepsleep.optimize import adam, adam_clipping_list_lr
 from deepsleep.utils import iterate_minibatches, iterate_batch_seq_minibatches
 
+
 # from tensorlayer.db import TensorDB
 # from tensorlayer.db import JobStatus
 
@@ -27,20 +29,20 @@ from deepsleep.utils import iterate_minibatches, iterate_batch_seq_minibatches
 class Trainer(object):
 
     def __init__(
-        self,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+            self,
+            interval_plot_filter=50,
+            interval_save_model=100,
+            interval_print_cm=10
     ):
         self.interval_plot_filter = interval_plot_filter
         self.interval_save_model = interval_save_model
         self.interval_print_cm = interval_print_cm
 
     def print_performance(self, sess, output_dir, network_name,
-                           n_train_examples, n_valid_examples,
-                           train_cm, valid_cm, epoch, n_epochs,
-                           train_duration, train_loss, train_acc, train_f1,
-                           valid_duration, valid_loss, valid_acc, valid_f1):
+                          n_train_examples, n_valid_examples,
+                          train_cm, valid_cm, epoch, n_epochs,
+                          train_duration, train_loss, train_acc, train_f1,
+                          valid_duration, valid_loss, valid_acc, valid_f1):
         # Get regularization loss
         train_reg_loss = tf.add_n(tf.compat.v1.get_collection("losses", scope=network_name + "\/"))
         train_reg_loss_value = sess.run(train_reg_loss)
@@ -50,7 +52,7 @@ class Trainer(object):
         if ((epoch + 1) % self.interval_print_cm == 0) or ((epoch + 1) == n_epochs):
             print(" ")
             print("[{}] epoch {}:".format(
-                datetime.now(), epoch+1
+                datetime.now(), epoch + 1
             ))
             print((
                 "train ({:.3f} sec): n={}, loss={:.3f} ({:.3f}), acc={:.3f}, "
@@ -78,7 +80,7 @@ class Trainer(object):
                 "acc={:.3f}, f1={:.3f} | "
                 "valid ({:.2f} sec): n={}, loss={:.3f} ({:.3f}), "
                 "acc={:.3f}, f1={:.3f}".format(
-                    epoch+1,
+                    epoch + 1,
                     train_duration, n_train_examples,
                     train_loss, train_reg_loss_value,
                     train_acc, train_f1,
@@ -112,13 +114,13 @@ class Trainer(object):
                 plt.figure(figsize=(18, 10))
                 plt.title(v.name)
                 for w_idx in range(n_viz_filters):
-                    plt.subplot(4, 4, w_idx+1)
+                    plt.subplot(4, 4, w_idx + 1)
                     plt.plot(weights[w_idx])
                     plt.axis("tight")
                 plt.savefig(os.path.join(
                     output_dir, "{}_{}.png".format(
                         v.name.replace("/", "_").replace(":0", ""),
-                        epoch+1
+                        epoch + 1
                     )
                 ))
                 plt.close("all")
@@ -127,17 +129,17 @@ class Trainer(object):
 class DeepFeatureNetTrainer(Trainer):
 
     def __init__(
-        self, 
-        data_dir, 
-        output_dir, 
-        n_folds, 
-        fold_idx, 
-        batch_size, 
-        input_dims, 
-        n_classes,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+            self,
+            data_dir,
+            output_dir,
+            n_folds,
+            fold_idx,
+            batch_size,
+            input_dims,
+            n_classes,
+            interval_plot_filter=50,
+            interval_save_model=100,
+            interval_print_cm=10
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -214,22 +216,32 @@ class DeepFeatureNetTrainer(Trainer):
         return total_y_true, total_y_pred, total_loss, duration
 
     def train(self, n_epochs, resume):
+        gpus = tf.config.experimental.list_physical_devices('GPU')
+        if gpus:
+            # Restrict TensorFlow to only use the first GPU
+            try:
+                tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+            except RuntimeError as e:
+                # Visible devices must be set at program startup
+                print(e)
+
+        # gpu_options = tf.GPUOptions(visible_device_list="0")
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
             # Build training and validation networks
             train_net = DeepFeatureNet(
-                batch_size=self.batch_size, 
-                input_dims=self.input_dims, 
-                n_classes=self.n_classes, 
+                batch_size=self.batch_size,
+                input_dims=self.input_dims,
+                n_classes=self.n_classes,
                 is_train=True,
-                reuse_params=False, 
+                reuse_params=False,
                 use_dropout=True
             )
             valid_net = DeepFeatureNet(
-                batch_size=self.batch_size, 
-                input_dims=self.input_dims, 
-                n_classes=self.n_classes, 
+                batch_size=self.batch_size,
+                input_dims=self.input_dims,
+                n_classes=self.n_classes,
                 is_train=False,
-                reuse_params=True, 
+                reuse_params=True,
                 use_dropout=True
             )
 
@@ -302,8 +314,8 @@ class DeepFeatureNetTrainer(Trainer):
             # Load data
             if sess.run(global_step) < n_epochs:
                 data_loader = NonSeqDataLoader(
-                    data_dir=self.data_dir, 
-                    n_folds=self.n_folds, 
+                    data_dir=self.data_dir,
+                    n_folds=self.n_folds,
                     fold_idx=self.fold_idx
                 )
                 x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
@@ -409,11 +421,13 @@ class DeepFeatureNetTrainer(Trainer):
 
                 # Visualize weights from convolutional layers
                 if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
+                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir,
+                                      16)
+                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)",
+                                      output_dir, 16)
 
                 # Save checkpoint
-                sess.run(tf.compat.v1.assign(global_step, epoch+1))
+                sess.run(tf.compat.v1.assign(global_step, epoch + 1))
                 if ((epoch + 1) % self.interval_save_model == 0) or ((epoch + 1) == n_epochs):
                     start_time = time.time()
                     save_path = os.path.join(
@@ -437,7 +451,7 @@ class DeepFeatureNetTrainer(Trainer):
                     )
                     duration = time.time() - start_time
                     print("Saved trained parameters ({:.3f} sec)".format(duration))
-        
+
         print("Finish pre-training")
         return os.path.join(output_dir, "params_fold{}.npz".format(self.fold_idx))
 
@@ -445,20 +459,20 @@ class DeepFeatureNetTrainer(Trainer):
 class DeepSleepNetTrainer(Trainer):
 
     def __init__(
-        self, 
-        data_dir, 
-        output_dir, 
-        n_folds, 
-        fold_idx, 
-        batch_size, 
-        input_dims, 
-        n_classes,
-        seq_length,
-        n_rnn_layers,
-        return_last,
-        interval_plot_filter=50,
-        interval_save_model=100,
-        interval_print_cm=10
+            self,
+            data_dir,
+            output_dir,
+            n_folds,
+            fold_idx,
+            batch_size,
+            input_dims,
+            n_classes,
+            seq_length,
+            n_rnn_layers,
+            return_last,
+            interval_plot_filter=50,
+            interval_save_model=100,
+            interval_print_cm=10
     ):
         super(self.__class__, self).__init__(
             interval_plot_filter=interval_plot_filter,
@@ -546,27 +560,27 @@ class DeepSleepNetTrainer(Trainer):
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
             # Build training and validation networks
             train_net = DeepSleepNet(
-                batch_size=self.batch_size, 
-                input_dims=self.input_dims, 
-                n_classes=self.n_classes, 
+                batch_size=self.batch_size,
+                input_dims=self.input_dims,
+                n_classes=self.n_classes,
                 seq_length=self.seq_length,
                 n_rnn_layers=self.n_rnn_layers,
                 return_last=self.return_last,
-                is_train=True, 
-                reuse_params=False, 
-                use_dropout_feature=True, 
+                is_train=True,
+                reuse_params=False,
+                use_dropout_feature=True,
                 use_dropout_sequence=True
             )
             valid_net = DeepSleepNet(
-                batch_size=self.batch_size, 
-                input_dims=self.input_dims, 
-                n_classes=self.n_classes, 
+                batch_size=self.batch_size,
+                input_dims=self.input_dims,
+                n_classes=self.n_classes,
                 seq_length=self.seq_length,
                 n_rnn_layers=self.n_rnn_layers,
                 return_last=self.return_last,
-                is_train=False, 
-                reuse_params=True, 
-                use_dropout_feature=True, 
+                is_train=False,
+                reuse_params=True,
+                use_dropout_feature=True,
                 use_dropout_sequence=True
             )
 
@@ -674,7 +688,7 @@ class DeepSleepNetTrainer(Trainer):
                         tmp_tensor = tf.compat.v1.get_default_graph().get_tensor_by_name(k)
                         sess.run(
                             tf.compat.v1.assign(
-                                tmp_tensor, 
+                                tmp_tensor,
                                 v
                             )
                         )
@@ -687,8 +701,8 @@ class DeepSleepNetTrainer(Trainer):
             # Load data
             if sess.run(global_step) < n_epochs:
                 data_loader = SeqDataLoader(
-                    data_dir=self.data_dir, 
-                    n_folds=self.n_folds, 
+                    data_dir=self.data_dir,
+                    n_folds=self.n_folds,
                     fold_idx=self.fold_idx
                 )
                 x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
@@ -776,11 +790,13 @@ class DeepSleepNetTrainer(Trainer):
 
                 # Visualize weights from convolutional layers
                 if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
+                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir,
+                                      16)
+                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)",
+                                      output_dir, 16)
 
                 # Save checkpoint
-                sess.run(tf.compat.v1.assign(global_step, epoch+1))
+                sess.run(tf.compat.v1.assign(global_step, epoch + 1))
                 if ((epoch + 1) % self.interval_save_model == 0) or ((epoch + 1) == n_epochs):
                     start_time = time.time()
                     save_path = os.path.join(
@@ -804,6 +820,6 @@ class DeepSleepNetTrainer(Trainer):
                     )
                     duration = time.time() - start_time
                     print("Saved trained parameters ({:.3f} sec)".format(duration))
-        
+
         print("Finish fine-tuning")
         return os.path.join(output_dir, "params_fold{}.npz".format(self.fold_idx))
