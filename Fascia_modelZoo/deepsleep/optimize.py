@@ -14,7 +14,7 @@ def adam(loss, lr, train_vars, beta1=0.9, beta2=0.999, epsilon=1e-8):
     return apply_gradient_op, grads_and_vars
 
 
-def adam_clipping(loss, lr, train_vars, beta1=0.9, beta2=0.999,
+def adam_clipping(loss, lr, train_vars, beta1=0.9, beta2=0.999, 
                   epsilon=1e-8, clip_value=5.0):
     grads, _ = tf.clip_by_global_norm(tf.gradients(loss, train_vars),
                                       clip_value)
