@@ -4,6 +4,7 @@ import math
 import ntpath
 import os
 import shutil
+import time
 import urllib.request, urllib.parse, urllib.error
 import urllib.request, urllib.error, urllib.parse
 
@@ -15,7 +16,6 @@ from mne import Epochs, pick_types, find_events
 from mne.io import concatenate_raws, read_raw_edf
 
 import dhedfreader
-
 # Label values
 W = 0
 N1 = 1
@@ -57,6 +57,7 @@ EPOCH_SEC_SIZE = 30
 
 
 def main():
+    start_time = time.time()
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_dir", type=str, default="/data/physionet_sleep",
                         help="File path to the CSV or NPY file that contains walking data.")
@@ -89,6 +90,7 @@ def main():
         #     continue
 
         raw = read_raw_edf(psg_fnames[i], preload=True, stim_channel=None)
+        # print(raw.info)
         sampling_rate = raw.info['sfreq']
         raw_ch_df = raw.to_data_frame(scaling_time=100.0)[select_ch]
         raw_ch_df = raw_ch_df.to_frame()
@@ -106,6 +108,7 @@ def main():
         f = open(ann_fnames[i], 'r', encoding='iso-8859-1')
         reader_ann = dhedfreader.BaseEDFReader(f)
         reader_ann.read_header()
+        print(reader_ann)
         h_ann = reader_ann.header
         _, _, ann = list(zip(*reader_ann.records()))
         f.close()
@@ -195,6 +198,9 @@ def main():
         x = x[select_idx]
         y = y[select_idx]
         print(("Data after selection: {}, {}".format(x.shape, y.shape)))
+
+        duration = time.time() - start_time
+        print("Time taken for preprocessing is", duration)
 
         # Save
         filename = ntpath.basename(psg_fnames[i]).replace("-PSG.edf", ".npz")

@@ -5,6 +5,7 @@ import os
 import time
 
 import numpy as np
+os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import tensorflow as tf
 
 from datetime import datetime
@@ -490,7 +491,7 @@ def custom_run_epoch(
     total_loss, n_batches = 0.0, 0
     for sub_f_idx, each_data in enumerate(zip(inputs, targets)):
         each_x, each_y = each_data
-        print("initial lengths", len(each_x), len(each_y))
+        # print("initial lengths", len(each_x), len(each_y))
         # # Initialize state of LSTM - Unidirectional LSTM
         # state = sess.run(network.initial_state)
 
@@ -574,12 +575,12 @@ def custom_run_epoch(
         "y_true": y_true,
         "y_pred": y
     }
-    save_path = os.path.join(
-        output_dir,
-        "output_subject{}.npz".format(subject_idx)
-    )
-    np.savez(save_path, **save_dict)
-    print("Saved outputs to {}".format(save_path))
+    # save_path = os.path.join(
+    #     output_dir,
+    #     "output_subject{}.npz".format(subject_idx)
+    # )
+    # np.savez(save_path, **save_dict)
+    # print("Saved outputs to {}".format(save_path))
 
     duration = time.time() - start_time
     total_loss /= n_batches
@@ -707,7 +708,6 @@ def custom_run_single_instance_epoch(
     # )
     # np.savez(save_path, **save_dict)
     # print("Saved outputs to {}".format(save_path))
-
     duration = time.time() - start_time
     total_loss /= n_batches
     total_y_pred = np.hstack(y)
@@ -768,6 +768,10 @@ def predict(
                 "deepsleepnet"
             )
 
+            print(fold_idx)
+            if(fold_idx)==1:
+                continue
+
             # Restore the trained model
             saver = tf.compat.v1.train.Saver()
             saver.restore(sess, tf.train.latest_checkpoint(checkpoint_path))
@@ -807,33 +811,33 @@ def predict(
             y_true.extend(y_true_)
             y_pred.extend(y_pred_)
 
-            # Loop each epoch
-            print("[{}] Predicting a single instance ...\n".format(datetime.now()))
-
-            # Evaluate the model on the subject data
-            y_true_, y_pred_, loss, duration = \
-                custom_run_single_instance_epoch(
-                    sess=sess, network=valid_net,
-                    inputs=x, targets=y,
-                    train_op=tf.no_op(),
-                    is_train=False,
-                    output_dir=output_dir,
-                    subject_idx=subject_idx
-                )
-            n_examples = len(y_true_)
-            cm_ = confusion_matrix(y_true_, y_pred_)
-            acc_ = np.mean(y_true_ == y_pred_)
-            mf1_ = f1_score(y_true_, y_pred_, average="macro")
-
-            # Report performance
-            print_performance(
-                sess, valid_net.name,
-                n_examples, duration, loss,
-                cm_, acc_, mf1_
-            )
-
-            # y_true.extend(y_true_)
-            # y_pred.extend(y_pred_)
+            # # Loop each epoch
+            # print("[{}] Predicting a single instance ...\n".format(datetime.now()))
+            #
+            # # Evaluate the model on the subject data
+            # y_true_, y_pred_, loss, duration = \
+            #     custom_run_single_instance_epoch(
+            #         sess=sess, network=valid_net,
+            #         inputs=x, targets=y,
+            #         train_op=tf.no_op(),
+            #         is_train=False,
+            #         output_dir=output_dir,
+            #         subject_idx=subject_idx
+            #     )
+            # n_examples = len(y_true_)
+            # cm_ = confusion_matrix(y_true_, y_pred_)
+            # acc_ = np.mean(y_true_ == y_pred_)
+            # mf1_ = f1_score(y_true_, y_pred_, average="macro")
+            #
+            # # Report performance
+            # print_performance(
+            #     sess, valid_net.name,
+            #     n_examples, duration, loss,
+            #     cm_, acc_, mf1_
+            # )
+            #
+            # # y_true.extend(y_true_)
+            # # y_pred.extend(y_pred_)
 
     # Overall performance
     print("[{}] Overall prediction performance\n".format(datetime.now()))

@@ -29,9 +29,11 @@ tf.app.flags.DEFINE_integer('finetune_epochs', 200,
                             """Number of epochs for fine-tuning DeepSleepNet.""")
 tf.app.flags.DEFINE_boolean('resume', False,
                             """Whether to resume the training process.""")
+tf.app.flags.DEFINE_boolean('psg', False,
+                            """Training with PSG""")
 
 
-def pretrain(n_epochs):
+def pretrain(n_epochs, psg=False):
     trainer = DeepFeatureNetTrainer(
         data_dir=FLAGS.data_dir,
         output_dir=FLAGS.output_dir,
@@ -46,12 +48,13 @@ def pretrain(n_epochs):
     )
     pretrained_model_path = trainer.train(
         n_epochs=n_epochs,
-        resume=FLAGS.resume
+        resume=FLAGS.resume,
+        psg=psg
     )
     return pretrained_model_path
 
 
-def finetune(model_path, n_epochs):
+def finetune(model_path, n_epochs, psg=False):
     trainer = DeepSleepNetTrainer(
         data_dir=FLAGS.data_dir,
         output_dir=FLAGS.output_dir,
@@ -70,7 +73,8 @@ def finetune(model_path, n_epochs):
     finetuned_model_path = trainer.finetune(
         pretrained_model_path=model_path,
         n_epochs=n_epochs,
-        resume=FLAGS.resume
+        resume=FLAGS.resume,
+        psg=psg
     )
     return finetuned_model_path
 
@@ -84,12 +88,15 @@ def main(argv=None):
         tf.gfile.MakeDirs(output_dir)
 
     pretrained_model_path = pretrain(
-        n_epochs=FLAGS.pretrain_epochs
+        n_epochs=FLAGS.pretrain_epochs,
+        psg=FLAGS.psg
     )
     finetuned_model_path = finetune(
         model_path=pretrained_model_path,
-        n_epochs=FLAGS.finetune_epochs
+        n_epochs=FLAGS.finetune_epochs,
+        psg=FLAGS.psg
     )
+
 
 
 if __name__ == "__main__":

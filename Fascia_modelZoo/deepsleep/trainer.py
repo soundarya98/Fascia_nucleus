@@ -5,9 +5,9 @@ import time
 
 from datetime import datetime
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+# import matplotlib
+# matplotlib.use("Agg")
+# import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from sklearn.metrics import confusion_matrix, f1_score
@@ -99,35 +99,35 @@ class Trainer(object):
             print("{} ({}): {}".format(name, act.name, act.get_shape()))
         print(" ")
 
-    def plot_filters(self, sess, epoch, reg_exp, output_dir, n_viz_filters):
-        conv_weight = re.compile(reg_exp)
-        for v in tf.compat.v1.trainable_variables():
-            value = sess.run(v)
-            if conv_weight.match(v.name):
-                weights = np.squeeze(value)
-                # Only plot conv that has one channel
-                if len(weights.shape) > 2:
-                    continue
-                weights = weights.T
-                plt.figure(figsize=(18, 10))
-                plt.title(v.name)
-                for w_idx in range(n_viz_filters):
-                    plt.subplot(4, 4, w_idx+1)
-                    plt.plot(weights[w_idx])
-                    plt.axis("tight")
-                plt.savefig(os.path.join(
-                    output_dir, "{}_{}.png".format(
-                        v.name.replace("/", "_").replace(":0", ""),
-                        epoch+1
-                    )
-                ))
-                plt.close("all")
+    # def plot_filters(self, sess, epoch, reg_exp, output_dir, n_viz_filters):
+    #     conv_weight = re.compile(reg_exp)
+    #     for v in tf.compat.v1.trainable_variables():
+    #         value = sess.run(v)
+    #         if conv_weight.match(v.name):
+    #             weights = np.squeeze(value)
+    #             # Only plot conv that has one channel
+    #             if len(weights.shape) > 2:
+    #                 continue
+    #             weights = weights.T
+    #             plt.figure(figsize=(18, 10))
+    #             plt.title(v.name)
+    #             for w_idx in range(n_viz_filters):
+    #                 plt.subplot(4, 4, w_idx+1)
+    #                 plt.plot(weights[w_idx])
+    #                 plt.axis("tight")
+    #             plt.savefig(os.path.join(
+    #                 output_dir, "{}_{}.png".format(
+    #                     v.name.replace("/", "_").replace(":0", ""),
+    #                     epoch+1
+    #                 )
+    #             ))
+    #             plt.close("all")
 
 
 class DeepFeatureNetTrainer(Trainer):
 
     def __init__(
-        self, 
+        self,
         data_dir, 
         output_dir, 
         n_folds, 
@@ -213,10 +213,11 @@ class DeepFeatureNetTrainer(Trainer):
 
         return total_y_true, total_y_pred, total_loss, duration
 
-    def train(self, n_epochs, resume):
+    def train(self, n_epochs, resume, psg):
 
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
             # Build training and validation networks
+            # print("INPUT DIMS", self.input_dims)
             train_net = DeepFeatureNet(
                 batch_size=self.batch_size, 
                 input_dims=self.input_dims, 
@@ -307,7 +308,11 @@ class DeepFeatureNetTrainer(Trainer):
                     n_folds=self.n_folds, 
                     fold_idx=self.fold_idx
                 )
-                x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
+
+                if psg:
+                    x_train, y_train, x_valid, y_valid = data_loader.load_train_data_psg()
+                else:
+                    x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
 
                 # Performance history
                 all_train_loss = np.zeros(n_epochs)
@@ -409,9 +414,9 @@ class DeepFeatureNetTrainer(Trainer):
                 )
 
                 # Visualize weights from convolutional layers
-                if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
+                # if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
+                #     self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
+                #     self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
 
                 # Save checkpoint
                 sess.run(tf.compat.v1.assign(global_step, epoch+1))
@@ -446,7 +451,7 @@ class DeepFeatureNetTrainer(Trainer):
 class DeepSleepNetTrainer(Trainer):
 
     def __init__(
-        self, 
+        self,
         data_dir, 
         output_dir, 
         n_folds, 
@@ -541,7 +546,7 @@ class DeepSleepNetTrainer(Trainer):
 
         return total_y_true, total_y_pred, total_loss, duration
 
-    def finetune(self, pretrained_model_path, n_epochs, resume):
+    def finetune(self, pretrained_model_path, n_epochs, resume, psg):
         pretrained_model_name = "deepfeaturenet"
 
         with tf.Graph().as_default(), tf.compat.v1.Session() as sess:
@@ -692,7 +697,11 @@ class DeepSleepNetTrainer(Trainer):
                     n_folds=self.n_folds, 
                     fold_idx=self.fold_idx
                 )
-                x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
+
+                if psg:
+                    x_train, y_train, x_valid, y_valid = data_loader.load_train_data_psg()
+                else:
+                    x_train, y_train, x_valid, y_valid = data_loader.load_train_data()
 
                 # Performance history
                 all_train_loss = np.zeros(n_epochs)
@@ -775,10 +784,10 @@ class DeepSleepNetTrainer(Trainer):
                     y_pred_val=np.asarray(y_pred_val)
                 )
 
-                # Visualize weights from convolutional layers
-                if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
-                    self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
+                # # Visualize weights from convolutional layers
+                # if ((epoch + 1) % self.interval_plot_filter == 0) or ((epoch + 1) == n_epochs):
+                #     self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?\/l[0-9]+_conv\/(weights)", output_dir, 16)
+                #     self.plot_filters(sess, epoch, train_net.name + "(_[0-9])?/l[0-9]+_conv\/conv1d\/(weights)", output_dir, 16)
 
                 # Save checkpoint
                 sess.run(tf.compat.v1.assign(global_step, epoch+1))
@@ -808,3 +817,5 @@ class DeepSleepNetTrainer(Trainer):
         
         print("Finish fine-tuning")
         return os.path.join(output_dir, "params_fold{}.npz".format(self.fold_idx))
+
+
