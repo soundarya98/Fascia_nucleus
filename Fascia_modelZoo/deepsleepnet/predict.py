@@ -27,7 +27,7 @@ from deepsleep.utils import iterate_batch_seq_minibatches
 
 FLAGS = tf.app.flags.FLAGS
 
-tf.app.flags.DEFINE_string('data_dir', 'data',
+tf.app.flags.DEFINE_string('data_dir', '/home/fascia/Fascia_nucleus/Fascia_modelZoo/data',
                            """Directory where to load training data.""")
 tf.app.flags.DEFINE_string('model_dir', 'output',
                            """Directory where to load trained models.""")
@@ -769,7 +769,10 @@ def predict(
             y_true = []
             y_pred = []
 
-            for model_dir in ['output/eeg_fpz_cz', 'output/emg', 'output/eog', 'output/resp-oro-nasal', 'output/temp']:
+            for channel in ['eeg_fpz_cz', 'eeg_pz_oz','emg', 'eog', 'resp_oro_nasal', 'temp']:
+
+                model_dir = os.path.join("output", channel)
+
                 fold_idx = subject_idx // n_subjects_per_fold
 
                 checkpoint_path = os.path.join(
@@ -790,7 +793,7 @@ def predict(
 
                 # Load testing data
                 x, y = SeqDataLoader.load_subject_data(
-                    data_dir=data_dir,
+                    data_dir=os.path.join(data_dir, channel),
                     subject_idx=subject_idx
                 )
 
