@@ -37,7 +37,7 @@ tf.app.flags.DEFINE_string('model_dir', 'output',
 tf.app.flags.DEFINE_string('output_dir', 'output',
                            """Directory where to save outputs.""")
 tf.app.flags.DEFINE_boolean('single_epoch', False,
-                           """Whether you wish to predict for a single epoch""")
+                            """Whether you wish to predict for a single epoch""")
 tf.app.flags.DEFINE_string('filename', 'SC4001E0.npz',
                            """File you want to predict""")
 
@@ -548,7 +548,8 @@ def custom_run_epoch(
                 feed_dict[h] = bw_state[i].h
 
             _, loss_value, y_pred, y_logits, fw_state, bw_state = sess.run(
-                [train_op, network.loss_op, network.pred_op, network.logits, network.fw_final_state, network.bw_final_state],
+                [train_op, network.loss_op, network.pred_op, network.logits, network.fw_final_state,
+                 network.bw_final_state],
                 feed_dict=feed_dict
             )
 
@@ -564,7 +565,7 @@ def custom_run_epoch(
             each_y_true.extend(y_batch)
             each_y_pred.extend(y_pred)
             each_y_logits.extend(y_logits)
-
+            # each_y_logits = np.array(each_y_logits)
             total_loss += loss_value
             n_batches += 1
 
@@ -578,11 +579,12 @@ def custom_run_epoch(
         y.append(each_y_pred)
         y_true.append(each_y_true)
 
-        if(flag==False):
+        if (flag == False):
             y_logits_ = each_y_logits
             flag = True
         else:
             y_logits_ = np.concatenate((y_logits_, np.array(each_y_logits)), axis=0)
+        # y_logits_.append(np.array(each_y_logits))
 
     # Save memory cells and predictions
     # save_dict = {
@@ -606,6 +608,7 @@ def custom_run_epoch(
     total_y_logits = y_logits_
     return total_y_true, total_y_pred, total_y_logits, total_loss, duration
 
+
 def custom_run_single_instance_epoch(
         sess,
         network,
@@ -619,8 +622,6 @@ def custom_run_single_instance_epoch(
     start_time = time.time()
     y = []
     y_true = []
-    y_logits_ = []
-    flag = False
     all_fw_memory_cells = []
     all_bw_memory_cells = []
     total_loss, n_batches = 0.0, 0
@@ -647,7 +648,6 @@ def custom_run_single_instance_epoch(
     # Store prediction and actual stages of each patient
     each_y_true = []
     each_y_pred = []
-    each_y_logits = []
 
     each_x = np.array(each_x).T
 
@@ -662,9 +662,9 @@ def custom_run_single_instance_epoch(
         each_y = np.hstack([each_y, each_y_orig])
 
     for x_batch, y_batch in iterate_batch_seq_minibatches_single_epoch(inputs=each_x,
-                                                          targets=each_y,
-                                                          batch_size=network.batch_size,
-                                                          seq_length=network.seq_length):
+                                                                       targets=each_y,
+                                                                       batch_size=network.batch_size,
+                                                                       seq_length=network.seq_length):
         # # x_batch = []
         # for i in range(25):
         #     x_batch.append(each_x)
@@ -672,7 +672,6 @@ def custom_run_single_instance_epoch(
         # # y_batch = []
         # for i in range(25):
         #     y_batch.append(each_y)
-
 
         feed_dict = {
             network.input_var: x_batch,
@@ -697,8 +696,8 @@ def custom_run_single_instance_epoch(
             feed_dict[c] = bw_state[i].c
             feed_dict[h] = bw_state[i].h
 
-        _, loss_value, y_pred, y_logits, fw_state, bw_state = sess.run(
-            [train_op, network.loss_op, network.pred_op, network.logits, network.fw_final_state, network.bw_final_state],
+        _, loss_value, y_pred, fw_state, bw_state = sess.run(
+            [train_op, network.loss_op, network.pred_op, network.fw_final_state, network.bw_final_state],
             feed_dict=feed_dict
         )
 
@@ -713,7 +712,6 @@ def custom_run_single_instance_epoch(
         seq_idx += 1
         each_y_true.extend(y_batch)
         each_y_pred.extend(y_pred)
-        each_y_logits.extend(y_logits)
 
         total_loss += loss_value
         n_batches += 1
@@ -726,12 +724,6 @@ def custom_run_single_instance_epoch(
     all_bw_memory_cells.append(bw_memory_cells)
     y.append(each_y_pred)
     y_true.append(each_y_true)
-
-    if (flag == False):
-        y_logits_ = each_y_logits
-        flag = True
-    else:
-        y_logits_ = np.concatenate((y_logits_, np.array(each_y_logits)), axis=0)
 
     # # Save memory cells and predictions
     # save_dict = {
@@ -750,9 +742,8 @@ def custom_run_single_instance_epoch(
     total_loss /= n_batches
     total_y_pred = np.hstack(y)
     total_y_true = np.hstack(y_true)
-    y_logits_ = np.array(y_logits_)
-    total_y_logits = y_logits_
-    return total_y_true, total_y_pred, total_y_logits, total_loss, duration
+
+    return total_y_true, total_y_pred, total_loss, duration
 
 
 def predict(
@@ -789,7 +780,7 @@ def predict(
             y_true = []
             y_pred = []
 
-            for channel in ['eeg_fpz_cz', 'eeg_pz_oz','emg', 'eog', 'resp_oro_nasal']:
+            for channel in ['eeg_fpz_cz', 'eeg_pz_oz', 'emg', 'eog', 'resp_oro_nasal']:
 
                 model_dir = os.path.join("output", channel)
 
@@ -801,6 +792,7 @@ def predict(
                     "deepsleepnet"
                 )
 
+                print(checkpoint_path)
 
                 # Restore the trained model
                 saver = tf.compat.v1.train.Saver()
@@ -842,7 +834,7 @@ def predict(
                 # y_true.extend(y_true_)
                 # y_pred.extend(y_pred_)
 
-                if(flag==False):
+                if (flag == False):
                     y_logits = y_logits_
                     flag = True
                 else:
@@ -867,6 +859,7 @@ def predict(
             ))
             print(cm)
             break
+
     # Overall performance
     print("[{}] Overall prediction performance\n".format(datetime.now()))
     y_true = np.asarray(y_true)
@@ -881,6 +874,7 @@ def predict(
         )
     ))
     print(cm)
+
 
 def predict_single_epoch(
         filename,
@@ -917,11 +911,11 @@ def predict_single_epoch(
             y_true = []
             y_pred = []
 
-            for channel in ['eeg_fpz_cz', 'eeg_pz_oz','emg', 'eog', 'resp_oro_nasal', 'temp']:
-
+            for channel in ['eeg_fpz_cz', 'eeg_pz_oz', 'emg', 'eog', 'resp_oro_nasal']:
                 model_dir = os.path.join("output", channel)
 
-                fold_idx = subject_idx // n_subjects_per_fold
+                # fold_idx = subject_idx // n_subjects_per_fold
+                fold_idx = 0
 
                 checkpoint_path = os.path.join(
                     model_dir,
@@ -942,7 +936,7 @@ def predict_single_epoch(
                 print("[{}] Predicting ...\n".format(datetime.now()))
 
                 # Evaluate the model on the subject data
-                y_true_, y_pred_, y_logits_, loss, duration = \
+                y_true_, y_pred_, loss, duration = \
                     custom_run_single_instance_epoch(
                         sess=sess, network=valid_net,
                         inputs=x, targets=y,
@@ -967,17 +961,17 @@ def predict_single_epoch(
                 # y_true.extend(y_true_)
                 # y_pred.extend(y_pred_)
 
-                if(flag==False):
-                    y_logits = y_logits_
-                    flag = True
-                else:
-                    y_logits *= y_logits_
+                # if(flag==False):
+                #     y_logits = y_logits_
+                #     flag = True
+                # else:
+                #     y_logits *= y_logits_
 
             # Overall performance
             print("[{}] PSG prediction performance for a particular fold \n".format(datetime.now()))
             y_true = np.asarray(y_true_)
 
-            y_pred = np.asarray(np.argmax(y_logits, 1))
+            # y_pred = np.asarray(np.argmax(y_logits, 1))
             n_examples = len(y_true)
 
             # print(len(y_true), len())
@@ -991,7 +985,35 @@ def predict_single_epoch(
                 )
             ))
             print(cm)
-            break
+
+            # # Loop each epoch
+            # print("[{}] Predicting a single instance ...\n".format(datetime.now()))
+            #
+            # # Evaluate the model on the subject data
+            # y_true_, y_pred_, loss, duration = \
+            #     custom_run_single_instance_epoch(
+            #         sess=sess, network=valid_net,
+            #         inputs=x, targets=y,
+            #         train_op=tf.no_op(),
+            #         is_train=False,
+            #         output_dir=output_dir,
+            #         subject_idx=subject_idx
+            #     )
+            # n_examples = len(y_true_)
+            # cm_ = confusion_matrix(y_true_, y_pred_)
+            # acc_ = np.mean(y_true_ == y_pred_)
+            # mf1_ = f1_score(y_true_, y_pred_, average="macro")
+            #
+            # # Report performance
+            # print_performance(
+            #     sess, valid_net.name,
+            #     n_examples, duration, loss,
+            #     cm_, acc_, mf1_
+            # )
+            #
+            # # y_true.extend(y_true_)
+            # # y_pred.extend(y_pred_)
+
     # Overall performance
     print("[{}] Overall prediction performance\n".format(datetime.now()))
     y_true = np.asarray(y_true)
@@ -1012,7 +1034,7 @@ def main(argv=None):
     # # Makes the random numbers predictable
     # np.random.seed(0)
     # tf.set_random_seed(0)
-    print("Predict Starting!")
+
     # Output dir
     if not os.path.exists(FLAGS.output_dir):
         os.makedirs(FLAGS.output_dir)
@@ -1038,6 +1060,7 @@ def main(argv=None):
             n_subjects=n_subjects,
             n_subjects_per_fold=n_subjects_per_fold
         )
+
 
 if __name__ == "__main__":
     tf.compat.v1.app.run()
