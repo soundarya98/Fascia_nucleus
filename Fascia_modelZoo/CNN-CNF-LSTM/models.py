@@ -1,9 +1,7 @@
-from tensorflow.python.keras import losses, activations, models
-from tensorflow.python.keras.layers import Dense, Input, Dropout, Convolution1D, MaxPool1D, GlobalMaxPool1D, GlobalAveragePooling1D, \
+from keras import optimizers, losses, activations, models
+from keras.layers import Dense, Input, Dropout, Convolution1D, MaxPool1D, GlobalMaxPool1D, GlobalAveragePooling1D, \
     concatenate, SpatialDropout1D, TimeDistributed, Bidirectional, LSTM
-from tensorflow.keras import optimizers
 from keras_contrib.layers import CRF
-from tensorflow.keras.layers import Lambda
 
 from utils import WINDOW_SIZE
 
@@ -138,7 +136,6 @@ def get_model_cnn_crf(lr=0.001):
     crf = CRF(nclass, sparse_target=True)
 
     out = crf(encoded_sequence)
-    # out = Lambda(lambda x: crf(x))(encoded_sequence)
 
 
     model = models.Model(seq_input, out)

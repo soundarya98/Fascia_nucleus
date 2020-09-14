@@ -578,7 +578,7 @@ def custom_run_epoch(
         y.append(each_y_pred)
         y_true.append(each_y_true)
 
-        if(flag==False):
+        if (flag == False):
             y_logits_ = each_y_logits
             flag = True
         else:
@@ -842,7 +842,7 @@ def predict(
                 # y_true.extend(y_true_)
                 # y_pred.extend(y_pred_)
 
-                if(flag==False):
+                if (flag == False):
                     y_logits = y_logits_
                     flag = True
                 else:
@@ -882,6 +882,20 @@ def predict(
     ))
     print(cm)
 
+    sleep_stage = None
+    if(y_pred[0] == 0):
+        sleep_stage = 'Wake'
+    elif(y_pred[0] == 1):
+        sleep_stage = 'N1'
+    elif(y_pred[0] == 2):
+        sleep_stage = 'N2'
+    elif(y_pred[0] == 2):
+        sleep_stage = 'N3'
+    else:
+        sleep_stage = 'R'
+
+    print("The Sleep stage is found to be", sleep_stage)
+
 def predict_single_epoch(
         filename,
         data_dir,
@@ -917,8 +931,7 @@ def predict_single_epoch(
             y_true = []
             y_pred = []
 
-            for channel in ['eeg_fpz_cz', 'eeg_pz_oz','emg', 'eog', 'resp_oro_nasal', 'temp']:
-
+            for channel in ['eeg_fpz_cz', 'eeg_pz_oz', 'emg', 'eog', 'resp_oro_nasal']:
                 model_dir = os.path.join("output", channel)
 
                 fold_idx = subject_idx // n_subjects_per_fold
@@ -1007,7 +1020,19 @@ def predict_single_epoch(
     ))
     print(cm)
 
+    sleep_stage = None
+    if(y_pred[0] == 0):
+        sleep_stage = 'Wake'
+    elif(y_pred[0] == 1):
+        sleep_stage = 'N1'
+    elif(y_pred[0] == 2):
+        sleep_stage = 'N2'
+    elif(y_pred[0] == 2):
+        sleep_stage = 'N3'
+    else:
+        sleep_stage = 'R'
 
+    print("The Sleep stage is found to be", sleep_stage)
 def main(argv=None):
     # # Makes the random numbers predictable
     # np.random.seed(0)
