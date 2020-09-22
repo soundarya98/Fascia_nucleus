@@ -1033,6 +1033,7 @@ def predict_single_epoch(
         sleep_stage = 'R'
 
     print("The Sleep stage is found to be", sleep_stage)
+
 def main(argv=None):
     # # Makes the random numbers predictable
     # np.random.seed(0)

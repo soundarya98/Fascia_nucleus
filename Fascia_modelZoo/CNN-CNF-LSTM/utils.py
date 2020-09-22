@@ -37,6 +37,9 @@ def gen(dict_files, aug=False):
                 X = aug_X(X)
             X = rescale_array(X)
 
+            # print("X shape", X.shape)
+            # print("Y shape", Y.shape)
+
             yield X, Y
 
 
