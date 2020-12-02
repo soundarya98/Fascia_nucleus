@@ -1,0 +1,4 @@
+<map id="checkMultiCharCmdTimer" name="checkMultiCharCmdTimer">
+<area shape="rect" id="node1" title="Check for valid on multi char commands." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="node2" href="$_nova_x_r___comm___protocol_8cpp.html#a55f9a76f1e0330b60da0457d3cca0e6c" title="End the timer on multi char commands." alt="" coords="228,5,391,31"/>
+</map>

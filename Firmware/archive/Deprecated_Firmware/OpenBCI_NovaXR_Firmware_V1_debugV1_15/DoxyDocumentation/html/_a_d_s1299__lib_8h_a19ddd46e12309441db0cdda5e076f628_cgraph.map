@@ -1,0 +1,7 @@
+<map id="stop_and_configInput" name="stop_and_configInput">
+<area shape="rect" id="node1" title="Stops and Sets configurations for selected input channel and board." alt="" coords="5,55,154,80"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a46e58fd33706f92cbf0a8376e5f4aefe" title="Stop ADC Conversion Operation." alt="" coords="202,5,361,31"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#afc1f487ddcd83ccc92dda2e169bf04fa" title="Configure a single ADS1299 Input." alt="" coords="217,55,346,80"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#a5ce329181e609c3d23a4ebd8c754b810" title="Select ADS1299 to Control." alt="" coords="236,104,327,129"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="409,55,494,80"/>
+</map>

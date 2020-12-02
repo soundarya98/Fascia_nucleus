@@ -1,0 +1,256 @@
+\hypertarget{heart_rate_8cpp}{}\doxysection{src/\+Peripherals/heart\+Rate.cpp File Reference}
+\label{heart_rate_8cpp}\index{src/Peripherals/heartRate.cpp@{src/Peripherals/heartRate.cpp}}
+{\ttfamily \#include \char`\"{}heart\+Rate.\+h\char`\"{}}\newline
+Include dependency graph for heart\+Rate.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{heart_rate_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{heart_rate_8cpp_a83abdb9881ef7887abffdbf639539572}{check\+For\+Beat}} (int32\+\_\+t sample)
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_af4f11545a05f97c55092e7f3f01b9f59}{average\+D\+C\+Estimator}} (int32\+\_\+t $\ast$p, uint16\+\_\+t x)
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a6cedece0bbb86fa19985f9ea4b3927f2}{low\+Pass\+F\+I\+R\+Filter}} (int16\+\_\+t din)
+\item 
+int32\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a8088186de4a3d9d5650a2f0f4684c237}{mul16}} (int16\+\_\+t x, int16\+\_\+t y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_aadfffc9bb91c5f2212e1fe37fe176e31}{I\+R\+\_\+\+A\+C\+\_\+\+Max}} = 20
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_ac82d44e5573ead57b41d8e6925c56efb}{I\+R\+\_\+\+A\+C\+\_\+\+Min}} = -\/20
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a5d860360023be3563f5f3ca35b67dbd6}{I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+\+Current}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_af155356f274277a989217647a74de491}{I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+\+Previous}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a029d86d9231d19e3575c594da4b8f3a6}{I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+min}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a1907ab3ae36a69998242237553c97c64}{I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+max}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_aac37ff5ca7f870dbbe1153bb79a9b10b}{I\+R\+\_\+\+Average\+\_\+\+Estimated}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a01ebe57fe63c9c91acb9a64a20c09317}{positive\+Edge}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a41c4b2a190425db8fdf501a78224cb39}{negative\+Edge}} = 0
+\item 
+int32\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_a498ce9e787948fe7526ad99d76e5b76a}{ir\+\_\+avg\+\_\+reg}} = 0
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_afd2f4a77835e9d1548951ec6ba21c334}{cbuf}} \mbox{[}32\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{heart_rate_8cpp_aa9fff43968831437a312428836cab362}{offset}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{heart_rate_8cpp_af4f11545a05f97c55092e7f3f01b9f59}\label{heart_rate_8cpp_af4f11545a05f97c55092e7f3f01b9f59}} 
+\index{heartRate.cpp@{heartRate.cpp}!averageDCEstimator@{averageDCEstimator}}
+\index{averageDCEstimator@{averageDCEstimator}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{averageDCEstimator()}{averageDCEstimator()}}
+{\footnotesize\ttfamily int16\+\_\+t average\+D\+C\+Estimator (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{p,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 139 of file heart\+Rate.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8cpp_af4f11545a05f97c55092e7f3f01b9f59_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8cpp_a83abdb9881ef7887abffdbf639539572}\label{heart_rate_8cpp_a83abdb9881ef7887abffdbf639539572}} 
+\index{heartRate.cpp@{heartRate.cpp}!checkForBeat@{checkForBeat}}
+\index{checkForBeat@{checkForBeat}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{checkForBeat()}{checkForBeat()}}
+{\footnotesize\ttfamily bool check\+For\+Beat (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{sample }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file heart\+Rate.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8cpp_a83abdb9881ef7887abffdbf639539572_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8cpp_a83abdb9881ef7887abffdbf639539572_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8cpp_a6cedece0bbb86fa19985f9ea4b3927f2}\label{heart_rate_8cpp_a6cedece0bbb86fa19985f9ea4b3927f2}} 
+\index{heartRate.cpp@{heartRate.cpp}!lowPassFIRFilter@{lowPassFIRFilter}}
+\index{lowPassFIRFilter@{lowPassFIRFilter}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{lowPassFIRFilter()}{lowPassFIRFilter()}}
+{\footnotesize\ttfamily int16\+\_\+t low\+Pass\+F\+I\+R\+Filter (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{din }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file heart\+Rate.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{heart_rate_8cpp_a6cedece0bbb86fa19985f9ea4b3927f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8cpp_a6cedece0bbb86fa19985f9ea4b3927f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8cpp_a8088186de4a3d9d5650a2f0f4684c237}\label{heart_rate_8cpp_a8088186de4a3d9d5650a2f0f4684c237}} 
+\index{heartRate.cpp@{heartRate.cpp}!mul16@{mul16}}
+\index{mul16@{mul16}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{mul16()}{mul16()}}
+{\footnotesize\ttfamily int32\+\_\+t mul16 (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 164 of file heart\+Rate.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8cpp_a8088186de4a3d9d5650a2f0f4684c237_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{heart_rate_8cpp_afd2f4a77835e9d1548951ec6ba21c334}\label{heart_rate_8cpp_afd2f4a77835e9d1548951ec6ba21c334}} 
+\index{heartRate.cpp@{heartRate.cpp}!cbuf@{cbuf}}
+\index{cbuf@{cbuf}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{cbuf}{cbuf}}
+{\footnotesize\ttfamily int16\+\_\+t cbuf\mbox{[}32\mbox{]}}
+
+
+
+Definition at line 73 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_aadfffc9bb91c5f2212e1fe37fe176e31}\label{heart_rate_8cpp_aadfffc9bb91c5f2212e1fe37fe176e31}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Max@{IR\_AC\_Max}}
+\index{IR\_AC\_Max@{IR\_AC\_Max}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Max}{IR\_AC\_Max}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Max = 20}
+
+
+
+Definition at line 60 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_ac82d44e5573ead57b41d8e6925c56efb}\label{heart_rate_8cpp_ac82d44e5573ead57b41d8e6925c56efb}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Min@{IR\_AC\_Min}}
+\index{IR\_AC\_Min@{IR\_AC\_Min}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Min}{IR\_AC\_Min}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Min = -\/20}
+
+
+
+Definition at line 61 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a5d860360023be3563f5f3ca35b67dbd6}\label{heart_rate_8cpp_a5d860360023be3563f5f3ca35b67dbd6}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Signal\_Current@{IR\_AC\_Signal\_Current}}
+\index{IR\_AC\_Signal\_Current@{IR\_AC\_Signal\_Current}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Signal\_Current}{IR\_AC\_Signal\_Current}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+\+Current = 0}
+
+
+
+Definition at line 63 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a1907ab3ae36a69998242237553c97c64}\label{heart_rate_8cpp_a1907ab3ae36a69998242237553c97c64}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Signal\_max@{IR\_AC\_Signal\_max}}
+\index{IR\_AC\_Signal\_max@{IR\_AC\_Signal\_max}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Signal\_max}{IR\_AC\_Signal\_max}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+max = 0}
+
+
+
+Definition at line 66 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a029d86d9231d19e3575c594da4b8f3a6}\label{heart_rate_8cpp_a029d86d9231d19e3575c594da4b8f3a6}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Signal\_min@{IR\_AC\_Signal\_min}}
+\index{IR\_AC\_Signal\_min@{IR\_AC\_Signal\_min}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Signal\_min}{IR\_AC\_Signal\_min}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+min = 0}
+
+
+
+Definition at line 65 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_af155356f274277a989217647a74de491}\label{heart_rate_8cpp_af155356f274277a989217647a74de491}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_AC\_Signal\_Previous@{IR\_AC\_Signal\_Previous}}
+\index{IR\_AC\_Signal\_Previous@{IR\_AC\_Signal\_Previous}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_AC\_Signal\_Previous}{IR\_AC\_Signal\_Previous}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+A\+C\+\_\+\+Signal\+\_\+\+Previous}
+
+
+
+Definition at line 64 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_aac37ff5ca7f870dbbe1153bb79a9b10b}\label{heart_rate_8cpp_aac37ff5ca7f870dbbe1153bb79a9b10b}} 
+\index{heartRate.cpp@{heartRate.cpp}!IR\_Average\_Estimated@{IR\_Average\_Estimated}}
+\index{IR\_Average\_Estimated@{IR\_Average\_Estimated}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{IR\_Average\_Estimated}{IR\_Average\_Estimated}}
+{\footnotesize\ttfamily int16\+\_\+t I\+R\+\_\+\+Average\+\_\+\+Estimated}
+
+
+
+Definition at line 67 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a498ce9e787948fe7526ad99d76e5b76a}\label{heart_rate_8cpp_a498ce9e787948fe7526ad99d76e5b76a}} 
+\index{heartRate.cpp@{heartRate.cpp}!ir\_avg\_reg@{ir\_avg\_reg}}
+\index{ir\_avg\_reg@{ir\_avg\_reg}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{ir\_avg\_reg}{ir\_avg\_reg}}
+{\footnotesize\ttfamily int32\+\_\+t ir\+\_\+avg\+\_\+reg = 0}
+
+
+
+Definition at line 71 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a41c4b2a190425db8fdf501a78224cb39}\label{heart_rate_8cpp_a41c4b2a190425db8fdf501a78224cb39}} 
+\index{heartRate.cpp@{heartRate.cpp}!negativeEdge@{negativeEdge}}
+\index{negativeEdge@{negativeEdge}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{negativeEdge}{negativeEdge}}
+{\footnotesize\ttfamily int16\+\_\+t negative\+Edge = 0}
+
+
+
+Definition at line 70 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_aa9fff43968831437a312428836cab362}\label{heart_rate_8cpp_aa9fff43968831437a312428836cab362}} 
+\index{heartRate.cpp@{heartRate.cpp}!offset@{offset}}
+\index{offset@{offset}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily uint8\+\_\+t offset = 0}
+
+
+
+Definition at line 74 of file heart\+Rate.\+cpp.
+
+\mbox{\Hypertarget{heart_rate_8cpp_a01ebe57fe63c9c91acb9a64a20c09317}\label{heart_rate_8cpp_a01ebe57fe63c9c91acb9a64a20c09317}} 
+\index{heartRate.cpp@{heartRate.cpp}!positiveEdge@{positiveEdge}}
+\index{positiveEdge@{positiveEdge}!heartRate.cpp@{heartRate.cpp}}
+\doxysubsubsection{\texorpdfstring{positiveEdge}{positiveEdge}}
+{\footnotesize\ttfamily int16\+\_\+t positive\+Edge = 0}
+
+
+
+Definition at line 69 of file heart\+Rate.\+cpp.
+

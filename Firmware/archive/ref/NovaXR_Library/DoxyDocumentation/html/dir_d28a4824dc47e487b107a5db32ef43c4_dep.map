@@ -1,0 +1,12 @@
+<map id="examples" name="examples">
+<area shape="rect" id="node2" href="dir_6a0ca98862d85d81e5c776093f97612b.html" title="OpenBCI_NovaXR_Firmware_AP_PCB_V1_1_Debug" alt="" coords="1113,27,1455,75"/>
+<area shape="rect" id="node6" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="696,123,768,171"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000001_000005.html" title="1" alt="" coords="784,139,791,152"/>
+<area shape="rect" id="node3" href="dir_ba70c74c9b7707f8d69d9ba762c4bd6e.html" title="OpenBCI_NovaXR_Firmware_AP_PCB_V1_1_Release" alt="" coords="738,27,1089,75"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000005.html" title="1" alt="" coords="785,119,792,132"/>
+<area shape="rect" id="node4" href="dir_cdd3fe5dd8d021a7cea1f6cfde818f3d.html" title="OpenBCI_NovaXR_Firmware_AP_PCB_V2_Debug" alt="" coords="387,27,714,75"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000003_000005.html" title="1" alt="" coords="679,104,687,117"/>
+<area shape="rect" id="node5" href="dir_18cb8c46af47650047ae2044a4374e50.html" title="OpenBCI_NovaXR_Firmware_AP_PCB_V2_Release" alt="" coords="27,27,363,75"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000004_000005.html" title="1" alt="" coords="676,122,683,135"/>
+<area shape="rect" id="clust1" href="dir_d28a4824dc47e487b107a5db32ef43c4.html" alt="" coords="16,16,1567,85"/>
+</map>

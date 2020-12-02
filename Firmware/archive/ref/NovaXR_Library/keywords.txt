@@ -1,0 +1,68 @@
+#######################################
+# Syntax Coloring Map 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+ADS1299						KEYWORD1
+NovaXR						KEYWORD1
+BIO_Data					KEYWORD1
+ADS_Data					KEYWORD1
+AUX_Data					KEYWORD1
+Sensors_Data				KEYWORD1
+DataPacket					KEYWORD1
+switchOutBuffer				KEYWORD1
+EEG_FC						KEYWORD1
+EOG							KEYWORD1
+EEG_OL						KEYWORD1
+EMG							KEYWORD1
+EDA							KEYWORD1
+PPG							KEYWORD1
+BATT						KEYWORD1
+SKIN_T						KEYWORD1
+FW_CODE						KEYWORD1
+AUX0						KEYWORD1
+AUX1						KEYWORD1
+AUX2						KEYWORD1
+AUX3						KEYWORD1
+BIO							KEYWORD1
+ADS							KEYWORD1
+AUX							KEYWORD1
+BOARD_REVISION_ID 			KEYWORD1
+WIFI_MODE					KEYWORD1
+
+
+#######################################
+# Methods/Functions          (KEYWORD2)
+#######################################
+getRAW_BIOdata 				KEYWORD2
+getRAW_ADSdata				KEYWORD2
+getRAW_AUXdata				KEYWORD2
+getUpdatedSensoryData		KEYWORD2
+UDPcommandCheck				KEYWORD2
+Send_UDP_swBuffer			KEYWORD2
+UDP_DataSW_Exchange			KEYWORD2
+UDP_or_TCP_data_exchage		KEYWORD2
+Send_UDP_outputBuffer		KEYWORD2
+startUDP_Server				KEYWORD2
+UDP_DataSW_Exchange         KEYWORD2
+commandCheck				KEYWORD2
+Config_Board_Rev			KEYWORD2
+WiFi_connectivityOption     KEYWORD2
+
+
+#######################################
+# Constants                  (LITERAL1)
+#######################################
+MainCS     			     LITERAL1
+MainDRDY      			 LITERAL1
+ResetMB_pin    			 LITERAL1
+OTG_pin      			 LITERAL1  
+SisCS         			 LITERAL1 
+SisDRDY       			 LITERAL1 
+ResetSB_pin   			 LITERAL1  
+VDD_ref_pin   			 LITERAL1 
+GND_ref_pin    			 LITERAL1
+BATT_Sense_pin 			 LITERAL1
+EDA_Sense_pin 			 LITERAL1

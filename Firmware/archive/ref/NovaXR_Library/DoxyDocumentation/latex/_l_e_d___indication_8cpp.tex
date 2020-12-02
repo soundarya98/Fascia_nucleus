@@ -1,0 +1,646 @@
+\hypertarget{_l_e_d___indication_8cpp}{}\doxysection{src/\+Peripherals/\+L\+E\+D\+\_\+\+Indication.cpp File Reference}
+\label{_l_e_d___indication_8cpp}\index{src/Peripherals/LED\_Indication.cpp@{src/Peripherals/LED\_Indication.cpp}}
+{\ttfamily \#include \char`\"{}L\+E\+D\+\_\+\+Indication.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Wi\+Fi\+N\+I\+N\+A.\+h$>$}\newline
+{\ttfamily \#include $<$utility/wifi\+\_\+drv.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Nova\+X\+R\+\_\+\+Library.\+h\char`\"{}}\newline
+Include dependency graph for L\+E\+D\+\_\+\+Indication.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_abadcb48a859f407a0a045582aec009e8}{u\+Blox\+\_\+\+H\+W\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize G\+P\+I\+Os of U\+Blox Module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a8f8e5db61eafa7203a27b9cced9a3c99}{E\+R\+R\+O\+R\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Indicate a Hardware Issue or Stall. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a216320cece62ff8f43f679b2ab9a39ef}{Valid\+\_\+\+C\+M\+D\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Indicate a valid incoming command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a6100c66f578bba2b8672937f7debb289}{Invalid\+\_\+\+C\+M\+D\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Indicate an invalid incoming command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_aa2c074cf49d7f77fd5b6acf2673bfbb3}{C\+H\+E\+C\+K\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Indicate a correct Operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a003a4e557400f918e793628dd4e22b31}{in\+Progress\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Blink Blue Once as somehting is being in progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_ad029e779e08de03d6ea8a09815dd4f80}{Wi\+Fi\+\_\+conn\+\_\+in\+Progress\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Blink Blue Once as somehting is being in progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a3b5b5edd2fd26b63ee49c448ef1374dc}{success\+\_\+\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Indicate Successful State. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_acb653f64366b90f597daa67b7212598d}{show\+\_\+stand\+By\+\_\+\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Shows the stand by state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a141c3d76bbbb13fdbfc6f022768db55b}{show\+\_\+streamming\+\_\+\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Shows the streamming state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a8f78b85477a3e04ad96d9c1cf0867027}{diconnected\+\_\+\+Client\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Unexpected T\+CP Client Disonnection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a59465ebabc82fa3e752715432004f25f}{stand\+By\+\_\+mode}} (void)
+\begin{DoxyCompactList}\small\item\em Enter Stand\+By Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_ac52202f7b5d665c5089686405527f628}{powered\+\_\+\+On\+\_\+\+Indication}} (void)
+\begin{DoxyCompactList}\small\item\em Power On Device Indication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_ac586fb7f63dc3a867fad49aaef2808d8}{blink\+\_\+\+Red}} (uint8\+\_\+t blink\+\_\+num, uint16\+\_\+t Period)
+\begin{DoxyCompactList}\small\item\em Fade-\/in effect with Red Color L\+ED Indicator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_afa854d5c97f41972ffa9bc30d95ee380}{Blink\+L\+ED}} (const uint8\+\_\+t led\+\_\+pin, uint16\+\_\+t period)
+\begin{DoxyCompactList}\small\item\em Blink L\+ED at certain frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_ac3f607ad591547991fc6126c6525352e}{Blink\+\_\+\+Dual\+Color}} (const uint8\+\_\+t led1\+\_\+pin, const uint8\+\_\+t led2\+\_\+pin, uint16\+\_\+t period)
+\begin{DoxyCompactList}\small\item\em Blink bi-\/coloerd L\+ED at certain frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a5163d45c1af814fc9ea0cca80f001657}{turn\+On\+L\+ED}} (const uint8\+\_\+t lep\+\_\+pin, uint8\+\_\+t step\+Delay)
+\begin{DoxyCompactList}\small\item\em Fade-\/in Turning On any L\+ED at certain P\+WM speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a2ee303fca36724a93b175082bbc87344}{turn\+Off\+L\+E\+Ds}} (void)
+\begin{DoxyCompactList}\small\item\em Turn O\+FF all L\+E\+Ds immidiately. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a58dc5b2353d222d575913c12c254d477}{turn\+On\+Purple}} (void)
+\begin{DoxyCompactList}\small\item\em Fade-\/in Turning On Purple Color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_a93bde88fd5f6af880eff0e21eb061695}{turn\+On\+Yellow}} (void)
+\begin{DoxyCompactList}\small\item\em Fade-\/in Turning On Yellow Color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_e_d___indication_8cpp_acfeecfccc02d00508868a1d7c2936056}{turn\+On\+White}} (void)
+\begin{DoxyCompactList}\small\item\em Fade-\/in Turning On White Color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_l_e_d___indication_8cpp_a9622dd48e7ac4ef8bcd582533d977f0d}{red\+L\+E\+D\+\_\+\+Pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a31e20330f8ce94e0dd10b005a15c5898}{L\+E\+D\+\_\+\+R\+ED}}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_l_e_d___indication_8cpp_a4fd76a1a375c15a81f01b740b65640be}{green\+L\+E\+D\+\_\+\+Pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_aca338dbd19d7940923334629f6e5f3b7}{L\+E\+D\+\_\+\+G\+R\+E\+EN}}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_l_e_d___indication_8cpp_a62399136457d5cb906562c4a3b0b81da}{blue\+L\+E\+D\+\_\+\+Pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_ae2e40566d27689f8581d7b0f12271d45}{L\+E\+D\+\_\+\+B\+L\+UE}}
+\item 
+Wi\+Fi\+Drv \mbox{\hyperlink{_l_e_d___indication_8cpp_aa427a897a286b730cd2d4616761e51fc}{u\+B\+Lox}}
+\begin{DoxyCompactList}\small\item\em Instance of the L\+ED Driver Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_ac3f607ad591547991fc6126c6525352e}\label{_l_e_d___indication_8cpp_ac3f607ad591547991fc6126c6525352e}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!Blink\_DualColor@{Blink\_DualColor}}
+\index{Blink\_DualColor@{Blink\_DualColor}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{Blink\_DualColor()}{Blink\_DualColor()}}
+{\footnotesize\ttfamily void Blink\+\_\+\+Dual\+Color (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{led1\+\_\+pin,  }\item[{const uint8\+\_\+t}]{led2\+\_\+pin,  }\item[{uint16\+\_\+t}]{period }\end{DoxyParamCaption})}
+
+
+
+Blink bi-\/coloerd L\+ED at certain frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led1\+\_\+pin} & The pin 1 that is assigned to L\+ED color 1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em led2\+\_\+pin} & The pin 2 that is assigned to L\+ED color 2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em period} & Sets the period of blinking frequency \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_ac3f607ad591547991fc6126c6525352e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_ac586fb7f63dc3a867fad49aaef2808d8}\label{_l_e_d___indication_8cpp_ac586fb7f63dc3a867fad49aaef2808d8}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!blink\_Red@{blink\_Red}}
+\index{blink\_Red@{blink\_Red}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{blink\_Red()}{blink\_Red()}}
+{\footnotesize\ttfamily void blink\+\_\+\+Red (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{blink\+\_\+num,  }\item[{uint16\+\_\+t}]{Period }\end{DoxyParamCaption})}
+
+
+
+Fade-\/in effect with Red Color L\+ED Indicator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em blink\+\_\+num} & Sets the number of blinks the L\+ED will perform \\
+\hline
+\mbox{\texttt{ in}}  & {\em Period} & Sets the period of blinking frequency \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{_l_e_d___indication_8cpp_ac586fb7f63dc3a867fad49aaef2808d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{_l_e_d___indication_8cpp_ac586fb7f63dc3a867fad49aaef2808d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_afa854d5c97f41972ffa9bc30d95ee380}\label{_l_e_d___indication_8cpp_afa854d5c97f41972ffa9bc30d95ee380}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!BlinkLED@{BlinkLED}}
+\index{BlinkLED@{BlinkLED}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{BlinkLED()}{BlinkLED()}}
+{\footnotesize\ttfamily void Blink\+L\+ED (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{led\+\_\+pin,  }\item[{uint16\+\_\+t}]{period }\end{DoxyParamCaption})}
+
+
+
+Blink L\+ED at certain frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em led\+\_\+pin} & The pin that is assigned to the L\+ED indicator \\
+\hline
+\mbox{\texttt{ in}}  & {\em period} & Sets the period of blinking frequency \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_afa854d5c97f41972ffa9bc30d95ee380_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_aa2c074cf49d7f77fd5b6acf2673bfbb3}\label{_l_e_d___indication_8cpp_aa2c074cf49d7f77fd5b6acf2673bfbb3}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!CHECK\_Indication@{CHECK\_Indication}}
+\index{CHECK\_Indication@{CHECK\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{CHECK\_Indication()}{CHECK\_Indication()}}
+{\footnotesize\ttfamily void C\+H\+E\+C\+K\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Indicate a correct Operation. 
+
+
+
+Definition at line 56 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{_l_e_d___indication_8cpp_aa2c074cf49d7f77fd5b6acf2673bfbb3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a8f78b85477a3e04ad96d9c1cf0867027}\label{_l_e_d___indication_8cpp_a8f78b85477a3e04ad96d9c1cf0867027}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!diconnected\_Client\_Indication@{diconnected\_Client\_Indication}}
+\index{diconnected\_Client\_Indication@{diconnected\_Client\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{diconnected\_Client\_Indication()}{diconnected\_Client\_Indication()}}
+{\footnotesize\ttfamily void diconnected\+\_\+\+Client\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Unexpected T\+CP Client Disonnection. 
+
+
+
+Definition at line 110 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_l_e_d___indication_8cpp_a8f78b85477a3e04ad96d9c1cf0867027_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a8f78b85477a3e04ad96d9c1cf0867027_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a8f8e5db61eafa7203a27b9cced9a3c99}\label{_l_e_d___indication_8cpp_a8f8e5db61eafa7203a27b9cced9a3c99}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!ERROR\_Indication@{ERROR\_Indication}}
+\index{ERROR\_Indication@{ERROR\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{ERROR\_Indication()}{ERROR\_Indication()}}
+{\footnotesize\ttfamily void E\+R\+R\+O\+R\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Indicate a Hardware Issue or Stall. 
+
+
+
+Definition at line 30 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a8f8e5db61eafa7203a27b9cced9a3c99_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a003a4e557400f918e793628dd4e22b31}\label{_l_e_d___indication_8cpp_a003a4e557400f918e793628dd4e22b31}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!inProgress\_Indication@{inProgress\_Indication}}
+\index{inProgress\_Indication@{inProgress\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{inProgress\_Indication()}{inProgress\_Indication()}}
+{\footnotesize\ttfamily void in\+Progress\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Blink Blue Once as somehting is being in progress. 
+
+
+
+Definition at line 65 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{_l_e_d___indication_8cpp_a003a4e557400f918e793628dd4e22b31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a003a4e557400f918e793628dd4e22b31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a6100c66f578bba2b8672937f7debb289}\label{_l_e_d___indication_8cpp_a6100c66f578bba2b8672937f7debb289}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!Invalid\_CMD\_Indication@{Invalid\_CMD\_Indication}}
+\index{Invalid\_CMD\_Indication@{Invalid\_CMD\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{Invalid\_CMD\_Indication()}{Invalid\_CMD\_Indication()}}
+{\footnotesize\ttfamily void Invalid\+\_\+\+C\+M\+D\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Indicate an invalid incoming command. 
+
+
+
+Definition at line 47 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{_l_e_d___indication_8cpp_a6100c66f578bba2b8672937f7debb289_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a6100c66f578bba2b8672937f7debb289_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_ac52202f7b5d665c5089686405527f628}\label{_l_e_d___indication_8cpp_ac52202f7b5d665c5089686405527f628}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!powered\_On\_Indication@{powered\_On\_Indication}}
+\index{powered\_On\_Indication@{powered\_On\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{powered\_On\_Indication()}{powered\_On\_Indication()}}
+{\footnotesize\ttfamily void powered\+\_\+\+On\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Power On Device Indication. 
+
+
+
+Definition at line 128 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{_l_e_d___indication_8cpp_ac52202f7b5d665c5089686405527f628_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{_l_e_d___indication_8cpp_ac52202f7b5d665c5089686405527f628_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_acb653f64366b90f597daa67b7212598d}\label{_l_e_d___indication_8cpp_acb653f64366b90f597daa67b7212598d}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!show\_standBy\_State@{show\_standBy\_State}}
+\index{show\_standBy\_State@{show\_standBy\_State}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{show\_standBy\_State()}{show\_standBy\_State()}}
+{\footnotesize\ttfamily void show\+\_\+stand\+By\+\_\+\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Shows the stand by state. 
+
+
+
+Definition at line 92 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{_l_e_d___indication_8cpp_acb653f64366b90f597daa67b7212598d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_acb653f64366b90f597daa67b7212598d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a141c3d76bbbb13fdbfc6f022768db55b}\label{_l_e_d___indication_8cpp_a141c3d76bbbb13fdbfc6f022768db55b}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!show\_streamming\_State@{show\_streamming\_State}}
+\index{show\_streamming\_State@{show\_streamming\_State}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{show\_streamming\_State()}{show\_streamming\_State()}}
+{\footnotesize\ttfamily void show\+\_\+streamming\+\_\+\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Shows the streamming state. 
+
+
+
+Definition at line 101 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{_l_e_d___indication_8cpp_a141c3d76bbbb13fdbfc6f022768db55b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a141c3d76bbbb13fdbfc6f022768db55b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a59465ebabc82fa3e752715432004f25f}\label{_l_e_d___indication_8cpp_a59465ebabc82fa3e752715432004f25f}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!standBy\_mode@{standBy\_mode}}
+\index{standBy\_mode@{standBy\_mode}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{standBy\_mode()}{standBy\_mode()}}
+{\footnotesize\ttfamily void stand\+By\+\_\+mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enter Stand\+By Mode. 
+
+
+
+Definition at line 119 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{_l_e_d___indication_8cpp_a59465ebabc82fa3e752715432004f25f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a59465ebabc82fa3e752715432004f25f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a3b5b5edd2fd26b63ee49c448ef1374dc}\label{_l_e_d___indication_8cpp_a3b5b5edd2fd26b63ee49c448ef1374dc}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!success\_State@{success\_State}}
+\index{success\_State@{success\_State}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{success\_State()}{success\_State()}}
+{\footnotesize\ttfamily void success\+\_\+\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Indicate Successful State. 
+
+
+
+Definition at line 83 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_l_e_d___indication_8cpp_a3b5b5edd2fd26b63ee49c448ef1374dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a3b5b5edd2fd26b63ee49c448ef1374dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a2ee303fca36724a93b175082bbc87344}\label{_l_e_d___indication_8cpp_a2ee303fca36724a93b175082bbc87344}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!turnOffLEDs@{turnOffLEDs}}
+\index{turnOffLEDs@{turnOffLEDs}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOffLEDs()}{turnOffLEDs()}}
+{\footnotesize\ttfamily void turn\+Off\+L\+E\+Ds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Turn O\+FF all L\+E\+Ds immidiately. 
+
+
+
+Definition at line 220 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a2ee303fca36724a93b175082bbc87344_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a5163d45c1af814fc9ea0cca80f001657}\label{_l_e_d___indication_8cpp_a5163d45c1af814fc9ea0cca80f001657}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!turnOnLED@{turnOnLED}}
+\index{turnOnLED@{turnOnLED}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOnLED()}{turnOnLED()}}
+{\footnotesize\ttfamily void turn\+On\+L\+ED (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{lep\+\_\+pin,  }\item[{uint8\+\_\+t}]{step\+Delay }\end{DoxyParamCaption})}
+
+
+
+Fade-\/in Turning On any L\+ED at certain P\+WM speed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lep\+\_\+pin} & The pin that is assigned to the L\+ED indicator \\
+\hline
+\mbox{\texttt{ in}}  & {\em step\+Delay} & The step delay that controls the speed of lighting up the L\+ED \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 209 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a5163d45c1af814fc9ea0cca80f001657_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a58dc5b2353d222d575913c12c254d477}\label{_l_e_d___indication_8cpp_a58dc5b2353d222d575913c12c254d477}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!turnOnPurple@{turnOnPurple}}
+\index{turnOnPurple@{turnOnPurple}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOnPurple()}{turnOnPurple()}}
+{\footnotesize\ttfamily void turn\+On\+Purple (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fade-\/in Turning On Purple Color. 
+
+
+
+Definition at line 230 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_acfeecfccc02d00508868a1d7c2936056}\label{_l_e_d___indication_8cpp_acfeecfccc02d00508868a1d7c2936056}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!turnOnWhite@{turnOnWhite}}
+\index{turnOnWhite@{turnOnWhite}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOnWhite()}{turnOnWhite()}}
+{\footnotesize\ttfamily void turn\+On\+White (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fade-\/in Turning On White Color. 
+
+
+
+Definition at line 255 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a93bde88fd5f6af880eff0e21eb061695}\label{_l_e_d___indication_8cpp_a93bde88fd5f6af880eff0e21eb061695}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!turnOnYellow@{turnOnYellow}}
+\index{turnOnYellow@{turnOnYellow}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{turnOnYellow()}{turnOnYellow()}}
+{\footnotesize\ttfamily void turn\+On\+Yellow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fade-\/in Turning On Yellow Color. 
+
+
+
+Definition at line 243 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_abadcb48a859f407a0a045582aec009e8}\label{_l_e_d___indication_8cpp_abadcb48a859f407a0a045582aec009e8}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!uBlox\_HW\_Init@{uBlox\_HW\_Init}}
+\index{uBlox\_HW\_Init@{uBlox\_HW\_Init}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{uBlox\_HW\_Init()}{uBlox\_HW\_Init()}}
+{\footnotesize\ttfamily void u\+Blox\+\_\+\+H\+W\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize G\+P\+I\+Os of U\+Blox Module. 
+
+
+
+Definition at line 20 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{_l_e_d___indication_8cpp_abadcb48a859f407a0a045582aec009e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a216320cece62ff8f43f679b2ab9a39ef}\label{_l_e_d___indication_8cpp_a216320cece62ff8f43f679b2ab9a39ef}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!Valid\_CMD\_Indication@{Valid\_CMD\_Indication}}
+\index{Valid\_CMD\_Indication@{Valid\_CMD\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{Valid\_CMD\_Indication()}{Valid\_CMD\_Indication()}}
+{\footnotesize\ttfamily void Valid\+\_\+\+C\+M\+D\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Indicate a valid incoming command. 
+
+
+
+Definition at line 38 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_l_e_d___indication_8cpp_a216320cece62ff8f43f679b2ab9a39ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_a216320cece62ff8f43f679b2ab9a39ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_ad029e779e08de03d6ea8a09815dd4f80}\label{_l_e_d___indication_8cpp_ad029e779e08de03d6ea8a09815dd4f80}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!WiFi\_conn\_inProgress\_Indication@{WiFi\_conn\_inProgress\_Indication}}
+\index{WiFi\_conn\_inProgress\_Indication@{WiFi\_conn\_inProgress\_Indication}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{WiFi\_conn\_inProgress\_Indication()}{WiFi\_conn\_inProgress\_Indication()}}
+{\footnotesize\ttfamily void Wi\+Fi\+\_\+conn\+\_\+in\+Progress\+\_\+\+Indication (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Blink Blue Once as somehting is being in progress. 
+
+
+
+Definition at line 74 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{_l_e_d___indication_8cpp_ad029e779e08de03d6ea8a09815dd4f80_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_e_d___indication_8cpp_ad029e779e08de03d6ea8a09815dd4f80_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a62399136457d5cb906562c4a3b0b81da}\label{_l_e_d___indication_8cpp_a62399136457d5cb906562c4a3b0b81da}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!blueLED\_Pin@{blueLED\_Pin}}
+\index{blueLED\_Pin@{blueLED\_Pin}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{blueLED\_Pin}{blueLED\_Pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t blue\+L\+E\+D\+\_\+\+Pin = \mbox{\hyperlink{_nova_x_r___library_8h_ae2e40566d27689f8581d7b0f12271d45}{L\+E\+D\+\_\+\+B\+L\+UE}}}
+
+
+
+Definition at line 10 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a4fd76a1a375c15a81f01b740b65640be}\label{_l_e_d___indication_8cpp_a4fd76a1a375c15a81f01b740b65640be}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!greenLED\_Pin@{greenLED\_Pin}}
+\index{greenLED\_Pin@{greenLED\_Pin}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{greenLED\_Pin}{greenLED\_Pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t green\+L\+E\+D\+\_\+\+Pin = \mbox{\hyperlink{_nova_x_r___library_8h_aca338dbd19d7940923334629f6e5f3b7}{L\+E\+D\+\_\+\+G\+R\+E\+EN}}}
+
+
+
+Definition at line 9 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_a9622dd48e7ac4ef8bcd582533d977f0d}\label{_l_e_d___indication_8cpp_a9622dd48e7ac4ef8bcd582533d977f0d}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!redLED\_Pin@{redLED\_Pin}}
+\index{redLED\_Pin@{redLED\_Pin}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{redLED\_Pin}{redLED\_Pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t red\+L\+E\+D\+\_\+\+Pin = \mbox{\hyperlink{_nova_x_r___library_8h_a31e20330f8ce94e0dd10b005a15c5898}{L\+E\+D\+\_\+\+R\+ED}}}
+
+
+
+Definition at line 8 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+
+\mbox{\Hypertarget{_l_e_d___indication_8cpp_aa427a897a286b730cd2d4616761e51fc}\label{_l_e_d___indication_8cpp_aa427a897a286b730cd2d4616761e51fc}} 
+\index{LED\_Indication.cpp@{LED\_Indication.cpp}!uBLox@{uBLox}}
+\index{uBLox@{uBLox}!LED\_Indication.cpp@{LED\_Indication.cpp}}
+\doxysubsubsection{\texorpdfstring{uBLox}{uBLox}}
+{\footnotesize\ttfamily Wi\+Fi\+Drv u\+B\+Lox}
+
+
+
+Instance of the L\+ED Driver Class. 
+
+
+
+Definition at line 13 of file L\+E\+D\+\_\+\+Indication.\+cpp.
+

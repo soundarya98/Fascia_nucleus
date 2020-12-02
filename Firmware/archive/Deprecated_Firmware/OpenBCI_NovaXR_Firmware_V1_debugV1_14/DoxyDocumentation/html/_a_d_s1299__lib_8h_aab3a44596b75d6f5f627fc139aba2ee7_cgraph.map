@@ -1,0 +1,7 @@
+<map id="ADS_connected" name="ADS_connected">
+<area shape="rect" id="node1" title="Check id ADS1299 device is present on the board." alt="" coords="5,55,123,80"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="174,5,314,31"/>
+<area shape="rect" id="node3" href="$_a_d_s1299__lib_8cpp.html#a5f211d0f1d5eb2bbdb6dd04c2f994428" title="Prints a board id." alt="" coords="193,55,295,80"/>
+<area shape="rect" id="node4" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="171,104,317,129"/>
+<area shape="rect" id="node5" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="365,104,447,129"/>
+</map>

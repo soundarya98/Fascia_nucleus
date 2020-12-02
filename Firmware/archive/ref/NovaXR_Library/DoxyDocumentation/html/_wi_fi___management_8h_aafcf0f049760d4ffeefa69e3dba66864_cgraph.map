@@ -1,0 +1,5 @@
+<map id="CreateAccessPoint" name="CreateAccessPoint">
+<area shape="rect" id="node1" title="Creates a WiFi Access Point." alt="" coords="5,40,140,65"/>
+<area shape="rect" id="node2" href="$_wi_fi___management_8cpp.html#a1857d3854a20c586ad6b70b7a54aac88" title="Check if any WiFi client is connected to NovaXR device." alt="" coords="188,5,344,44"/>
+<area shape="rect" id="node3" href="$_wi_fi___management_8cpp.html#a50e0014b556683f2e8910be4b2974797" title="Prints a WiFi status." alt="" coords="210,68,322,93"/>
+</map>

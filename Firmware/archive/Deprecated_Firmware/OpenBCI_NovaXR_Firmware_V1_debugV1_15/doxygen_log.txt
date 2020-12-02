@@ -1,0 +1,732 @@
+Adding custom extension mapping: .ino will be treated as language c
+Searching for include files...
+Searching for example files...
+Searching for images...
+Searching for dot files...
+Searching for msc files...
+Searching for dia files...
+Searching for files to exclude
+Searching INPUT for files to process...
+Searching for files in directory /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15
+Searching for files in directory /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/DoxyDocumentation
+Reading and parsing tag files
+Parsing files
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/ADS1299_lib.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/ADS1299_lib.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/ADS1299_lib.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/ADS1299_lib.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/Data_Handler.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/Data_Handler.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/Data_Handler.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/Data_Handler.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/heartRate.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/heartRate.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/heartRate.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/heartRate.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/HTML_Server.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/HTML_Server.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/HTML_Server.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/HTML_Server.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/LED_Indication.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/LED_Indication.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/LED_Indication.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/LED_Indication.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/MAX30105.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/MAX30105.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/MAX30105.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/MAX30105.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_Library.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_Library.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_Library.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_Library.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_PPG_Sensor.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_PPG_Sensor.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_PPG_Sensor.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NovaXR_PPG_Sensor.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_AUX_Sensors.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_AUX_Sensors.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_AUX_Sensors.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_AUX_Sensors.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Communication.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Communication.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Communication.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Communication.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Flash.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Flash.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Flash.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/NXR_Flash.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR_Definitions.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR_Definitions.h...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR_Firmware_V1_debugV1_15.ino...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR_Firmware_V1_debugV1_15.ino...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/WiFi_Management.cpp...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/WiFi_Management.cpp...
+Preprocessing /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/WiFi_Management.h...
+Parsing file /Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/WiFi_Management.h...
+Building group list...
+Building directory list...
+Building namespace list...
+Building file list...
+Building class list...
+Computing nesting relations for classes...
+Associating documentation with classes...
+Building example list...
+Searching for enumerations...
+Searching for documented typedefs...
+Searching for members imported via using declarations...
+Searching for included using directives...
+Searching for documented variables...
+Building interface member list...
+Building member list...
+Searching for friends...
+Searching for documented defines...
+Computing class inheritance relations...
+Computing class usage relations...
+Flushing cached template relations that have become invalid...
+Computing class relations...
+Add enum values to enums...
+Searching for member function documentation...
+Creating members for template instances...
+Building page list...
+Search for main page...
+Computing page relations...
+Determining the scope of groups...
+Sorting lists...
+Determining which enums are documented
+Computing member relations...
+Building full member lists recursively...
+Adding members to member groups.
+Computing member references...
+Inheriting documentation...
+Generating disk names...
+Adding source references...
+Adding xrefitems...
+Sorting member lists...
+Setting anonymous enum type...
+Computing dependencies between directories...
+Generating citations page...
+Counting members...
+Counting data structures...
+Resolving user defined references...
+Finding anchors and sections in the documentation...
+Transferring function references...
+Combining using relations...
+Adding members to index pages...
+Correcting members for VHDL...
+Generating style sheet...
+Generating search indices...
+Generating example documentation...
+Generating file sources...
+Generating code for file ADS1299_lib.cpp...
+Generating code for file ADS1299_lib.h...
+Generating code for file Data_Handler.cpp...
+Generating code for file Data_Handler.h...
+Generating code for file heartRate.cpp...
+Generating code for file heartRate.h...
+Generating code for file HTML_Server.cpp...
+Generating code for file HTML_Server.h...
+Generating code for file LED_Indication.cpp...
+Generating code for file LED_Indication.h...
+Generating code for file MAX30105.cpp...
+Generating code for file MAX30105.h...
+Generating code for file NovaXR_Library.cpp...
+Generating code for file NovaXR_Library.h...
+Generating code for file NovaXR_PPG_Sensor.cpp...
+Generating code for file NovaXR_PPG_Sensor.h...
+Generating code for file NXR_AUX_Sensors.cpp...
+Generating code for file NXR_AUX_Sensors.h...
+Generating code for file NXR_Communication.cpp...
+Generating code for file NXR_Communication.h...
+Generating code for file NXR_Flash.cpp...
+Generating code for file NXR_Flash.h...
+Generating code for file OpenBCI_NovaXR.cpp...
+Generating code for file OpenBCI_NovaXR.h...
+Generating code for file OpenBCI_NovaXR_Definitions.h...
+Generating code for file OpenBCI_NovaXR_Firmware_V1_debugV1_15.ino...
+Generating code for file WiFi_Management.cpp...
+Generating code for file WiFi_Management.h...
+Generating file documentation...
+Generating docs for file ADS1299_lib.cpp...
+Generating call graph for function ADS_connected
+Generating caller graph for function ADS_connected
+Generating call graph for function ADS_Example_2_Single_Shot
+Generating call graph for function ADS_Example_3_Single_Shot_Freq
+Generating call graph for function ADS_Init_Config
+Generating caller graph for function ADS_Init_Config
+Generating call graph for function ADS_MB_Interrupt
+Generating caller graph for function ADS_Stop_Conversion
+Generating call graph for function apply_bit_Config
+Generating call graph for function Begin_ADS
+Generating caller graph for function Begin_ADS
+Generating call graph for function config_ADS_Input
+Generating caller graph for function config_ADS_Input
+Generating call graph for function config_ADS_Register
+Generating caller graph for function config_ADS_Register
+Generating call graph for function config_All_ADS_Inputs
+Generating caller graph for function config_All_ADS_Inputs
+Generating caller graph for function disable_ContninuousConversion
+Generating call graph for function display_Registers_settings
+Generating caller graph for function display_Registers_settings
+Generating caller graph for function do_RREG
+Generating caller graph for function do_WREG
+Generating caller graph for function enable_ADS1299
+Generating caller graph for function flipBit
+Generating caller graph for function get_ADC_Data_SS
+Generating caller graph for function getADC1_Data_CM
+Generating caller graph for function getCurrent_ADS_ID
+Generating caller graph for function print_boardID
+Generating call graph for function print_Single_Shot
+Generating caller graph for function print_Single_Shot
+Generating call graph for function readRegisterSettings
+Generating caller graph for function readRegisterSettings
+Generating caller graph for function Reset_ADC
+Generating caller graph for function select_ADC
+Generating caller graph for function SPI_pinPeriphernal_init
+Generating call graph for function startADC_Continuous_Mode
+Generating caller graph for function startADC_Continuous_Mode
+Generating call graph for function stop_ADC_interrupt
+Generating caller graph for function stop_ADC_interrupt
+Generating call graph for function stop_and_configInput
+Generating caller graph for function stop_and_configInput
+Generating docs for file ADS1299_lib.h...
+Generating call graph for function ADS_connected
+Generating caller graph for function ADS_connected
+Generating call graph for function ADS_Example_2_Single_Shot
+Generating call graph for function ADS_Example_3_Single_Shot_Freq
+Generating call graph for function ADS_Init_Config
+Generating caller graph for function ADS_Init_Config
+Generating call graph for function ADS_MB_Interrupt
+Generating caller graph for function ADS_Stop_Conversion
+Generating call graph for function Begin_ADS
+Generating caller graph for function Begin_ADS
+Generating call graph for function config_ADS_Input
+Generating caller graph for function config_ADS_Input
+Generating call graph for function config_ADS_Register
+Generating caller graph for function config_ADS_Register
+Generating call graph for function config_All_ADS_Inputs
+Generating caller graph for function config_All_ADS_Inputs
+Generating caller graph for function disable_ContninuousConversion
+Generating call graph for function display_Registers_settings
+Generating caller graph for function display_Registers_settings
+Generating caller graph for function do_RREG
+Generating caller graph for function do_WREG
+Generating caller graph for function enable_ADS1299
+Generating caller graph for function flipBit
+Generating caller graph for function get_ADC_Data_SS
+Generating caller graph for function getADC1_Data_CM
+Generating caller graph for function getCurrent_ADS_ID
+Generating caller graph for function print_boardID
+Generating call graph for function print_Single_Shot
+Generating caller graph for function print_Single_Shot
+Generating call graph for function readRegisterSettings
+Generating caller graph for function readRegisterSettings
+Generating caller graph for function Reset_ADC
+Generating caller graph for function select_ADC
+Generating caller graph for function SPI_pinPeriphernal_init
+Generating call graph for function startADC_Continuous_Mode
+Generating caller graph for function startADC_Continuous_Mode
+Generating call graph for function stop_ADC_interrupt
+Generating caller graph for function stop_ADC_interrupt
+Generating call graph for function stop_and_configInput
+Generating caller graph for function stop_and_configInput
+Generating docs for file Data_Handler.cpp...
+Generating call graph for function assemble_outBuffer
+Generating caller graph for function assemble_outBuffer
+Generating call graph for function assemble_swBuffer
+Generating caller graph for function assemble_swBuffer
+Generating call graph for function fill_outBuffer
+Generating caller graph for function fill_outBuffer
+Generating call graph for function fill_SwitchBuffer
+Generating caller graph for function fill_SwitchBuffer
+Generating caller graph for function getEmpty_swBuffer_ID
+Generating caller graph for function getFull_swBuffer_ID
+Generating call graph for function getRAW_ADSdata
+Generating caller graph for function getRAW_ADSdata
+Generating caller graph for function getRAW_AUXdata
+Generating caller graph for function getRAW_BIOdata
+Generating call graph for function getUpdatedSensoryData
+Generating caller graph for function getUpdatedSensoryData
+Generating caller graph for function markEmpty_swBuffer
+Generating caller graph for function markFull_swBuffer
+Generating caller graph for function putTimeStamp
+Generating caller graph for function reset_swBuffers
+Generating docs for file Data_Handler.h...
+Generating call graph for function assemble_outBuffer
+Generating caller graph for function assemble_outBuffer
+Generating call graph for function assemble_swBuffer
+Generating caller graph for function assemble_swBuffer
+Generating call graph for function fill_SwitchBuffer
+Generating caller graph for function fill_SwitchBuffer
+Generating caller graph for function getEmpty_swBuffer_ID
+Generating caller graph for function getFull_swBuffer_ID
+Generating call graph for function getRAW_ADSdata
+Generating caller graph for function getRAW_ADSdata
+Generating caller graph for function getRAW_AUXdata
+Generating caller graph for function getRAW_BIOdata
+Generating call graph for function getUpdatedSensoryData
+Generating caller graph for function getUpdatedSensoryData
+Generating caller graph for function markEmpty_swBuffer
+Generating caller graph for function markFull_swBuffer
+Generating caller graph for function putTimeStamp
+Generating caller graph for function reset_swBuffers
+Generating docs for file heartRate.cpp...
+Generating caller graph for function averageDCEstimator
+Generating call graph for function checkForBeat
+Generating caller graph for function checkForBeat
+Generating call graph for function lowPassFIRFilter
+Generating caller graph for function lowPassFIRFilter
+Generating caller graph for function mul16
+Generating docs for file heartRate.h...
+Generating caller graph for function averageDCEstimator
+Generating call graph for function checkForBeat
+Generating caller graph for function checkForBeat
+Generating call graph for function lowPassFIRFilter
+Generating caller graph for function lowPassFIRFilter
+Generating caller graph for function mul16
+Generating docs for file HTML_Server.cpp...
+Generating caller graph for function fill_form
+Generating caller graph for function h2int
+Generating caller graph for function HTTPserver
+Generating call graph for function parse_HTML
+Generating caller graph for function parse_HTML
+Generating call graph for function register_New_WiFi
+Generating caller graph for function register_New_WiFi
+Generating call graph for function start_HTMLserver
+Generating caller graph for function start_HTMLserver
+Generating call graph for function urldecode
+Generating caller graph for function urldecode
+Generating call graph for function wait_for_Client
+Generating caller graph for function wait_for_Client
+Generating docs for file HTML_Server.h...
+Generating caller graph for function fill_form
+Generating caller graph for function h2int
+Generating call graph for function parse_HTML
+Generating caller graph for function parse_HTML
+Generating call graph for function register_New_WiFi
+Generating caller graph for function register_New_WiFi
+Generating call graph for function start_HTMLserver
+Generating caller graph for function start_HTMLserver
+Generating call graph for function urldecode
+Generating caller graph for function urldecode
+Generating call graph for function wait_for_Client
+Generating caller graph for function wait_for_Client
+Generating docs for file LED_Indication.cpp...
+Generating caller graph for function Blink_DualColor
+Generating call graph for function blink_Red
+Generating caller graph for function blink_Red
+Generating caller graph for function BlinkLED
+Generating call graph for function CHECK_Indication
+Generating call graph for function diconnected_Client_Indication
+Generating caller graph for function diconnected_Client_Indication
+Generating call graph for function ERROR_Indication
+Generating call graph for function inProgress_Indication
+Generating caller graph for function inProgress_Indication
+Generating call graph for function Invalid_CMD_Indication
+Generating caller graph for function Invalid_CMD_Indication
+Generating call graph for function powered_On_Indication
+Generating caller graph for function powered_On_Indication
+Generating call graph for function show_standBy_State
+Generating caller graph for function show_standBy_State
+Generating call graph for function show_streamming_State
+Generating caller graph for function show_streamming_State
+Generating call graph for function standBy_mode
+Generating caller graph for function standBy_mode
+Generating call graph for function success_State
+Generating caller graph for function success_State
+Generating caller graph for function turnOffLEDs
+Generating caller graph for function turnOnLED
+Generating caller graph for function uBlox_HW_Init
+Generating call graph for function Valid_CMD_Indication
+Generating caller graph for function Valid_CMD_Indication
+Generating call graph for function WiFi_conn_inProgress_Indication
+Generating caller graph for function WiFi_conn_inProgress_Indication
+Generating docs for file LED_Indication.h...
+Generating caller graph for function Blink_DualColor
+Generating call graph for function blink_Red
+Generating caller graph for function blink_Red
+Generating caller graph for function BlinkLED
+Generating call graph for function CHECK_Indication
+Generating call graph for function diconnected_Client_Indication
+Generating caller graph for function diconnected_Client_Indication
+Generating call graph for function ERROR_Indication
+Generating call graph for function inProgress_Indication
+Generating caller graph for function inProgress_Indication
+Generating call graph for function Invalid_CMD_Indication
+Generating caller graph for function Invalid_CMD_Indication
+Generating call graph for function powered_On_Indication
+Generating caller graph for function powered_On_Indication
+Generating call graph for function show_standBy_State
+Generating caller graph for function show_standBy_State
+Generating call graph for function show_streamming_State
+Generating caller graph for function show_streamming_State
+Generating call graph for function standBy_mode
+Generating caller graph for function standBy_mode
+Generating call graph for function success_State
+Generating caller graph for function success_State
+Generating caller graph for function turnOffLEDs
+Generating caller graph for function turnOnLED
+Generating caller graph for function uBlox_HW_Init
+Generating call graph for function Valid_CMD_Indication
+Generating caller graph for function Valid_CMD_Indication
+Generating call graph for function WiFi_conn_inProgress_Indication
+Generating caller graph for function WiFi_conn_inProgress_Indication
+Generating docs for file MAX30105.cpp...
+Generating docs for file MAX30105.h...
+Generating docs for file NovaXR_Library.cpp...
+Generating call graph for function set_board_revision
+Generating caller graph for function set_board_revision
+Generating docs for file NovaXR_Library.h...
+Generating call graph for function set_board_revision
+Generating caller graph for function set_board_revision
+Generating docs for file NovaXR_PPG_Sensor.cpp...
+Generating call graph for function adjust_configs
+Generating caller graph for function adjust_configs
+Generating call graph for function Config_and_Calibrate
+Generating caller graph for function Config_and_Calibrate
+Generating call graph for function En_Int_FIFO_config
+Generating call graph for function get_calculated_HR
+Generating caller graph for function get_calculated_HR
+Generating call graph for function get_Heart_Rate
+Generating caller graph for function get_Heart_Rate
+Generating call graph for function get_RAW_IR_Reflection
+Generating call graph for function get_Skin_Temp
+Generating call graph for function getPresence
+Generating call graph for function HR_config
+Generating caller graph for function HR_config
+Generating call graph for function HR_config_Default
+Generating caller graph for function HR_config_Default
+Generating call graph for function PPG_HR_Sense_Init
+Generating call graph for function PPG_Init
+Generating call graph for function PPG_Presence_Config
+Generating call graph for function PPG_Presence_Sense_Init
+Generating call graph for function PPG_Temp_Config
+Generating caller graph for function PPG_Temp_Config
+Generating call graph for function PPG_Temp_Sense_Init
+Generating caller graph for function printPPG_Configs
+Generating call graph for function read_return_int
+Generating caller graph for function read_return_int
+Generating call graph for function RealTime_Sensor_Calibration
+Generating docs for file NovaXR_PPG_Sensor.h...
+Generating call graph for function adjust_configs
+Generating caller graph for function adjust_configs
+Generating call graph for function Config_and_Calibrate
+Generating caller graph for function Config_and_Calibrate
+Generating call graph for function En_Int_FIFO_config
+Generating call graph for function get_calculated_HR
+Generating caller graph for function get_calculated_HR
+Generating call graph for function get_Heart_Rate
+Generating caller graph for function get_Heart_Rate
+Generating call graph for function get_RAW_IR_Reflection
+Generating call graph for function get_Skin_Temp
+Generating call graph for function getPresence
+Generating call graph for function HR_config
+Generating caller graph for function HR_config
+Generating call graph for function HR_config_Default
+Generating caller graph for function HR_config_Default
+Generating call graph for function PPG_HR_Sense_Init
+Generating call graph for function PPG_Init
+Generating call graph for function PPG_Presence_Config
+Generating call graph for function PPG_Presence_Sense_Init
+Generating call graph for function PPG_Temp_Config
+Generating caller graph for function PPG_Temp_Config
+Generating call graph for function PPG_Temp_Sense_Init
+Generating caller graph for function printPPG_Configs
+Generating call graph for function read_return_int
+Generating caller graph for function read_return_int
+Generating call graph for function RealTime_Sensor_Calibration
+Generating docs for file NXR_AUX_Sensors.cpp...
+Generating caller graph for function calc_Sensory_Output
+Generating call graph for function gain_Correction
+Generating caller graph for function gain_Correction
+Generating caller graph for function get_AnalogSense_Level
+Generating call graph for function getBattery_ChargeLevel
+Generating caller graph for function getBattery_ChargeLevel
+Generating call graph for function MCU_ADC_Calibration
+Generating caller graph for function MCU_ADC_Calibration
+Generating call graph for function MCU_ADC_Default
+Generating caller graph for function MCU_ADC_Default
+Generating call graph for function MCU_ADC_Init
+Generating caller graph for function MCU_ADC_Init
+Generating call graph for function offSet_Correction
+Generating caller graph for function offSet_Correction
+Generating call graph for function printBatt_level
+Generating caller graph for function printBatt_level
+Generating caller graph for function readGND_Level
+Generating caller graph for function readVDD_Level
+Generating caller graph for function test_ADC_init
+Generating docs for file NXR_AUX_Sensors.h...
+Generating caller graph for function calc_Sensory_Output
+Generating call graph for function gain_Correction
+Generating caller graph for function gain_Correction
+Generating caller graph for function get_AnalogSense_Level
+Generating call graph for function getBattery_ChargeLevel
+Generating caller graph for function getBattery_ChargeLevel
+Generating call graph for function MCU_ADC_Calibration
+Generating caller graph for function MCU_ADC_Calibration
+Generating call graph for function MCU_ADC_Default
+Generating caller graph for function MCU_ADC_Default
+Generating call graph for function MCU_ADC_Init
+Generating caller graph for function MCU_ADC_Init
+Generating call graph for function offSet_Correction
+Generating caller graph for function offSet_Correction
+Generating call graph for function printBatt_level
+Generating caller graph for function printBatt_level
+Generating caller graph for function readGND_Level
+Generating caller graph for function readVDD_Level
+Generating caller graph for function test_ADC_init
+Generating docs for file NXR_Communication.cpp...
+Generating caller graph for function getHeader
+Generating caller graph for function Send_TCP_outputBuffer
+Generating caller graph for function Send_TCP_swBuffer
+Generating caller graph for function Send_UDP_outputBuffer
+Generating caller graph for function Send_UDP_swBuffer
+Generating call graph for function startTCP_Server
+Generating caller graph for function startTCP_Server
+Generating call graph for function startUDP_Server
+Generating caller graph for function startUDP_Server
+Generating call graph for function TCP_Data_Exchange
+Generating caller graph for function TCP_Data_Exchange
+Generating call graph for function TCP_DataSW_Exchange
+Generating caller graph for function TCP_DataSW_Exchange
+Generating caller graph for function TCP_Server
+Generating call graph for function TCPcommandCheck
+Generating caller graph for function TCPcommandCheck
+Generating call graph for function UDP_Data_Exchange
+Generating caller graph for function UDP_Data_Exchange
+Generating call graph for function UDP_DataSW_Exchange
+Generating caller graph for function UDP_DataSW_Exchange
+Generating call graph for function UDP_or_TCP_data_exchage
+Generating caller graph for function UDP_or_TCP_data_exchage
+Generating call graph for function UDPcommandCheck
+Generating caller graph for function UDPcommandCheck
+Generating docs for file NXR_Communication.h...
+Generating caller graph for function getHeader
+Generating caller graph for function Send_TCP_outputBuffer
+Generating caller graph for function Send_TCP_swBuffer
+Generating caller graph for function Send_UDP_outputBuffer
+Generating caller graph for function Send_UDP_swBuffer
+Generating call graph for function startTCP_Server
+Generating caller graph for function startTCP_Server
+Generating call graph for function startUDP_Server
+Generating caller graph for function startUDP_Server
+Generating call graph for function TCP_Data_Exchange
+Generating caller graph for function TCP_Data_Exchange
+Generating call graph for function TCP_DataSW_Exchange
+Generating caller graph for function TCP_DataSW_Exchange
+Generating call graph for function TCPcommandCheck
+Generating caller graph for function TCPcommandCheck
+Generating call graph for function UDP_Data_Exchange
+Generating caller graph for function UDP_Data_Exchange
+Generating call graph for function UDP_DataSW_Exchange
+Generating caller graph for function UDP_DataSW_Exchange
+Generating call graph for function UDP_or_TCP_data_exchage
+Generating caller graph for function UDP_or_TCP_data_exchage
+Generating call graph for function UDPcommandCheck
+Generating caller graph for function UDPcommandCheck
+Generating docs for file NXR_Flash.cpp...
+Generating call graph for function connect_lastWiFi
+Generating caller graph for function connect_lastWiFi
+Generating caller graph for function count_SSIDsInList
+Generating caller graph for function CreatePASS
+Generating caller graph for function CreateSSID
+Generating caller graph for function displayHardwareInfo
+Generating caller graph for function displaySaved_WiFiCredentails
+Generating call graph for function eraseAllFlashContnent
+Generating caller graph for function eraseDev_Info
+Generating caller graph for function eraseWiFi_Info
+Generating call graph for function find_WiFiSpace
+Generating caller graph for function find_WiFiSpace
+Generating caller graph for function getSerialNumber_ID
+Generating caller graph for function lastWiFi_ID
+Generating call graph for function previous_WiFi_ID
+Generating caller graph for function previous_WiFi_ID
+Generating call graph for function ROM_Init
+Generating caller graph for function ROM_Init
+Generating call graph for function update_DeviceInfo
+Generating caller graph for function update_DeviceInfo
+Generating call graph for function update_WifiCred
+Generating caller graph for function update_WifiCred
+Generating caller graph for function WiFi_ID_exists
+Generating call graph for function writeDev_StandardInfo
+Generating caller graph for function writeDev_StandardInfo
+Generating docs for file NXR_Flash.h...
+Generating call graph for function connect_lastWiFi
+Generating caller graph for function connect_lastWiFi
+Generating caller graph for function count_SSIDsInList
+Generating caller graph for function CreatePASS
+Generating caller graph for function CreateSSID
+Generating caller graph for function displayHardwareInfo
+Generating caller graph for function displaySaved_WiFiCredentails
+Generating call graph for function eraseAllFlashContnent
+Generating caller graph for function eraseDev_Info
+Generating caller graph for function eraseWiFi_Info
+Generating call graph for function find_WiFiSpace
+Generating caller graph for function find_WiFiSpace
+Generating caller graph for function getSerialNumber_ID
+Generating caller graph for function lastWiFi_ID
+Generating call graph for function previous_WiFi_ID
+Generating caller graph for function previous_WiFi_ID
+Generating call graph for function ROM_Init
+Generating caller graph for function ROM_Init
+Generating call graph for function update_DeviceInfo
+Generating caller graph for function update_DeviceInfo
+Generating call graph for function update_WifiCred
+Generating caller graph for function update_WifiCred
+Generating caller graph for function WiFi_ID_exists
+Generating call graph for function writeDev_StandardInfo
+Generating caller graph for function writeDev_StandardInfo
+Generating docs for file OpenBCI_NovaXR.cpp...
+Generating caller graph for function ASCIIchar_To_Int
+Generating caller graph for function BIAS_LOFF_CH_Enable
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:403: warning: argument 'None' of command @param is not found in the argument list of checkMultiCharCmdTimer(void)
+Generating call graph for function checkMultiCharCmdTimer
+Generating caller graph for function checkMultiCharCmdTimer
+Generating caller graph for function checkMultiCharCommand
+Generating call graph for function config_BIAS_LOFF
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:428: warning: argument 'None' of command @param is not found in the argument list of endMultiCharCmdTimer(void)
+Generating caller graph for function endMultiCharCmdTimer
+Generating caller graph for function get_sisterADS_Input
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:440: warning: argument 'None' of command @param is not found in the argument list of getMultiCharCommand(void)
+Generating caller graph for function getMultiCharCommand
+Generating call graph for function processChar
+Generating caller graph for function processChar
+Generating call graph for function processMultiChar
+Generating caller graph for function processMultiChar
+Generating docs for file OpenBCI_NovaXR.h...
+Generating caller graph for function ASCIIchar_To_Int
+Generating caller graph for function BIAS_LOFF_CH_Enable
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:403: warning: argument 'None' of command @param is not found in the argument list of checkMultiCharCmdTimer(void)
+Generating call graph for function checkMultiCharCmdTimer
+Generating caller graph for function checkMultiCharCmdTimer
+Generating caller graph for function checkMultiCharCommand
+Generating call graph for function config_BIAS_LOFF
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:428: warning: argument 'None' of command @param is not found in the argument list of endMultiCharCmdTimer(void)
+Generating caller graph for function endMultiCharCmdTimer
+Generating caller graph for function get_sisterADS_Input
+/Users/modifas/Documents/Arduino/OpenBCI_NovaXR_Firmware_V1_debugV1_15/OpenBCI_NovaXR.cpp:440: warning: argument 'None' of command @param is not found in the argument list of getMultiCharCommand(void)
+Generating caller graph for function getMultiCharCommand
+Generating call graph for function processChar
+Generating caller graph for function processChar
+Generating call graph for function processMultiChar
+Generating caller graph for function processMultiChar
+Generating docs for file OpenBCI_NovaXR_Definitions.h...
+Generating docs for file OpenBCI_NovaXR_Firmware_V1_debugV1_15.ino...
+Generating call graph for function loop
+Generating call graph for function setup
+Generating docs for file WiFi_Management.cpp...
+Generating caller graph for function check_For_Connected_Client
+Generating call graph for function Connect_to_AP
+Generating caller graph for function Connect_to_AP
+Generating call graph for function CreateAccessPoint
+Generating caller graph for function CreateAccessPoint
+Generating call graph for function new_wifi_setup
+Generating caller graph for function printInstructions
+Generating caller graph for function printWiFiStatus
+Generating call graph for function startHTMLserver
+Generating call graph for function WiFi_connectivityOption
+Generating caller graph for function WiFi_connectivityOption
+Generating call graph for function WiFi_Management_AP_Init
+Generating caller graph for function WiFi_Management_AP_Init
+Generating call graph for function WiFi_Management_Init
+Generating caller graph for function WiFi_Management_Init
+Generating docs for file WiFi_Management.h...
+Generating caller graph for function check_For_Connected_Client
+Generating call graph for function Connect_to_AP
+Generating caller graph for function Connect_to_AP
+Generating call graph for function CreateAccessPoint
+Generating caller graph for function CreateAccessPoint
+Generating call graph for function new_wifi_setup
+Generating caller graph for function printInstructions
+Generating caller graph for function printWiFiStatus
+Generating call graph for function startHTMLserver
+Generating call graph for function WiFi_connectivityOption
+Generating caller graph for function WiFi_connectivityOption
+Generating call graph for function WiFi_Management_AP_Init
+Generating caller graph for function WiFi_Management_AP_Init
+Generating call graph for function WiFi_Management_Init
+Generating caller graph for function WiFi_Management_Init
+Generating page documentation...
+Generating group documentation...
+Generating class documentation...
+Generating docs for compound adc_data...
+Generating docs for nested compound adc_data::ADS...
+Generating docs for compound ADS_Data...
+Generating docs for compound AUX_Data...
+Generating docs for compound BIO_Data...
+Generating docs for compound DataPacket...
+Generating docs for compound Device_Info...
+Generating docs for compound MAX30105...
+Generating caller graph for function MAX30105::available
+Generating call graph for function MAX30105::begin
+Generating caller graph for function MAX30105::begin
+Generating call graph for function MAX30105::check
+Generating caller graph for function MAX30105::check
+Generating call graph for function MAX30105::clearFIFO
+Generating call graph for function MAX30105::disableSlots
+Generating caller graph for function MAX30105::enableAFULL
+Generating caller graph for function MAX30105::enableDIETEMPRDY
+Generating call graph for function MAX30105::getGreen
+Generating call graph for function MAX30105::getINT1
+Generating call graph for function MAX30105::getINT2
+Generating call graph for function MAX30105::getIR
+Generating caller graph for function MAX30105::getIR
+Generating call graph for function MAX30105::getReadPointer
+Generating caller graph for function MAX30105::getReadPointer
+Generating call graph for function MAX30105::getRed
+Generating call graph for function MAX30105::getWritePointer
+Generating caller graph for function MAX30105::getWritePointer
+Generating call graph for function MAX30105::nextSample
+Generating call graph for function MAX30105::readPartID
+Generating caller graph for function MAX30105::readPartID
+Generating caller graph for function MAX30105::readRegister8
+Generating call graph for function MAX30105::readTemperature
+Generating caller graph for function MAX30105::readTemperature
+Generating call graph for function MAX30105::readTemperatureF
+Generating caller graph for function MAX30105::readTemperatureF
+Generating call graph for function MAX30105::safeCheck
+Generating caller graph for function MAX30105::safeCheck
+Generating caller graph for function MAX30105::setFIFOAlmostFull
+Generating caller graph for function MAX30105::setFIFOAverage
+Generating call graph for function MAX30105::setProximityThreshold
+Generating call graph for function MAX30105::setPROXINTTHRESH
+Generating call graph for function MAX30105::setPulseAmplitudeGreen
+Generating caller graph for function MAX30105::setPulseAmplitudeGreen
+Generating call graph for function MAX30105::setPulseAmplitudeIR
+Generating call graph for function MAX30105::setPulseAmplitudeProximity
+Generating call graph for function MAX30105::setPulseAmplitudeRed
+Generating caller graph for function MAX30105::setPulseAmplitudeRed
+Generating call graph for function MAX30105::setup
+Generating caller graph for function MAX30105::setup
+Generating caller graph for function MAX30105::softReset
+Generating caller graph for function MAX30105::writeRegister8
+Generating docs for compound NXR_Rom...
+Generating docs for compound NXR_WiFi...
+Generating docs for compound Sensors_Data...
+Generating docs for compound switchOutBuffer...
+Generating namespace index...
+Generating graph info page...
+Generating directory documentation...
+Generating index page...
+Generating page index...
+Generating module index...
+Generating namespace index...
+Generating namespace member index...
+Generating annotated compound index...
+Generating alphabetical compound index...
+Generating hierarchical class index...
+Generating graphical class hierarchy...
+Generating member index...
+Generating file index...
+Generating file member index...
+Generating example index...
+finalizing index lists...
+writing tag file...
+Running plantuml with JAVA...
+Running dot...
+lookup cache used 1005/65536 hits=3552 misses=1013
+finished...
+*** Doxygen has finished

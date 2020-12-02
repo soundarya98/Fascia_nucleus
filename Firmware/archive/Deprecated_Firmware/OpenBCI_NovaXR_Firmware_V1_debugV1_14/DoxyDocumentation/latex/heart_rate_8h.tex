@@ -1,0 +1,97 @@
+\hypertarget{heart_rate_8h}{}\doxysection{heart\+Rate.\+h File Reference}
+\label{heart_rate_8h}\index{heartRate.h@{heartRate.h}}
+{\ttfamily \#include \char`\"{}W\+Program.\+h\char`\"{}}\newline
+Include dependency graph for heart\+Rate.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{heart_rate_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{heart_rate_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{heart_rate_8h_a83abdb9881ef7887abffdbf639539572}{check\+For\+Beat}} (int32\+\_\+t sample)
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8h_af4f11545a05f97c55092e7f3f01b9f59}{average\+D\+C\+Estimator}} (int32\+\_\+t $\ast$p, uint16\+\_\+t x)
+\item 
+int16\+\_\+t \mbox{\hyperlink{heart_rate_8h_a6cedece0bbb86fa19985f9ea4b3927f2}{low\+Pass\+F\+I\+R\+Filter}} (int16\+\_\+t din)
+\item 
+int32\+\_\+t \mbox{\hyperlink{heart_rate_8h_a8088186de4a3d9d5650a2f0f4684c237}{mul16}} (int16\+\_\+t x, int16\+\_\+t y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{heart_rate_8h_af4f11545a05f97c55092e7f3f01b9f59}\label{heart_rate_8h_af4f11545a05f97c55092e7f3f01b9f59}} 
+\index{heartRate.h@{heartRate.h}!averageDCEstimator@{averageDCEstimator}}
+\index{averageDCEstimator@{averageDCEstimator}!heartRate.h@{heartRate.h}}
+\doxysubsubsection{\texorpdfstring{averageDCEstimator()}{averageDCEstimator()}}
+{\footnotesize\ttfamily int16\+\_\+t average\+D\+C\+Estimator (\begin{DoxyParamCaption}\item[{int32\+\_\+t $\ast$}]{p,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8h_af4f11545a05f97c55092e7f3f01b9f59_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8h_a83abdb9881ef7887abffdbf639539572}\label{heart_rate_8h_a83abdb9881ef7887abffdbf639539572}} 
+\index{heartRate.h@{heartRate.h}!checkForBeat@{checkForBeat}}
+\index{checkForBeat@{checkForBeat}!heartRate.h@{heartRate.h}}
+\doxysubsubsection{\texorpdfstring{checkForBeat()}{checkForBeat()}}
+{\footnotesize\ttfamily bool check\+For\+Beat (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{sample }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8h_a83abdb9881ef7887abffdbf639539572_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8h_a83abdb9881ef7887abffdbf639539572_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8h_a6cedece0bbb86fa19985f9ea4b3927f2}\label{heart_rate_8h_a6cedece0bbb86fa19985f9ea4b3927f2}} 
+\index{heartRate.h@{heartRate.h}!lowPassFIRFilter@{lowPassFIRFilter}}
+\index{lowPassFIRFilter@{lowPassFIRFilter}!heartRate.h@{heartRate.h}}
+\doxysubsubsection{\texorpdfstring{lowPassFIRFilter()}{lowPassFIRFilter()}}
+{\footnotesize\ttfamily int16\+\_\+t low\+Pass\+F\+I\+R\+Filter (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{din }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{heart_rate_8h_a6cedece0bbb86fa19985f9ea4b3927f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8h_a6cedece0bbb86fa19985f9ea4b3927f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{heart_rate_8h_a8088186de4a3d9d5650a2f0f4684c237}\label{heart_rate_8h_a8088186de4a3d9d5650a2f0f4684c237}} 
+\index{heartRate.h@{heartRate.h}!mul16@{mul16}}
+\index{mul16@{mul16}!heartRate.h@{heartRate.h}}
+\doxysubsubsection{\texorpdfstring{mul16()}{mul16()}}
+{\footnotesize\ttfamily int32\+\_\+t mul16 (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{x,  }\item[{int16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heart_rate_8h_a8088186de4a3d9d5650a2f0f4684c237_icgraph}
+\end{center}
+\end{figure}

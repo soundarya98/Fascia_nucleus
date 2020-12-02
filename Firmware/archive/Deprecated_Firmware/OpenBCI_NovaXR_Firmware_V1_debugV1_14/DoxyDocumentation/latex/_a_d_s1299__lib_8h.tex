@@ -1,0 +1,1764 @@
+\hypertarget{_a_d_s1299__lib_8h}{}\doxysection{A\+D\+S1299\+\_\+lib.\+h File Reference}
+\label{_a_d_s1299__lib_8h}\index{ADS1299\_lib.h@{ADS1299\_lib.h}}
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Definitions.\+h\char`\"{}}\newline
+Include dependency graph for A\+D\+S1299\+\_\+lib.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_a_d_s1299__lib_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structadc__data_1_1_a_d_s}{adc\+\_\+data\+::\+A\+DS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_af3cfe48f6efdc257518227b43c1bc3df}{S\+P\+I\+\_\+\+C\+LK}}~20000000
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ae7c26612f8cbbf7e03794d4455e4b8c6}{S\+I\+S\+T\+E\+R\+\_\+\+B\+O\+A\+RD}}~1
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a569dfbec8aeaee9e5692bcf887b8cfd8}{M\+A\+I\+N\+\_\+\+B\+O\+A\+RD}}~2
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a5edeeb916b04a7f5430e95b0a2801b6e}{W\+A\+K\+E\+UP}}~0x02
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a42d8551dd3f10de6540de8a6fdf05a37}{S\+T\+A\+N\+D\+BY}}~0x04
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~0x06
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a3018c7600b7bb9866400596a56a57af7}{S\+T\+A\+RT}}~0x08
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ae19b6bb2940d2fbe0a79852b070eeafd}{S\+T\+OP}}~0x0A
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aae10ea86a4b725e7fe6149829a9a0004}{R\+D\+A\+T\+AC}}~0x10
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a993739431380c1beb0e04a8826c1b7e3}{S\+D\+A\+T\+AC}}~0x11
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ac44cbcdd450c41da61bbbffe2cc49e01}{R\+D\+A\+TA}}~0x12
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a68848df31fa7fe837400f0f49ab1b811}{R\+R\+EG}}~0x20
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a2d3ec1e69b3e63db5c37c9b0ed6578cf}{W\+R\+EG}}~0x40
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a92b6f8d865f3531d98e011446da275a6}{A\+D\+S\+\_\+\+ID}}~0x3E
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a95c754a9fe808331240df62b32f782d5}{I\+D\+\_\+\+R\+EG}}~0x00
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ae28dbf424985dc1c58ae7dbc5a0926b9}{C\+O\+N\+F\+I\+G1}}~0x01
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9989dac1034e36497f2f4f81613cab88}{C\+O\+N\+F\+I\+G2}}~0x02
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a8d128687074c874210b0c9dada3d8ca7}{C\+O\+N\+F\+I\+G3}}~0x03
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_abb4faa9cfd0d710c0b6311baf45f506f}{L\+O\+FF}}~0x04
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a8fea370fa35eeb28355a58a40783ec99}{C\+H1\+S\+ET}}~0x05
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a3e8ab2c505cc6f00a1807a151a9ebcdb}{C\+H2\+S\+ET}}~0x06
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a70dccc80e613cfc0eea471983aecc229}{C\+H3\+S\+ET}}~0x07
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a0d9979e6e1d8b4e7727063b2660ac10b}{C\+H4\+S\+ET}}~0x08
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aff7800e91abe1001d9e3c9febc34e0d3}{C\+H5\+S\+ET}}~0x09
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a4708b2ba51cdb3a41817f06b8982657f}{C\+H6\+S\+ET}}~0x0A
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a018ba15c7462bc82cae0c3695d4c0ed0}{C\+H7\+S\+ET}}~0x0B
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9e870ff4a991cadaab80c387e09b33de}{C\+H8\+S\+ET}}~0x0C
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ab29e7c90ac7276f5f10d433bac04ed74}{C\+Hn}}~0x\+FF
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_adee1ef2aa548da6eb85a1f103bd50471}{B\+I\+A\+S\+\_\+\+S\+E\+N\+SP}}~0x0D
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ac8197f544e39562ab0b4e67ad7d4410b}{B\+I\+A\+S\+\_\+\+S\+E\+N\+SN}}~0x0E
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ab3086af5aee3864fbaee44f58fbd90fa}{L\+O\+F\+F\+\_\+\+S\+E\+N\+SP}}~0x0F
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a62fffa8684b8eae61de347e70fedef39}{L\+O\+F\+F\+\_\+\+S\+E\+N\+SN}}~0x10
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a167c29fc8bc9fe36ff80fbab3aef76d0}{L\+O\+F\+F\+\_\+\+F\+L\+IP}}~0x11
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a80a21df4016d8e925264718cf7e4b74b}{L\+O\+F\+F\+\_\+\+S\+T\+A\+TP}}~0x12
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a294d95c8864fdd237709e896fc0b7f2c}{L\+O\+F\+F\+\_\+\+S\+T\+A\+TN}}~0x13
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a1037b18e2d226fe7d327d4a6f17a21c1}{G\+P\+IO}}~0x14
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ae329ec8008096911d2610e19ddb46c71}{M\+I\+S\+C1}}~0x15
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aae8dcec655baaec75ee902fdb31ef73d}{M\+I\+S\+C2}}~0x16
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a73621b04f3881ce7c5f91812ca82f6b0}{C\+O\+N\+F\+I\+G4}}~0x17
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ad9fd2e61b14458066cfa0f46105a4100}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+D\+A\+I\+SY}}~(0b10110000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ad0ec6a25c5c8877a2ab8ca573b8333e8}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+D\+A\+I\+S\+Y\+\_\+\+N\+OT}}~(0b11010000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a5eed64b899917953e3caeda8c07dcedf}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P1\+\_\+\+I\+NT}}~(0b11010000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ab50a3e33f275082a6a1c154a2a9a2fe0}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P2\+\_\+\+I\+NT}}~(0b11010100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aba9c22ec45827b6fe300ded0e71fb95a}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P1\+\_\+\+E\+XT}}~(0b11000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9c25e95b95f3121a3a0485a330948d5e}{A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P2\+\_\+\+E\+XT}}~(0b11000100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aec250a8658e71c48c7e72068f68b9b51}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+O\+FF}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a32fc91b5777fb207449b699f4341c4f5}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+ON}}~(0b11100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a89fd1c38ff24326191365f727d681439}{B\+I\+A\+S\+\_\+\+M\+E\+A\+S\+\_\+\+O\+P\+EN}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a21d48708873b7063cb04e2ee19a53ffa}{B\+I\+A\+S\+\_\+\+M\+E\+A\+S\+\_\+\+C\+O\+NN}}~(0b01110000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a8c19284a355fcd27b393952c5482df89}{B\+I\+A\+S\+R\+E\+F\+\_\+\+I\+N\+T\+\_\+\+F\+E\+D\+\_\+\+E\+XT}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a72e1a9487b82b58304d7ead5d972c69f}{B\+I\+A\+S\+R\+E\+F\+\_\+\+I\+N\+T\+\_\+\+F\+E\+D\+\_\+\+I\+NT}}~(0b01101000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a677dae8c6bda276d8617af39bbb275dc}{P\+D\+\_\+\+B\+I\+A\+S\+\_\+\+O\+FF}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_abf52af745be09d33d03b2aecf276d450}{P\+D\+\_\+\+B\+I\+A\+S\+\_\+\+ON}}~(0b01100100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a6411a9c8260fa8e8c2193c9e5a21b38a}{B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+S\+E\+N\+S\+\_\+\+O\+FF}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a4e76e2a2d8e0d0163852eafd62b72e86}{B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+S\+E\+N\+S\+\_\+\+ON}}~(0b01100010)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a10347bce19f154a1f9efdcbb45aa0af8}{L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+6\+NA}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_afd483c0197a6d292803e9ffa51bf11ef}{L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+24\+NA}}~(0b00000100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a5da349629444fdc460223637219ce572}{L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+6\+UA}}~(0b00001000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_adc2a3347e2d38ae91587a60682fd1284}{L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+24\+UA}}~(0b00001100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ad7df75a5d4ad6b65e5b56bb0fd7cd81e}{L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+\+DC}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aecc7fd6b62148228d2657531feb87a2a}{L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+7p8\+HZ}}~(0b00000001)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a39701cbaad5955197512c40d8bcc9da2}{L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+31p2\+HZ}}~(0b00000010)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_acd0137898658760009f19c444fd2f59e}{L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+\+F\+S\+\_\+4}}~(0b00000011)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a71feb0c2320860e512aebc5abe2cb1b3}{P\+C\+H\+AN}}~(0)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a3e9ad0441ab60e69a8b9d23efd7ddde8}{N\+C\+H\+AN}}~(1)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a29e413f6725b2ba32d165ffaa35b01e5}{O\+FF}}~(0)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ad76d1750a6cdeebd506bfcd6752554d2}{ON}}~(1)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a90434647d646bb26523c4c011adbe9d3}{A\+D\+S\+\_\+\+G\+A\+I\+N01}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9c08639e5c0ef9882fc8510754396efc}{A\+D\+S\+\_\+\+G\+A\+I\+N02}}~(0b00010000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a239d9580d404da48fc22e471ec00bb29}{A\+D\+S\+\_\+\+G\+A\+I\+N04}}~(0b00100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9545f6eda49aa7cc2ca4e770a0db5e24}{A\+D\+S\+\_\+\+G\+A\+I\+N06}}~(0b00110000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a234dd100d017d7d39304ceef768a7d56}{A\+D\+S\+\_\+\+G\+A\+I\+N08}}~(0b01000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_af51364bd52278c2ed4ac4a59a6a553dc}{A\+D\+S\+\_\+\+G\+A\+I\+N12}}~(0b01010000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a9718ed648c7228fb84a752c7b39514d8}{A\+D\+S\+\_\+\+G\+A\+I\+N24}}~(0b01100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aad04e0c9afdeec307d5b9cb2062d784d}{P\+O\+W\+E\+R\+\_\+\+D\+O\+WN}}~(0)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_ae8bcdb2f93ff698e7ff62a41dbc8f3b8}{G\+A\+I\+N\+\_\+\+S\+ET}}~(1)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aa5cb8a0aa13fd1b21b8bba8e5c6ee5f4}{I\+N\+P\+U\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+ET}}~(2)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aa24e8cc3ecb302b3430bdd9def28fef2}{B\+I\+A\+S\+\_\+\+S\+ET}}~(3)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a097bb3289a6ee33d5cf993e8d35cf951}{S\+R\+B2\+\_\+\+S\+ET}}~(4)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a62cf1daadcbe15df7a2ad3613c9808fd}{S\+R\+B1\+\_\+\+S\+ET}}~(5)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a7ebc9a785e5ab85457c98595aac81589}{Y\+ES}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a996bde01ecac342918f0a2c4e7ce7bd5}{NO}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a79a404120ad83a16e3ae5604e1d574c7}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+N\+O\+R\+M\+AL}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_af4819c6799cebfab368ca7aca44dbb61}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+S\+H\+O\+R\+T\+ED}}~(0b00000001)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a7bab91512236b30be9285da48d5ce360}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+S\+\_\+\+M\+E\+AS}}~(0b00000010)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_aca41b0b85d6a23cdf5d528ccb1ddd745}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+M\+V\+DD}}~(0b00000011)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a835a4b6ea1a22c4b8021e0d47a43344a}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+T\+E\+MP}}~(0b00000100)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a8894379ee3e97a0e296d0201fe75c1b8}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+T\+E\+S\+T\+S\+IG}}~(0b00000101)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a96b333a3e8d417e7e3980abec3168353}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+S\+\_\+\+D\+RP}}~(0b00000110)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a773cfa5f9f7f724e5bd7e6dc567ac772}{A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+L\+\_\+\+D\+RN}}~(0b00000111)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a35f02132db99d5838144a8c734b21585}{S\+R\+B1\+\_\+\+O\+P\+EN}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a6c6155f9cb62bae84ff7e8f61b44d869}{S\+R\+B1\+\_\+\+C\+L\+OS}}~(0b00100000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a33c0b5f0660a8a36b4a0e8d3a08dd138}{S\+I\+N\+G\+L\+E\+\_\+\+S\+H\+O\+T\+\_\+\+D\+IS}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a708e017f1028aede0576c8d8ac0215f3}{S\+I\+N\+G\+L\+E\+\_\+\+S\+H\+O\+T\+\_\+\+EN}}~(0b00001000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a2fc23454c3d8da4a5803e67759cc83c9}{P\+D\+\_\+\+L\+O\+F\+F\+\_\+\+C\+O\+M\+P\+\_\+\+D\+IS}}~(0b00000000)
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8h_a0836efb59a19bb1adc0ece71b4aa1abe}{P\+D\+\_\+\+L\+O\+F\+F\+\_\+\+C\+O\+M\+P\+\_\+\+EN}}~(0b00000010)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194c}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+TE}} \{ \newline
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca1d687fbd6d8bed1652afec1067fe9330}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+16000}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca18be34ded6319de38bf09a5bdfdc7ced}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+8000}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf36a4c82c051980f879b03a620189a98}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+4000}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca86ef65d533cfdaf79ac73531f22a5b26}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+2000}}, 
+\newline
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca51af9f63f5247546faf78d56341aa29d}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+1000}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf9dacb80e3b1998b60bb4b6fa9739a2d}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+500}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca8da420de8c2227e7b6142e1a9d9de1d4}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+250}}
+ \}
+\item 
+enum \mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0e}{T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+F\+R\+EQ}} \{ \mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea01d9c8adfc33c533ad3a3eaef42139ab}{P\+U\+L\+S\+E\+D21}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0eabb5899dc08db8573744fb8c8201652d0}{P\+U\+L\+S\+E\+D20}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea5f26a36444a6a4e062d64e61246e6baf}{D\+O\+N\+T\+\_\+\+U\+SE}}, 
+\mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea166f96f90c25a30cf240c23c6d64071f}{A\+T\+\_\+\+DC}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_af5f72c3e310dccb4c3a2912e4adfdf4a}{pineriphernal\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_aa1ead4a65c659d08667f72ae75b31b87}{Reset\+\_\+\+A\+DC}} (void)
+\begin{DoxyCompactList}\small\item\em Send Reset Command to an active A\+D\+S1299. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8h_aef554e55dae3a87df1455de4cd22c558}{read\+Register\+Settings}} (byte Reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Read Settings of a single register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_ab8e6e66e304cc15a50a3fa5b49075e6e}{Begin\+\_\+\+A\+DS}} (void)
+\begin{DoxyCompactList}\small\item\em Begins Nova\+XR Custom S\+PI Module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_ac39a837ad6e83714e21d0d690180d9de}{S\+P\+I\+\_\+pin\+Periphernal\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI Pins for S\+E\+R\+C\+OM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a4529fc9cc6740d80d18a98b38693d51b}{display\+\_\+\+Registers\+\_\+settings}} (void)
+\begin{DoxyCompactList}\small\item\em Display Current Registers Settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a9ce4752411a8916cf7b81547a8f11f2f}{config\+\_\+\+A\+D\+S\+\_\+\+Register}} (byte R\+\_\+\+Address, byte data)
+\begin{DoxyCompactList}\small\item\em Configure an A\+D\+S1299 Register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_ae319817637388acc86b1b423929d0fd5}{config\+\_\+\+All\+\_\+\+A\+D\+S\+\_\+\+Inputs}} (byte data)
+\begin{DoxyCompactList}\small\item\em Configure all A\+DC Inputs at once. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_afc1f487ddcd83ccc92dda2e169bf04fa}{config\+\_\+\+A\+D\+S\+\_\+\+Input}} (uint8\+\_\+t channel, byte data)
+\begin{DoxyCompactList}\small\item\em Configure a single A\+D\+S1299 Input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a5ce329181e609c3d23a4ebd8c754b810}{select\+\_\+\+A\+DC}} (uint8\+\_\+t adc\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Select A\+DC to Control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a7d269a2712c96078de256b92974562fc}{start\+A\+D\+C\+\_\+\+Continuous\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Start A\+D\+S1299 in Continuous Conversion Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a5961c91233a0e9b7f3be962171f49f1b}{get\+A\+D\+C1\+\_\+\+Data\+\_\+\+CM}} (void)
+\begin{DoxyCompactList}\small\item\em For A\+D\+C1 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_aa36d42edd4c7066927bb0593a697f032}{get\+\_\+\+A\+D\+C2\+\_\+\+Data\+\_\+\+CM}} (void)
+\begin{DoxyCompactList}\small\item\em For A\+D\+C2 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_ab09c1af4e63a218ddcd4c6e74dbd2c1d}{get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+SS}} (\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$adc)
+\begin{DoxyCompactList}\small\item\em Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a432cb9e3fee655b9ff0d0ed16dae77d1}{disable\+\_\+\+Contninuous\+Conversion}} (void)
+\begin{DoxyCompactList}\small\item\em Disables the contninuous conversion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a46e58fd33706f92cbf0a8376e5f4aefe}{A\+D\+S\+\_\+\+Stop\+\_\+\+Conversion}} (void)
+\begin{DoxyCompactList}\small\item\em Stop A\+DC Conversion Operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a83ac68b6fa7d053091231026fe530db6}{stop\+\_\+\+A\+D\+C\+\_\+interrupt}} (void)
+\begin{DoxyCompactList}\small\item\em Stop Being interrupted by A\+D\+S1299. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a2d6dec2b61becfda886550904633e7ca}{fill\+\_\+\+Pkt\+Buff}} (\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$adc, uint8\+\_\+t sample\+\_\+id)
+\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a810241b5eff0b37656f6872e50017b14}{do\+\_\+\+W\+R\+EG}} (byte Register, byte Data)
+\begin{DoxyCompactList}\small\item\em Performs a W\+R\+EG A\+D\+S1299 command -\/ Writes a Register . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a02e2ce7236806ce2d2850aa9a8af6881}{do\+\_\+\+R\+R\+EG}} (byte register\+\_\+\+Address, byte returned\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Performs a R\+R\+EG A\+D\+S1299 command -\/ Reads a Register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8h_a6ac4e5584b4d38c609b1a2b83b73223a}{apply\+\_\+bit\+\_\+\+Config}} (byte mask, byte target\+\_\+\+Reg)
+\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8h_a52e23b40605aa2ba96ccb88476f78c0f}{set\+Bit1}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Sets to 1 a bit in a given 8bit register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8h_a43e1a071fde96ba35733cd7af6fce90f}{set\+Bit0}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Set to 0 a bit in a given register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8h_a45a70ec53b50fced02d723027ebeda7b}{flip\+Bit}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Flips a bit state in a given register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_a_d_s1299__lib_8h_aab3a44596b75d6f5f627fc139aba2ee7}{A\+D\+S\+\_\+connected}} (void)
+\begin{DoxyCompactList}\small\item\em Check id A\+D\+S1299 device is present on the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a5f211d0f1d5eb2bbdb6dd04c2f994428}{print\+\_\+board\+ID}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Prints a board id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a6088edd483f7e2e1141823df741b1720}{A\+D\+S\+\_\+\+Init\+\_\+\+Config}} (uint8\+\_\+t ads\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Build your A\+S\+D1299 Configuration List and Apply it. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_abfe762421ab527e99e51c95f8390f250}{get\+Current\+\_\+\+A\+D\+S\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the current A\+D\+S1299 id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_ad31ec5a9add8086f5dd739a00e0c6fc0}{enable\+\_\+\+A\+D\+S1299}} (uint8\+\_\+t adc\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Enable A\+D\+S1299 Hardware. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a95be66202eced2a7d049c17c7419342a}{A\+D\+S\+\_\+\+M\+B\+\_\+\+Interrupt}} (uint8\+\_\+t ads\+\_\+id, long duration)
+\begin{DoxyCompactList}\small\item\em Interrupt Routine for A\+D\+S1299 of the Mainboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a8bc67979da493aa8aebd21c65e61d0f1}{A\+D\+S\+\_\+\+Example\+\_\+2\+\_\+\+Single\+\_\+\+Shot}} (void)
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 exaple that prints R\+AW values in single conversion mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_a_d_s1299__lib_8h_a2b9bd34c58e171be2894e29c2f6f1800}{print\+\_\+\+Single\+\_\+\+Shot}} (void)
+\begin{DoxyCompactList}\small\item\em Prints a single shot R\+AW data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a19ddd46e12309441db0cdda5e076f628}{stop\+\_\+and\+\_\+config\+Input}} (uint8\+\_\+t board\+\_\+id, uint8\+\_\+t channel, byte data)
+\begin{DoxyCompactList}\small\item\em Stops and Sets configurations for selected input channel and board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8h_a8bcdc72589550cd97b4251da3dea30ab}{get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+S\+S\+Alt}} (void)
+\begin{DoxyCompactList}\small\item\em Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_a_d_s1299__lib_8h_a26b52cfa1d492518f88e57692e2937cb}{print\+\_\+\+Single\+\_\+\+Shot\+Alt}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_a0eb69bb4e65b78dbd4f8c8f38a14ede2}{Main\+CS}}
+\begin{DoxyCompactList}\small\item\em Chip Select pin for main board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_aa706c01deac970283ec87731c242e9b2}{Main\+D\+R\+DY}}
+\begin{DoxyCompactList}\small\item\em Data Ready pin for main board -\/ Hardware Interrupt Ready. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_a181611c2e3b9bbb4da9337ca5f689746}{Reset\+M\+B\+\_\+pin}}
+\begin{DoxyCompactList}\small\item\em A\+DC Reset Pin for Main\+Board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_a3b5615e962b3bed7e791ff2c128bdfce}{Sis\+CS}}
+\begin{DoxyCompactList}\small\item\em Chip Select pin for sister board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_abaf24ea28a21cd9de9cb45fea3d5bba9}{Sis\+D\+R\+DY}}
+\begin{DoxyCompactList}\small\item\em Data Ready pin for sister board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8h_a57a449ae06dff050bb05e38ca0bfd9c2}{Reset\+S\+B\+\_\+pin}}
+\begin{DoxyCompactList}\small\item\em A\+DC Reset Pin for Sister\+Board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ad9fd2e61b14458066cfa0f46105a4100}\label{_a_d_s1299__lib_8h_ad9fd2e61b14458066cfa0f46105a4100}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_DAISY@{ADS1299\_CONFIG1\_DAISY}}
+\index{ADS1299\_CONFIG1\_DAISY@{ADS1299\_CONFIG1\_DAISY}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_DAISY}{ADS1299\_CONFIG1\_DAISY}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+D\+A\+I\+SY~(0b10110000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ad0ec6a25c5c8877a2ab8ca573b8333e8}\label{_a_d_s1299__lib_8h_ad0ec6a25c5c8877a2ab8ca573b8333e8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_DAISY\_NOT@{ADS1299\_CONFIG1\_DAISY\_NOT}}
+\index{ADS1299\_CONFIG1\_DAISY\_NOT@{ADS1299\_CONFIG1\_DAISY\_NOT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_DAISY\_NOT}{ADS1299\_CONFIG1\_DAISY\_NOT}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+D\+A\+I\+S\+Y\+\_\+\+N\+OT~(0b11010000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aba9c22ec45827b6fe300ded0e71fb95a}\label{_a_d_s1299__lib_8h_aba9c22ec45827b6fe300ded0e71fb95a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_TEST\_AMP1\_EXT@{ADS1299\_CONFIG1\_TEST\_AMP1\_EXT}}
+\index{ADS1299\_CONFIG1\_TEST\_AMP1\_EXT@{ADS1299\_CONFIG1\_TEST\_AMP1\_EXT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_TEST\_AMP1\_EXT}{ADS1299\_CONFIG1\_TEST\_AMP1\_EXT}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P1\+\_\+\+E\+XT~(0b11000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5eed64b899917953e3caeda8c07dcedf}\label{_a_d_s1299__lib_8h_a5eed64b899917953e3caeda8c07dcedf}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_TEST\_AMP1\_INT@{ADS1299\_CONFIG1\_TEST\_AMP1\_INT}}
+\index{ADS1299\_CONFIG1\_TEST\_AMP1\_INT@{ADS1299\_CONFIG1\_TEST\_AMP1\_INT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_TEST\_AMP1\_INT}{ADS1299\_CONFIG1\_TEST\_AMP1\_INT}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P1\+\_\+\+I\+NT~(0b11010000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9c25e95b95f3121a3a0485a330948d5e}\label{_a_d_s1299__lib_8h_a9c25e95b95f3121a3a0485a330948d5e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_TEST\_AMP2\_EXT@{ADS1299\_CONFIG1\_TEST\_AMP2\_EXT}}
+\index{ADS1299\_CONFIG1\_TEST\_AMP2\_EXT@{ADS1299\_CONFIG1\_TEST\_AMP2\_EXT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_TEST\_AMP2\_EXT}{ADS1299\_CONFIG1\_TEST\_AMP2\_EXT}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P2\+\_\+\+E\+XT~(0b11000100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab50a3e33f275082a6a1c154a2a9a2fe0}\label{_a_d_s1299__lib_8h_ab50a3e33f275082a6a1c154a2a9a2fe0}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS1299\_CONFIG1\_TEST\_AMP2\_INT@{ADS1299\_CONFIG1\_TEST\_AMP2\_INT}}
+\index{ADS1299\_CONFIG1\_TEST\_AMP2\_INT@{ADS1299\_CONFIG1\_TEST\_AMP2\_INT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_CONFIG1\_TEST\_AMP2\_INT}{ADS1299\_CONFIG1\_TEST\_AMP2\_INT}}
+{\footnotesize\ttfamily \#define A\+D\+S1299\+\_\+\+C\+O\+N\+F\+I\+G1\+\_\+\+T\+E\+S\+T\+\_\+\+A\+M\+P2\+\_\+\+I\+NT~(0b11010100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a90434647d646bb26523c4c011adbe9d3}\label{_a_d_s1299__lib_8h_a90434647d646bb26523c4c011adbe9d3}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN01@{ADS\_GAIN01}}
+\index{ADS\_GAIN01@{ADS\_GAIN01}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN01}{ADS\_GAIN01}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N01~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9c08639e5c0ef9882fc8510754396efc}\label{_a_d_s1299__lib_8h_a9c08639e5c0ef9882fc8510754396efc}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN02@{ADS\_GAIN02}}
+\index{ADS\_GAIN02@{ADS\_GAIN02}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN02}{ADS\_GAIN02}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N02~(0b00010000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a239d9580d404da48fc22e471ec00bb29}\label{_a_d_s1299__lib_8h_a239d9580d404da48fc22e471ec00bb29}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN04@{ADS\_GAIN04}}
+\index{ADS\_GAIN04@{ADS\_GAIN04}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN04}{ADS\_GAIN04}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N04~(0b00100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9545f6eda49aa7cc2ca4e770a0db5e24}\label{_a_d_s1299__lib_8h_a9545f6eda49aa7cc2ca4e770a0db5e24}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN06@{ADS\_GAIN06}}
+\index{ADS\_GAIN06@{ADS\_GAIN06}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN06}{ADS\_GAIN06}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N06~(0b00110000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a234dd100d017d7d39304ceef768a7d56}\label{_a_d_s1299__lib_8h_a234dd100d017d7d39304ceef768a7d56}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN08@{ADS\_GAIN08}}
+\index{ADS\_GAIN08@{ADS\_GAIN08}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN08}{ADS\_GAIN08}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N08~(0b01000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_af51364bd52278c2ed4ac4a59a6a553dc}\label{_a_d_s1299__lib_8h_af51364bd52278c2ed4ac4a59a6a553dc}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN12@{ADS\_GAIN12}}
+\index{ADS\_GAIN12@{ADS\_GAIN12}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN12}{ADS\_GAIN12}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N12~(0b01010000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9718ed648c7228fb84a752c7b39514d8}\label{_a_d_s1299__lib_8h_a9718ed648c7228fb84a752c7b39514d8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_GAIN24@{ADS\_GAIN24}}
+\index{ADS\_GAIN24@{ADS\_GAIN24}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_GAIN24}{ADS\_GAIN24}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+G\+A\+I\+N24~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a92b6f8d865f3531d98e011446da275a6}\label{_a_d_s1299__lib_8h_a92b6f8d865f3531d98e011446da275a6}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_ID@{ADS\_ID}}
+\index{ADS\_ID@{ADS\_ID}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_ID}{ADS\_ID}}
+{\footnotesize\ttfamily \#define A\+D\+S\+\_\+\+ID~0x3E}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a773cfa5f9f7f724e5bd7e6dc567ac772}\label{_a_d_s1299__lib_8h_a773cfa5f9f7f724e5bd7e6dc567ac772}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_BIAL\_DRN@{ADSINPUT\_BIAL\_DRN}}
+\index{ADSINPUT\_BIAL\_DRN@{ADSINPUT\_BIAL\_DRN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_BIAL\_DRN}{ADSINPUT\_BIAL\_DRN}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+L\+\_\+\+D\+RN~(0b00000111)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a96b333a3e8d417e7e3980abec3168353}\label{_a_d_s1299__lib_8h_a96b333a3e8d417e7e3980abec3168353}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_BIAS\_DRP@{ADSINPUT\_BIAS\_DRP}}
+\index{ADSINPUT\_BIAS\_DRP@{ADSINPUT\_BIAS\_DRP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_BIAS\_DRP}{ADSINPUT\_BIAS\_DRP}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+S\+\_\+\+D\+RP~(0b00000110)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a7bab91512236b30be9285da48d5ce360}\label{_a_d_s1299__lib_8h_a7bab91512236b30be9285da48d5ce360}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_BIAS\_MEAS@{ADSINPUT\_BIAS\_MEAS}}
+\index{ADSINPUT\_BIAS\_MEAS@{ADSINPUT\_BIAS\_MEAS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_BIAS\_MEAS}{ADSINPUT\_BIAS\_MEAS}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+B\+I\+A\+S\+\_\+\+M\+E\+AS~(0b00000010)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aca41b0b85d6a23cdf5d528ccb1ddd745}\label{_a_d_s1299__lib_8h_aca41b0b85d6a23cdf5d528ccb1ddd745}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_MVDD@{ADSINPUT\_MVDD}}
+\index{ADSINPUT\_MVDD@{ADSINPUT\_MVDD}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_MVDD}{ADSINPUT\_MVDD}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+M\+V\+DD~(0b00000011)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a79a404120ad83a16e3ae5604e1d574c7}\label{_a_d_s1299__lib_8h_a79a404120ad83a16e3ae5604e1d574c7}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_NORMAL@{ADSINPUT\_NORMAL}}
+\index{ADSINPUT\_NORMAL@{ADSINPUT\_NORMAL}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_NORMAL}{ADSINPUT\_NORMAL}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+N\+O\+R\+M\+AL~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_af4819c6799cebfab368ca7aca44dbb61}\label{_a_d_s1299__lib_8h_af4819c6799cebfab368ca7aca44dbb61}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_SHORTED@{ADSINPUT\_SHORTED}}
+\index{ADSINPUT\_SHORTED@{ADSINPUT\_SHORTED}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_SHORTED}{ADSINPUT\_SHORTED}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+S\+H\+O\+R\+T\+ED~(0b00000001)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a835a4b6ea1a22c4b8021e0d47a43344a}\label{_a_d_s1299__lib_8h_a835a4b6ea1a22c4b8021e0d47a43344a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_TEMP@{ADSINPUT\_TEMP}}
+\index{ADSINPUT\_TEMP@{ADSINPUT\_TEMP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_TEMP}{ADSINPUT\_TEMP}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+T\+E\+MP~(0b00000100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8894379ee3e97a0e296d0201fe75c1b8}\label{_a_d_s1299__lib_8h_a8894379ee3e97a0e296d0201fe75c1b8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADSINPUT\_TESTSIG@{ADSINPUT\_TESTSIG}}
+\index{ADSINPUT\_TESTSIG@{ADSINPUT\_TESTSIG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADSINPUT\_TESTSIG}{ADSINPUT\_TESTSIG}}
+{\footnotesize\ttfamily \#define A\+D\+S\+I\+N\+P\+U\+T\+\_\+\+T\+E\+S\+T\+S\+IG~(0b00000101)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a6411a9c8260fa8e8c2193c9e5a21b38a}\label{_a_d_s1299__lib_8h_a6411a9c8260fa8e8c2193c9e5a21b38a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_LOFF\_SENS\_OFF@{BIAS\_LOFF\_SENS\_OFF}}
+\index{BIAS\_LOFF\_SENS\_OFF@{BIAS\_LOFF\_SENS\_OFF}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_LOFF\_SENS\_OFF}{BIAS\_LOFF\_SENS\_OFF}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+S\+E\+N\+S\+\_\+\+O\+FF~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a4e76e2a2d8e0d0163852eafd62b72e86}\label{_a_d_s1299__lib_8h_a4e76e2a2d8e0d0163852eafd62b72e86}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_LOFF\_SENS\_ON@{BIAS\_LOFF\_SENS\_ON}}
+\index{BIAS\_LOFF\_SENS\_ON@{BIAS\_LOFF\_SENS\_ON}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_LOFF\_SENS\_ON}{BIAS\_LOFF\_SENS\_ON}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+S\+E\+N\+S\+\_\+\+ON~(0b01100010)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a21d48708873b7063cb04e2ee19a53ffa}\label{_a_d_s1299__lib_8h_a21d48708873b7063cb04e2ee19a53ffa}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_MEAS\_CONN@{BIAS\_MEAS\_CONN}}
+\index{BIAS\_MEAS\_CONN@{BIAS\_MEAS\_CONN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_MEAS\_CONN}{BIAS\_MEAS\_CONN}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+M\+E\+A\+S\+\_\+\+C\+O\+NN~(0b01110000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a89fd1c38ff24326191365f727d681439}\label{_a_d_s1299__lib_8h_a89fd1c38ff24326191365f727d681439}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_MEAS\_OPEN@{BIAS\_MEAS\_OPEN}}
+\index{BIAS\_MEAS\_OPEN@{BIAS\_MEAS\_OPEN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_MEAS\_OPEN}{BIAS\_MEAS\_OPEN}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+M\+E\+A\+S\+\_\+\+O\+P\+EN~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ac8197f544e39562ab0b4e67ad7d4410b}\label{_a_d_s1299__lib_8h_ac8197f544e39562ab0b4e67ad7d4410b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_SENSN@{BIAS\_SENSN}}
+\index{BIAS\_SENSN@{BIAS\_SENSN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_SENSN}{BIAS\_SENSN}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+S\+E\+N\+SN~0x0E}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_adee1ef2aa548da6eb85a1f103bd50471}\label{_a_d_s1299__lib_8h_adee1ef2aa548da6eb85a1f103bd50471}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_SENSP@{BIAS\_SENSP}}
+\index{BIAS\_SENSP@{BIAS\_SENSP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_SENSP}{BIAS\_SENSP}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+S\+E\+N\+SP~0x0D}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aa24e8cc3ecb302b3430bdd9def28fef2}\label{_a_d_s1299__lib_8h_aa24e8cc3ecb302b3430bdd9def28fef2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIAS\_SET@{BIAS\_SET}}
+\index{BIAS\_SET@{BIAS\_SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIAS\_SET}{BIAS\_SET}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+\_\+\+S\+ET~(3)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8c19284a355fcd27b393952c5482df89}\label{_a_d_s1299__lib_8h_a8c19284a355fcd27b393952c5482df89}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIASREF\_INT\_FED\_EXT@{BIASREF\_INT\_FED\_EXT}}
+\index{BIASREF\_INT\_FED\_EXT@{BIASREF\_INT\_FED\_EXT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIASREF\_INT\_FED\_EXT}{BIASREF\_INT\_FED\_EXT}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+R\+E\+F\+\_\+\+I\+N\+T\+\_\+\+F\+E\+D\+\_\+\+E\+XT~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a72e1a9487b82b58304d7ead5d972c69f}\label{_a_d_s1299__lib_8h_a72e1a9487b82b58304d7ead5d972c69f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!BIASREF\_INT\_FED\_INT@{BIASREF\_INT\_FED\_INT}}
+\index{BIASREF\_INT\_FED\_INT@{BIASREF\_INT\_FED\_INT}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{BIASREF\_INT\_FED\_INT}{BIASREF\_INT\_FED\_INT}}
+{\footnotesize\ttfamily \#define B\+I\+A\+S\+R\+E\+F\+\_\+\+I\+N\+T\+\_\+\+F\+E\+D\+\_\+\+I\+NT~(0b01101000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8fea370fa35eeb28355a58a40783ec99}\label{_a_d_s1299__lib_8h_a8fea370fa35eeb28355a58a40783ec99}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH1SET@{CH1SET}}
+\index{CH1SET@{CH1SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH1SET}{CH1SET}}
+{\footnotesize\ttfamily \#define C\+H1\+S\+ET~0x05}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a3e8ab2c505cc6f00a1807a151a9ebcdb}\label{_a_d_s1299__lib_8h_a3e8ab2c505cc6f00a1807a151a9ebcdb}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH2SET@{CH2SET}}
+\index{CH2SET@{CH2SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH2SET}{CH2SET}}
+{\footnotesize\ttfamily \#define C\+H2\+S\+ET~0x06}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a70dccc80e613cfc0eea471983aecc229}\label{_a_d_s1299__lib_8h_a70dccc80e613cfc0eea471983aecc229}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH3SET@{CH3SET}}
+\index{CH3SET@{CH3SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH3SET}{CH3SET}}
+{\footnotesize\ttfamily \#define C\+H3\+S\+ET~0x07}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a0d9979e6e1d8b4e7727063b2660ac10b}\label{_a_d_s1299__lib_8h_a0d9979e6e1d8b4e7727063b2660ac10b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH4SET@{CH4SET}}
+\index{CH4SET@{CH4SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH4SET}{CH4SET}}
+{\footnotesize\ttfamily \#define C\+H4\+S\+ET~0x08}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aff7800e91abe1001d9e3c9febc34e0d3}\label{_a_d_s1299__lib_8h_aff7800e91abe1001d9e3c9febc34e0d3}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH5SET@{CH5SET}}
+\index{CH5SET@{CH5SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH5SET}{CH5SET}}
+{\footnotesize\ttfamily \#define C\+H5\+S\+ET~0x09}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a4708b2ba51cdb3a41817f06b8982657f}\label{_a_d_s1299__lib_8h_a4708b2ba51cdb3a41817f06b8982657f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH6SET@{CH6SET}}
+\index{CH6SET@{CH6SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH6SET}{CH6SET}}
+{\footnotesize\ttfamily \#define C\+H6\+S\+ET~0x0A}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a018ba15c7462bc82cae0c3695d4c0ed0}\label{_a_d_s1299__lib_8h_a018ba15c7462bc82cae0c3695d4c0ed0}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH7SET@{CH7SET}}
+\index{CH7SET@{CH7SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH7SET}{CH7SET}}
+{\footnotesize\ttfamily \#define C\+H7\+S\+ET~0x0B}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9e870ff4a991cadaab80c387e09b33de}\label{_a_d_s1299__lib_8h_a9e870ff4a991cadaab80c387e09b33de}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CH8SET@{CH8SET}}
+\index{CH8SET@{CH8SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CH8SET}{CH8SET}}
+{\footnotesize\ttfamily \#define C\+H8\+S\+ET~0x0C}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab29e7c90ac7276f5f10d433bac04ed74}\label{_a_d_s1299__lib_8h_ab29e7c90ac7276f5f10d433bac04ed74}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CHn@{CHn}}
+\index{CHn@{CHn}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CHn}{CHn}}
+{\footnotesize\ttfamily \#define C\+Hn~0x\+FF}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae28dbf424985dc1c58ae7dbc5a0926b9}\label{_a_d_s1299__lib_8h_ae28dbf424985dc1c58ae7dbc5a0926b9}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CONFIG1@{CONFIG1}}
+\index{CONFIG1@{CONFIG1}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG1}{CONFIG1}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G1~0x01}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9989dac1034e36497f2f4f81613cab88}\label{_a_d_s1299__lib_8h_a9989dac1034e36497f2f4f81613cab88}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CONFIG2@{CONFIG2}}
+\index{CONFIG2@{CONFIG2}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG2}{CONFIG2}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G2~0x02}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8d128687074c874210b0c9dada3d8ca7}\label{_a_d_s1299__lib_8h_a8d128687074c874210b0c9dada3d8ca7}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CONFIG3@{CONFIG3}}
+\index{CONFIG3@{CONFIG3}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG3}{CONFIG3}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G3~0x03}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a73621b04f3881ce7c5f91812ca82f6b0}\label{_a_d_s1299__lib_8h_a73621b04f3881ce7c5f91812ca82f6b0}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!CONFIG4@{CONFIG4}}
+\index{CONFIG4@{CONFIG4}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG4}{CONFIG4}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G4~0x17}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae8bcdb2f93ff698e7ff62a41dbc8f3b8}\label{_a_d_s1299__lib_8h_ae8bcdb2f93ff698e7ff62a41dbc8f3b8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!GAIN\_SET@{GAIN\_SET}}
+\index{GAIN\_SET@{GAIN\_SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{GAIN\_SET}{GAIN\_SET}}
+{\footnotesize\ttfamily \#define G\+A\+I\+N\+\_\+\+S\+ET~(1)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a1037b18e2d226fe7d327d4a6f17a21c1}\label{_a_d_s1299__lib_8h_a1037b18e2d226fe7d327d4a6f17a21c1}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!GPIO@{GPIO}}
+\index{GPIO@{GPIO}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{GPIO}{GPIO}}
+{\footnotesize\ttfamily \#define G\+P\+IO~0x14}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a95c754a9fe808331240df62b32f782d5}\label{_a_d_s1299__lib_8h_a95c754a9fe808331240df62b32f782d5}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ID\_REG@{ID\_REG}}
+\index{ID\_REG@{ID\_REG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ID\_REG}{ID\_REG}}
+{\footnotesize\ttfamily \#define I\+D\+\_\+\+R\+EG~0x00}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aa5cb8a0aa13fd1b21b8bba8e5c6ee5f4}\label{_a_d_s1299__lib_8h_aa5cb8a0aa13fd1b21b8bba8e5c6ee5f4}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!INPUT\_TYPE\_SET@{INPUT\_TYPE\_SET}}
+\index{INPUT\_TYPE\_SET@{INPUT\_TYPE\_SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{INPUT\_TYPE\_SET}{INPUT\_TYPE\_SET}}
+{\footnotesize\ttfamily \#define I\+N\+P\+U\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+ET~(2)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_abb4faa9cfd0d710c0b6311baf45f506f}\label{_a_d_s1299__lib_8h_abb4faa9cfd0d710c0b6311baf45f506f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF@{LOFF}}
+\index{LOFF@{LOFF}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF}{LOFF}}
+{\footnotesize\ttfamily \#define L\+O\+FF~0x04}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a167c29fc8bc9fe36ff80fbab3aef76d0}\label{_a_d_s1299__lib_8h_a167c29fc8bc9fe36ff80fbab3aef76d0}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_FLIP@{LOFF\_FLIP}}
+\index{LOFF\_FLIP@{LOFF\_FLIP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_FLIP}{LOFF\_FLIP}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+F\+L\+IP~0x11}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a39701cbaad5955197512c40d8bcc9da2}\label{_a_d_s1299__lib_8h_a39701cbaad5955197512c40d8bcc9da2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_FREQ\_31p2HZ@{LOFF\_FREQ\_31p2HZ}}
+\index{LOFF\_FREQ\_31p2HZ@{LOFF\_FREQ\_31p2HZ}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_FREQ\_31p2HZ}{LOFF\_FREQ\_31p2HZ}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+31p2\+HZ~(0b00000010)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aecc7fd6b62148228d2657531feb87a2a}\label{_a_d_s1299__lib_8h_aecc7fd6b62148228d2657531feb87a2a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_FREQ\_7p8HZ@{LOFF\_FREQ\_7p8HZ}}
+\index{LOFF\_FREQ\_7p8HZ@{LOFF\_FREQ\_7p8HZ}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_FREQ\_7p8HZ}{LOFF\_FREQ\_7p8HZ}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+7p8\+HZ~(0b00000001)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ad7df75a5d4ad6b65e5b56bb0fd7cd81e}\label{_a_d_s1299__lib_8h_ad7df75a5d4ad6b65e5b56bb0fd7cd81e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_FREQ\_DC@{LOFF\_FREQ\_DC}}
+\index{LOFF\_FREQ\_DC@{LOFF\_FREQ\_DC}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_FREQ\_DC}{LOFF\_FREQ\_DC}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+\+DC~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_acd0137898658760009f19c444fd2f59e}\label{_a_d_s1299__lib_8h_acd0137898658760009f19c444fd2f59e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_FREQ\_FS\_4@{LOFF\_FREQ\_FS\_4}}
+\index{LOFF\_FREQ\_FS\_4@{LOFF\_FREQ\_FS\_4}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_FREQ\_FS\_4}{LOFF\_FREQ\_FS\_4}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+F\+R\+E\+Q\+\_\+\+F\+S\+\_\+4~(0b00000011)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_afd483c0197a6d292803e9ffa51bf11ef}\label{_a_d_s1299__lib_8h_afd483c0197a6d292803e9ffa51bf11ef}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_MAG\_24NA@{LOFF\_MAG\_24NA}}
+\index{LOFF\_MAG\_24NA@{LOFF\_MAG\_24NA}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_MAG\_24NA}{LOFF\_MAG\_24NA}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+24\+NA~(0b00000100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_adc2a3347e2d38ae91587a60682fd1284}\label{_a_d_s1299__lib_8h_adc2a3347e2d38ae91587a60682fd1284}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_MAG\_24UA@{LOFF\_MAG\_24UA}}
+\index{LOFF\_MAG\_24UA@{LOFF\_MAG\_24UA}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_MAG\_24UA}{LOFF\_MAG\_24UA}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+24\+UA~(0b00001100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a10347bce19f154a1f9efdcbb45aa0af8}\label{_a_d_s1299__lib_8h_a10347bce19f154a1f9efdcbb45aa0af8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_MAG\_6NA@{LOFF\_MAG\_6NA}}
+\index{LOFF\_MAG\_6NA@{LOFF\_MAG\_6NA}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_MAG\_6NA}{LOFF\_MAG\_6NA}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+6\+NA~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5da349629444fdc460223637219ce572}\label{_a_d_s1299__lib_8h_a5da349629444fdc460223637219ce572}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_MAG\_6UA@{LOFF\_MAG\_6UA}}
+\index{LOFF\_MAG\_6UA@{LOFF\_MAG\_6UA}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_MAG\_6UA}{LOFF\_MAG\_6UA}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+M\+A\+G\+\_\+6\+UA~(0b00001000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a62fffa8684b8eae61de347e70fedef39}\label{_a_d_s1299__lib_8h_a62fffa8684b8eae61de347e70fedef39}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_SENSN@{LOFF\_SENSN}}
+\index{LOFF\_SENSN@{LOFF\_SENSN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_SENSN}{LOFF\_SENSN}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+S\+E\+N\+SN~0x10}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab3086af5aee3864fbaee44f58fbd90fa}\label{_a_d_s1299__lib_8h_ab3086af5aee3864fbaee44f58fbd90fa}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_SENSP@{LOFF\_SENSP}}
+\index{LOFF\_SENSP@{LOFF\_SENSP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_SENSP}{LOFF\_SENSP}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+S\+E\+N\+SP~0x0F}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a294d95c8864fdd237709e896fc0b7f2c}\label{_a_d_s1299__lib_8h_a294d95c8864fdd237709e896fc0b7f2c}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_STATN@{LOFF\_STATN}}
+\index{LOFF\_STATN@{LOFF\_STATN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_STATN}{LOFF\_STATN}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+S\+T\+A\+TN~0x13}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a80a21df4016d8e925264718cf7e4b74b}\label{_a_d_s1299__lib_8h_a80a21df4016d8e925264718cf7e4b74b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!LOFF\_STATP@{LOFF\_STATP}}
+\index{LOFF\_STATP@{LOFF\_STATP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{LOFF\_STATP}{LOFF\_STATP}}
+{\footnotesize\ttfamily \#define L\+O\+F\+F\+\_\+\+S\+T\+A\+TP~0x12}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a569dfbec8aeaee9e5692bcf887b8cfd8}\label{_a_d_s1299__lib_8h_a569dfbec8aeaee9e5692bcf887b8cfd8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!MAIN\_BOARD@{MAIN\_BOARD}}
+\index{MAIN\_BOARD@{MAIN\_BOARD}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{MAIN\_BOARD}{MAIN\_BOARD}}
+{\footnotesize\ttfamily \#define M\+A\+I\+N\+\_\+\+B\+O\+A\+RD~2}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae329ec8008096911d2610e19ddb46c71}\label{_a_d_s1299__lib_8h_ae329ec8008096911d2610e19ddb46c71}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!MISC1@{MISC1}}
+\index{MISC1@{MISC1}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{MISC1}{MISC1}}
+{\footnotesize\ttfamily \#define M\+I\+S\+C1~0x15}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aae8dcec655baaec75ee902fdb31ef73d}\label{_a_d_s1299__lib_8h_aae8dcec655baaec75ee902fdb31ef73d}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!MISC2@{MISC2}}
+\index{MISC2@{MISC2}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{MISC2}{MISC2}}
+{\footnotesize\ttfamily \#define M\+I\+S\+C2~0x16}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a3e9ad0441ab60e69a8b9d23efd7ddde8}\label{_a_d_s1299__lib_8h_a3e9ad0441ab60e69a8b9d23efd7ddde8}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!NCHAN@{NCHAN}}
+\index{NCHAN@{NCHAN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{NCHAN}{NCHAN}}
+{\footnotesize\ttfamily \#define N\+C\+H\+AN~(1)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a996bde01ecac342918f0a2c4e7ce7bd5}\label{_a_d_s1299__lib_8h_a996bde01ecac342918f0a2c4e7ce7bd5}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!NO@{NO}}
+\index{NO@{NO}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{NO}{NO}}
+{\footnotesize\ttfamily \#define NO~(0x00)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a29e413f6725b2ba32d165ffaa35b01e5}\label{_a_d_s1299__lib_8h_a29e413f6725b2ba32d165ffaa35b01e5}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!OFF@{OFF}}
+\index{OFF@{OFF}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{OFF}{OFF}}
+{\footnotesize\ttfamily \#define O\+FF~(0)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ad76d1750a6cdeebd506bfcd6752554d2}\label{_a_d_s1299__lib_8h_ad76d1750a6cdeebd506bfcd6752554d2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ON@{ON}}
+\index{ON@{ON}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ON}{ON}}
+{\footnotesize\ttfamily \#define ON~(1)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a71feb0c2320860e512aebc5abe2cb1b3}\label{_a_d_s1299__lib_8h_a71feb0c2320860e512aebc5abe2cb1b3}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PCHAN@{PCHAN}}
+\index{PCHAN@{PCHAN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PCHAN}{PCHAN}}
+{\footnotesize\ttfamily \#define P\+C\+H\+AN~(0)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a677dae8c6bda276d8617af39bbb275dc}\label{_a_d_s1299__lib_8h_a677dae8c6bda276d8617af39bbb275dc}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_BIAS\_OFF@{PD\_BIAS\_OFF}}
+\index{PD\_BIAS\_OFF@{PD\_BIAS\_OFF}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_BIAS\_OFF}{PD\_BIAS\_OFF}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+B\+I\+A\+S\+\_\+\+O\+FF~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_abf52af745be09d33d03b2aecf276d450}\label{_a_d_s1299__lib_8h_abf52af745be09d33d03b2aecf276d450}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_BIAS\_ON@{PD\_BIAS\_ON}}
+\index{PD\_BIAS\_ON@{PD\_BIAS\_ON}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_BIAS\_ON}{PD\_BIAS\_ON}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+B\+I\+A\+S\+\_\+\+ON~(0b01100100)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a2fc23454c3d8da4a5803e67759cc83c9}\label{_a_d_s1299__lib_8h_a2fc23454c3d8da4a5803e67759cc83c9}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_LOFF\_COMP\_DIS@{PD\_LOFF\_COMP\_DIS}}
+\index{PD\_LOFF\_COMP\_DIS@{PD\_LOFF\_COMP\_DIS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_LOFF\_COMP\_DIS}{PD\_LOFF\_COMP\_DIS}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+L\+O\+F\+F\+\_\+\+C\+O\+M\+P\+\_\+\+D\+IS~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a0836efb59a19bb1adc0ece71b4aa1abe}\label{_a_d_s1299__lib_8h_a0836efb59a19bb1adc0ece71b4aa1abe}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_LOFF\_COMP\_EN@{PD\_LOFF\_COMP\_EN}}
+\index{PD\_LOFF\_COMP\_EN@{PD\_LOFF\_COMP\_EN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_LOFF\_COMP\_EN}{PD\_LOFF\_COMP\_EN}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+L\+O\+F\+F\+\_\+\+C\+O\+M\+P\+\_\+\+EN~(0b00000010)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aec250a8658e71c48c7e72068f68b9b51}\label{_a_d_s1299__lib_8h_aec250a8658e71c48c7e72068f68b9b51}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_REFBUF\_OFF@{PD\_REFBUF\_OFF}}
+\index{PD\_REFBUF\_OFF@{PD\_REFBUF\_OFF}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_REFBUF\_OFF}{PD\_REFBUF\_OFF}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+O\+FF~(0b01100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a32fc91b5777fb207449b699f4341c4f5}\label{_a_d_s1299__lib_8h_a32fc91b5777fb207449b699f4341c4f5}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PD\_REFBUF\_ON@{PD\_REFBUF\_ON}}
+\index{PD\_REFBUF\_ON@{PD\_REFBUF\_ON}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{PD\_REFBUF\_ON}{PD\_REFBUF\_ON}}
+{\footnotesize\ttfamily \#define P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+ON~(0b11100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aad04e0c9afdeec307d5b9cb2062d784d}\label{_a_d_s1299__lib_8h_aad04e0c9afdeec307d5b9cb2062d784d}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!POWER\_DOWN@{POWER\_DOWN}}
+\index{POWER\_DOWN@{POWER\_DOWN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{POWER\_DOWN}{POWER\_DOWN}}
+{\footnotesize\ttfamily \#define P\+O\+W\+E\+R\+\_\+\+D\+O\+WN~(0)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ac44cbcdd450c41da61bbbffe2cc49e01}\label{_a_d_s1299__lib_8h_ac44cbcdd450c41da61bbbffe2cc49e01}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!RDATA@{RDATA}}
+\index{RDATA@{RDATA}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{RDATA}{RDATA}}
+{\footnotesize\ttfamily \#define R\+D\+A\+TA~0x12}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aae10ea86a4b725e7fe6149829a9a0004}\label{_a_d_s1299__lib_8h_aae10ea86a4b725e7fe6149829a9a0004}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!RDATAC@{RDATAC}}
+\index{RDATAC@{RDATAC}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{RDATAC}{RDATAC}}
+{\footnotesize\ttfamily \#define R\+D\+A\+T\+AC~0x10}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab702106cf3b3e96750b6845ded4e0299}\label{_a_d_s1299__lib_8h_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!RESET@{RESET}}
+\index{RESET@{RESET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define R\+E\+S\+ET~0x06}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a68848df31fa7fe837400f0f49ab1b811}\label{_a_d_s1299__lib_8h_a68848df31fa7fe837400f0f49ab1b811}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!RREG@{RREG}}
+\index{RREG@{RREG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{RREG}{RREG}}
+{\footnotesize\ttfamily \#define R\+R\+EG~0x20}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a993739431380c1beb0e04a8826c1b7e3}\label{_a_d_s1299__lib_8h_a993739431380c1beb0e04a8826c1b7e3}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SDATAC@{SDATAC}}
+\index{SDATAC@{SDATAC}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SDATAC}{SDATAC}}
+{\footnotesize\ttfamily \#define S\+D\+A\+T\+AC~0x11}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a33c0b5f0660a8a36b4a0e8d3a08dd138}\label{_a_d_s1299__lib_8h_a33c0b5f0660a8a36b4a0e8d3a08dd138}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SINGLE\_SHOT\_DIS@{SINGLE\_SHOT\_DIS}}
+\index{SINGLE\_SHOT\_DIS@{SINGLE\_SHOT\_DIS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_SHOT\_DIS}{SINGLE\_SHOT\_DIS}}
+{\footnotesize\ttfamily \#define S\+I\+N\+G\+L\+E\+\_\+\+S\+H\+O\+T\+\_\+\+D\+IS~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a708e017f1028aede0576c8d8ac0215f3}\label{_a_d_s1299__lib_8h_a708e017f1028aede0576c8d8ac0215f3}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SINGLE\_SHOT\_EN@{SINGLE\_SHOT\_EN}}
+\index{SINGLE\_SHOT\_EN@{SINGLE\_SHOT\_EN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_SHOT\_EN}{SINGLE\_SHOT\_EN}}
+{\footnotesize\ttfamily \#define S\+I\+N\+G\+L\+E\+\_\+\+S\+H\+O\+T\+\_\+\+EN~(0b00001000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae7c26612f8cbbf7e03794d4455e4b8c6}\label{_a_d_s1299__lib_8h_ae7c26612f8cbbf7e03794d4455e4b8c6}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SISTER\_BOARD@{SISTER\_BOARD}}
+\index{SISTER\_BOARD@{SISTER\_BOARD}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SISTER\_BOARD}{SISTER\_BOARD}}
+{\footnotesize\ttfamily \#define S\+I\+S\+T\+E\+R\+\_\+\+B\+O\+A\+RD~1}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_af3cfe48f6efdc257518227b43c1bc3df}\label{_a_d_s1299__lib_8h_af3cfe48f6efdc257518227b43c1bc3df}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SPI\_CLK@{SPI\_CLK}}
+\index{SPI\_CLK@{SPI\_CLK}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CLK}{SPI\_CLK}}
+{\footnotesize\ttfamily \#define S\+P\+I\+\_\+\+C\+LK~20000000}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a6c6155f9cb62bae84ff7e8f61b44d869}\label{_a_d_s1299__lib_8h_a6c6155f9cb62bae84ff7e8f61b44d869}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SRB1\_CLOS@{SRB1\_CLOS}}
+\index{SRB1\_CLOS@{SRB1\_CLOS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SRB1\_CLOS}{SRB1\_CLOS}}
+{\footnotesize\ttfamily \#define S\+R\+B1\+\_\+\+C\+L\+OS~(0b00100000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a35f02132db99d5838144a8c734b21585}\label{_a_d_s1299__lib_8h_a35f02132db99d5838144a8c734b21585}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SRB1\_OPEN@{SRB1\_OPEN}}
+\index{SRB1\_OPEN@{SRB1\_OPEN}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SRB1\_OPEN}{SRB1\_OPEN}}
+{\footnotesize\ttfamily \#define S\+R\+B1\+\_\+\+O\+P\+EN~(0b00000000)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a62cf1daadcbe15df7a2ad3613c9808fd}\label{_a_d_s1299__lib_8h_a62cf1daadcbe15df7a2ad3613c9808fd}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SRB1\_SET@{SRB1\_SET}}
+\index{SRB1\_SET@{SRB1\_SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SRB1\_SET}{SRB1\_SET}}
+{\footnotesize\ttfamily \#define S\+R\+B1\+\_\+\+S\+ET~(5)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a097bb3289a6ee33d5cf993e8d35cf951}\label{_a_d_s1299__lib_8h_a097bb3289a6ee33d5cf993e8d35cf951}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SRB2\_SET@{SRB2\_SET}}
+\index{SRB2\_SET@{SRB2\_SET}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SRB2\_SET}{SRB2\_SET}}
+{\footnotesize\ttfamily \#define S\+R\+B2\+\_\+\+S\+ET~(4)}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a42d8551dd3f10de6540de8a6fdf05a37}\label{_a_d_s1299__lib_8h_a42d8551dd3f10de6540de8a6fdf05a37}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!STANDBY@{STANDBY}}
+\index{STANDBY@{STANDBY}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{STANDBY}{STANDBY}}
+{\footnotesize\ttfamily \#define S\+T\+A\+N\+D\+BY~0x04}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a3018c7600b7bb9866400596a56a57af7}\label{_a_d_s1299__lib_8h_a3018c7600b7bb9866400596a56a57af7}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!START@{START}}
+\index{START@{START}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{START}{START}}
+{\footnotesize\ttfamily \#define S\+T\+A\+RT~0x08}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae19b6bb2940d2fbe0a79852b070eeafd}\label{_a_d_s1299__lib_8h_ae19b6bb2940d2fbe0a79852b070eeafd}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!STOP@{STOP}}
+\index{STOP@{STOP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{STOP}{STOP}}
+{\footnotesize\ttfamily \#define S\+T\+OP~0x0A}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5edeeb916b04a7f5430e95b0a2801b6e}\label{_a_d_s1299__lib_8h_a5edeeb916b04a7f5430e95b0a2801b6e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!WAKEUP@{WAKEUP}}
+\index{WAKEUP@{WAKEUP}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{WAKEUP}{WAKEUP}}
+{\footnotesize\ttfamily \#define W\+A\+K\+E\+UP~0x02}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a2d3ec1e69b3e63db5c37c9b0ed6578cf}\label{_a_d_s1299__lib_8h_a2d3ec1e69b3e63db5c37c9b0ed6578cf}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!WREG@{WREG}}
+\index{WREG@{WREG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{WREG}{WREG}}
+{\footnotesize\ttfamily \#define W\+R\+EG~0x40}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a7ebc9a785e5ab85457c98595aac81589}\label{_a_d_s1299__lib_8h_a7ebc9a785e5ab85457c98595aac81589}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!YES@{YES}}
+\index{YES@{YES}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{YES}{YES}}
+{\footnotesize\ttfamily \#define Y\+ES~(0x01)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194c}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194c}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194c}{S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+TE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_16000@{SAMPLE\_RATE\_16000}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_16000@{SAMPLE\_RATE\_16000}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca1d687fbd6d8bed1652afec1067fe9330}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca1d687fbd6d8bed1652afec1067fe9330}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+16000&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_8000@{SAMPLE\_RATE\_8000}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_8000@{SAMPLE\_RATE\_8000}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca18be34ded6319de38bf09a5bdfdc7ced}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca18be34ded6319de38bf09a5bdfdc7ced}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+8000&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_4000@{SAMPLE\_RATE\_4000}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_4000@{SAMPLE\_RATE\_4000}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf36a4c82c051980f879b03a620189a98}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf36a4c82c051980f879b03a620189a98}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+4000&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_2000@{SAMPLE\_RATE\_2000}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_2000@{SAMPLE\_RATE\_2000}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca86ef65d533cfdaf79ac73531f22a5b26}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca86ef65d533cfdaf79ac73531f22a5b26}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+2000&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_1000@{SAMPLE\_RATE\_1000}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_1000@{SAMPLE\_RATE\_1000}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca51af9f63f5247546faf78d56341aa29d}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca51af9f63f5247546faf78d56341aa29d}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+1000&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_500@{SAMPLE\_RATE\_500}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_500@{SAMPLE\_RATE\_500}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf9dacb80e3b1998b60bb4b6fa9739a2d}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194caf9dacb80e3b1998b60bb4b6fa9739a2d}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+500&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAMPLE\_RATE\_250@{SAMPLE\_RATE\_250}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SAMPLE\_RATE\_250@{SAMPLE\_RATE\_250}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca8da420de8c2227e7b6142e1a9d9de1d4}\label{_a_d_s1299__lib_8h_acc70659c653fac32a6fd48f8ede3194ca8da420de8c2227e7b6142e1a9d9de1d4}} 
+S\+A\+M\+P\+L\+E\+\_\+\+R\+A\+T\+E\+\_\+250&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0e}\label{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!TEST\_SIGNAL\_FREQ@{TEST\_SIGNAL\_FREQ}}
+\index{TEST\_SIGNAL\_FREQ@{TEST\_SIGNAL\_FREQ}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_SIGNAL\_FREQ}{TEST\_SIGNAL\_FREQ}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0e}{T\+E\+S\+T\+\_\+\+S\+I\+G\+N\+A\+L\+\_\+\+F\+R\+EQ}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSED21@{PULSED21}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PULSED21@{PULSED21}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea01d9c8adfc33c533ad3a3eaef42139ab}\label{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea01d9c8adfc33c533ad3a3eaef42139ab}} 
+P\+U\+L\+S\+E\+D21&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PULSED20@{PULSED20}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!PULSED20@{PULSED20}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0eabb5899dc08db8573744fb8c8201652d0}\label{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0eabb5899dc08db8573744fb8c8201652d0}} 
+P\+U\+L\+S\+E\+D20&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DONT\_USE@{DONT\_USE}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!DONT\_USE@{DONT\_USE}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea5f26a36444a6a4e062d64e61246e6baf}\label{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea5f26a36444a6a4e062d64e61246e6baf}} 
+D\+O\+N\+T\+\_\+\+U\+SE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AT\_DC@{AT\_DC}!ADS1299\_lib.h@{ADS1299\_lib.h}}\index{ADS1299\_lib.h@{ADS1299\_lib.h}!AT\_DC@{AT\_DC}}}\mbox{\Hypertarget{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea166f96f90c25a30cf240c23c6d64071f}\label{_a_d_s1299__lib_8h_ace2372a62859acfe65f57e827ed4ad0ea166f96f90c25a30cf240c23c6d64071f}} 
+A\+T\+\_\+\+DC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aab3a44596b75d6f5f627fc139aba2ee7}\label{_a_d_s1299__lib_8h_aab3a44596b75d6f5f627fc139aba2ee7}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_connected@{ADS\_connected}}
+\index{ADS\_connected@{ADS\_connected}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_connected()}{ADS\_connected()}}
+{\footnotesize\ttfamily bool A\+D\+S\+\_\+connected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check id A\+D\+S1299 device is present on the board. 
+
+\begin{DoxyReturn}{Returns}
+True if A\+D\+S1299 is connected to the system 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_aab3a44596b75d6f5f627fc139aba2ee7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_aab3a44596b75d6f5f627fc139aba2ee7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8bc67979da493aa8aebd21c65e61d0f1}\label{_a_d_s1299__lib_8h_a8bc67979da493aa8aebd21c65e61d0f1}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_Example\_2\_Single\_Shot@{ADS\_Example\_2\_Single\_Shot}}
+\index{ADS\_Example\_2\_Single\_Shot@{ADS\_Example\_2\_Single\_Shot}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_Example\_2\_Single\_Shot()}{ADS\_Example\_2\_Single\_Shot()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Example\+\_\+2\+\_\+\+Single\+\_\+\+Shot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A\+D\+S1299 exaple that prints R\+AW values in single conversion mode. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a8bc67979da493aa8aebd21c65e61d0f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a6088edd483f7e2e1141823df741b1720}\label{_a_d_s1299__lib_8h_a6088edd483f7e2e1141823df741b1720}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_Init\_Config@{ADS\_Init\_Config}}
+\index{ADS\_Init\_Config@{ADS\_Init\_Config}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_Init\_Config()}{ADS\_Init\_Config()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Init\+\_\+\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ads\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Build your A\+S\+D1299 Configuration List and Apply it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ads\+\_\+id} & The A\+D\+S1299 Board identifier \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a6088edd483f7e2e1141823df741b1720_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a6088edd483f7e2e1141823df741b1720_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a95be66202eced2a7d049c17c7419342a}\label{_a_d_s1299__lib_8h_a95be66202eced2a7d049c17c7419342a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_MB\_Interrupt@{ADS\_MB\_Interrupt}}
+\index{ADS\_MB\_Interrupt@{ADS\_MB\_Interrupt}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_MB\_Interrupt()}{ADS\_MB\_Interrupt()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+M\+B\+\_\+\+Interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ads\+\_\+id,  }\item[{long}]{duration }\end{DoxyParamCaption})}
+
+
+
+Interrupt Routine for A\+D\+S1299 of the Mainboard. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ads\+\_\+id} & The A\+D\+S1299m board identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & The duration of the sampling period using interrupts \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a95be66202eced2a7d049c17c7419342a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a46e58fd33706f92cbf0a8376e5f4aefe}\label{_a_d_s1299__lib_8h_a46e58fd33706f92cbf0a8376e5f4aefe}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ADS\_Stop\_Conversion@{ADS\_Stop\_Conversion}}
+\index{ADS\_Stop\_Conversion@{ADS\_Stop\_Conversion}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_Stop\_Conversion()}{ADS\_Stop\_Conversion()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Stop\+\_\+\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop A\+DC Conversion Operation. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a46e58fd33706f92cbf0a8376e5f4aefe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a6ac4e5584b4d38c609b1a2b83b73223a}\label{_a_d_s1299__lib_8h_a6ac4e5584b4d38c609b1a2b83b73223a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!apply\_bit\_Config@{apply\_bit\_Config}}
+\index{apply\_bit\_Config@{apply\_bit\_Config}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{apply\_bit\_Config()}{apply\_bit\_Config()}}
+{\footnotesize\ttfamily byte apply\+\_\+bit\+\_\+\+Config (\begin{DoxyParamCaption}\item[{byte}]{mask,  }\item[{byte}]{target\+\_\+\+Reg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab8e6e66e304cc15a50a3fa5b49075e6e}\label{_a_d_s1299__lib_8h_ab8e6e66e304cc15a50a3fa5b49075e6e}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!Begin\_ADS@{Begin\_ADS}}
+\index{Begin\_ADS@{Begin\_ADS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{Begin\_ADS()}{Begin\_ADS()}}
+{\footnotesize\ttfamily void Begin\+\_\+\+A\+DS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Begins Nova\+XR Custom S\+PI Module. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{_a_d_s1299__lib_8h_ab8e6e66e304cc15a50a3fa5b49075e6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_ab8e6e66e304cc15a50a3fa5b49075e6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_afc1f487ddcd83ccc92dda2e169bf04fa}\label{_a_d_s1299__lib_8h_afc1f487ddcd83ccc92dda2e169bf04fa}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!config\_ADS\_Input@{config\_ADS\_Input}}
+\index{config\_ADS\_Input@{config\_ADS\_Input}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{config\_ADS\_Input()}{config\_ADS\_Input()}}
+{\footnotesize\ttfamily void config\+\_\+\+A\+D\+S\+\_\+\+Input (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure a single A\+D\+S1299 Input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & The inout channel selection \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{_a_d_s1299__lib_8h_afc1f487ddcd83ccc92dda2e169bf04fa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_afc1f487ddcd83ccc92dda2e169bf04fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a9ce4752411a8916cf7b81547a8f11f2f}\label{_a_d_s1299__lib_8h_a9ce4752411a8916cf7b81547a8f11f2f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!config\_ADS\_Register@{config\_ADS\_Register}}
+\index{config\_ADS\_Register@{config\_ADS\_Register}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{config\_ADS\_Register()}{config\_ADS\_Register()}}
+{\footnotesize\ttfamily void config\+\_\+\+A\+D\+S\+\_\+\+Register (\begin{DoxyParamCaption}\item[{byte}]{R\+\_\+\+Address,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure an A\+D\+S1299 Register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em R\+\_\+\+Address} & The A\+D\+S1299 Register address \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_a_d_s1299__lib_8h_a9ce4752411a8916cf7b81547a8f11f2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a9ce4752411a8916cf7b81547a8f11f2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ae319817637388acc86b1b423929d0fd5}\label{_a_d_s1299__lib_8h_ae319817637388acc86b1b423929d0fd5}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!config\_All\_ADS\_Inputs@{config\_All\_ADS\_Inputs}}
+\index{config\_All\_ADS\_Inputs@{config\_All\_ADS\_Inputs}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{config\_All\_ADS\_Inputs()}{config\_All\_ADS\_Inputs()}}
+{\footnotesize\ttfamily void config\+\_\+\+All\+\_\+\+A\+D\+S\+\_\+\+Inputs (\begin{DoxyParamCaption}\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure all A\+DC Inputs at once. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{_a_d_s1299__lib_8h_ae319817637388acc86b1b423929d0fd5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_ae319817637388acc86b1b423929d0fd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a432cb9e3fee655b9ff0d0ed16dae77d1}\label{_a_d_s1299__lib_8h_a432cb9e3fee655b9ff0d0ed16dae77d1}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!disable\_ContninuousConversion@{disable\_ContninuousConversion}}
+\index{disable\_ContninuousConversion@{disable\_ContninuousConversion}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{disable\_ContninuousConversion()}{disable\_ContninuousConversion()}}
+{\footnotesize\ttfamily void disable\+\_\+\+Contninuous\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables the contninuous conversion. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a432cb9e3fee655b9ff0d0ed16dae77d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a4529fc9cc6740d80d18a98b38693d51b}\label{_a_d_s1299__lib_8h_a4529fc9cc6740d80d18a98b38693d51b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!display\_Registers\_settings@{display\_Registers\_settings}}
+\index{display\_Registers\_settings@{display\_Registers\_settings}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{display\_Registers\_settings()}{display\_Registers\_settings()}}
+{\footnotesize\ttfamily void display\+\_\+\+Registers\+\_\+settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display Current Registers Settings. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a4529fc9cc6740d80d18a98b38693d51b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a4529fc9cc6740d80d18a98b38693d51b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a02e2ce7236806ce2d2850aa9a8af6881}\label{_a_d_s1299__lib_8h_a02e2ce7236806ce2d2850aa9a8af6881}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!do\_RREG@{do\_RREG}}
+\index{do\_RREG@{do\_RREG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{do\_RREG()}{do\_RREG()}}
+{\footnotesize\ttfamily void do\+\_\+\+R\+R\+EG (\begin{DoxyParamCaption}\item[{byte}]{register\+\_\+\+Address,  }\item[{byte}]{returned\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Performs a R\+R\+EG A\+D\+S1299 command -\/ Reads a Register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em register\+\_\+\+Address} & The register address to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em returned\+\_\+bytes} & The returned configuration value data-\/byte that the target register holds \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a02e2ce7236806ce2d2850aa9a8af6881_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a810241b5eff0b37656f6872e50017b14}\label{_a_d_s1299__lib_8h_a810241b5eff0b37656f6872e50017b14}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!do\_WREG@{do\_WREG}}
+\index{do\_WREG@{do\_WREG}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{do\_WREG()}{do\_WREG()}}
+{\footnotesize\ttfamily void do\+\_\+\+W\+R\+EG (\begin{DoxyParamCaption}\item[{byte}]{Register,  }\item[{byte}]{Data }\end{DoxyParamCaption})}
+
+
+
+Performs a W\+R\+EG A\+D\+S1299 command -\/ Writes a Register . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Register} & The register address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em Data} & The configuration value data-\/byte \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a810241b5eff0b37656f6872e50017b14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ad31ec5a9add8086f5dd739a00e0c6fc0}\label{_a_d_s1299__lib_8h_ad31ec5a9add8086f5dd739a00e0c6fc0}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!enable\_ADS1299@{enable\_ADS1299}}
+\index{enable\_ADS1299@{enable\_ADS1299}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{enable\_ADS1299()}{enable\_ADS1299()}}
+{\footnotesize\ttfamily void enable\+\_\+\+A\+D\+S1299 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Enable A\+D\+S1299 Hardware. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adc\+\_\+id} & The A\+D\+S1299 identifier \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_ad31ec5a9add8086f5dd739a00e0c6fc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a2d6dec2b61becfda886550904633e7ca}\label{_a_d_s1299__lib_8h_a2d6dec2b61becfda886550904633e7ca}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!fill\_PktBuff@{fill\_PktBuff}}
+\index{fill\_PktBuff@{fill\_PktBuff}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{fill\_PktBuff()}{fill\_PktBuff()}}
+{\footnotesize\ttfamily void fill\+\_\+\+Pkt\+Buff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$}]{adc,  }\item[{uint8\+\_\+t}]{sample\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a45a70ec53b50fced02d723027ebeda7b}\label{_a_d_s1299__lib_8h_a45a70ec53b50fced02d723027ebeda7b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!flipBit@{flipBit}}
+\index{flipBit@{flipBit}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{flipBit()}{flipBit()}}
+{\footnotesize\ttfamily byte flip\+Bit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Flips a bit state in a given register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the changed byte 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{_a_d_s1299__lib_8h_a45a70ec53b50fced02d723027ebeda7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aa36d42edd4c7066927bb0593a697f032}\label{_a_d_s1299__lib_8h_aa36d42edd4c7066927bb0593a697f032}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!get\_ADC2\_Data\_CM@{get\_ADC2\_Data\_CM}}
+\index{get\_ADC2\_Data\_CM@{get\_ADC2\_Data\_CM}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{get\_ADC2\_Data\_CM()}{get\_ADC2\_Data\_CM()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C2\+\_\+\+Data\+\_\+\+CM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+For A\+D\+C2 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ab09c1af4e63a218ddcd4c6e74dbd2c1d}\label{_a_d_s1299__lib_8h_ab09c1af4e63a218ddcd4c6e74dbd2c1d}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!get\_ADC\_Data\_SS@{get\_ADC\_Data\_SS}}
+\index{get\_ADC\_Data\_SS@{get\_ADC\_Data\_SS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{get\_ADC\_Data\_SS()}{get\_ADC\_Data\_SS()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+SS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$}]{adc }\end{DoxyParamCaption})}
+
+
+
+Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc} & The \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} structure \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_ab09c1af4e63a218ddcd4c6e74dbd2c1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a8bcdc72589550cd97b4251da3dea30ab}\label{_a_d_s1299__lib_8h_a8bcdc72589550cd97b4251da3dea30ab}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!get\_ADC\_Data\_SSAlt@{get\_ADC\_Data\_SSAlt}}
+\index{get\_ADC\_Data\_SSAlt@{get\_ADC\_Data\_SSAlt}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{get\_ADC\_Data\_SSAlt()}{get\_ADC\_Data\_SSAlt()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+S\+S\+Alt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5961c91233a0e9b7f3be962171f49f1b}\label{_a_d_s1299__lib_8h_a5961c91233a0e9b7f3be962171f49f1b}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!getADC1\_Data\_CM@{getADC1\_Data\_CM}}
+\index{getADC1\_Data\_CM@{getADC1\_Data\_CM}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{getADC1\_Data\_CM()}{getADC1\_Data\_CM()}}
+{\footnotesize\ttfamily void get\+A\+D\+C1\+\_\+\+Data\+\_\+\+CM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+For A\+D\+C1 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a5961c91233a0e9b7f3be962171f49f1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_abfe762421ab527e99e51c95f8390f250}\label{_a_d_s1299__lib_8h_abfe762421ab527e99e51c95f8390f250}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!getCurrent\_ADS\_ID@{getCurrent\_ADS\_ID}}
+\index{getCurrent\_ADS\_ID@{getCurrent\_ADS\_ID}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{getCurrent\_ADS\_ID()}{getCurrent\_ADS\_ID()}}
+{\footnotesize\ttfamily int8\+\_\+t get\+Current\+\_\+\+A\+D\+S\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current A\+D\+S1299 id. 
+
+\begin{DoxyReturn}{Returns}
+The current ads id. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_abfe762421ab527e99e51c95f8390f250_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_af5f72c3e310dccb4c3a2912e4adfdf4a}\label{_a_d_s1299__lib_8h_af5f72c3e310dccb4c3a2912e4adfdf4a}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!pineriphernal\_init@{pineriphernal\_init}}
+\index{pineriphernal\_init@{pineriphernal\_init}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{pineriphernal\_init()}{pineriphernal\_init()}}
+{\footnotesize\ttfamily void pineriphernal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5f211d0f1d5eb2bbdb6dd04c2f994428}\label{_a_d_s1299__lib_8h_a5f211d0f1d5eb2bbdb6dd04c2f994428}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!print\_boardID@{print\_boardID}}
+\index{print\_boardID@{print\_boardID}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{print\_boardID()}{print\_boardID()}}
+{\footnotesize\ttfamily void print\+\_\+board\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Prints a board id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The Nova\+XR board identifier \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a5f211d0f1d5eb2bbdb6dd04c2f994428_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a2b9bd34c58e171be2894e29c2f6f1800}\label{_a_d_s1299__lib_8h_a2b9bd34c58e171be2894e29c2f6f1800}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!print\_Single\_Shot@{print\_Single\_Shot}}
+\index{print\_Single\_Shot@{print\_Single\_Shot}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{print\_Single\_Shot()}{print\_Single\_Shot()}}
+{\footnotesize\ttfamily bool print\+\_\+\+Single\+\_\+\+Shot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints a single shot R\+AW data. 
+
+\begin{DoxyReturn}{Returns}
+returns error if something goes wrong with A\+D\+S1299 connection 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{_a_d_s1299__lib_8h_a2b9bd34c58e171be2894e29c2f6f1800_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a2b9bd34c58e171be2894e29c2f6f1800_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a26b52cfa1d492518f88e57692e2937cb}\label{_a_d_s1299__lib_8h_a26b52cfa1d492518f88e57692e2937cb}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!print\_Single\_ShotAlt@{print\_Single\_ShotAlt}}
+\index{print\_Single\_ShotAlt@{print\_Single\_ShotAlt}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{print\_Single\_ShotAlt()}{print\_Single\_ShotAlt()}}
+{\footnotesize\ttfamily bool print\+\_\+\+Single\+\_\+\+Shot\+Alt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aef554e55dae3a87df1455de4cd22c558}\label{_a_d_s1299__lib_8h_aef554e55dae3a87df1455de4cd22c558}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!readRegisterSettings@{readRegisterSettings}}
+\index{readRegisterSettings@{readRegisterSettings}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{readRegisterSettings()}{readRegisterSettings()}}
+{\footnotesize\ttfamily byte read\+Register\+Settings (\begin{DoxyParamCaption}\item[{byte}]{Reg\+Addr }\end{DoxyParamCaption})}
+
+
+
+Read Settings of a single register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reg\+Addr} & is the address of the register we target to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returned\+Byte byte holds the register value 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_a_d_s1299__lib_8h_aef554e55dae3a87df1455de4cd22c558_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_aef554e55dae3a87df1455de4cd22c558_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aa1ead4a65c659d08667f72ae75b31b87}\label{_a_d_s1299__lib_8h_aa1ead4a65c659d08667f72ae75b31b87}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!Reset\_ADC@{Reset\_ADC}}
+\index{Reset\_ADC@{Reset\_ADC}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{Reset\_ADC()}{Reset\_ADC()}}
+{\footnotesize\ttfamily void Reset\+\_\+\+A\+DC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Reset Command to an active A\+D\+S1299. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_aa1ead4a65c659d08667f72ae75b31b87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a5ce329181e609c3d23a4ebd8c754b810}\label{_a_d_s1299__lib_8h_a5ce329181e609c3d23a4ebd8c754b810}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!select\_ADC@{select\_ADC}}
+\index{select\_ADC@{select\_ADC}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{select\_ADC()}{select\_ADC()}}
+{\footnotesize\ttfamily void select\+\_\+\+A\+DC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Select A\+DC to Control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a5ce329181e609c3d23a4ebd8c754b810_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a43e1a071fde96ba35733cd7af6fce90f}\label{_a_d_s1299__lib_8h_a43e1a071fde96ba35733cd7af6fce90f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!setBit0@{setBit0}}
+\index{setBit0@{setBit0}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{setBit0()}{setBit0()}}
+{\footnotesize\ttfamily byte set\+Bit0 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Set to 0 a bit in a given register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a52e23b40605aa2ba96ccb88476f78c0f}\label{_a_d_s1299__lib_8h_a52e23b40605aa2ba96ccb88476f78c0f}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!setBit1@{setBit1}}
+\index{setBit1@{setBit1}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{setBit1()}{setBit1()}}
+{\footnotesize\ttfamily byte set\+Bit1 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Sets to 1 a bit in a given 8bit register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_ac39a837ad6e83714e21d0d690180d9de}\label{_a_d_s1299__lib_8h_ac39a837ad6e83714e21d0d690180d9de}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SPI\_pinPeriphernal\_init@{SPI\_pinPeriphernal\_init}}
+\index{SPI\_pinPeriphernal\_init@{SPI\_pinPeriphernal\_init}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_pinPeriphernal\_init()}{SPI\_pinPeriphernal\_init()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+pin\+Periphernal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize S\+PI Pins for S\+E\+R\+C\+OM. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_ac39a837ad6e83714e21d0d690180d9de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a7d269a2712c96078de256b92974562fc}\label{_a_d_s1299__lib_8h_a7d269a2712c96078de256b92974562fc}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!startADC\_Continuous\_Mode@{startADC\_Continuous\_Mode}}
+\index{startADC\_Continuous\_Mode@{startADC\_Continuous\_Mode}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{startADC\_Continuous\_Mode()}{startADC\_Continuous\_Mode()}}
+{\footnotesize\ttfamily void start\+A\+D\+C\+\_\+\+Continuous\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start A\+D\+S1299 in Continuous Conversion Mode. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a7d269a2712c96078de256b92974562fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a7d269a2712c96078de256b92974562fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a83ac68b6fa7d053091231026fe530db6}\label{_a_d_s1299__lib_8h_a83ac68b6fa7d053091231026fe530db6}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!stop\_ADC\_interrupt@{stop\_ADC\_interrupt}}
+\index{stop\_ADC\_interrupt@{stop\_ADC\_interrupt}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{stop\_ADC\_interrupt()}{stop\_ADC\_interrupt()}}
+{\footnotesize\ttfamily void stop\+\_\+\+A\+D\+C\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop Being interrupted by A\+D\+S1299. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a83ac68b6fa7d053091231026fe530db6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{_a_d_s1299__lib_8h_a83ac68b6fa7d053091231026fe530db6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a19ddd46e12309441db0cdda5e076f628}\label{_a_d_s1299__lib_8h_a19ddd46e12309441db0cdda5e076f628}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!stop\_and\_configInput@{stop\_and\_configInput}}
+\index{stop\_and\_configInput@{stop\_and\_configInput}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{stop\_and\_configInput()}{stop\_and\_configInput()}}
+{\footnotesize\ttfamily void stop\+\_\+and\+\_\+config\+Input (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{board\+\_\+id,  }\item[{uint8\+\_\+t}]{channel,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Stops and Sets configurations for selected input channel and board. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em board\+\_\+id} & The board identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em channel} & The A\+D\+S1299 input channel num \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a19ddd46e12309441db0cdda5e076f628_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8h_a19ddd46e12309441db0cdda5e076f628_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a0eb69bb4e65b78dbd4f8c8f38a14ede2}\label{_a_d_s1299__lib_8h_a0eb69bb4e65b78dbd4f8c8f38a14ede2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!MainCS@{MainCS}}
+\index{MainCS@{MainCS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{MainCS}{MainCS}}
+{\footnotesize\ttfamily const uint8\+\_\+t Main\+CS}
+
+
+
+Chip Select pin for main board. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_aa706c01deac970283ec87731c242e9b2}\label{_a_d_s1299__lib_8h_aa706c01deac970283ec87731c242e9b2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!MainDRDY@{MainDRDY}}
+\index{MainDRDY@{MainDRDY}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{MainDRDY}{MainDRDY}}
+{\footnotesize\ttfamily const uint8\+\_\+t Main\+D\+R\+DY}
+
+
+
+Data Ready pin for main board -\/ Hardware Interrupt Ready. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a181611c2e3b9bbb4da9337ca5f689746}\label{_a_d_s1299__lib_8h_a181611c2e3b9bbb4da9337ca5f689746}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ResetMB\_pin@{ResetMB\_pin}}
+\index{ResetMB\_pin@{ResetMB\_pin}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ResetMB\_pin}{ResetMB\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t Reset\+M\+B\+\_\+pin}
+
+
+
+A\+DC Reset Pin for Main\+Board. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a57a449ae06dff050bb05e38ca0bfd9c2}\label{_a_d_s1299__lib_8h_a57a449ae06dff050bb05e38ca0bfd9c2}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!ResetSB\_pin@{ResetSB\_pin}}
+\index{ResetSB\_pin@{ResetSB\_pin}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{ResetSB\_pin}{ResetSB\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t Reset\+S\+B\+\_\+pin}
+
+
+
+A\+DC Reset Pin for Sister\+Board. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_a3b5615e962b3bed7e791ff2c128bdfce}\label{_a_d_s1299__lib_8h_a3b5615e962b3bed7e791ff2c128bdfce}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SisCS@{SisCS}}
+\index{SisCS@{SisCS}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SisCS}{SisCS}}
+{\footnotesize\ttfamily const uint8\+\_\+t Sis\+CS}
+
+
+
+Chip Select pin for sister board. 
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8h_abaf24ea28a21cd9de9cb45fea3d5bba9}\label{_a_d_s1299__lib_8h_abaf24ea28a21cd9de9cb45fea3d5bba9}} 
+\index{ADS1299\_lib.h@{ADS1299\_lib.h}!SisDRDY@{SisDRDY}}
+\index{SisDRDY@{SisDRDY}!ADS1299\_lib.h@{ADS1299\_lib.h}}
+\doxysubsubsection{\texorpdfstring{SisDRDY}{SisDRDY}}
+{\footnotesize\ttfamily const uint8\+\_\+t Sis\+D\+R\+DY}
+
+
+
+Data Ready pin for sister board. 
+

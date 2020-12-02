@@ -1,0 +1,38 @@
+<map id="TCP_Data_Exchange" name="TCP_Data_Exchange">
+<area shape="rect" id="node1" title="Data Exchange with TCP Client." alt="" coords="5,457,156,483"/>
+<area shape="rect" id="node2" href="$_data___handler_8cpp.html#a137a546a4c0d77bbae2ca50248e8505a" title="Assemble Output Buffer." alt="" coords="218,153,358,179"/>
+<area shape="rect" id="node11" href="$_l_e_d___indication_8cpp.html#a8f78b85477a3e04ad96d9c1cf0867027" title="Unexpected TCP Client Disonnection." alt="" coords="220,479,355,517"/>
+<area shape="rect" id="node13" href="$_n_x_r___communication_8cpp.html#a12a6a3ad701bd312082f1042b162a563" title="Sends the Data Buffer over TCP." alt="" coords="204,591,371,616"/>
+<area shape="rect" id="node14" href="$_l_e_d___indication_8cpp.html#acb653f64366b90f597daa67b7212598d" title="Shows the stand by state." alt="" coords="214,380,361,405"/>
+<area shape="rect" id="node15" href="$_l_e_d___indication_8cpp.html#a141c3d76bbbb13fdbfc6f022768db55b" title="Shows the streamming state." alt="" coords="204,429,372,455"/>
+<area shape="rect" id="node16" href="$_l_e_d___indication_8cpp.html#a59465ebabc82fa3e752715432004f25f" title="Enter StandBy Mode." alt="" coords="233,541,343,567"/>
+<area shape="rect" id="node18" href="$_n_x_r___communication_8cpp.html#ab3624745ac366f4b5d21d22c97b4929c" title=" " alt="" coords="240,640,335,665"/>
+<area shape="rect" id="node19" href="$_n_x_r___communication_8cpp.html#a3088a3cfcad30749415fcf71f15a3e70" title="Check Incoming Commands over TCP." alt="" coords="216,331,360,356"/>
+<area shape="rect" id="node3" href="$_data___handler_8cpp.html#aeb83ea68553ca96235d0c6db5123374b" title="Fills a data pacekt of a single output buffer with sensory data." alt="" coords="456,153,551,179"/>
+<area shape="rect" id="node5" href="$_data___handler_8cpp.html#a05ac889f44934d1195f3977ae5e04e37" title="Updates the local Sensors_Data structure with updated sensory data." alt="" coords="420,80,587,105"/>
+<area shape="rect" id="node4" href="$_data___handler_8cpp.html#ae8bbead6cea3c61dda2c0f70af7aaa96" title="Create a local timestamp." alt="" coords="671,153,779,179"/>
+<area shape="rect" id="node6" href="$_data___handler_8cpp.html#aba8dcefea8a2e070ef9dac4aef05d581" title="Stores the ADS1299 raw data in the instace of the ADC_data structure." alt="" coords="659,104,791,129"/>
+<area shape="rect" id="node9" href="$_data___handler_8cpp.html#a464fae4171ae3df467e2afa2f08250e3" title="Gets Auxilary Raw Data data." alt="" coords="659,5,791,31"/>
+<area shape="rect" id="node10" href="$_data___handler_8cpp.html#a644418a52957d98920680f65cbf941da" title=" " alt="" coords="662,55,788,80"/>
+<area shape="rect" id="node7" href="$_a_d_s1299__lib_8cpp.html#ab09c1af4e63a218ddcd4c6e74dbd2c1d" title="Single Shot Mode &#45; Get Data in shared Union Structure: &quot;ADC_data&quot;." alt="" coords="876,53,1012,79"/>
+<area shape="rect" id="node8" href="$_a_d_s1299__lib_8cpp.html#a5ce329181e609c3d23a4ebd8c754b810" title="Select ADS1299 to Control." alt="" coords="1107,280,1198,305"/>
+<area shape="rect" id="node12" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="456,459,551,484"/>
+<area shape="rect" id="node17" href="$_l_e_d___indication_8cpp.html#a5163d45c1af814fc9ea0cca80f001657" title="Fade&#45;in Turning On any LED at certain PWM speed." alt="" coords="459,541,547,567"/>
+<area shape="rect" id="node20" href="$_open_b_c_i___nova_x_r_8cpp.html#a3288fb0114b19b1a0a0860c51efadc4d" title="Process incomming command character." alt="" coords="455,357,552,383"/>
+<area shape="rect" id="node21" href="$_open_b_c_i___nova_x_r_8cpp.html#a8a1019693140e7529258bcbbb0354b78" title="Check for valid on multi char commands." alt="" coords="638,483,812,508"/>
+<area shape="rect" id="node23" href="$_open_b_c_i___nova_x_r_8cpp.html#a00311c67c0858bb46ee764f977ba1a40" title="Check if the incoming command is a multichar command." alt="" coords="638,532,812,557"/>
+<area shape="rect" id="node24" href="$_a_d_s1299__lib_8cpp.html#a4529fc9cc6740d80d18a98b38693d51b" title="Display Current Registers Settings." alt="" coords="635,204,815,229"/>
+<area shape="rect" id="node28" href="$_open_b_c_i___nova_x_r_8cpp.html#a7d8cfc3480da6dcf2038ff365b0411a8" title="Gets the active multi char command." alt="" coords="646,332,804,357"/>
+<area shape="rect" id="node29" href="$_open_b_c_i___nova_x_r_8cpp.html#a61c213b429d09cbe8f69c2e724a648d9" title="Process a Multi&#45;Char incoming Command." alt="" coords="662,381,788,407"/>
+<area shape="rect" id="node34" href="$_a_d_s1299__lib_8cpp.html#a19ddd46e12309441db0cdda5e076f628" title="Stops and Sets configurations for selected input channel and board." alt="" coords="870,505,1019,531"/>
+<area shape="rect" id="node22" href="$_open_b_c_i___nova_x_r_8cpp.html#a55f9a76f1e0330b60da0457d3cca0e6c" title="End the timer on multi char commands." alt="" coords="863,555,1025,580"/>
+<area shape="rect" id="node25" href="$_a_d_s1299__lib_8cpp.html#abfe762421ab527e99e51c95f8390f250" title="Gets the current ADS1299 id." alt="" coords="874,204,1014,229"/>
+<area shape="rect" id="node26" href="$_a_d_s1299__lib_8cpp.html#aef554e55dae3a87df1455de4cd22c558" title="Read Settings of a single register." alt="" coords="871,155,1017,180"/>
+<area shape="rect" id="node27" href="$_a_d_s1299__lib_8cpp.html#a02e2ce7236806ce2d2850aa9a8af6881" title="Performs a RREG ADS1299 command &#45; Reads a Register." alt="" coords="1112,155,1194,180"/>
+<area shape="rect" id="node30" href="$_open_b_c_i___nova_x_r_8cpp.html#ade01502530bd39f049c51231cf11b858" title="Convert ASCII Characters to integers." alt="" coords="881,456,1007,481"/>
+<area shape="rect" id="node31" href="$_a_d_s1299__lib_8cpp.html#a9ce4752411a8916cf7b81547a8f11f2f" title="Configure an ADS1299 Register." alt="" coords="1078,381,1227,407"/>
+<area shape="rect" id="node33" href="$_open_b_c_i___nova_x_r_8cpp.html#a2e703b1b0c861e9e1e1723b2be7672b0" title="Translate the Incoming Channel Command to ADS input ID for Sisterboard." alt="" coords="872,407,1016,432"/>
+<area shape="rect" id="node32" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="1280,431,1365,456"/>
+<area shape="rect" id="node35" href="$_a_d_s1299__lib_8cpp.html#a46e58fd33706f92cbf0a8376e5f4aefe" title="Stop ADC Conversion Operation." alt="" coords="1073,456,1232,481"/>
+<area shape="rect" id="node36" href="$_a_d_s1299__lib_8cpp.html#afc1f487ddcd83ccc92dda2e169bf04fa" title="Configure a single ADS1299 Input." alt="" coords="1088,505,1217,531"/>
+</map>

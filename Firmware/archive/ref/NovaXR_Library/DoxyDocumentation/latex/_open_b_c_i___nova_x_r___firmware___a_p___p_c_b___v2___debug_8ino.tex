@@ -1,0 +1,305 @@
+\hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino}{}\doxysection{examples/\+Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug/\+Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.ino File Reference}
+\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino}\index{examples/OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug/OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{examples/OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug/OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+{\ttfamily \#include \char`\"{}Nova\+X\+R\+\_\+\+Library.\+h\char`\"{}}\newline
+Include dependency graph for Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ad72dbcf6d0153db1b8d8a58001feed83}{D\+E\+B\+UG}}
+\item 
+\#define \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_af3415bfad5b4ad346ed8e9c6d54eb943}{B\+O\+A\+R\+D\+\_\+\+R\+E\+V\+I\+S\+I\+O\+N\+\_\+\+ID}}~2.\+0
+\begin{DoxyCompactList}\small\item\em P\+CB Revision Number. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4e3075c45ada71b4a46179e6ed778c25}{W\+I\+F\+I\+\_\+\+M\+O\+DE}}~\textquotesingle{}A\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Wi\+Fi Interface \textquotesingle{}A\textquotesingle{} for Access Point Mode , \textquotesingle{}I\textquotesingle{} for Infrastructure Mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a0eb69bb4e65b78dbd4f8c8f38a14ede2}{Main\+CS}} = \mbox{\hyperlink{_nova_x_r___library_8h_a4e259e313e720aada63c3d95cdbf2061}{P\+A21}}
+\begin{DoxyCompactList}\small\item\em Chip Select pin for main board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aa706c01deac970283ec87731c242e9b2}{Main\+D\+R\+DY}} = \mbox{\hyperlink{_nova_x_r___library_8h_a918709b8b499a0646056a1239346140a}{P\+B10}}
+\begin{DoxyCompactList}\small\item\em Data Ready pin for main board -\/ Hardware Interrupt Ready ~\newline
+ \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a181611c2e3b9bbb4da9337ca5f689746}{Reset\+M\+B\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_aa1931044de56b535004983976e040548}{P\+A23}}
+\begin{DoxyCompactList}\small\item\em A\+DC Reset Pin for Main\+Board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aaae9f50278ca4f3e1af4037916c3388d}{O\+T\+G\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a078220bb0dfb2fc38deb672fc0e44a13}{P\+A18}}
+\begin{DoxyCompactList}\small\item\em U\+SB O\+TG Pin for Main\+Board ~\newline
+ \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a3b5615e962b3bed7e791ff2c128bdfce}{Sis\+CS}} = \mbox{\hyperlink{_nova_x_r___library_8h_a47715740b0a31ff3162d4c5ef06a3f6d}{P\+A20}}
+\begin{DoxyCompactList}\small\item\em Chip Select pin for sister board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_abaf24ea28a21cd9de9cb45fea3d5bba9}{Sis\+D\+R\+DY}} = \mbox{\hyperlink{_nova_x_r___library_8h_a70039eeea0d223a5fe582c078233e138}{P\+B02}}
+\begin{DoxyCompactList}\small\item\em Data Ready pin for sister board. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a57a449ae06dff050bb05e38ca0bfd9c2}{Reset\+S\+B\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a5640be3dc197f9bdf8afe5c2ae3328e6}{P\+A22}}
+\begin{DoxyCompactList}\small\item\em A\+DC Reset Pin for Sister\+Board ~\newline
+ \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4cf5a20448836803db37dce5d6851c78}{V\+D\+D\+\_\+ref\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a79ed80b82eebe2206e612579176e991b}{P\+A06}}
+\begin{DoxyCompactList}\small\item\em V\+DD for E\+DA Circuit. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4964de54b1ece16a00fdef08841b97d6}{G\+N\+D\+\_\+ref\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a30a907db5f5070ac8cce063442c4f79e}{P\+B09}}
+\begin{DoxyCompactList}\small\item\em G\+ND for E\+DA Circuit. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a014379e6930724f35785005022b2ca1b}{B\+A\+T\+T\+\_\+\+Sense\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_a29b9ce237e8cb55e25428e5cdb2454b7}{P\+A05}}
+\begin{DoxyCompactList}\small\item\em Battery Level Sense Signal. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ab03c8269ac6fdfa0c724903107d48957}{E\+D\+A\+\_\+\+Sense\+\_\+pin}} = \mbox{\hyperlink{_nova_x_r___library_8h_ac8df03c3e5b60e730a692012768724e9}{P\+A02}}
+\begin{DoxyCompactList}\small\item\em s E\+DA Sensor Sense Signal \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aec11d6d1da8e5e8c1bbd529f8b40c4a5}{error\+\_\+flag}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_af3415bfad5b4ad346ed8e9c6d54eb943}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_af3415bfad5b4ad346ed8e9c6d54eb943}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!BOARD\_REVISION\_ID@{BOARD\_REVISION\_ID}}
+\index{BOARD\_REVISION\_ID@{BOARD\_REVISION\_ID}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{BOARD\_REVISION\_ID}{BOARD\_REVISION\_ID}}
+{\footnotesize\ttfamily \#define B\+O\+A\+R\+D\+\_\+\+R\+E\+V\+I\+S\+I\+O\+N\+\_\+\+ID~2.\+0}
+
+
+
+P\+CB Revision Number. 
+
+
+
+Definition at line 22 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ad72dbcf6d0153db1b8d8a58001feed83}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ad72dbcf6d0153db1b8d8a58001feed83}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily \#define D\+E\+B\+UG}
+
+
+
+Definition at line 12 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4e3075c45ada71b4a46179e6ed778c25}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4e3075c45ada71b4a46179e6ed778c25}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!WIFI\_MODE@{WIFI\_MODE}}
+\index{WIFI\_MODE@{WIFI\_MODE}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{WIFI\_MODE}{WIFI\_MODE}}
+{\footnotesize\ttfamily \#define W\+I\+F\+I\+\_\+\+M\+O\+DE~\textquotesingle{}A\textquotesingle{}}
+
+
+
+Wi\+Fi Interface \textquotesingle{}A\textquotesingle{} for Access Point Mode , \textquotesingle{}I\textquotesingle{} for Infrastructure Mode. 
+
+
+
+Definition at line 23 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_afe461d27b9c48d5921c00d521181f12f}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!loop@{loop}}
+\index{loop@{loop}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!setup@{setup}}
+\index{setup@{setup}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a014379e6930724f35785005022b2ca1b}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a014379e6930724f35785005022b2ca1b}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!BATT\_Sense\_pin@{BATT\_Sense\_pin}}
+\index{BATT\_Sense\_pin@{BATT\_Sense\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{BATT\_Sense\_pin}{BATT\_Sense\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t B\+A\+T\+T\+\_\+\+Sense\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_a29b9ce237e8cb55e25428e5cdb2454b7}{P\+A05}}}
+
+
+
+Battery Level Sense Signal. 
+
+Battery Sense Analog In Pin. 
+
+Definition at line 38 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ab03c8269ac6fdfa0c724903107d48957}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_ab03c8269ac6fdfa0c724903107d48957}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!EDA\_Sense\_pin@{EDA\_Sense\_pin}}
+\index{EDA\_Sense\_pin@{EDA\_Sense\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{EDA\_Sense\_pin}{EDA\_Sense\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t E\+D\+A\+\_\+\+Sense\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_ac8df03c3e5b60e730a692012768724e9}{P\+A02}}}
+
+
+
+s E\+DA Sensor Sense Signal 
+
+E\+DA Curcuit Sense Analog In Pin. 
+
+Definition at line 39 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aec11d6d1da8e5e8c1bbd529f8b40c4a5}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aec11d6d1da8e5e8c1bbd529f8b40c4a5}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!error\_flag@{error\_flag}}
+\index{error\_flag@{error\_flag}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{error\_flag}{error\_flag}}
+{\footnotesize\ttfamily bool error\+\_\+flag = false}
+
+
+
+Definition at line 42 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4964de54b1ece16a00fdef08841b97d6}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4964de54b1ece16a00fdef08841b97d6}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!GND\_ref\_pin@{GND\_ref\_pin}}
+\index{GND\_ref\_pin@{GND\_ref\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{GND\_ref\_pin}{GND\_ref\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t G\+N\+D\+\_\+ref\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_a30a907db5f5070ac8cce063442c4f79e}{P\+B09}}}
+
+
+
+G\+ND for E\+DA Circuit. 
+
+Ground Reference Voltage Analog In Pin. 
+
+Definition at line 37 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a0eb69bb4e65b78dbd4f8c8f38a14ede2}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a0eb69bb4e65b78dbd4f8c8f38a14ede2}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!MainCS@{MainCS}}
+\index{MainCS@{MainCS}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{MainCS}{MainCS}}
+{\footnotesize\ttfamily const uint8\+\_\+t Main\+CS = \mbox{\hyperlink{_nova_x_r___library_8h_a4e259e313e720aada63c3d95cdbf2061}{P\+A21}}}
+
+
+
+Chip Select pin for main board. 
+
+
+
+Definition at line 27 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aa706c01deac970283ec87731c242e9b2}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aa706c01deac970283ec87731c242e9b2}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!MainDRDY@{MainDRDY}}
+\index{MainDRDY@{MainDRDY}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{MainDRDY}{MainDRDY}}
+{\footnotesize\ttfamily const uint8\+\_\+t Main\+D\+R\+DY = \mbox{\hyperlink{_nova_x_r___library_8h_a918709b8b499a0646056a1239346140a}{P\+B10}}}
+
+
+
+Data Ready pin for main board -\/ Hardware Interrupt Ready ~\newline
+ 
+
+Data Ready pin for main board -\/ Hardware Interrupt Ready. 
+
+Definition at line 28 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aaae9f50278ca4f3e1af4037916c3388d}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_aaae9f50278ca4f3e1af4037916c3388d}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!OTG\_pin@{OTG\_pin}}
+\index{OTG\_pin@{OTG\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{OTG\_pin}{OTG\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t O\+T\+G\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_a078220bb0dfb2fc38deb672fc0e44a13}{P\+A18}}}
+
+
+
+U\+SB O\+TG Pin for Main\+Board ~\newline
+ 
+
+
+
+Definition at line 30 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a181611c2e3b9bbb4da9337ca5f689746}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a181611c2e3b9bbb4da9337ca5f689746}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!ResetMB\_pin@{ResetMB\_pin}}
+\index{ResetMB\_pin@{ResetMB\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{ResetMB\_pin}{ResetMB\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t Reset\+M\+B\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_aa1931044de56b535004983976e040548}{P\+A23}}}
+
+
+
+A\+DC Reset Pin for Main\+Board. 
+
+Reset pin for main board. 
+
+Definition at line 29 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a57a449ae06dff050bb05e38ca0bfd9c2}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a57a449ae06dff050bb05e38ca0bfd9c2}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!ResetSB\_pin@{ResetSB\_pin}}
+\index{ResetSB\_pin@{ResetSB\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{ResetSB\_pin}{ResetSB\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t Reset\+S\+B\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_a5640be3dc197f9bdf8afe5c2ae3328e6}{P\+A22}}}
+
+
+
+A\+DC Reset Pin for Sister\+Board ~\newline
+ 
+
+Reset pin for sister board. 
+
+Definition at line 35 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a3b5615e962b3bed7e791ff2c128bdfce}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a3b5615e962b3bed7e791ff2c128bdfce}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!SisCS@{SisCS}}
+\index{SisCS@{SisCS}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{SisCS}{SisCS}}
+{\footnotesize\ttfamily const uint8\+\_\+t Sis\+CS = \mbox{\hyperlink{_nova_x_r___library_8h_a47715740b0a31ff3162d4c5ef06a3f6d}{P\+A20}}}
+
+
+
+Chip Select pin for sister board. 
+
+
+
+Definition at line 33 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_abaf24ea28a21cd9de9cb45fea3d5bba9}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_abaf24ea28a21cd9de9cb45fea3d5bba9}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!SisDRDY@{SisDRDY}}
+\index{SisDRDY@{SisDRDY}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{SisDRDY}{SisDRDY}}
+{\footnotesize\ttfamily const uint8\+\_\+t Sis\+D\+R\+DY = \mbox{\hyperlink{_nova_x_r___library_8h_a70039eeea0d223a5fe582c078233e138}{P\+B02}}}
+
+
+
+Data Ready pin for sister board. 
+
+
+
+Definition at line 34 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+
+\mbox{\Hypertarget{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4cf5a20448836803db37dce5d6851c78}\label{_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino_a4cf5a20448836803db37dce5d6851c78}} 
+\index{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}!VDD\_ref\_pin@{VDD\_ref\_pin}}
+\index{VDD\_ref\_pin@{VDD\_ref\_pin}!OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino@{OpenBCI\_NovaXR\_Firmware\_AP\_PCB\_V2\_Debug.ino}}
+\doxysubsubsection{\texorpdfstring{VDD\_ref\_pin}{VDD\_ref\_pin}}
+{\footnotesize\ttfamily const uint8\+\_\+t V\+D\+D\+\_\+ref\+\_\+pin = \mbox{\hyperlink{_nova_x_r___library_8h_a79ed80b82eebe2206e612579176e991b}{P\+A06}}}
+
+
+
+V\+DD for E\+DA Circuit. 
+
+Supply Reference Voltage Analog In Pin. 
+
+Definition at line 36 of file Open\+B\+C\+I\+\_\+\+Nova\+X\+R\+\_\+\+Firmware\+\_\+\+A\+P\+\_\+\+P\+C\+B\+\_\+\+V2\+\_\+\+Debug.\+ino.
+

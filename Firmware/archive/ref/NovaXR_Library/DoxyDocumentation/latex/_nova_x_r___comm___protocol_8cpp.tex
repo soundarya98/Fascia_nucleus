@@ -1,0 +1,619 @@
+\hypertarget{_nova_x_r___comm___protocol_8cpp}{}\doxysection{src/\+Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.cpp File Reference}
+\label{_nova_x_r___comm___protocol_8cpp}\index{src/NovaXR\_Comm\_Protocol.cpp@{src/NovaXR\_Comm\_Protocol.cpp}}
+{\ttfamily \#include \char`\"{}Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+X\+R\+\_\+\+Peripherals.\+h\char`\"{}}\newline
+Include dependency graph for Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_ab492680ed4011036b504fd042d1703e3}{Debug}}
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_aefb7723e1092c450754ef6c07922b1bf}{P\+O\+S\+I\+T\+I\+VE}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_adbb32e6744a151dde6686dbc26bdd342}{B\+I\+AS}}~1
+\item 
+\#define \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a514ad415fb6125ba296793df7d1a468a}{E\+N\+A\+B\+LE}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a3288fb0114b19b1a0a0860c51efadc4d}{process\+Char}} (char character)
+\begin{DoxyCompactList}\small\item\em Process incomming command character. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a8a1019693140e7529258bcbbb0354b78}{check\+Multi\+Char\+Cmd\+Timer}} (void)
+\begin{DoxyCompactList}\small\item\em Check for valid on multi char commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a55f9a76f1e0330b60da0457d3cca0e6c}{end\+Multi\+Char\+Cmd\+Timer}} (void)
+\begin{DoxyCompactList}\small\item\em End the timer on multi char commands. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a7d8cfc3480da6dcf2038ff365b0411a8}{get\+Multi\+Char\+Command}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the active multi char command. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a00311c67c0858bb46ee764f977ba1a40}{check\+Multi\+Char\+Command}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the incoming command is a multichar command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a61c213b429d09cbe8f69c2e724a648d9}{process\+Multi\+Char}} (void)
+\begin{DoxyCompactList}\small\item\em Process a Multi-\/\+Char incoming Command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_ab37bd75c8088eea47718990164426d13}{config\+\_\+\+B\+I\+A\+S\+\_\+\+L\+O\+FF}} (bool positive, bool bias\+\_\+loff\+\_\+option, bool enable\+Flag, uint8\+\_\+t Channel)
+\begin{DoxyCompactList}\small\item\em Config B\+I\+AS or L\+O\+FF per channel. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_aeed4a4713194b7693ca08d9936cba81f}{B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+C\+H\+\_\+\+Enable}} (uint8\+\_\+t select\+Num, bool enable\+Flag, byte Register)
+\begin{DoxyCompactList}\small\item\em B\+I\+AS or L\+O\+FF channel Disable/ Enable action. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_ade01502530bd39f049c51231cf11b858}{A\+S\+C\+I\+Ichar\+\_\+\+To\+\_\+\+Int}} (char cmd\+\_\+char)
+\begin{DoxyCompactList}\small\item\em Convert A\+S\+C\+II Characters to integers. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a2e703b1b0c861e9e1e1723b2be7672b0}{get\+\_\+sister\+A\+D\+S\+\_\+\+Input}} (char input\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Translate the Incoming Channel Command to A\+DS input ID for Sisterboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a6191aa23cc7d6b890ed79942ab9db77c}{is\+Multi\+Char\+Cmd}}
+\item 
+char \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a07af722b88ee28b87b83df8bd47dcc47}{multi\+Char\+Command}}
+\item 
+unsigned long \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_af494725b7e3657a1f1dad0ca192fea6b}{multi\+Char\+Cmd\+Timeout}}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a8e2fa8d8d63a6ae87af1159c64443159}{Gain}} \mbox{[}7\mbox{]}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 Gain Options. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a861dac15eeebb5a879258004741ced34}{Input\+\_\+\+Type}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 Input Type Options. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_ac8cbf359dc2d46e284d5f3701d4c42d2}{S\+R\+B2\+\_\+\+Type}} \mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_aec32fc72efe887828fefa43549fa8fd7}{C\+H\+\_\+\+S\+R\+B2\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+ED}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a6b64862ec3b17aaa5731037fdfb48d9f}{C\+H\+\_\+\+S\+R\+B2\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}}\}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a6d70c605fc4fd137ac73b5df9998df23}{S\+R\+B1\+\_\+\+Type}} \mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_a35f02132db99d5838144a8c734b21585}{S\+R\+B1\+\_\+\+O\+P\+EN}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a6c6155f9cb62bae84ff7e8f61b44d869}{S\+R\+B1\+\_\+\+C\+L\+OS}}\}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a8d7462c4580bc652aeb745d36b6a02e5}{B\+I\+A\+S\+\_\+\+Type}} \mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_aec250a8658e71c48c7e72068f68b9b51}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+O\+FF}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a32fc91b5777fb207449b699f4341c4f5}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+ON}}\}
+\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a54a705c5160f9d76cc4cf34be9f433a2}{A\+D\+S\+\_\+sister\+\_\+input\+\_\+\+ID}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 on Nova\+XR Sister Board input channels command representations. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a10579a803fe6ea1bcce2010adbcd2548}{A\+D\+S\+\_\+\+Test\+\_\+\+Signals}} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 Test Signals Options. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_nova_x_r___comm___protocol_8cpp_a981a416866eb58fb18a8943c4c7a781a}{L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+F\+R\+EQ}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 L\+E\+A\+D\+\_\+\+O\+FF Frequency Options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_adbb32e6744a151dde6686dbc26bdd342}\label{_nova_x_r___comm___protocol_8cpp_adbb32e6744a151dde6686dbc26bdd342}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!BIAS@{BIAS}}
+\index{BIAS@{BIAS}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{BIAS}{BIAS}}
+{\footnotesize\ttfamily \#define B\+I\+AS~1}
+
+
+
+Definition at line 15 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_ab492680ed4011036b504fd042d1703e3}\label{_nova_x_r___comm___protocol_8cpp_ab492680ed4011036b504fd042d1703e3}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!Debug@{Debug}}
+\index{Debug@{Debug}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{Debug}{Debug}}
+{\footnotesize\ttfamily \#define Debug}
+
+
+
+Definition at line 13 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a514ad415fb6125ba296793df7d1a468a}\label{_nova_x_r___comm___protocol_8cpp_a514ad415fb6125ba296793df7d1a468a}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!ENABLE@{ENABLE}}
+\index{ENABLE@{ENABLE}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{ENABLE}{ENABLE}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+LE~1}
+
+
+
+Definition at line 16 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_aefb7723e1092c450754ef6c07922b1bf}\label{_nova_x_r___comm___protocol_8cpp_aefb7723e1092c450754ef6c07922b1bf}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!POSITIVE@{POSITIVE}}
+\index{POSITIVE@{POSITIVE}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{POSITIVE}{POSITIVE}}
+{\footnotesize\ttfamily \#define P\+O\+S\+I\+T\+I\+VE~1}
+
+
+
+Definition at line 14 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_ade01502530bd39f049c51231cf11b858}\label{_nova_x_r___comm___protocol_8cpp_ade01502530bd39f049c51231cf11b858}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!ASCIIchar\_To\_Int@{ASCIIchar\_To\_Int}}
+\index{ASCIIchar\_To\_Int@{ASCIIchar\_To\_Int}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{ASCIIchar\_To\_Int()}{ASCIIchar\_To\_Int()}}
+{\footnotesize\ttfamily int A\+S\+C\+I\+Ichar\+\_\+\+To\+\_\+\+Int (\begin{DoxyParamCaption}\item[{char}]{cmd\+\_\+char }\end{DoxyParamCaption})}
+
+
+
+Convert A\+S\+C\+II Characters to integers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cmd\+\_\+char} & The given command character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the corresponding integer of the A\+S\+C\+II table 
+\end{DoxyReturn}
+
+
+Definition at line 577 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_ade01502530bd39f049c51231cf11b858_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_aeed4a4713194b7693ca08d9936cba81f}\label{_nova_x_r___comm___protocol_8cpp_aeed4a4713194b7693ca08d9936cba81f}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!BIAS\_LOFF\_CH\_Enable@{BIAS\_LOFF\_CH\_Enable}}
+\index{BIAS\_LOFF\_CH\_Enable@{BIAS\_LOFF\_CH\_Enable}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{BIAS\_LOFF\_CH\_Enable()}{BIAS\_LOFF\_CH\_Enable()}}
+{\footnotesize\ttfamily byte B\+I\+A\+S\+\_\+\+L\+O\+F\+F\+\_\+\+C\+H\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{select\+Num,  }\item[{bool}]{enable\+Flag,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+B\+I\+AS or L\+O\+FF channel Disable/ Enable action. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em select\+Num} & The select number of the input channel to configure \\
+\hline
+\mbox{\texttt{ in}}  & {\em enable\+Flag} & The enable flag \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The register\textquotesingle{}s configuration value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the configuration byte value 
+\end{DoxyReturn}
+
+
+Definition at line 560 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{_nova_x_r___comm___protocol_8cpp_aeed4a4713194b7693ca08d9936cba81f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a8a1019693140e7529258bcbbb0354b78}\label{_nova_x_r___comm___protocol_8cpp_a8a1019693140e7529258bcbbb0354b78}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!checkMultiCharCmdTimer@{checkMultiCharCmdTimer}}
+\index{checkMultiCharCmdTimer@{checkMultiCharCmdTimer}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{checkMultiCharCmdTimer()}{checkMultiCharCmdTimer()}}
+{\footnotesize\ttfamily boolean check\+Multi\+Char\+Cmd\+Timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check for valid on multi char commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{boolean\} true if a multi char commands is active and the timer is running, otherwise False 
+\end{DoxyReturn}
+
+
+Definition at line 405 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a8a1019693140e7529258bcbbb0354b78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a8a1019693140e7529258bcbbb0354b78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a00311c67c0858bb46ee764f977ba1a40}\label{_nova_x_r___comm___protocol_8cpp_a00311c67c0858bb46ee764f977ba1a40}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!checkMultiCharCommand@{checkMultiCharCommand}}
+\index{checkMultiCharCommand@{checkMultiCharCommand}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{checkMultiCharCommand()}{checkMultiCharCommand()}}
+{\footnotesize\ttfamily bool check\+Multi\+Char\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the incoming command is a multichar command. 
+
+\begin{DoxyReturn}{Returns}
+returns True if it is a multichar Command 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a00311c67c0858bb46ee764f977ba1a40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_ab37bd75c8088eea47718990164426d13}\label{_nova_x_r___comm___protocol_8cpp_ab37bd75c8088eea47718990164426d13}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!config\_BIAS\_LOFF@{config\_BIAS\_LOFF}}
+\index{config\_BIAS\_LOFF@{config\_BIAS\_LOFF}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_BIAS\_LOFF()}{config\_BIAS\_LOFF()}}
+{\footnotesize\ttfamily void config\+\_\+\+B\+I\+A\+S\+\_\+\+L\+O\+FF (\begin{DoxyParamCaption}\item[{bool}]{positive,  }\item[{bool}]{bias\+\_\+loff\+\_\+option,  }\item[{bool}]{enable\+Flag,  }\item[{uint8\+\_\+t}]{Channel }\end{DoxyParamCaption})}
+
+
+
+Config B\+I\+AS or L\+O\+FF per channel. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em positive} & The positive channel \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+loff\+\_\+option} & The bias lead-\/off enable \textquotesingle{}1\textquotesingle{} disable \textquotesingle{}0\textquotesingle{} option \\
+\hline
+\mbox{\texttt{ in}}  & {\em enable\+Flag} & The enable flag \\
+\hline
+\mbox{\texttt{ in}}  & {\em Channel} & The channel to set B\+I\+AS or L\+O\+FF \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 532 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_ab37bd75c8088eea47718990164426d13_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a55f9a76f1e0330b60da0457d3cca0e6c}\label{_nova_x_r___comm___protocol_8cpp_a55f9a76f1e0330b60da0457d3cca0e6c}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!endMultiCharCmdTimer@{endMultiCharCmdTimer}}
+\index{endMultiCharCmdTimer@{endMultiCharCmdTimer}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{endMultiCharCmdTimer()}{endMultiCharCmdTimer()}}
+{\footnotesize\ttfamily void end\+Multi\+Char\+Cmd\+Timer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+End the timer on multi char commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 430 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a55f9a76f1e0330b60da0457d3cca0e6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a2e703b1b0c861e9e1e1723b2be7672b0}\label{_nova_x_r___comm___protocol_8cpp_a2e703b1b0c861e9e1e1723b2be7672b0}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!get\_sisterADS\_Input@{get\_sisterADS\_Input}}
+\index{get\_sisterADS\_Input@{get\_sisterADS\_Input}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_sisterADS\_Input()}{get\_sisterADS\_Input()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+sister\+A\+D\+S\+\_\+\+Input (\begin{DoxyParamCaption}\item[{char}]{input\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Translate the Incoming Channel Command to A\+DS input ID for Sisterboard. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input\+\_\+code} & The input command that corresponds to the input channel of the sister board\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the corresponding A\+D\+S1299 input channel 
+\end{DoxyReturn}
+
+
+Definition at line 590 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a2e703b1b0c861e9e1e1723b2be7672b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a7d8cfc3480da6dcf2038ff365b0411a8}\label{_nova_x_r___comm___protocol_8cpp_a7d8cfc3480da6dcf2038ff365b0411a8}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!getMultiCharCommand@{getMultiCharCommand}}
+\index{getMultiCharCommand@{getMultiCharCommand}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{getMultiCharCommand()}{getMultiCharCommand()}}
+{\footnotesize\ttfamily char get\+Multi\+Char\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the active multi char command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{char\} multi\+Char\+Command 
+\end{DoxyReturn}
+
+
+Definition at line 442 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a7d8cfc3480da6dcf2038ff365b0411a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a3288fb0114b19b1a0a0860c51efadc4d}\label{_nova_x_r___comm___protocol_8cpp_a3288fb0114b19b1a0a0860c51efadc4d}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!processChar@{processChar}}
+\index{processChar@{processChar}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{processChar()}{processChar()}}
+{\footnotesize\ttfamily boolean process\+Char (\begin{DoxyParamCaption}\item[{char}]{character }\end{DoxyParamCaption})}
+
+
+
+Process incomming command character. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em character} & The given commnad character\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return True if the command takes effect 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a3288fb0114b19b1a0a0860c51efadc4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a3288fb0114b19b1a0a0860c51efadc4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a61c213b429d09cbe8f69c2e724a648d9}\label{_nova_x_r___comm___protocol_8cpp_a61c213b429d09cbe8f69c2e724a648d9}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!processMultiChar@{processMultiChar}}
+\index{processMultiChar@{processMultiChar}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{processMultiChar()}{processMultiChar()}}
+{\footnotesize\ttfamily void process\+Multi\+Char (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Process a Multi-\/\+Char incoming Command. 
+
+
+
+Definition at line 467 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a61c213b429d09cbe8f69c2e724a648d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_nova_x_r___comm___protocol_8cpp_a61c213b429d09cbe8f69c2e724a648d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a54a705c5160f9d76cc4cf34be9f433a2}\label{_nova_x_r___comm___protocol_8cpp_a54a705c5160f9d76cc4cf34be9f433a2}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!ADS\_sister\_input\_ID@{ADS\_sister\_input\_ID}}
+\index{ADS\_sister\_input\_ID@{ADS\_sister\_input\_ID}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_sister\_input\_ID}{ADS\_sister\_input\_ID}}
+{\footnotesize\ttfamily byte A\+D\+S\+\_\+sister\+\_\+input\+\_\+\+ID\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ab1d17f51ce3ff60db690b46f20aff711}{OPENBCI\_CHANNEL\_ON\_9}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a7b1acfa2099197819e3d99d5c8bb93b6}{OPENBCI\_CHANNEL\_ON\_10}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac03dcb3105f39001f71e041ce5f9a93d}{OPENBCI\_CHANNEL\_ON\_11}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a4099b62974f17ee413e6b8819a946d75}{OPENBCI\_CHANNEL\_ON\_12}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a9068199f8edbd6451e9015baba7ceda1}{OPENBCI\_CHANNEL\_ON\_13}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_ac9ed71583166a586fbc8ee151817124d}{OPENBCI\_CHANNEL\_ON\_14}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a01f9511792af61cd83576338987a8e2a}{OPENBCI\_CHANNEL\_ON\_15}},}
+\DoxyCodeLine{     \mbox{\hyperlink{_nova_x_r___comm___protocol___definitions_8h_a6e0eed865aeec74610ebc6ea5920b799}{OPENBCI\_CHANNEL\_ON\_16}}}
+\DoxyCodeLine{   \}}
+
+\end{DoxyCode}
+
+
+A\+D\+S1299 on Nova\+XR Sister Board input channels command representations. 
+
+
+
+Definition at line 61 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a10579a803fe6ea1bcce2010adbcd2548}\label{_nova_x_r___comm___protocol_8cpp_a10579a803fe6ea1bcce2010adbcd2548}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!ADS\_Test\_Signals@{ADS\_Test\_Signals}}
+\index{ADS\_Test\_Signals@{ADS\_Test\_Signals}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_Test\_Signals}{ADS\_Test\_Signals}}
+{\footnotesize\ttfamily byte A\+D\+S\+\_\+\+Test\+\_\+\+Signals\mbox{[}6\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_a73acc481619d255e7652ccfa148f50a1}{ADSTESTSIG\_AMP\_1X}},      }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_a512bb26913d49e4d6fc2c7f271b0964d}{ADSTESTSIG\_AMP\_2X}},       }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_a6825c7210e0be635b9f9db381133900b}{ADSTESTSIG\_PULSE\_SLOW}},    }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_adfb3a042d1cb163c324f7c2422a81bd0}{ADSTESTSIG\_PULSE\_FAST}},    }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_abbd58fa66fd5f8ccb4310e4f59afd3d9}{ADSTESTSIG\_DCSIG}},         }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_a7141f22cf9ee75a5a97d6230621ce273}{ADSTESTSIG\_NOCHANGE}}    }
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}
+
+
+A\+D\+S1299 Test Signals Options. 
+
+
+
+Definition at line 76 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a8d7462c4580bc652aeb745d36b6a02e5}\label{_nova_x_r___comm___protocol_8cpp_a8d7462c4580bc652aeb745d36b6a02e5}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!BIAS\_Type@{BIAS\_Type}}
+\index{BIAS\_Type@{BIAS\_Type}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{BIAS\_Type}{BIAS\_Type}}
+{\footnotesize\ttfamily byte B\+I\+A\+S\+\_\+\+Type\mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_aec250a8658e71c48c7e72068f68b9b51}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+O\+FF}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a32fc91b5777fb207449b699f4341c4f5}{P\+D\+\_\+\+R\+E\+F\+B\+U\+F\+\_\+\+ON}}\}}
+
+
+
+Definition at line 56 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a8e2fa8d8d63a6ae87af1159c64443159}\label{_nova_x_r___comm___protocol_8cpp_a8e2fa8d8d63a6ae87af1159c64443159}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!Gain@{Gain}}
+\index{Gain@{Gain}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{Gain}{Gain}}
+{\footnotesize\ttfamily byte Gain\mbox{[}7\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a90434647d646bb26523c4c011adbe9d3}{ADS\_GAIN01}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a9c08639e5c0ef9882fc8510754396efc}{ADS\_GAIN02}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a239d9580d404da48fc22e471ec00bb29}{ADS\_GAIN04}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a9545f6eda49aa7cc2ca4e770a0db5e24}{ADS\_GAIN06}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a234dd100d017d7d39304ceef768a7d56}{ADS\_GAIN08}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_af51364bd52278c2ed4ac4a59a6a553dc}{ADS\_GAIN12}},  }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a9718ed648c7228fb84a752c7b39514d8}{ADS\_GAIN24}}   }
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+A\+D\+S1299 Gain Options. 
+
+
+
+Definition at line 27 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a861dac15eeebb5a879258004741ced34}\label{_nova_x_r___comm___protocol_8cpp_a861dac15eeebb5a879258004741ced34}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!Input\_Type@{Input\_Type}}
+\index{Input\_Type@{Input\_Type}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{Input\_Type}{Input\_Type}}
+{\footnotesize\ttfamily byte Input\+\_\+\+Type\mbox{[}8\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a3a8d00c3566eec1312bc5adbc89bd41d}{CH\_NORMAL\_ELECTRODE}},     }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a6835a7c894e9ae3b7f9cc0e927b5b582}{CH\_INPUT\_SHORTED}},        }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a4758baeb4d64dd3b63364b308eafb740}{CH\_BIAS\_MEASUREMENT}},     }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a351fd5c6f29fde0a22d9c03e9d3930f3}{CH\_MVDD\_SUPPLY}},          }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_aa9f9e128847808a22fce880e2c3e8deb}{CH\_TEMPERATURE\_SENSOR}},   }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_af4e213220b2090363db13dd3f0dd3ac8}{CH\_TEST\_SIGNAL}},          }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a8a2afbeddd73ec78640db075bc5d9ff7}{CH\_BIAS\_DRIVE\_P}},       }
+\DoxyCodeLine{      \mbox{\hyperlink{_a_d_s1299__lib_8h_a218d3aeddd809f41b36cd1c606d0da04}{CH\_BIAS\_DRIVE\_N}}      }
+\DoxyCodeLine{   \}}
+
+\end{DoxyCode}
+
+
+A\+D\+S1299 Input Type Options. 
+
+
+
+Definition at line 41 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a6191aa23cc7d6b890ed79942ab9db77c}\label{_nova_x_r___comm___protocol_8cpp_a6191aa23cc7d6b890ed79942ab9db77c}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!isMultiCharCmd@{isMultiCharCmd}}
+\index{isMultiCharCmd@{isMultiCharCmd}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{isMultiCharCmd}{isMultiCharCmd}}
+{\footnotesize\ttfamily boolean is\+Multi\+Char\+Cmd}
+
+
+
+Definition at line 19 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a981a416866eb58fb18a8943c4c7a781a}\label{_nova_x_r___comm___protocol_8cpp_a981a416866eb58fb18a8943c4c7a781a}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!LEAD\_OFF\_FREQ@{LEAD\_OFF\_FREQ}}
+\index{LEAD\_OFF\_FREQ@{LEAD\_OFF\_FREQ}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{LEAD\_OFF\_FREQ}{LEAD\_OFF\_FREQ}}
+{\footnotesize\ttfamily byte L\+E\+A\+D\+\_\+\+O\+F\+F\+\_\+\+F\+R\+EQ\mbox{[}4\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\{}
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_ad7df75a5d4ad6b65e5b56bb0fd7cd81e}{LOFF\_FREQ\_DC}},       }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_aecc7fd6b62148228d2657531feb87a2a}{LOFF\_FREQ\_7p8HZ}},     }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_a39701cbaad5955197512c40d8bcc9da2}{LOFF\_FREQ\_31p2HZ}},    }
+\DoxyCodeLine{    \mbox{\hyperlink{_a_d_s1299__lib_8h_acd0137898658760009f19c444fd2f59e}{LOFF\_FREQ\_FS\_4}}    }
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+
+
+A\+D\+S1299 L\+E\+A\+D\+\_\+\+O\+FF Frequency Options. 
+
+
+
+Definition at line 95 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_af494725b7e3657a1f1dad0ca192fea6b}\label{_nova_x_r___comm___protocol_8cpp_af494725b7e3657a1f1dad0ca192fea6b}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!multiCharCmdTimeout@{multiCharCmdTimeout}}
+\index{multiCharCmdTimeout@{multiCharCmdTimeout}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{multiCharCmdTimeout}{multiCharCmdTimeout}}
+{\footnotesize\ttfamily unsigned long multi\+Char\+Cmd\+Timeout}
+
+
+
+Definition at line 21 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a07af722b88ee28b87b83df8bd47dcc47}\label{_nova_x_r___comm___protocol_8cpp_a07af722b88ee28b87b83df8bd47dcc47}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!multiCharCommand@{multiCharCommand}}
+\index{multiCharCommand@{multiCharCommand}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{multiCharCommand}{multiCharCommand}}
+{\footnotesize\ttfamily char multi\+Char\+Command}
+
+
+
+Definition at line 20 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_a6d70c605fc4fd137ac73b5df9998df23}\label{_nova_x_r___comm___protocol_8cpp_a6d70c605fc4fd137ac73b5df9998df23}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!SRB1\_Type@{SRB1\_Type}}
+\index{SRB1\_Type@{SRB1\_Type}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{SRB1\_Type}{SRB1\_Type}}
+{\footnotesize\ttfamily byte S\+R\+B1\+\_\+\+Type\mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_a35f02132db99d5838144a8c734b21585}{S\+R\+B1\+\_\+\+O\+P\+EN}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a6c6155f9cb62bae84ff7e8f61b44d869}{S\+R\+B1\+\_\+\+C\+L\+OS}}\}}
+
+
+
+Definition at line 55 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+
+\mbox{\Hypertarget{_nova_x_r___comm___protocol_8cpp_ac8cbf359dc2d46e284d5f3701d4c42d2}\label{_nova_x_r___comm___protocol_8cpp_ac8cbf359dc2d46e284d5f3701d4c42d2}} 
+\index{NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}!SRB2\_Type@{SRB2\_Type}}
+\index{SRB2\_Type@{SRB2\_Type}!NovaXR\_Comm\_Protocol.cpp@{NovaXR\_Comm\_Protocol.cpp}}
+\doxysubsubsection{\texorpdfstring{SRB2\_Type}{SRB2\_Type}}
+{\footnotesize\ttfamily byte S\+R\+B2\+\_\+\+Type\mbox{[}2\mbox{]} =\{\mbox{\hyperlink{_a_d_s1299__lib_8h_aec32fc72efe887828fefa43549fa8fd7}{C\+H\+\_\+\+S\+R\+B2\+\_\+\+D\+I\+S\+C\+O\+N\+N\+E\+C\+T\+ED}}, \mbox{\hyperlink{_a_d_s1299__lib_8h_a6b64862ec3b17aaa5731037fdfb48d9f}{C\+H\+\_\+\+S\+R\+B2\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}}\}}
+
+
+
+Definition at line 54 of file Nova\+X\+R\+\_\+\+Comm\+\_\+\+Protocol.\+cpp.
+

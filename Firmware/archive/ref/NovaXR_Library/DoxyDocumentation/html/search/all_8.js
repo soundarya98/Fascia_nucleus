@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['i_282',['i',['../_h_t_m_l___server_8cpp.html#acb559820d9ca11295b4500f179ef6392',1,'HTML_Server.cpp']]],
+  ['i2c_5fbuffer_5flength_283',['I2C_BUFFER_LENGTH',['../_m_a_x30105_8h.html#aab040ced3ff06bdd71655d55a5f8db14',1,'MAX30105.h']]],
+  ['i2c_5fspeed_5ffast_284',['I2C_SPEED_FAST',['../_m_a_x30105_8h.html#aef9d097ed2b58676498a33f3cf76f38d',1,'MAX30105.h']]],
+  ['i2c_5fspeed_5fstandard_285',['I2C_SPEED_STANDARD',['../_m_a_x30105_8h.html#a5ca8c5fbb2caa99ab0b7007ce2c11633',1,'MAX30105.h']]],
+  ['i2c_5fsuper_5ffast_286',['I2C_SUPER_FAST',['../_m_a_x30105_8h.html#a389fa0c3fdbed513c010d94181965bf1',1,'MAX30105.h']]],
+  ['id_5freg_287',['ID_REG',['../_a_d_s1299__lib_8h.html#a95c754a9fe808331240df62b32f782d5',1,'ADS1299_lib.h']]],
+  ['inprogress_5findication_288',['inProgress_Indication',['../_l_e_d___indication_8cpp.html#a003a4e557400f918e793628dd4e22b31',1,'inProgress_Indication(void):&#160;LED_Indication.cpp'],['../_l_e_d___indication_8h.html#a003a4e557400f918e793628dd4e22b31',1,'inProgress_Indication(void):&#160;LED_Indication.cpp']]],
+  ['input_5ftype_289',['Input_Type',['../_nova_x_r___comm___protocol_8cpp.html#a861dac15eeebb5a879258004741ced34',1,'NovaXR_Comm_Protocol.cpp']]],
+  ['invalid_5fcmd_5findication_290',['Invalid_CMD_Indication',['../_l_e_d___indication_8cpp.html#a6100c66f578bba2b8672937f7debb289',1,'Invalid_CMD_Indication(void):&#160;LED_Indication.cpp'],['../_l_e_d___indication_8h.html#a6100c66f578bba2b8672937f7debb289',1,'Invalid_CMD_Indication(void):&#160;LED_Indication.cpp']]],
+  ['ir_5fac_5fmax_291',['IR_AC_Max',['../heart_rate_8cpp.html#aadfffc9bb91c5f2212e1fe37fe176e31',1,'heartRate.cpp']]],
+  ['ir_5fac_5fmin_292',['IR_AC_Min',['../heart_rate_8cpp.html#ac82d44e5573ead57b41d8e6925c56efb',1,'heartRate.cpp']]],
+  ['ir_5fac_5fsignal_5fcurrent_293',['IR_AC_Signal_Current',['../heart_rate_8cpp.html#a5d860360023be3563f5f3ca35b67dbd6',1,'heartRate.cpp']]],
+  ['ir_5fac_5fsignal_5fmax_294',['IR_AC_Signal_max',['../heart_rate_8cpp.html#a1907ab3ae36a69998242237553c97c64',1,'heartRate.cpp']]],
+  ['ir_5fac_5fsignal_5fmin_295',['IR_AC_Signal_min',['../heart_rate_8cpp.html#a029d86d9231d19e3575c594da4b8f3a6',1,'heartRate.cpp']]],
+  ['ir_5fac_5fsignal_5fprevious_296',['IR_AC_Signal_Previous',['../heart_rate_8cpp.html#af155356f274277a989217647a74de491',1,'heartRate.cpp']]],
+  ['ir_5faverage_5festimated_297',['IR_Average_Estimated',['../heart_rate_8cpp.html#aac37ff5ca7f870dbbe1153bb79a9b10b',1,'heartRate.cpp']]],
+  ['ir_5favg_5freg_298',['ir_avg_reg',['../heart_rate_8cpp.html#a498ce9e787948fe7526ad99d76e5b76a',1,'heartRate.cpp']]],
+  ['ismulticharcmd_299',['isMultiCharCmd',['../_nova_x_r___comm___protocol_8cpp.html#a6191aa23cc7d6b890ed79942ab9db77c',1,'NovaXR_Comm_Protocol.cpp']]]
+];

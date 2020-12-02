@@ -1,0 +1,5 @@
+<map id="getBattery_ChargeLevel" name="getBattery_ChargeLevel">
+<area shape="rect" id="node1" title="Get the percentile Battery Charge Level." alt="" coords="5,31,170,56"/>
+<area shape="rect" id="node2" href="$_n_x_r___a_u_x___sensors_8cpp.html#a7bca354bf3b9118ef558c900e7f137d2" title="Calculates the sensory output regarding the reference voltage we set." alt="" coords="227,5,376,31"/>
+<area shape="rect" id="node3" href="$_n_x_r___a_u_x___sensors_8cpp.html#a26456581ec4bae87e59ef764e3d56322" title="Gets the analog sense level with averaging." alt="" coords="218,55,384,80"/>
+</map>

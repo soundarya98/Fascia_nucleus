@@ -1,0 +1,535 @@
+\hypertarget{_data___handler_8cpp}{}\doxysection{src/\+Data\+\_\+\+Handler.cpp File Reference}
+\label{_data___handler_8cpp}\index{src/Data\_Handler.cpp@{src/Data\_Handler.cpp}}
+{\ttfamily \#include \char`\"{}Data\+\_\+\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+X\+R\+\_\+\+Peripherals.\+h\char`\"{}}\newline
+Include dependency graph for Data\+\_\+\+Handler.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_data___handler_8cpp_ad950508156f588af2d873079e1eb5971}{C\+E\+L\+C\+I\+O\+US}}~1
+\item 
+\#define \mbox{\hyperlink{_data___handler_8cpp_a9e49c6fb1f20a05dbf07a6742f9bb8c0}{F\+A\+HR}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_data___handler_8cpp_aba8dcefea8a2e070ef9dac4aef05d581}{get\+R\+A\+W\+\_\+\+A\+D\+Sdata}} (\mbox{\hyperlink{struct_a_d_s___data}{A\+D\+S\+\_\+\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Stores the A\+D\+S1299 raw data in the instace of the A\+D\+C\+\_\+data structure. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_data___handler_8cpp_ae8bbead6cea3c61dda2c0f70af7aaa96}{put\+Time\+Stamp}} (void)
+\begin{DoxyCompactList}\small\item\em Create a local timestamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_a464fae4171ae3df467e2afa2f08250e3}{get\+R\+A\+W\+\_\+\+A\+U\+Xdata}} (\mbox{\hyperlink{struct_a_u_x___data}{A\+U\+X\+\_\+\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Gets Auxilary Raw Data data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_a644418a52957d98920680f65cbf941da}{get\+R\+A\+W\+\_\+\+B\+I\+Odata}} (\mbox{\hyperlink{struct_b_i_o___data}{B\+I\+O\+\_\+\+Data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{_data___handler_8cpp_a05ac889f44934d1195f3977ae5e04e37}{get\+Updated\+Sensory\+Data}} (\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Updates the local \mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} structure with updated sensory data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_aeb83ea68553ca96235d0c6db5123374b}{fill\+\_\+out\+Buffer}} (\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$payload, uint8\+\_\+t pkg\+ID, uint8\+\_\+t buff\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Fills a data pacekt of a single output buffer with sensory data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_ac6650a21fe94e744d42598232968497f}{fill\+\_\+\+Switch\+Buffer}} (\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$payload, uint8\+\_\+t pkg\+ID, uint8\+\_\+t entry\+\_\+id, uint8\+\_\+t sw\+Buff\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Fills a data pacekt of a switch buffer with sensory data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_a137a546a4c0d77bbae2ca50248e8505a}{assemble\+\_\+out\+Buffer}} (uint8\+\_\+t data\+Pkt\+\_\+\+ID)
+\begin{DoxyCompactList}\small\item\em Assemble Output Buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_ab758a8db2d255e8ffbe60e5e945047af}{assemble\+\_\+sw\+Buffer}} (uint8\+\_\+t data\+Pkt\+\_\+\+ID, uint8\+\_\+t sw\+Buff\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Assemble a full Switch Output Buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_data___handler_8cpp_acacd93e8e4bb6eb11ae1b8c2abcb6a52}{reset\+\_\+sw\+Buffers}} (void)
+\begin{DoxyCompactList}\small\item\em Reset both switch buffers state. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_data___handler_8cpp_a320bda42e2fda1ee208a589465a9125e}{get\+Empty\+\_\+sw\+Buffer\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the ID of one available empty buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_data___handler_8cpp_ad7ead52873c88852222106c5610d9972}{get\+Full\+\_\+sw\+Buffer\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the ID of one available full switch buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_data___handler_8cpp_a4eda3b58dc6c93a5a280526ef87d2155}{mark\+Full\+\_\+sw\+Buffer}} (uint8\+\_\+t sw\+Buff\+\_\+\+ID)
+\begin{DoxyCompactList}\small\item\em Mark a Switch Buffer as Full. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_data___handler_8cpp_aa8d33b42622036a60f0b17e13668090b}{mark\+Empty\+\_\+sw\+Buffer}} (uint8\+\_\+t sw\+Buff\+\_\+\+ID)
+\begin{DoxyCompactList}\small\item\em Mark a Switch Buffer as Empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} \mbox{\hyperlink{_data___handler_8cpp_aaeb3d2bf8189e51803a021b781e323d5}{A\+D\+C\+\_\+data}}
+\item 
+\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} \mbox{\hyperlink{_data___handler_8cpp_a078cfa6eccd26ccc3e331e9b8662f0f2}{SenseD}}
+\item 
+\mbox{\hyperlink{struct_data_packet}{Data\+Packet}} \mbox{\hyperlink{_data___handler_8cpp_a208ea148dd95edd60ed16a184d04ef9d}{out\+Buffer}} \mbox{[}\mbox{\hyperlink{_data___handler_8h_a5c7d4797fe227690b70b6f284043cc79}{U\+D\+P\+\_\+\+T\+C\+P\+\_\+\+P\+K\+T\+\_\+\+S\+I\+ZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em End Pragma Here. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structswitch_out_buffer}{switch\+Out\+Buffer}} \mbox{\hyperlink{_data___handler_8cpp_aeb9d06ec7ca3360bb23dee62dcd7ee2d}{sw\+Out\+Buffer}} \mbox{[}\mbox{\hyperlink{_data___handler_8h_a73fa565c141cafc198f9a077f9ee38e6}{B\+U\+F\+F\+P\+O\+O\+L\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_data___handler_8cpp_ad950508156f588af2d873079e1eb5971}\label{_data___handler_8cpp_ad950508156f588af2d873079e1eb5971}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!CELCIOUS@{CELCIOUS}}
+\index{CELCIOUS@{CELCIOUS}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{CELCIOUS}{CELCIOUS}}
+{\footnotesize\ttfamily \#define C\+E\+L\+C\+I\+O\+US~1}
+
+\mbox{\Hypertarget{_data___handler_8cpp_a9e49c6fb1f20a05dbf07a6742f9bb8c0}\label{_data___handler_8cpp_a9e49c6fb1f20a05dbf07a6742f9bb8c0}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!FAHR@{FAHR}}
+\index{FAHR@{FAHR}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{FAHR}{FAHR}}
+{\footnotesize\ttfamily \#define F\+A\+HR~0}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_data___handler_8cpp_a137a546a4c0d77bbae2ca50248e8505a}\label{_data___handler_8cpp_a137a546a4c0d77bbae2ca50248e8505a}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!assemble\_outBuffer@{assemble\_outBuffer}}
+\index{assemble\_outBuffer@{assemble\_outBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{assemble\_outBuffer()}{assemble\_outBuffer()}}
+{\footnotesize\ttfamily void assemble\+\_\+out\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\+Pkt\+\_\+\+ID }\end{DoxyParamCaption})}
+
+
+
+Assemble Output Buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data\+Pkt\+\_\+\+ID} & The data-\/packet id \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 207 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a137a546a4c0d77bbae2ca50248e8505a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a137a546a4c0d77bbae2ca50248e8505a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_ab758a8db2d255e8ffbe60e5e945047af}\label{_data___handler_8cpp_ab758a8db2d255e8ffbe60e5e945047af}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!assemble\_swBuffer@{assemble\_swBuffer}}
+\index{assemble\_swBuffer@{assemble\_swBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{assemble\_swBuffer()}{assemble\_swBuffer()}}
+{\footnotesize\ttfamily void assemble\+\_\+sw\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data\+Pkt\+\_\+\+ID,  }\item[{uint8\+\_\+t}]{sw\+Buff\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Assemble a full Switch Output Buffer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data\+Pkt\+\_\+\+ID} & The data packet id \\
+\hline
+\mbox{\texttt{ in}}  & {\em sw\+Buff\+\_\+id} & The software buffer identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 222 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_ab758a8db2d255e8ffbe60e5e945047af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_ab758a8db2d255e8ffbe60e5e945047af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_aeb83ea68553ca96235d0c6db5123374b}\label{_data___handler_8cpp_aeb83ea68553ca96235d0c6db5123374b}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!fill\_outBuffer@{fill\_outBuffer}}
+\index{fill\_outBuffer@{fill\_outBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{fill\_outBuffer()}{fill\_outBuffer()}}
+{\footnotesize\ttfamily void fill\+\_\+out\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$}]{payload,  }\item[{uint8\+\_\+t}]{pkg\+ID,  }\item[{uint8\+\_\+t}]{buff\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Fills a data pacekt of a single output buffer with sensory data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em payload} & The sensory data -\/ payload \\
+\hline
+\mbox{\texttt{ in}}  & {\em pkg\+ID} & The data package id \\
+\hline
+\mbox{\texttt{ in}}  & {\em buff\+\_\+id} & The buffer identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 174 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_data___handler_8cpp_aeb83ea68553ca96235d0c6db5123374b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_aeb83ea68553ca96235d0c6db5123374b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_ac6650a21fe94e744d42598232968497f}\label{_data___handler_8cpp_ac6650a21fe94e744d42598232968497f}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!fill\_SwitchBuffer@{fill\_SwitchBuffer}}
+\index{fill\_SwitchBuffer@{fill\_SwitchBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{fill\_SwitchBuffer()}{fill\_SwitchBuffer()}}
+{\footnotesize\ttfamily void fill\+\_\+\+Switch\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$}]{payload,  }\item[{uint8\+\_\+t}]{pkg\+ID,  }\item[{uint8\+\_\+t}]{entry\+\_\+id,  }\item[{uint8\+\_\+t}]{sw\+Buff\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Fills a data pacekt of a switch buffer with sensory data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em payload} & The sensory data -\/ payload \\
+\hline
+\mbox{\texttt{ in}}  & {\em pkg\+ID} & The data package id \\
+\hline
+\mbox{\texttt{ in}}  & {\em entry\+\_\+id} & The entry identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em sw\+Buff\+\_\+id} & The switch buffer identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 192 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{_data___handler_8cpp_ac6650a21fe94e744d42598232968497f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_ac6650a21fe94e744d42598232968497f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_a320bda42e2fda1ee208a589465a9125e}\label{_data___handler_8cpp_a320bda42e2fda1ee208a589465a9125e}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getEmpty\_swBuffer\_ID@{getEmpty\_swBuffer\_ID}}
+\index{getEmpty\_swBuffer\_ID@{getEmpty\_swBuffer\_ID}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getEmpty\_swBuffer\_ID()}{getEmpty\_swBuffer\_ID()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Empty\+\_\+sw\+Buffer\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the ID of one available empty buffer. 
+
+\begin{DoxyReturn}{Returns}
+The empty switch buffer id. 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a320bda42e2fda1ee208a589465a9125e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_ad7ead52873c88852222106c5610d9972}\label{_data___handler_8cpp_ad7ead52873c88852222106c5610d9972}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getFull\_swBuffer\_ID@{getFull\_swBuffer\_ID}}
+\index{getFull\_swBuffer\_ID@{getFull\_swBuffer\_ID}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getFull\_swBuffer\_ID()}{getFull\_swBuffer\_ID()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Full\+\_\+sw\+Buffer\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the ID of one available full switch buffer. 
+
+\begin{DoxyReturn}{Returns}
+The full switch buffer id. 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_ad7ead52873c88852222106c5610d9972_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_aba8dcefea8a2e070ef9dac4aef05d581}\label{_data___handler_8cpp_aba8dcefea8a2e070ef9dac4aef05d581}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getRAW\_ADSdata@{getRAW\_ADSdata}}
+\index{getRAW\_ADSdata@{getRAW\_ADSdata}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getRAW\_ADSdata()}{getRAW\_ADSdata()}}
+{\footnotesize\ttfamily void get\+R\+A\+W\+\_\+\+A\+D\+Sdata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_d_s___data}{A\+D\+S\+\_\+\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Stores the A\+D\+S1299 raw data in the instace of the A\+D\+C\+\_\+data structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The target instace of the A\+D\+C\+\_\+data structure \\
+\hline
+\end{DoxyParams}
+$<$ -- Get Main Board A\+DS fresh data
+
+$<$ -- single readback
+
+$<$ -- Get Sister Board fresh data
+
+$<$ -- single readback
+
+Definition at line 33 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{_data___handler_8cpp_aba8dcefea8a2e070ef9dac4aef05d581_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_aba8dcefea8a2e070ef9dac4aef05d581_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_a464fae4171ae3df467e2afa2f08250e3}\label{_data___handler_8cpp_a464fae4171ae3df467e2afa2f08250e3}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getRAW\_AUXdata@{getRAW\_AUXdata}}
+\index{getRAW\_AUXdata@{getRAW\_AUXdata}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getRAW\_AUXdata()}{getRAW\_AUXdata()}}
+{\footnotesize\ttfamily void get\+R\+A\+W\+\_\+\+A\+U\+Xdata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_u_x___data}{A\+U\+X\+\_\+\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Gets Auxilary Raw Data data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a464fae4171ae3df467e2afa2f08250e3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_a644418a52957d98920680f65cbf941da}\label{_data___handler_8cpp_a644418a52957d98920680f65cbf941da}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getRAW\_BIOdata@{getRAW\_BIOdata}}
+\index{getRAW\_BIOdata@{getRAW\_BIOdata}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getRAW\_BIOdata()}{getRAW\_BIOdata()}}
+{\footnotesize\ttfamily void get\+R\+A\+W\+\_\+\+B\+I\+Odata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_i_o___data}{B\+I\+O\+\_\+\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 139 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a644418a52957d98920680f65cbf941da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_a05ac889f44934d1195f3977ae5e04e37}\label{_data___handler_8cpp_a05ac889f44934d1195f3977ae5e04e37}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!getUpdatedSensoryData@{getUpdatedSensoryData}}
+\index{getUpdatedSensoryData@{getUpdatedSensoryData}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{getUpdatedSensoryData()}{getUpdatedSensoryData()}}
+{\footnotesize\ttfamily void get\+Updated\+Sensory\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Updates the local \mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} structure with updated sensory data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Instance of the local \mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} structure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a05ac889f44934d1195f3977ae5e04e37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a05ac889f44934d1195f3977ae5e04e37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_aa8d33b42622036a60f0b17e13668090b}\label{_data___handler_8cpp_aa8d33b42622036a60f0b17e13668090b}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!markEmpty\_swBuffer@{markEmpty\_swBuffer}}
+\index{markEmpty\_swBuffer@{markEmpty\_swBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{markEmpty\_swBuffer()}{markEmpty\_swBuffer()}}
+{\footnotesize\ttfamily bool mark\+Empty\+\_\+sw\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sw\+Buff\+\_\+\+ID }\end{DoxyParamCaption})}
+
+
+
+Mark a Switch Buffer as Empty. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sw\+Buff\+\_\+\+ID} & The switch buffer id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+confirm it returns True if buffer was full 
+\end{DoxyReturn}
+
+
+Definition at line 309 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_aa8d33b42622036a60f0b17e13668090b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_a4eda3b58dc6c93a5a280526ef87d2155}\label{_data___handler_8cpp_a4eda3b58dc6c93a5a280526ef87d2155}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!markFull\_swBuffer@{markFull\_swBuffer}}
+\index{markFull\_swBuffer@{markFull\_swBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{markFull\_swBuffer()}{markFull\_swBuffer()}}
+{\footnotesize\ttfamily bool mark\+Full\+\_\+sw\+Buffer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sw\+Buff\+\_\+\+ID }\end{DoxyParamCaption})}
+
+
+
+Mark a Switch Buffer as Full. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sw\+Buff\+\_\+\+ID} & The switch buffer id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+confirm it returns True if buffer was empty 
+\end{DoxyReturn}
+
+
+Definition at line 288 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_a4eda3b58dc6c93a5a280526ef87d2155_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_ae8bbead6cea3c61dda2c0f70af7aaa96}\label{_data___handler_8cpp_ae8bbead6cea3c61dda2c0f70af7aaa96}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!putTimeStamp@{putTimeStamp}}
+\index{putTimeStamp@{putTimeStamp}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{putTimeStamp()}{putTimeStamp()}}
+{\footnotesize\ttfamily double put\+Time\+Stamp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create a local timestamp. 
+
+\begin{DoxyReturn}{Returns}
+timest returns timestamp in microseconds 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_ae8bbead6cea3c61dda2c0f70af7aaa96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_data___handler_8cpp_acacd93e8e4bb6eb11ae1b8c2abcb6a52}\label{_data___handler_8cpp_acacd93e8e4bb6eb11ae1b8c2abcb6a52}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!reset\_swBuffers@{reset\_swBuffers}}
+\index{reset\_swBuffers@{reset\_swBuffers}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{reset\_swBuffers()}{reset\_swBuffers()}}
+{\footnotesize\ttfamily void reset\+\_\+sw\+Buffers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset both switch buffers state. 
+
+
+
+Definition at line 234 of file Data\+\_\+\+Handler.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_data___handler_8cpp_acacd93e8e4bb6eb11ae1b8c2abcb6a52_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_data___handler_8cpp_aaeb3d2bf8189e51803a021b781e323d5}\label{_data___handler_8cpp_aaeb3d2bf8189e51803a021b781e323d5}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!ADC\_data@{ADC\_data}}
+\index{ADC\_data@{ADC\_data}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{ADC\_data}{ADC\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} A\+D\+C\+\_\+data}
+
+
+
+Definition at line 21 of file Data\+\_\+\+Handler.\+cpp.
+
+\mbox{\Hypertarget{_data___handler_8cpp_a208ea148dd95edd60ed16a184d04ef9d}\label{_data___handler_8cpp_a208ea148dd95edd60ed16a184d04ef9d}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!outBuffer@{outBuffer}}
+\index{outBuffer@{outBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{outBuffer}{outBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_data_packet}{Data\+Packet}} out\+Buffer\mbox{[}\mbox{\hyperlink{_data___handler_8h_a5c7d4797fe227690b70b6f284043cc79}{U\+D\+P\+\_\+\+T\+C\+P\+\_\+\+P\+K\+T\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+End Pragma Here. 
+
+
+
+Definition at line 23 of file Data\+\_\+\+Handler.\+cpp.
+
+\mbox{\Hypertarget{_data___handler_8cpp_a078cfa6eccd26ccc3e331e9b8662f0f2}\label{_data___handler_8cpp_a078cfa6eccd26ccc3e331e9b8662f0f2}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!SenseD@{SenseD}}
+\index{SenseD@{SenseD}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{SenseD}{SenseD}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_sensors___data}{Sensors\+\_\+\+Data}} SenseD}
+
+
+
+Definition at line 22 of file Data\+\_\+\+Handler.\+cpp.
+
+\mbox{\Hypertarget{_data___handler_8cpp_aeb9d06ec7ca3360bb23dee62dcd7ee2d}\label{_data___handler_8cpp_aeb9d06ec7ca3360bb23dee62dcd7ee2d}} 
+\index{Data\_Handler.cpp@{Data\_Handler.cpp}!swOutBuffer@{swOutBuffer}}
+\index{swOutBuffer@{swOutBuffer}!Data\_Handler.cpp@{Data\_Handler.cpp}}
+\doxysubsubsection{\texorpdfstring{swOutBuffer}{swOutBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structswitch_out_buffer}{switch\+Out\+Buffer}} sw\+Out\+Buffer\mbox{[}\mbox{\hyperlink{_data___handler_8h_a73fa565c141cafc198f9a077f9ee38e6}{B\+U\+F\+F\+P\+O\+O\+L\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+
+
+Definition at line 24 of file Data\+\_\+\+Handler.\+cpp.
+

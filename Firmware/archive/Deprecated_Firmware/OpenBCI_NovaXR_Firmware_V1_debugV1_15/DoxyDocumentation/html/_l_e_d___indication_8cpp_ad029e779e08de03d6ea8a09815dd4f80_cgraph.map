@@ -1,0 +1,5 @@
+<map id="WiFi_conn_inProgress_Indication" name="WiFi_conn_inProgress_Indication">
+<area shape="rect" id="node1" title="Blink Blue Once as somehting is being in progress." alt="" coords="5,24,161,63"/>
+<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="209,5,326,31"/>
+<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="220,55,314,80"/>
+</map>

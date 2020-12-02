@@ -1,0 +1,6 @@
+<map id="Reset_ADC" name="Reset_ADC">
+<area shape="rect" id="node1" title="Send Reset Command to an active ADS1299." alt="" coords="457,5,549,31"/>
+<area shape="rect" id="node2" href="$_a_d_s1299__lib_8h.html#a6088edd483f7e2e1141823df741b1720" title="Build your ASD1299 Configuration List and Apply it." alt="" coords="289,5,409,31"/>
+<area shape="rect" id="node3" href="$_nova_x_r___library_8h.html#a4d69ff28910f2d26aeb8f8acc3ecf5c7" title="Initialization of the selected NovaXR PCB Revision." alt="" coords="107,5,241,31"/>
+<area shape="rect" id="node4" href="$_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title=" " alt="" coords="5,5,59,31"/>
+</map>

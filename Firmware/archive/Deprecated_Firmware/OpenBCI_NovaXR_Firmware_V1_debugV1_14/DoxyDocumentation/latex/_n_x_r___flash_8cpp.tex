@@ -1,0 +1,494 @@
+\hypertarget{_n_x_r___flash_8cpp}{}\doxysection{N\+X\+R\+\_\+\+Flash.\+cpp File Reference}
+\label{_n_x_r___flash_8cpp}\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+{\ttfamily \#include \char`\"{}Arduino.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+X\+R\+\_\+\+Flash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}N\+X\+R\+\_\+\+Communication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Wi\+Fi\+\_\+\+Management.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Flash\+Storage.\+h$>$}\newline
+Include dependency graph for N\+X\+R\+\_\+\+Flash.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_n_x_r___flash_8cpp_a0c304872d1a3c46591f6560969305049}{Flash\+Storage}} (Flash\+\_\+handler, \mbox{\hyperlink{struct_n_x_r___rom}{N\+X\+R\+\_\+\+Rom}})
+\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_a748b88561c6dcef166c49a6f946af67e}{R\+O\+M\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em E\+E\+P\+R\+OM -\/ Device R\+OM Initialization. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_n_x_r___flash_8cpp_a983d47ca5edc244f46da2449a704b2b1}{count\+\_\+\+S\+S\+I\+Ds\+In\+List}} (void)
+\begin{DoxyCompactList}\small\item\em Counts the number of S\+S\+I\+Ds in the stored wifi list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_n_x_r___flash_8cpp_a8556cc4e746513d805737c04ac56ab9f}{connect\+\_\+last\+Wi\+Fi}} (uint8\+\_\+t last\+\_\+wifi)
+\begin{DoxyCompactList}\small\item\em Connects to the last wifi network listed in the E\+E\+P\+R\+OM M\+E\+M\+O\+RY of the device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_aa70ed6a9c1fd8ac00342f6463b917e66}{erase\+All\+Flash\+Contnent}} (void)
+\begin{DoxyCompactList}\small\item\em Erase all E\+E\+P\+R\+OM Content from the Nova\+XR device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_adc943d403894041eabebd64b785ef041}{erase\+Dev\+\_\+\+Info}} (void)
+\begin{DoxyCompactList}\small\item\em Erase Device information , Initialize all data to Zero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_ac6285f7a8041d90719cbf9d7bd641b76}{erase\+Wi\+Fi\+\_\+\+Info}} (void)
+\begin{DoxyCompactList}\small\item\em Erase all stored Wi\+Fi network credentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_a0141be812ef7dbe793c800b0870d6a9a}{write\+Dev\+\_\+\+Standard\+Info}} (\mbox{\hyperlink{struct_n_x_r___rom}{N\+X\+R\+\_\+\+Rom}} $\ast$flash\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Write the Flash Memory with standard information about the current device. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_n_x_r___flash_8cpp_a69a50329cabb824a93972c519e641341}{last\+Wi\+Fi\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Get the memory position of the last Stored Wi\+Fi network. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_n_x_r___flash_8cpp_abc57b1a7a8b2f84a6c22fe0322f3bb8e}{Wi\+Fi\+\_\+\+I\+D\+\_\+exists}} (int8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Determines if a specific Wi\+Fi id exists in the wifi list. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_n_x_r___flash_8cpp_a16dae47d72164618d227d78b578529a3}{previous\+\_\+\+Wi\+Fi\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Get the previous Wi\+Fi ID counting from the last wifi location in the Wi\+Fi list. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_n_x_r___flash_8cpp_ac449c76691b242a5f0662fd49bca3dc7}{find\+\_\+\+Wi\+Fi\+Space}} (void)
+\begin{DoxyCompactList}\small\item\em Finds empty space position in the Wi\+Fi list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_af54a2030d1bc7756e2165a12ebe82a52}{update\+\_\+\+Device\+Info}} (char $\ast$Dev\+\_\+\+Name, char $\ast$Update\+Time, uint16\+\_\+t fw\+\_\+\+Version, char $\ast$H\+Wrev, char $\ast$Vendor\+\_\+\+Name)
+\begin{DoxyCompactList}\small\item\em Update Nova\+XR Device Information. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_n_x_r___flash_8cpp_a4370c5212a2037ad809c46853c830f98}{update\+\_\+\+Wifi\+Cred}} (char $\ast$wifi\+\_\+ssid, char $\ast$Password)
+\begin{DoxyCompactList}\small\item\em Add a new Wifi in the Credentials List. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_ae4ea4f4d1421d0b630cc89d02946964d}{display\+Saved\+\_\+\+Wi\+Fi\+Credentails}} (void)
+\begin{DoxyCompactList}\small\item\em Print the entire Wi\+Fi list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_n_x_r___flash_8cpp_adce33a37878b541aa7e06baa18389de7}{display\+Hardware\+Info}} (void)
+\begin{DoxyCompactList}\small\item\em Print saved Hardware Information from the Nova\+XR device E\+E\+P\+R\+OM memory. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{_n_x_r___flash_8cpp_ad242d2fcb5a82d2da7a18fd89308d315}{Create\+S\+S\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Creates a Wi\+Fi S\+S\+ID network based on the device serial number. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{_n_x_r___flash_8cpp_a7dd1fbc4b767ffb32fe08c4324fb813d}{Create\+P\+A\+SS}} (void)
+\begin{DoxyCompactList}\small\item\em Creates a Wi\+Fi password based on the device serial number. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_n_x_r___flash_8cpp_a8b236cb930b43226dd6733751197e5ca}{get\+Serial\+Number\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Get Unique S\+M\+A\+D21 Chip ID and Create a Unique Serial Numner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a8556cc4e746513d805737c04ac56ab9f}\label{_n_x_r___flash_8cpp_a8556cc4e746513d805737c04ac56ab9f}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!connect\_lastWiFi@{connect\_lastWiFi}}
+\index{connect\_lastWiFi@{connect\_lastWiFi}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{connect\_lastWiFi()}{connect\_lastWiFi()}}
+{\footnotesize\ttfamily bool connect\+\_\+last\+Wi\+Fi (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{last\+\_\+wifi }\end{DoxyParamCaption})}
+
+
+
+Connects to the last wifi network listed in the E\+E\+P\+R\+OM M\+E\+M\+O\+RY of the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em last\+\_\+wifi} & The last wifi position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if connection is ssuccessful 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a8556cc4e746513d805737c04ac56ab9f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a8556cc4e746513d805737c04ac56ab9f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a983d47ca5edc244f46da2449a704b2b1}\label{_n_x_r___flash_8cpp_a983d47ca5edc244f46da2449a704b2b1}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!count\_SSIDsInList@{count\_SSIDsInList}}
+\index{count\_SSIDsInList@{count\_SSIDsInList}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{count\_SSIDsInList()}{count\_SSIDsInList()}}
+{\footnotesize\ttfamily uint8\+\_\+t count\+\_\+\+S\+S\+I\+Ds\+In\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Counts the number of S\+S\+I\+Ds in the stored wifi list. 
+
+\begin{DoxyReturn}{Returns}
+Number of stored network S\+S\+I\+Ds 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a983d47ca5edc244f46da2449a704b2b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a7dd1fbc4b767ffb32fe08c4324fb813d}\label{_n_x_r___flash_8cpp_a7dd1fbc4b767ffb32fe08c4324fb813d}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!CreatePASS@{CreatePASS}}
+\index{CreatePASS@{CreatePASS}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{CreatePASS()}{CreatePASS()}}
+{\footnotesize\ttfamily char$\ast$ Create\+P\+A\+SS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creates a Wi\+Fi password based on the device serial number. 
+
+\begin{DoxyReturn}{Returns}
+Passwd \{returns a string pointer of the password\} 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a7dd1fbc4b767ffb32fe08c4324fb813d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_ad242d2fcb5a82d2da7a18fd89308d315}\label{_n_x_r___flash_8cpp_ad242d2fcb5a82d2da7a18fd89308d315}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!CreateSSID@{CreateSSID}}
+\index{CreateSSID@{CreateSSID}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{CreateSSID()}{CreateSSID()}}
+{\footnotesize\ttfamily char$\ast$ Create\+S\+S\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creates a Wi\+Fi S\+S\+ID network based on the device serial number. 
+
+\begin{DoxyReturn}{Returns}
+ss\+ID returns a string pointer of the S\+S\+ID name 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_ad242d2fcb5a82d2da7a18fd89308d315_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_adce33a37878b541aa7e06baa18389de7}\label{_n_x_r___flash_8cpp_adce33a37878b541aa7e06baa18389de7}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!displayHardwareInfo@{displayHardwareInfo}}
+\index{displayHardwareInfo@{displayHardwareInfo}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{displayHardwareInfo()}{displayHardwareInfo()}}
+{\footnotesize\ttfamily void display\+Hardware\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Print saved Hardware Information from the Nova\+XR device E\+E\+P\+R\+OM memory. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_adce33a37878b541aa7e06baa18389de7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_ae4ea4f4d1421d0b630cc89d02946964d}\label{_n_x_r___flash_8cpp_ae4ea4f4d1421d0b630cc89d02946964d}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!displaySaved\_WiFiCredentails@{displaySaved\_WiFiCredentails}}
+\index{displaySaved\_WiFiCredentails@{displaySaved\_WiFiCredentails}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{displaySaved\_WiFiCredentails()}{displaySaved\_WiFiCredentails()}}
+{\footnotesize\ttfamily void display\+Saved\+\_\+\+Wi\+Fi\+Credentails (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Print the entire Wi\+Fi list. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_ae4ea4f4d1421d0b630cc89d02946964d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_aa70ed6a9c1fd8ac00342f6463b917e66}\label{_n_x_r___flash_8cpp_aa70ed6a9c1fd8ac00342f6463b917e66}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!eraseAllFlashContnent@{eraseAllFlashContnent}}
+\index{eraseAllFlashContnent@{eraseAllFlashContnent}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{eraseAllFlashContnent()}{eraseAllFlashContnent()}}
+{\footnotesize\ttfamily void erase\+All\+Flash\+Contnent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Erase all E\+E\+P\+R\+OM Content from the Nova\+XR device. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{_n_x_r___flash_8cpp_aa70ed6a9c1fd8ac00342f6463b917e66_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_adc943d403894041eabebd64b785ef041}\label{_n_x_r___flash_8cpp_adc943d403894041eabebd64b785ef041}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!eraseDev\_Info@{eraseDev\_Info}}
+\index{eraseDev\_Info@{eraseDev\_Info}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{eraseDev\_Info()}{eraseDev\_Info()}}
+{\footnotesize\ttfamily void erase\+Dev\+\_\+\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Erase Device information , Initialize all data to Zero. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{_n_x_r___flash_8cpp_adc943d403894041eabebd64b785ef041_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_ac6285f7a8041d90719cbf9d7bd641b76}\label{_n_x_r___flash_8cpp_ac6285f7a8041d90719cbf9d7bd641b76}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!eraseWiFi\_Info@{eraseWiFi\_Info}}
+\index{eraseWiFi\_Info@{eraseWiFi\_Info}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{eraseWiFi\_Info()}{eraseWiFi\_Info()}}
+{\footnotesize\ttfamily void erase\+Wi\+Fi\+\_\+\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Erase all stored Wi\+Fi network credentials. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{_n_x_r___flash_8cpp_ac6285f7a8041d90719cbf9d7bd641b76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_ac449c76691b242a5f0662fd49bca3dc7}\label{_n_x_r___flash_8cpp_ac449c76691b242a5f0662fd49bca3dc7}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!find\_WiFiSpace@{find\_WiFiSpace}}
+\index{find\_WiFiSpace@{find\_WiFiSpace}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{find\_WiFiSpace()}{find\_WiFiSpace()}}
+{\footnotesize\ttfamily uint8\+\_\+t find\+\_\+\+Wi\+Fi\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Finds empty space position in the Wi\+Fi list. 
+
+\begin{DoxyReturn}{Returns}
+new\+\_\+location Find the new Wi\+Fi list location for any use 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{_n_x_r___flash_8cpp_ac449c76691b242a5f0662fd49bca3dc7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_ac449c76691b242a5f0662fd49bca3dc7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a0c304872d1a3c46591f6560969305049}\label{_n_x_r___flash_8cpp_a0c304872d1a3c46591f6560969305049}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!FlashStorage@{FlashStorage}}
+\index{FlashStorage@{FlashStorage}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{FlashStorage()}{FlashStorage()}}
+{\footnotesize\ttfamily Flash\+Storage (\begin{DoxyParamCaption}\item[{Flash\+\_\+handler}]{,  }\item[{\mbox{\hyperlink{struct_n_x_r___rom}{N\+X\+R\+\_\+\+Rom}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a8b236cb930b43226dd6733751197e5ca}\label{_n_x_r___flash_8cpp_a8b236cb930b43226dd6733751197e5ca}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!getSerialNumber\_ID@{getSerialNumber\_ID}}
+\index{getSerialNumber\_ID@{getSerialNumber\_ID}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{getSerialNumber\_ID()}{getSerialNumber\_ID()}}
+{\footnotesize\ttfamily uint32\+\_\+t get\+Serial\+Number\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Unique S\+M\+A\+D21 Chip ID and Create a Unique Serial Numner. 
+
+\begin{DoxyReturn}{Returns}
+Serial\+Number. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a8b236cb930b43226dd6733751197e5ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a69a50329cabb824a93972c519e641341}\label{_n_x_r___flash_8cpp_a69a50329cabb824a93972c519e641341}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!lastWiFi\_ID@{lastWiFi\_ID}}
+\index{lastWiFi\_ID@{lastWiFi\_ID}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{lastWiFi\_ID()}{lastWiFi\_ID()}}
+{\footnotesize\ttfamily int8\+\_\+t last\+Wi\+Fi\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the memory position of the last Stored Wi\+Fi network. 
+
+\begin{DoxyReturn}{Returns}
+last\+Wi\+Fi\+\_\+id The last Wi\+Fi network position that is stored in the wifi list 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a69a50329cabb824a93972c519e641341_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a16dae47d72164618d227d78b578529a3}\label{_n_x_r___flash_8cpp_a16dae47d72164618d227d78b578529a3}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!previous\_WiFi\_ID@{previous\_WiFi\_ID}}
+\index{previous\_WiFi\_ID@{previous\_WiFi\_ID}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{previous\_WiFi\_ID()}{previous\_WiFi\_ID()}}
+{\footnotesize\ttfamily uint8\+\_\+t previous\+\_\+\+Wi\+Fi\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the previous Wi\+Fi ID counting from the last wifi location in the Wi\+Fi list. 
+
+\begin{DoxyReturn}{Returns}
+Wi\+FI id position in the list 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_n_x_r___flash_8cpp_a16dae47d72164618d227d78b578529a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a16dae47d72164618d227d78b578529a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a748b88561c6dcef166c49a6f946af67e}\label{_n_x_r___flash_8cpp_a748b88561c6dcef166c49a6f946af67e}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!ROM\_Init@{ROM\_Init}}
+\index{ROM\_Init@{ROM\_Init}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{ROM\_Init()}{ROM\_Init()}}
+{\footnotesize\ttfamily void R\+O\+M\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+E\+E\+P\+R\+OM -\/ Device R\+OM Initialization. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a748b88561c6dcef166c49a6f946af67e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a748b88561c6dcef166c49a6f946af67e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_af54a2030d1bc7756e2165a12ebe82a52}\label{_n_x_r___flash_8cpp_af54a2030d1bc7756e2165a12ebe82a52}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!update\_DeviceInfo@{update\_DeviceInfo}}
+\index{update\_DeviceInfo@{update\_DeviceInfo}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{update\_DeviceInfo()}{update\_DeviceInfo()}}
+{\footnotesize\ttfamily void update\+\_\+\+Device\+Info (\begin{DoxyParamCaption}\item[{char $\ast$}]{Dev\+\_\+\+Name,  }\item[{char $\ast$}]{Update\+Time,  }\item[{uint16\+\_\+t}]{fw\+\_\+\+Version,  }\item[{char $\ast$}]{H\+Wrev,  }\item[{char $\ast$}]{Vendor\+\_\+\+Name }\end{DoxyParamCaption})}
+
+
+
+Update Nova\+XR Device Information. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em Dev\+\_\+\+Name} & The dev name \\
+\hline
+ & {\em Update\+Time} & The last update time \\
+\hline
+\mbox{\texttt{ in}}  & {\em fw\+\_\+\+Version} & The firmware version \\
+\hline
+ & {\em H\+Wrev} & The hardware revision \\
+\hline
+ & {\em Vendor\+\_\+\+Name} & The vendor name \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{_n_x_r___flash_8cpp_af54a2030d1bc7756e2165a12ebe82a52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_af54a2030d1bc7756e2165a12ebe82a52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a4370c5212a2037ad809c46853c830f98}\label{_n_x_r___flash_8cpp_a4370c5212a2037ad809c46853c830f98}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!update\_WifiCred@{update\_WifiCred}}
+\index{update\_WifiCred@{update\_WifiCred}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{update\_WifiCred()}{update\_WifiCred()}}
+{\footnotesize\ttfamily bool update\+\_\+\+Wifi\+Cred (\begin{DoxyParamCaption}\item[{char $\ast$}]{wifi\+\_\+ssid,  }\item[{char $\ast$}]{Password }\end{DoxyParamCaption})}
+
+
+
+Add a new Wifi in the Credentials List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wifi\+\_\+ssid} & The wifi ssid \\
+\hline
+{\em Password} & The password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag\+Cred returns True if the wifilist is upadted successfuly 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a4370c5212a2037ad809c46853c830f98_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a4370c5212a2037ad809c46853c830f98_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_abc57b1a7a8b2f84a6c22fe0322f3bb8e}\label{_n_x_r___flash_8cpp_abc57b1a7a8b2f84a6c22fe0322f3bb8e}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!WiFi\_ID\_exists@{WiFi\_ID\_exists}}
+\index{WiFi\_ID\_exists@{WiFi\_ID\_exists}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{WiFi\_ID\_exists()}{WiFi\_ID\_exists()}}
+{\footnotesize\ttfamily bool Wi\+Fi\+\_\+\+I\+D\+\_\+exists (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Determines if a specific Wi\+Fi id exists in the wifi list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The identifier of a specific Wi\+Fi position of the list.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if wifi id exists, False otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_abc57b1a7a8b2f84a6c22fe0322f3bb8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_n_x_r___flash_8cpp_a0141be812ef7dbe793c800b0870d6a9a}\label{_n_x_r___flash_8cpp_a0141be812ef7dbe793c800b0870d6a9a}} 
+\index{NXR\_Flash.cpp@{NXR\_Flash.cpp}!writeDev\_StandardInfo@{writeDev\_StandardInfo}}
+\index{writeDev\_StandardInfo@{writeDev\_StandardInfo}!NXR\_Flash.cpp@{NXR\_Flash.cpp}}
+\doxysubsubsection{\texorpdfstring{writeDev\_StandardInfo()}{writeDev\_StandardInfo()}}
+{\footnotesize\ttfamily void write\+Dev\+\_\+\+Standard\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_x_r___rom}{N\+X\+R\+\_\+\+Rom}} $\ast$}]{flash\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Write the Flash Memory with standard information about the current device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flash\+\_\+data} & The flash data structure instance \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a0141be812ef7dbe793c800b0870d6a9a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_n_x_r___flash_8cpp_a0141be812ef7dbe793c800b0870d6a9a_icgraph}
+\end{center}
+\end{figure}

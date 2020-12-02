@@ -1,0 +1,1291 @@
+\hypertarget{_a_d_s1299__lib_8cpp}{}\doxysection{src/\+Peripherals/\+A\+D\+S1299\+\_\+lib.cpp File Reference}
+\label{_a_d_s1299__lib_8cpp}\index{src/Peripherals/ADS1299\_lib.cpp@{src/Peripherals/ADS1299\_lib.cpp}}
+{\ttfamily \#include \char`\"{}Nova\+X\+R\+\_\+\+Library.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+D\+S1299\+\_\+lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wiring\+\_\+private.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$S\+P\+I.\+h$>$}\newline
+Include dependency graph for A\+D\+S1299\+\_\+lib.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ad72dbcf6d0153db1b8d8a58001feed83}{D\+E\+B\+UG}}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a5a7c039615f027ce1f975f625e9b15ac}{P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+M\+I\+SO}}~\mbox{\hyperlink{_nova_x_r___library_8h_a6e91886f0b3aa8fc7b39a1aa269ccfae}{P\+A19}}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a704e2660aedb97382a6503160b27d968}{P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+S\+CK}}~\mbox{\hyperlink{_nova_x_r___library_8h_a90e949b77bfd597d8ec87c4a59e62546}{P\+A17}}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a78530c2d4dd5656190162d062b1fed5e}{P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+M\+O\+SI}}~\mbox{\hyperlink{_nova_x_r___library_8h_aba034f83e4a90db9ecb3c5f5047d3ee6}{P\+A16}}
+\item 
+\#define \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a4e3a7d55ce56060b5b82d54588a2322b}{E\+R\+R\+O\+R\+\_\+\+B\+O\+A\+R\+D\+\_\+\+ID}}~-\/1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ab8e6e66e304cc15a50a3fa5b49075e6e}{Begin\+\_\+\+A\+DS}} (void)
+\begin{DoxyCompactList}\small\item\em Begins Nova\+XR Custom S\+PI Module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ac39a837ad6e83714e21d0d690180d9de}{S\+P\+I\+\_\+pin\+Periphernal\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize S\+PI Pins for S\+E\+R\+C\+OM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_aa1ead4a65c659d08667f72ae75b31b87}{Reset\+\_\+\+A\+DC}} (void)
+\begin{DoxyCompactList}\small\item\em Send Reset Command to an active A\+D\+S1299. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a5ce329181e609c3d23a4ebd8c754b810}{select\+\_\+\+A\+DC}} (uint8\+\_\+t adc\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Select A\+D\+S1299 to Control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ad31ec5a9add8086f5dd739a00e0c6fc0}{enable\+\_\+\+A\+D\+S1299}} (uint8\+\_\+t adc\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Enable A\+D\+S1299 Hardware. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_abfe762421ab527e99e51c95f8390f250}{get\+Current\+\_\+\+A\+D\+S\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the current A\+D\+S1299 id. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_aef554e55dae3a87df1455de4cd22c558}{read\+Register\+Settings}} (byte Reg\+Addr)
+\begin{DoxyCompactList}\small\item\em Read Settings of a single register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a4529fc9cc6740d80d18a98b38693d51b}{display\+\_\+\+Registers\+\_\+settings}} (void)
+\begin{DoxyCompactList}\small\item\em Display Current Registers Settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a9ce4752411a8916cf7b81547a8f11f2f}{config\+\_\+\+A\+D\+S\+\_\+\+Register}} (byte R\+\_\+\+Address, byte data)
+\begin{DoxyCompactList}\small\item\em Configure an A\+D\+S1299 Register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ae319817637388acc86b1b423929d0fd5}{config\+\_\+\+All\+\_\+\+A\+D\+S\+\_\+\+Inputs}} (byte data)
+\begin{DoxyCompactList}\small\item\em Configure all A\+DC Inputs at once. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_a_d_s1299__lib_8cpp_aab3a44596b75d6f5f627fc139aba2ee7}{A\+D\+S\+\_\+connected}} (void)
+\begin{DoxyCompactList}\small\item\em Check id A\+D\+S1299 device is present on the board. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ad6613b321a93ef801bd7eb4abcb3ed4f}{config\+\_\+\+A\+D\+S\+\_\+\+Input}} (uint8\+\_\+t channel, byte data)
+\begin{DoxyCompactList}\small\item\em Configure a single A\+D\+S1299 Input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a7d269a2712c96078de256b92974562fc}{start\+A\+D\+C\+\_\+\+Continuous\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Start A\+D\+S1299 in Continuous Conversion Mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a5961c91233a0e9b7f3be962171f49f1b}{get\+A\+D\+C1\+\_\+\+Data\+\_\+\+CM}} (void)
+\begin{DoxyCompactList}\small\item\em For A\+D\+C1 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_aa36d42edd4c7066927bb0593a697f032}{get\+\_\+\+A\+D\+C2\+\_\+\+Data\+\_\+\+CM}} (void)
+\begin{DoxyCompactList}\small\item\em For A\+D\+C2 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a83ac68b6fa7d053091231026fe530db6}{stop\+\_\+\+A\+D\+C\+\_\+interrupt}} (void)
+\begin{DoxyCompactList}\small\item\em Stop Being interrupted by A\+D\+S1299. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a432cb9e3fee655b9ff0d0ed16dae77d1}{disable\+\_\+\+Contninuous\+Conversion}} (void)
+\begin{DoxyCompactList}\small\item\em Disables the contninuous conversion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a46e58fd33706f92cbf0a8376e5f4aefe}{A\+D\+S\+\_\+\+Stop\+\_\+\+Conversion}} (void)
+\begin{DoxyCompactList}\small\item\em Stop A\+DC Conversion Operation. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a74b4e999aa40a98affee9fbbcef6e796}{stop\+\_\+and\+\_\+config\+Input}} (uint8\+\_\+t board\+\_\+id, uint8\+\_\+t channel, byte data)
+\begin{DoxyCompactList}\small\item\em Stops and Sets configurations for selected input channel and board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ab09c1af4e63a218ddcd4c6e74dbd2c1d}{get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+SS}} (\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$adc)
+\begin{DoxyCompactList}\small\item\em Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ac7941e7b7353d3545f115e3ba3c02e69}{get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+S\+S\+Alt}} (\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$adc)
+\begin{DoxyCompactList}\small\item\em Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a810241b5eff0b37656f6872e50017b14}{do\+\_\+\+W\+R\+EG}} (byte Register, byte Data)
+\begin{DoxyCompactList}\small\item\em Performs a W\+R\+EG A\+D\+S1299 command -\/ Writes a Register . \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a02e2ce7236806ce2d2850aa9a8af6881}{do\+\_\+\+R\+R\+EG}} (byte register\+\_\+\+Address, byte returned\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Performs a R\+R\+EG A\+D\+S1299 command -\/ Reads a Register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a5f211d0f1d5eb2bbdb6dd04c2f994428}{print\+\_\+board\+ID}} (uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em Prints a board id. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a70b12f2e1f4880d9b9c34c20ebf26976}{apply\+\_\+bit\+\_\+\+Config}} (uint8\+\_\+t index, byte target\+\_\+\+Reg)
+\begin{DoxyCompactList}\small\item\em Apply Configuration to an A\+D\+S1299 Register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a52e23b40605aa2ba96ccb88476f78c0f}{set\+Bit1}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Sets to 1 a bit in a given 8bit register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a43e1a071fde96ba35733cd7af6fce90f}{set\+Bit0}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Set to 0 a bit in a given register. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a45a70ec53b50fced02d723027ebeda7b}{flip\+Bit}} (uint8\+\_\+t index, byte Register)
+\begin{DoxyCompactList}\small\item\em Flips a bit state in a given register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a6088edd483f7e2e1141823df741b1720}{A\+D\+S\+\_\+\+Init\+\_\+\+Config}} (uint8\+\_\+t ads\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Build your A\+S\+D1299 Configuration List and Apply it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ab46095741f39b0f08777140889ada196}{A\+D\+S1299\+\_\+\+Interrupt\+\_\+\+Example}} (uint8\+\_\+t ads\+\_\+id, long duration)
+\begin{DoxyCompactList}\small\item\em Interrupt Routine for A\+D\+S1299 of the Mainboard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a8bc67979da493aa8aebd21c65e61d0f1}{A\+D\+S\+\_\+\+Example\+\_\+2\+\_\+\+Single\+\_\+\+Shot}} (void)
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 example that prints R\+AW values in single conversion mode. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ad46e6005c4362b4018d883fc8c085136}{convert\+\_\+\+A\+D\+C\+\_\+volts}} (uint32\+\_\+t raw\+\_\+data, uint8\+\_\+t gain, float vref)
+\begin{DoxyCompactList}\small\item\em Convert Raw Data to micro Volts. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ac617974044c5dfaa6ce662b945225970}{cast\+\_\+3\+Bytes\+\_\+\+Int32}} (byte Byte1, byte Byte2, byte Byte3)
+\begin{DoxyCompactList}\small\item\em Concatinate 3 Bytes in a single Value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a2b9bd34c58e171be2894e29c2f6f1800}{print\+\_\+\+Single\+\_\+\+Shot}} (void)
+\begin{DoxyCompactList}\small\item\em Prints a single shot R\+AW data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a3c155d5ca30a918ddc484cee44484b9b}{display\+\_\+\+Both\+\_\+\+A\+D\+S\+\_\+setings}} (void)
+\begin{DoxyCompactList}\small\item\em Diplay All A\+D\+S1299 Devices Configurations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+P\+I\+Class Nova\+X\+R\+\_\+\+S\+PI \& \mbox{\hyperlink{_a_d_s1299__lib_8cpp_ad5cc5e0dfab44b482a4f24e6226bc60b}{sercom1}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_abec5cf35e76ecf21a83dbaa8efb65253}{A\+D\+S\+\_\+\+Reset\+\_\+pin}}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 Reset Pin External Variable initialization. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a6a9c5608766e3bba906497f2018b9630}{A\+D\+S\+\_\+\+C\+S\+\_\+pin}}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 Chip Select Pin External Variable initialization. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a4d2d5fadf53251e24a99f5b50e8beddb}{A\+D\+S\+\_\+\+D\+R\+D\+Y\+\_\+pin}}
+\begin{DoxyCompactList}\small\item\em A\+D\+S1299 D\+R\+DY External Variable initialization. \end{DoxyCompactList}\item 
+boolean \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a7e65581375644b3418d03a92ce5a26e7}{continuous\+Read}} = false
+\begin{DoxyCompactList}\small\item\em Flag warning for continuous conversion is happening. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a790d5d1da77f28576dcb3285fa1bc787}{M\+Bdata\+A\+DC}}
+\item 
+\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a64f5e3c6e1a4ae0bcf083fa5a5316b0b}{S\+Bdata\+A\+DC}}
+\item 
+\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} \mbox{\hyperlink{_a_d_s1299__lib_8cpp_af2380df577d238ce139f798240c27b5b}{raw\+A\+DC}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a761ad78222aa0024a6a85c5001a0c735}{Sample\+I\+D1}} =0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a61a452c25ecb231e19e88762be51683e}{Sample\+I\+D2}} =0
+\item 
+long \mbox{\hyperlink{_a_d_s1299__lib_8cpp_a4ce229c0e62db86360e6f1ee253d2b54}{time1}} \mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em for testing purpose \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ad72dbcf6d0153db1b8d8a58001feed83}\label{_a_d_s1299__lib_8cpp_ad72dbcf6d0153db1b8d8a58001feed83}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{DEBUG}{DEBUG}}
+{\footnotesize\ttfamily \#define D\+E\+B\+UG}
+
+
+
+Definition at line 15 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a4e3a7d55ce56060b5b82d54588a2322b}\label{_a_d_s1299__lib_8cpp_a4e3a7d55ce56060b5b82d54588a2322b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ERROR\_BOARD\_ID@{ERROR\_BOARD\_ID}}
+\index{ERROR\_BOARD\_ID@{ERROR\_BOARD\_ID}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ERROR\_BOARD\_ID}{ERROR\_BOARD\_ID}}
+{\footnotesize\ttfamily \#define E\+R\+R\+O\+R\+\_\+\+B\+O\+A\+R\+D\+\_\+\+ID~-\/1}
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a5a7c039615f027ce1f975f625e9b15ac}\label{_a_d_s1299__lib_8cpp_a5a7c039615f027ce1f975f625e9b15ac}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!PIN\_SPI\_MISO@{PIN\_SPI\_MISO}}
+\index{PIN\_SPI\_MISO@{PIN\_SPI\_MISO}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{PIN\_SPI\_MISO}{PIN\_SPI\_MISO}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+M\+I\+SO~\mbox{\hyperlink{_nova_x_r___library_8h_a6e91886f0b3aa8fc7b39a1aa269ccfae}{P\+A19}}}
+
+
+
+Definition at line 20 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a78530c2d4dd5656190162d062b1fed5e}\label{_a_d_s1299__lib_8cpp_a78530c2d4dd5656190162d062b1fed5e}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!PIN\_SPI\_MOSI@{PIN\_SPI\_MOSI}}
+\index{PIN\_SPI\_MOSI@{PIN\_SPI\_MOSI}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{PIN\_SPI\_MOSI}{PIN\_SPI\_MOSI}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+M\+O\+SI~\mbox{\hyperlink{_nova_x_r___library_8h_aba034f83e4a90db9ecb3c5f5047d3ee6}{P\+A16}}}
+
+
+
+Definition at line 22 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a704e2660aedb97382a6503160b27d968}\label{_a_d_s1299__lib_8cpp_a704e2660aedb97382a6503160b27d968}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!PIN\_SPI\_SCK@{PIN\_SPI\_SCK}}
+\index{PIN\_SPI\_SCK@{PIN\_SPI\_SCK}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{PIN\_SPI\_SCK}{PIN\_SPI\_SCK}}
+{\footnotesize\ttfamily \#define P\+I\+N\+\_\+\+S\+P\+I\+\_\+\+S\+CK~\mbox{\hyperlink{_nova_x_r___library_8h_a90e949b77bfd597d8ec87c4a59e62546}{P\+A17}}}
+
+
+
+Definition at line 21 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ab46095741f39b0f08777140889ada196}\label{_a_d_s1299__lib_8cpp_ab46095741f39b0f08777140889ada196}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS1299\_Interrupt\_Example@{ADS1299\_Interrupt\_Example}}
+\index{ADS1299\_Interrupt\_Example@{ADS1299\_Interrupt\_Example}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS1299\_Interrupt\_Example()}{ADS1299\_Interrupt\_Example()}}
+{\footnotesize\ttfamily void A\+D\+S1299\+\_\+\+Interrupt\+\_\+\+Example (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ads\+\_\+id,  }\item[{long}]{duration }\end{DoxyParamCaption})}
+
+
+
+Interrupt Routine for A\+D\+S1299 of the Mainboard. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ads\+\_\+id} & The A\+D\+S1299 board identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em duration} & The duration of the sampling period using interrupts \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 636 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ab46095741f39b0f08777140889ada196_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_aab3a44596b75d6f5f627fc139aba2ee7}\label{_a_d_s1299__lib_8cpp_aab3a44596b75d6f5f627fc139aba2ee7}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_connected@{ADS\_connected}}
+\index{ADS\_connected@{ADS\_connected}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_connected()}{ADS\_connected()}}
+{\footnotesize\ttfamily bool A\+D\+S\+\_\+connected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check id A\+D\+S1299 device is present on the board. 
+
+\begin{DoxyReturn}{Returns}
+True if A\+D\+S1299 is connected to the system 
+\end{DoxyReturn}
+
+
+Definition at line 256 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_aab3a44596b75d6f5f627fc139aba2ee7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_aab3a44596b75d6f5f627fc139aba2ee7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a8bc67979da493aa8aebd21c65e61d0f1}\label{_a_d_s1299__lib_8cpp_a8bc67979da493aa8aebd21c65e61d0f1}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_Example\_2\_Single\_Shot@{ADS\_Example\_2\_Single\_Shot}}
+\index{ADS\_Example\_2\_Single\_Shot@{ADS\_Example\_2\_Single\_Shot}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_Example\_2\_Single\_Shot()}{ADS\_Example\_2\_Single\_Shot()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Example\+\_\+2\+\_\+\+Single\+\_\+\+Shot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A\+D\+S1299 example that prints R\+AW values in single conversion mode. 
+
+
+
+Definition at line 669 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a8bc67979da493aa8aebd21c65e61d0f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a6088edd483f7e2e1141823df741b1720}\label{_a_d_s1299__lib_8cpp_a6088edd483f7e2e1141823df741b1720}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_Init\_Config@{ADS\_Init\_Config}}
+\index{ADS\_Init\_Config@{ADS\_Init\_Config}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_Init\_Config()}{ADS\_Init\_Config()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Init\+\_\+\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ads\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Build your A\+S\+D1299 Configuration List and Apply it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ads\+\_\+id} & The A\+D\+S1299 Board identifier \\
+\hline
+\end{DoxyParams}
+C\+O\+N\+F\+I\+G1 Sampling Frequency\+: F0 16K, F1 8K, F2 4K,F3 2K,F4 1K, F5 500 250 ,F6 250 2250ms// 8Khz -\/ $>$ 5.\+2\+Khz -\/ 125 micros period
+
+C\+O\+N\+F\+I\+G2 Register\+: 00000100
+
+C\+O\+N\+F\+I\+G3 Register\+: 0x\+EC , F6 .
+
+C\+O\+N\+F\+I\+G4 Register\+:
+
+M\+I\+S\+C1 Register\+: 0x20 // close S\+R\+B1 swtich
+
+G\+P\+IO Register\+: ~\newline
+
+
+Definition at line 587 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a6088edd483f7e2e1141823df741b1720_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a6088edd483f7e2e1141823df741b1720_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a46e58fd33706f92cbf0a8376e5f4aefe}\label{_a_d_s1299__lib_8cpp_a46e58fd33706f92cbf0a8376e5f4aefe}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_Stop\_Conversion@{ADS\_Stop\_Conversion}}
+\index{ADS\_Stop\_Conversion@{ADS\_Stop\_Conversion}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_Stop\_Conversion()}{ADS\_Stop\_Conversion()}}
+{\footnotesize\ttfamily void A\+D\+S\+\_\+\+Stop\+\_\+\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop A\+DC Conversion Operation. 
+
+
+
+Definition at line 397 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a46e58fd33706f92cbf0a8376e5f4aefe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a70b12f2e1f4880d9b9c34c20ebf26976}\label{_a_d_s1299__lib_8cpp_a70b12f2e1f4880d9b9c34c20ebf26976}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!apply\_bit\_Config@{apply\_bit\_Config}}
+\index{apply\_bit\_Config@{apply\_bit\_Config}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{apply\_bit\_Config()}{apply\_bit\_Config()}}
+{\footnotesize\ttfamily byte apply\+\_\+bit\+\_\+\+Config (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{target\+\_\+\+Reg }\end{DoxyParamCaption})}
+
+
+
+Apply Configuration to an A\+D\+S1299 Register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em target\+\_\+\+Reg} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the changed Configuration Byte 
+\end{DoxyReturn}
+
+
+Definition at line 529 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a70b12f2e1f4880d9b9c34c20ebf26976_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ab8e6e66e304cc15a50a3fa5b49075e6e}\label{_a_d_s1299__lib_8cpp_ab8e6e66e304cc15a50a3fa5b49075e6e}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!Begin\_ADS@{Begin\_ADS}}
+\index{Begin\_ADS@{Begin\_ADS}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{Begin\_ADS()}{Begin\_ADS()}}
+{\footnotesize\ttfamily void Begin\+\_\+\+A\+DS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Begins Nova\+XR Custom S\+PI Module. 
+
+
+
+Definition at line 51 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{_a_d_s1299__lib_8cpp_ab8e6e66e304cc15a50a3fa5b49075e6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ab8e6e66e304cc15a50a3fa5b49075e6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ac617974044c5dfaa6ce662b945225970}\label{_a_d_s1299__lib_8cpp_ac617974044c5dfaa6ce662b945225970}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!cast\_3Bytes\_Int32@{cast\_3Bytes\_Int32}}
+\index{cast\_3Bytes\_Int32@{cast\_3Bytes\_Int32}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{cast\_3Bytes\_Int32()}{cast\_3Bytes\_Int32()}}
+{\footnotesize\ttfamily int32\+\_\+t cast\+\_\+3\+Bytes\+\_\+\+Int32 (\begin{DoxyParamCaption}\item[{byte}]{Byte1,  }\item[{byte}]{Byte2,  }\item[{byte}]{Byte3 }\end{DoxyParamCaption})}
+
+
+
+Concatinate 3 Bytes in a single Value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Byte1} & The byte 1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em Byte2} & The byte 2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em Byte3} & The byte 3\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+
+
+Definition at line 728 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ad6613b321a93ef801bd7eb4abcb3ed4f}\label{_a_d_s1299__lib_8cpp_ad6613b321a93ef801bd7eb4abcb3ed4f}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!config\_ADS\_Input@{config\_ADS\_Input}}
+\index{config\_ADS\_Input@{config\_ADS\_Input}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_ADS\_Input()}{config\_ADS\_Input()}}
+{\footnotesize\ttfamily byte config\+\_\+\+A\+D\+S\+\_\+\+Input (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure a single A\+D\+S1299 Input. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em channel} & The inout channel selection \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returned\+Byte byte holds the target register address 
+\end{DoxyReturn}
+
+
+Definition at line 282 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{_a_d_s1299__lib_8cpp_ad6613b321a93ef801bd7eb4abcb3ed4f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ad6613b321a93ef801bd7eb4abcb3ed4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a9ce4752411a8916cf7b81547a8f11f2f}\label{_a_d_s1299__lib_8cpp_a9ce4752411a8916cf7b81547a8f11f2f}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!config\_ADS\_Register@{config\_ADS\_Register}}
+\index{config\_ADS\_Register@{config\_ADS\_Register}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_ADS\_Register()}{config\_ADS\_Register()}}
+{\footnotesize\ttfamily void config\+\_\+\+A\+D\+S\+\_\+\+Register (\begin{DoxyParamCaption}\item[{byte}]{R\+\_\+\+Address,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure an A\+D\+S1299 Register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em R\+\_\+\+Address} & The A\+D\+S1299 Register address \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_a_d_s1299__lib_8cpp_a9ce4752411a8916cf7b81547a8f11f2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a9ce4752411a8916cf7b81547a8f11f2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ae319817637388acc86b1b423929d0fd5}\label{_a_d_s1299__lib_8cpp_ae319817637388acc86b1b423929d0fd5}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!config\_All\_ADS\_Inputs@{config\_All\_ADS\_Inputs}}
+\index{config\_All\_ADS\_Inputs@{config\_All\_ADS\_Inputs}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{config\_All\_ADS\_Inputs()}{config\_All\_ADS\_Inputs()}}
+{\footnotesize\ttfamily void config\+\_\+\+All\+\_\+\+A\+D\+S\+\_\+\+Inputs (\begin{DoxyParamCaption}\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Configure all A\+DC Inputs at once. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{_a_d_s1299__lib_8cpp_ae319817637388acc86b1b423929d0fd5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ae319817637388acc86b1b423929d0fd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ad46e6005c4362b4018d883fc8c085136}\label{_a_d_s1299__lib_8cpp_ad46e6005c4362b4018d883fc8c085136}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!convert\_ADC\_volts@{convert\_ADC\_volts}}
+\index{convert\_ADC\_volts@{convert\_ADC\_volts}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{convert\_ADC\_volts()}{convert\_ADC\_volts()}}
+{\footnotesize\ttfamily float convert\+\_\+\+A\+D\+C\+\_\+volts (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{raw\+\_\+data,  }\item[{uint8\+\_\+t}]{gain,  }\item[{float}]{vref }\end{DoxyParamCaption})}
+
+
+
+Convert Raw Data to micro Volts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em raw\+\_\+data} & The raw data from the A\+D\+S1299 \\
+\hline
+\mbox{\texttt{ in}}  & {\em gain} & The defined gain of the A\+D\+S1299\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+
+
+Definition at line 713 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a432cb9e3fee655b9ff0d0ed16dae77d1}\label{_a_d_s1299__lib_8cpp_a432cb9e3fee655b9ff0d0ed16dae77d1}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!disable\_ContninuousConversion@{disable\_ContninuousConversion}}
+\index{disable\_ContninuousConversion@{disable\_ContninuousConversion}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{disable\_ContninuousConversion()}{disable\_ContninuousConversion()}}
+{\footnotesize\ttfamily void disable\+\_\+\+Contninuous\+Conversion (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables the contninuous conversion. 
+
+
+
+Definition at line 381 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a432cb9e3fee655b9ff0d0ed16dae77d1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a3c155d5ca30a918ddc484cee44484b9b}\label{_a_d_s1299__lib_8cpp_a3c155d5ca30a918ddc484cee44484b9b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!display\_Both\_ADS\_setings@{display\_Both\_ADS\_setings}}
+\index{display\_Both\_ADS\_setings@{display\_Both\_ADS\_setings}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{display\_Both\_ADS\_setings()}{display\_Both\_ADS\_setings()}}
+{\footnotesize\ttfamily void display\+\_\+\+Both\+\_\+\+A\+D\+S\+\_\+setings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Diplay All A\+D\+S1299 Devices Configurations. 
+
+
+
+Definition at line 765 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a3c155d5ca30a918ddc484cee44484b9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a3c155d5ca30a918ddc484cee44484b9b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a4529fc9cc6740d80d18a98b38693d51b}\label{_a_d_s1299__lib_8cpp_a4529fc9cc6740d80d18a98b38693d51b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!display\_Registers\_settings@{display\_Registers\_settings}}
+\index{display\_Registers\_settings@{display\_Registers\_settings}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{display\_Registers\_settings()}{display\_Registers\_settings()}}
+{\footnotesize\ttfamily void display\+\_\+\+Registers\+\_\+settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display Current Registers Settings. 
+
+
+
+Definition at line 180 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a4529fc9cc6740d80d18a98b38693d51b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a4529fc9cc6740d80d18a98b38693d51b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a02e2ce7236806ce2d2850aa9a8af6881}\label{_a_d_s1299__lib_8cpp_a02e2ce7236806ce2d2850aa9a8af6881}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!do\_RREG@{do\_RREG}}
+\index{do\_RREG@{do\_RREG}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{do\_RREG()}{do\_RREG()}}
+{\footnotesize\ttfamily void do\+\_\+\+R\+R\+EG (\begin{DoxyParamCaption}\item[{byte}]{register\+\_\+\+Address,  }\item[{byte}]{returned\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Performs a R\+R\+EG A\+D\+S1299 command -\/ Reads a Register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em register\+\_\+\+Address} & The register address to read \\
+\hline
+\mbox{\texttt{ in}}  & {\em returned\+\_\+bytes} & The returned configuration value data-\/byte that the target register holds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 497 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a02e2ce7236806ce2d2850aa9a8af6881_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a810241b5eff0b37656f6872e50017b14}\label{_a_d_s1299__lib_8cpp_a810241b5eff0b37656f6872e50017b14}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!do\_WREG@{do\_WREG}}
+\index{do\_WREG@{do\_WREG}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{do\_WREG()}{do\_WREG()}}
+{\footnotesize\ttfamily void do\+\_\+\+W\+R\+EG (\begin{DoxyParamCaption}\item[{byte}]{Register,  }\item[{byte}]{Data }\end{DoxyParamCaption})}
+
+
+
+Performs a W\+R\+EG A\+D\+S1299 command -\/ Writes a Register . 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Register} & The register address to write \\
+\hline
+\mbox{\texttt{ in}}  & {\em Data} & The configuration value data-\/byte \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 483 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a810241b5eff0b37656f6872e50017b14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ad31ec5a9add8086f5dd739a00e0c6fc0}\label{_a_d_s1299__lib_8cpp_ad31ec5a9add8086f5dd739a00e0c6fc0}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!enable\_ADS1299@{enable\_ADS1299}}
+\index{enable\_ADS1299@{enable\_ADS1299}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{enable\_ADS1299()}{enable\_ADS1299()}}
+{\footnotesize\ttfamily void enable\+\_\+\+A\+D\+S1299 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Enable A\+D\+S1299 Hardware. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em adc\+\_\+id} & The A\+D\+S1299 identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ad31ec5a9add8086f5dd739a00e0c6fc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a45a70ec53b50fced02d723027ebeda7b}\label{_a_d_s1299__lib_8cpp_a45a70ec53b50fced02d723027ebeda7b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!flipBit@{flipBit}}
+\index{flipBit@{flipBit}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{flipBit()}{flipBit()}}
+{\footnotesize\ttfamily byte flip\+Bit (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Flips a bit state in a given register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the changed byte 
+\end{DoxyReturn}
+
+
+Definition at line 575 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{_a_d_s1299__lib_8cpp_a45a70ec53b50fced02d723027ebeda7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_aa36d42edd4c7066927bb0593a697f032}\label{_a_d_s1299__lib_8cpp_aa36d42edd4c7066927bb0593a697f032}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!get\_ADC2\_Data\_CM@{get\_ADC2\_Data\_CM}}
+\index{get\_ADC2\_Data\_CM@{get\_ADC2\_Data\_CM}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_ADC2\_Data\_CM()}{get\_ADC2\_Data\_CM()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C2\+\_\+\+Data\+\_\+\+CM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+For A\+D\+C2 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+
+
+Definition at line 337 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ab09c1af4e63a218ddcd4c6e74dbd2c1d}\label{_a_d_s1299__lib_8cpp_ab09c1af4e63a218ddcd4c6e74dbd2c1d}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!get\_ADC\_Data\_SS@{get\_ADC\_Data\_SS}}
+\index{get\_ADC\_Data\_SS@{get\_ADC\_Data\_SS}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_ADC\_Data\_SS()}{get\_ADC\_Data\_SS()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+SS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$}]{adc }\end{DoxyParamCaption})}
+
+
+
+Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc} & The \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} structure \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 429 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ab09c1af4e63a218ddcd4c6e74dbd2c1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ac7941e7b7353d3545f115e3ba3c02e69}\label{_a_d_s1299__lib_8cpp_ac7941e7b7353d3545f115e3ba3c02e69}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!get\_ADC\_Data\_SSAlt@{get\_ADC\_Data\_SSAlt}}
+\index{get\_ADC\_Data\_SSAlt@{get\_ADC\_Data\_SSAlt}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_ADC\_Data\_SSAlt()}{get\_ADC\_Data\_SSAlt()}}
+{\footnotesize\ttfamily void get\+\_\+\+A\+D\+C\+\_\+\+Data\+\_\+\+S\+S\+Alt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} $\ast$}]{adc }\end{DoxyParamCaption})}
+
+
+
+Single Shot Mode -\/ Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+
+
+Definition at line 454 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{_a_d_s1299__lib_8cpp_ac7941e7b7353d3545f115e3ba3c02e69_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a5961c91233a0e9b7f3be962171f49f1b}\label{_a_d_s1299__lib_8cpp_a5961c91233a0e9b7f3be962171f49f1b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!getADC1\_Data\_CM@{getADC1\_Data\_CM}}
+\index{getADC1\_Data\_CM@{getADC1\_Data\_CM}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{getADC1\_Data\_CM()}{getADC1\_Data\_CM()}}
+{\footnotesize\ttfamily void get\+A\+D\+C1\+\_\+\+Data\+\_\+\+CM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+For A\+D\+C1 on mainbaord -\/ Interrupt Routine to Get Data in shared Union Structure\+: \char`\"{}\+A\+D\+C\+\_\+data\char`\"{}. 
+
+
+
+Definition at line 321 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a5961c91233a0e9b7f3be962171f49f1b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_abfe762421ab527e99e51c95f8390f250}\label{_a_d_s1299__lib_8cpp_abfe762421ab527e99e51c95f8390f250}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!getCurrent\_ADS\_ID@{getCurrent\_ADS\_ID}}
+\index{getCurrent\_ADS\_ID@{getCurrent\_ADS\_ID}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{getCurrent\_ADS\_ID()}{getCurrent\_ADS\_ID()}}
+{\footnotesize\ttfamily int8\+\_\+t get\+Current\+\_\+\+A\+D\+S\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current A\+D\+S1299 id. 
+
+\begin{DoxyReturn}{Returns}
+The current ads id. 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_abfe762421ab527e99e51c95f8390f250_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a5f211d0f1d5eb2bbdb6dd04c2f994428}\label{_a_d_s1299__lib_8cpp_a5f211d0f1d5eb2bbdb6dd04c2f994428}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!print\_boardID@{print\_boardID}}
+\index{print\_boardID@{print\_boardID}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_boardID()}{print\_boardID()}}
+{\footnotesize\ttfamily void print\+\_\+board\+ID (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Prints a board id. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em id} & The Nova\+XR board identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 509 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a5f211d0f1d5eb2bbdb6dd04c2f994428_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a2b9bd34c58e171be2894e29c2f6f1800}\label{_a_d_s1299__lib_8cpp_a2b9bd34c58e171be2894e29c2f6f1800}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!print\_Single\_Shot@{print\_Single\_Shot}}
+\index{print\_Single\_Shot@{print\_Single\_Shot}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_Single\_Shot()}{print\_Single\_Shot()}}
+{\footnotesize\ttfamily bool print\+\_\+\+Single\+\_\+\+Shot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Prints a single shot R\+AW data. 
+
+\begin{DoxyReturn}{Returns}
+returns error if something goes wrong with A\+D\+S1299 connection 
+\end{DoxyReturn}
+
+
+Definition at line 743 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{_a_d_s1299__lib_8cpp_a2b9bd34c58e171be2894e29c2f6f1800_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a2b9bd34c58e171be2894e29c2f6f1800_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_aef554e55dae3a87df1455de4cd22c558}\label{_a_d_s1299__lib_8cpp_aef554e55dae3a87df1455de4cd22c558}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!readRegisterSettings@{readRegisterSettings}}
+\index{readRegisterSettings@{readRegisterSettings}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{readRegisterSettings()}{readRegisterSettings()}}
+{\footnotesize\ttfamily byte read\+Register\+Settings (\begin{DoxyParamCaption}\item[{byte}]{Reg\+Addr }\end{DoxyParamCaption})}
+
+
+
+Read Settings of a single register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Reg\+Addr} & is the address of the register we target to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returned\+Byte byte holds the register value 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_a_d_s1299__lib_8cpp_aef554e55dae3a87df1455de4cd22c558_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_aef554e55dae3a87df1455de4cd22c558_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_aa1ead4a65c659d08667f72ae75b31b87}\label{_a_d_s1299__lib_8cpp_aa1ead4a65c659d08667f72ae75b31b87}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!Reset\_ADC@{Reset\_ADC}}
+\index{Reset\_ADC@{Reset\_ADC}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{Reset\_ADC()}{Reset\_ADC()}}
+{\footnotesize\ttfamily void Reset\+\_\+\+A\+DC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Reset Command to an active A\+D\+S1299. 
+
+
+
+Definition at line 77 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_aa1ead4a65c659d08667f72ae75b31b87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a5ce329181e609c3d23a4ebd8c754b810}\label{_a_d_s1299__lib_8cpp_a5ce329181e609c3d23a4ebd8c754b810}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!select\_ADC@{select\_ADC}}
+\index{select\_ADC@{select\_ADC}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{select\_ADC()}{select\_ADC()}}
+{\footnotesize\ttfamily void select\+\_\+\+A\+DC (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adc\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Select A\+D\+S1299 to Control. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adc\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a5ce329181e609c3d23a4ebd8c754b810_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a43e1a071fde96ba35733cd7af6fce90f}\label{_a_d_s1299__lib_8cpp_a43e1a071fde96ba35733cd7af6fce90f}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!setBit0@{setBit0}}
+\index{setBit0@{setBit0}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{setBit0()}{setBit0()}}
+{\footnotesize\ttfamily byte set\+Bit0 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Set to 0 a bit in a given register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the output 
+\end{DoxyReturn}
+
+
+Definition at line 560 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a52e23b40605aa2ba96ccb88476f78c0f}\label{_a_d_s1299__lib_8cpp_a52e23b40605aa2ba96ccb88476f78c0f}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!setBit1@{setBit1}}
+\index{setBit1@{setBit1}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{setBit1()}{setBit1()}}
+{\footnotesize\ttfamily byte set\+Bit1 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index,  }\item[{byte}]{Register }\end{DoxyParamCaption})}
+
+
+
+Sets to 1 a bit in a given 8bit register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & The index of the 8bit Register to change \\
+\hline
+\mbox{\texttt{ in}}  & {\em Register} & The values of the target A\+D\+S1299 register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+out\+Put -\/$>$ returns the output 
+\end{DoxyReturn}
+
+
+Definition at line 545 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ac39a837ad6e83714e21d0d690180d9de}\label{_a_d_s1299__lib_8cpp_ac39a837ad6e83714e21d0d690180d9de}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!SPI\_pinPeriphernal\_init@{SPI\_pinPeriphernal\_init}}
+\index{SPI\_pinPeriphernal\_init@{SPI\_pinPeriphernal\_init}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{SPI\_pinPeriphernal\_init()}{SPI\_pinPeriphernal\_init()}}
+{\footnotesize\ttfamily void S\+P\+I\+\_\+pin\+Periphernal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize S\+PI Pins for S\+E\+R\+C\+OM. 
+
+
+
+Definition at line 62 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_ac39a837ad6e83714e21d0d690180d9de_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a7d269a2712c96078de256b92974562fc}\label{_a_d_s1299__lib_8cpp_a7d269a2712c96078de256b92974562fc}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!startADC\_Continuous\_Mode@{startADC\_Continuous\_Mode}}
+\index{startADC\_Continuous\_Mode@{startADC\_Continuous\_Mode}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{startADC\_Continuous\_Mode()}{startADC\_Continuous\_Mode()}}
+{\footnotesize\ttfamily void start\+A\+D\+C\+\_\+\+Continuous\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start A\+D\+S1299 in Continuous Conversion Mode. 
+
+
+
+Definition at line 298 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a7d269a2712c96078de256b92974562fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a7d269a2712c96078de256b92974562fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a83ac68b6fa7d053091231026fe530db6}\label{_a_d_s1299__lib_8cpp_a83ac68b6fa7d053091231026fe530db6}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!stop\_ADC\_interrupt@{stop\_ADC\_interrupt}}
+\index{stop\_ADC\_interrupt@{stop\_ADC\_interrupt}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{stop\_ADC\_interrupt()}{stop\_ADC\_interrupt()}}
+{\footnotesize\ttfamily void stop\+\_\+\+A\+D\+C\+\_\+interrupt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop Being interrupted by A\+D\+S1299. 
+
+
+
+Definition at line 355 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a83ac68b6fa7d053091231026fe530db6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a83ac68b6fa7d053091231026fe530db6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a74b4e999aa40a98affee9fbbcef6e796}\label{_a_d_s1299__lib_8cpp_a74b4e999aa40a98affee9fbbcef6e796}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!stop\_and\_configInput@{stop\_and\_configInput}}
+\index{stop\_and\_configInput@{stop\_and\_configInput}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{stop\_and\_configInput()}{stop\_and\_configInput()}}
+{\footnotesize\ttfamily byte stop\+\_\+and\+\_\+config\+Input (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{board\+\_\+id,  }\item[{uint8\+\_\+t}]{channel,  }\item[{byte}]{data }\end{DoxyParamCaption})}
+
+
+
+Stops and Sets configurations for selected input channel and board. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em board\+\_\+id} & The board identifier \\
+\hline
+\mbox{\texttt{ in}}  & {\em channel} & The A\+D\+S1299 input channel num \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & The configuration value data byte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returned\+Byte byte holds the target register address 
+\end{DoxyReturn}
+
+
+Definition at line 414 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a74b4e999aa40a98affee9fbbcef6e796_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_d_s1299__lib_8cpp_a74b4e999aa40a98affee9fbbcef6e796_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a6a9c5608766e3bba906497f2018b9630}\label{_a_d_s1299__lib_8cpp_a6a9c5608766e3bba906497f2018b9630}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_CS\_pin@{ADS\_CS\_pin}}
+\index{ADS\_CS\_pin@{ADS\_CS\_pin}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_CS\_pin}{ADS\_CS\_pin}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+D\+S\+\_\+\+C\+S\+\_\+pin}
+
+
+
+A\+D\+S1299 Chip Select Pin External Variable initialization. 
+
+
+
+Definition at line 28 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a4d2d5fadf53251e24a99f5b50e8beddb}\label{_a_d_s1299__lib_8cpp_a4d2d5fadf53251e24a99f5b50e8beddb}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_DRDY\_pin@{ADS\_DRDY\_pin}}
+\index{ADS\_DRDY\_pin@{ADS\_DRDY\_pin}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_DRDY\_pin}{ADS\_DRDY\_pin}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+D\+S\+\_\+\+D\+R\+D\+Y\+\_\+pin}
+
+
+
+A\+D\+S1299 D\+R\+DY External Variable initialization. 
+
+
+
+Definition at line 29 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_abec5cf35e76ecf21a83dbaa8efb65253}\label{_a_d_s1299__lib_8cpp_abec5cf35e76ecf21a83dbaa8efb65253}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!ADS\_Reset\_pin@{ADS\_Reset\_pin}}
+\index{ADS\_Reset\_pin@{ADS\_Reset\_pin}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{ADS\_Reset\_pin}{ADS\_Reset\_pin}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+D\+S\+\_\+\+Reset\+\_\+pin}
+
+
+
+A\+D\+S1299 Reset Pin External Variable initialization. 
+
+
+
+Definition at line 27 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a7e65581375644b3418d03a92ce5a26e7}\label{_a_d_s1299__lib_8cpp_a7e65581375644b3418d03a92ce5a26e7}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!continuousRead@{continuousRead}}
+\index{continuousRead@{continuousRead}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{continuousRead}{continuousRead}}
+{\footnotesize\ttfamily boolean continuous\+Read = false}
+
+
+
+Flag warning for continuous conversion is happening. 
+
+
+
+Definition at line 30 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a790d5d1da77f28576dcb3285fa1bc787}\label{_a_d_s1299__lib_8cpp_a790d5d1da77f28576dcb3285fa1bc787}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!MBdataADC@{MBdataADC}}
+\index{MBdataADC@{MBdataADC}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{MBdataADC}{MBdataADC}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} M\+Bdata\+A\+DC}
+
+
+
+Definition at line 33 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_af2380df577d238ce139f798240c27b5b}\label{_a_d_s1299__lib_8cpp_af2380df577d238ce139f798240c27b5b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!rawADC@{rawADC}}
+\index{rawADC@{rawADC}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{rawADC}{rawADC}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} raw\+A\+DC}
+
+
+
+Definition at line 35 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a761ad78222aa0024a6a85c5001a0c735}\label{_a_d_s1299__lib_8cpp_a761ad78222aa0024a6a85c5001a0c735}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!SampleID1@{SampleID1}}
+\index{SampleID1@{SampleID1}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{SampleID1}{SampleID1}}
+{\footnotesize\ttfamily uint16\+\_\+t Sample\+I\+D1 =0}
+
+
+
+Definition at line 39 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a61a452c25ecb231e19e88762be51683e}\label{_a_d_s1299__lib_8cpp_a61a452c25ecb231e19e88762be51683e}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!SampleID2@{SampleID2}}
+\index{SampleID2@{SampleID2}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{SampleID2}{SampleID2}}
+{\footnotesize\ttfamily uint16\+\_\+t Sample\+I\+D2 =0}
+
+
+
+Definition at line 40 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a64f5e3c6e1a4ae0bcf083fa5a5316b0b}\label{_a_d_s1299__lib_8cpp_a64f5e3c6e1a4ae0bcf083fa5a5316b0b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!SBdataADC@{SBdataADC}}
+\index{SBdataADC@{SBdataADC}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{SBdataADC}{SBdataADC}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionadc__data}{adc\+\_\+data}} S\+Bdata\+A\+DC}
+
+
+
+Definition at line 34 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_ad5cc5e0dfab44b482a4f24e6226bc60b}\label{_a_d_s1299__lib_8cpp_ad5cc5e0dfab44b482a4f24e6226bc60b}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!sercom1@{sercom1}}
+\index{sercom1@{sercom1}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{sercom1}{sercom1}}
+{\footnotesize\ttfamily S\+P\+I\+Class Nova\+X\+R\+\_\+\+S\+PI\& sercom1}
+
+
+
+Definition at line 24 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
+\mbox{\Hypertarget{_a_d_s1299__lib_8cpp_a4ce229c0e62db86360e6f1ee253d2b54}\label{_a_d_s1299__lib_8cpp_a4ce229c0e62db86360e6f1ee253d2b54}} 
+\index{ADS1299\_lib.cpp@{ADS1299\_lib.cpp}!time1@{time1}}
+\index{time1@{time1}!ADS1299\_lib.cpp@{ADS1299\_lib.cpp}}
+\doxysubsubsection{\texorpdfstring{time1}{time1}}
+{\footnotesize\ttfamily long time1\mbox{[}10\mbox{]}}
+
+
+
+for testing purpose 
+
+
+
+Definition at line 41 of file A\+D\+S1299\+\_\+lib.\+cpp.
+
