@@ -1,7 +1,0 @@
-var searchData=
-[
-  ['lastwifi_5fid_925',['lastWiFi_ID',['../_n_x_r___flash_8cpp.html#a69a50329cabb824a93972c519e641341',1,'lastWiFi_ID(void):&#160;NXR_Flash.cpp'],['../_n_x_r___flash_8h.html#a69a50329cabb824a93972c519e641341',1,'lastWiFi_ID(void):&#160;NXR_Flash.cpp']]],
-  ['lightup_5fgreen_926',['lightUP_Green',['../_l_e_d___indication_8h.html#ada179cf6e543b7b2f5c282b036f8d47b',1,'LED_Indication.h']]],
-  ['loop_927',['loop',['../_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___debug_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;OpenBCI_NovaXR_Firmware_AP_PCB_V1_1_Debug.ino'],['../_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v1__1___release_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;OpenBCI_NovaXR_Firmware_AP_PCB_V1_1_Release.ino'],['../_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___debug_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;OpenBCI_NovaXR_Firmware_AP_PCB_V2_Debug.ino'],['../_open_b_c_i___nova_x_r___firmware___a_p___p_c_b___v2___release_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;OpenBCI_NovaXR_Firmware_AP_PCB_V2_Release.ino']]],
-  ['lowpassfirfilter_928',['lowPassFIRFilter',['../heart_rate_8cpp.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.cpp'],['../heart_rate_8h.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.cpp']]]
-];

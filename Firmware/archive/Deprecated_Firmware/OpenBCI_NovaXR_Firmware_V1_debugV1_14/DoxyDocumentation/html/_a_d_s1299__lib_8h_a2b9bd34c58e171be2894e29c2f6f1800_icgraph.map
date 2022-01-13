@@ -1,4 +1,0 @@
-<map id="print_Single_Shot" name="print_Single_Shot">
-<area shape="rect" id="node1" title="Prints a single shot RAW data." alt="" coords="256,5,382,31"/>
-<area shape="rect" id="node2" href="$_a_d_s1299__lib_8h.html#a8bc67979da493aa8aebd21c65e61d0f1" title="ADS1299 exaple that prints RAW values in single conversion mode." alt="" coords="5,5,208,31"/>
-</map>

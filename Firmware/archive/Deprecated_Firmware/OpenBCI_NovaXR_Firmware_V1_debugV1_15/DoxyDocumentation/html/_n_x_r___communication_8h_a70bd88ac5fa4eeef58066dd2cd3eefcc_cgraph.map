@@ -1,5 +1,0 @@
-<map id="startUDP_Server" name="startUDP_Server">
-<area shape="rect" id="node1" title="Start a UDP Server." alt="" coords="5,5,127,31"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#acb653f64366b90f597daa67b7212598d" title="Shows the stand by state." alt="" coords="175,5,322,31"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="370,5,464,31"/>
-</map>

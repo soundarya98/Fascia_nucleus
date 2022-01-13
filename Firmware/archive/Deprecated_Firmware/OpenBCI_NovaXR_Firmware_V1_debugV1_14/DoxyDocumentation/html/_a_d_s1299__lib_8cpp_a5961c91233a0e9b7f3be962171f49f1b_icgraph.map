@@ -1,5 +1,0 @@
-<map id="getADC1_Data_CM" name="getADC1_Data_CM">
-<area shape="rect" id="node1" title="For ADC1 on mainbaord &#45; Interrupt Routine to Get Data in shared Union Structure: &quot;ADC_data&quot;." alt="" coords="426,5,565,31"/>
-<area shape="rect" id="node2" href="$_a_d_s1299__lib_8h.html#a7d269a2712c96078de256b92974562fc" title="Start ADS1299 in Continuous Conversion Mode." alt="" coords="187,5,378,31"/>
-<area shape="rect" id="node3" href="$_a_d_s1299__lib_8h.html#a95be66202eced2a7d049c17c7419342a" title="Interrupt Routine for ADS1299 of the Mainboard." alt="" coords="5,5,139,31"/>
-</map>

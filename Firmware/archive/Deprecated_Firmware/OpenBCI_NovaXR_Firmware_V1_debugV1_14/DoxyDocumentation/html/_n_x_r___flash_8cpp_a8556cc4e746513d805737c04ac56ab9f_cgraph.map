@@ -1,7 +1,0 @@
-<map id="connect_lastWiFi" name="connect_lastWiFi">
-<area shape="rect" id="node1" title="Connects to the last wifi network listed in the EEPROM MEMORY of the device." alt="" coords="5,31,128,56"/>
-<area shape="rect" id="node2" href="$_wi_fi___management_8cpp.html#aaeccd91fa5a727285b2d00235e62c4d1" title="Connects to a given WiFi network." alt="" coords="176,31,291,56"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#ad029e779e08de03d6ea8a09815dd4f80" title="Blink Blue Once as somehting is being in progress." alt="" coords="339,24,494,63"/>
-<area shape="rect" id="node4" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="542,5,659,31"/>
-<area shape="rect" id="node5" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="554,55,648,80"/>
-</map>

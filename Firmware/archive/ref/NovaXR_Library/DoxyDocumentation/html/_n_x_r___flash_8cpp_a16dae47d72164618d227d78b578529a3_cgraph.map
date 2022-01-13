@@ -1,5 +1,0 @@
-<map id="previous_WiFi_ID" name="previous_WiFi_ID">
-<area shape="rect" id="node1" title="Get the previous WiFi ID counting from the last wifi location in the WiFi list." alt="" coords="5,31,132,56"/>
-<area shape="rect" id="node2" href="$_n_x_r___flash_8cpp.html#a69a50329cabb824a93972c519e641341" title="Get the memory position of the last Stored WiFi network." alt="" coords="190,5,280,31"/>
-<area shape="rect" id="node3" href="$_n_x_r___flash_8cpp.html#abc57b1a7a8b2f84a6c22fe0322f3bb8e" title="Determines if a specific WiFi id exists in the wifi list." alt="" coords="180,55,290,80"/>
-</map>

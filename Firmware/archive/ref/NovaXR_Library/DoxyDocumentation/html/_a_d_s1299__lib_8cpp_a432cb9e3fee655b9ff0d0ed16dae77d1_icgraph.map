@@ -1,5 +1,0 @@
-<map id="disable_ContninuousConversion" name="disable_ContninuousConversion">
-<area shape="rect" id="node1" title="Disables the contninuous conversion." alt="" coords="435,5,648,31"/>
-<area shape="rect" id="node2" href="$_a_d_s1299__lib_8h.html#a83ac68b6fa7d053091231026fe530db6" title="Stop Being interrupted by ADS1299." alt="" coords="248,5,387,31"/>
-<area shape="rect" id="node3" href="$_a_d_s1299__lib_8h.html#ab46095741f39b0f08777140889ada196" title="Interrupt Routine for ADS1299 of the Mainboard." alt="" coords="5,5,200,31"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="parse_HTML" name="parse_HTML">
-<area shape="rect" id="node1" title="Parse the user entered WiFi credentials from the HTML UI page." alt="" coords="5,5,104,31"/>
-<area shape="rect" id="node2" href="$_h_t_m_l___server_8cpp.html#a3fffc2f63fa82819c1f99d349b67e9e9" title="Decode the URL user data." alt="" coords="152,5,232,31"/>
-<area shape="rect" id="node3" href="$_h_t_m_l___server_8cpp.html#a79a5136696b1b701361fd29aaad51070" title="trnaslate a HEX Character to a real ASCII character" alt="" coords="280,5,330,31"/>
-</map>

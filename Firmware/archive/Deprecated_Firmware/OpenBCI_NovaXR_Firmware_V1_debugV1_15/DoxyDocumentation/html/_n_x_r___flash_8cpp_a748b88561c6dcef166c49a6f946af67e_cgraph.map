@@ -1,8 +1,0 @@
-<map id="ROM_Init" name="ROM_Init">
-<area shape="rect" id="node1" title="EEPROM &#45; Device ROM Initialization." alt="" coords="5,55,83,80"/>
-<area shape="rect" id="node2" href="$_n_x_r___flash_8cpp.html#adce33a37878b541aa7e06baa18389de7" title="Print saved Hardware Information from the NovaXR device EEPROM memory." alt="" coords="161,5,303,31"/>
-<area shape="rect" id="node3" href="$_n_x_r___flash_8cpp.html#ae4ea4f4d1421d0b630cc89d02946964d" title="Print the entire WiFi list." alt="" coords="131,55,333,80"/>
-<area shape="rect" id="node4" href="$_n_x_r___flash_8cpp.html#a0141be812ef7dbe793c800b0870d6a9a" title="Write the Flash Memory with standard information about the current device." alt="" coords="154,104,311,129"/>
-<area shape="rect" id="node5" href="$_n_x_r___flash_8cpp.html#af54a2030d1bc7756e2165a12ebe82a52" title="Update NovaXR Device Information." alt="" coords="381,104,514,129"/>
-<area shape="rect" id="node6" href="$_n_x_r___flash_8cpp.html#a8b236cb930b43226dd6733751197e5ca" title="Get Unique SMAD21 Chip ID and Create a Unique Serial Numner." alt="" coords="562,104,704,129"/>
-</map>

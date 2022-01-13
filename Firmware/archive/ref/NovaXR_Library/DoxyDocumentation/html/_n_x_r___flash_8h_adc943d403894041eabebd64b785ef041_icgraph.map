@@ -1,4 +1,0 @@
-<map id="eraseDev_Info" name="eraseDev_Info">
-<area shape="rect" id="node1" title="Erase Device information , Initialize all data to Zero." alt="" coords="210,5,318,31"/>
-<area shape="rect" id="node2" href="$_n_x_r___flash_8h.html#aa70ed6a9c1fd8ac00342f6463b917e66" title="Erase all EEPROM Content from the NovaXR device." alt="" coords="5,5,162,31"/>
-</map>

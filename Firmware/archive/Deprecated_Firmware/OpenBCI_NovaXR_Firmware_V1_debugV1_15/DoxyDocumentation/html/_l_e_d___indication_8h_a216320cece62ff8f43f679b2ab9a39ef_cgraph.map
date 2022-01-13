@@ -1,5 +1,0 @@
-<map id="Valid_CMD_Indication" name="Valid_CMD_Indication">
-<area shape="rect" id="node1" title="Indicate a valid incoming command." alt="" coords="5,31,158,56"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="206,5,323,31"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="217,55,311,80"/>
-</map>
