@@ -1,6 +1,0 @@
-<map id="new_wifi_setup" name="new_wifi_setup">
-<area shape="rect" id="node1" title="Connect to a New WiFi Network." alt="" coords="5,31,118,56"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#ad029e779e08de03d6ea8a09815dd4f80" title="Blink Blue Once as somehting is being in progress." alt="" coords="166,24,321,63"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="369,5,486,31"/>
-<area shape="rect" id="node4" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="381,55,475,80"/>
-</map>

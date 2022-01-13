@@ -1,6 +1,0 @@
-<map id="Connect_to_AP" name="Connect_to_AP">
-<area shape="rect" id="node1" title="Connects to a given WiFi network." alt="" coords="5,31,120,56"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#ad029e779e08de03d6ea8a09815dd4f80" title="Blink Blue Once as somehting is being in progress." alt="" coords="168,24,324,63"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#ac3f607ad591547991fc6126c6525352e" title="Blink bi&#45;coloerd LED at certain frequency." alt="" coords="372,5,488,31"/>
-<area shape="rect" id="node4" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="383,55,477,80"/>
-</map>

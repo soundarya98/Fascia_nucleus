@@ -1,5 +1,0 @@
-<map id="update_WifiCred" name="update_WifiCred">
-<area shape="rect" id="node1" title="Add a new Wifi in the Credentials List." alt="" coords="5,5,126,31"/>
-<area shape="rect" id="node2" href="$_n_x_r___flash_8cpp.html#ac449c76691b242a5f0662fd49bca3dc7" title="Finds empty space position in the WiFi list." alt="" coords="174,5,289,31"/>
-<area shape="rect" id="node3" href="$_n_x_r___flash_8cpp.html#a69a50329cabb824a93972c519e641341" title="Get the memory position of the last Stored WiFi network." alt="" coords="337,5,426,31"/>
-</map>

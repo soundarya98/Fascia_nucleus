@@ -1,5 +1,0 @@
-<map id="CHECK_Indication" name="CHECK_Indication">
-<area shape="rect" id="node1" title="Indicate a correct Operation." alt="" coords="5,31,138,56"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#afa854d5c97f41972ffa9bc30d95ee380" title="Blink LED at certain frequency." alt="" coords="195,5,271,31"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="186,55,280,80"/>
-</map>

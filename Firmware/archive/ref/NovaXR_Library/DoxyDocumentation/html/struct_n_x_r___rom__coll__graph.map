@@ -1,5 +1,0 @@
-<map id="NXR_Rom" name="NXR_Rom">
-<area shape="rect" id="node1" title="Device All Info." alt="" coords="65,92,150,117"/>
-<area shape="rect" id="node2" href="$struct_device___info.html" title="Device Information Data Structure." alt="" coords="5,5,97,31"/>
-<area shape="rect" id="node3" href="$struct_n_x_r___wi_fi.html" title="WiFi Credentials Data Structure." alt="" coords="121,5,205,31"/>
-</map>

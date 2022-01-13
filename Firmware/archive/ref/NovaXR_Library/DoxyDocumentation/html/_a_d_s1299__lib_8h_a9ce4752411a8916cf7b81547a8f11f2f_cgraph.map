@@ -1,4 +1,0 @@
-<map id="config_ADS_Register" name="config_ADS_Register">
-<area shape="rect" id="node1" title="Configure an ADS1299 Register." alt="" coords="5,5,154,31"/>
-<area shape="rect" id="node2" href="$_a_d_s1299__lib_8cpp.html#a810241b5eff0b37656f6872e50017b14" title="Performs a WREG ADS1299 command &#45; Writes a Register ." alt="" coords="202,5,287,31"/>
-</map>

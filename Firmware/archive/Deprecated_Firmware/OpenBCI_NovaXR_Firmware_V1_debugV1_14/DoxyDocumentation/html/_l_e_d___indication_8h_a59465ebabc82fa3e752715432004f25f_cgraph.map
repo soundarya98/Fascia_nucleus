@@ -1,5 +1,0 @@
-<map id="standBy_mode" name="standBy_mode">
-<area shape="rect" id="node1" title="Enter StandBy Mode." alt="" coords="5,31,116,56"/>
-<area shape="rect" id="node2" href="$_l_e_d___indication_8cpp.html#a2ee303fca36724a93b175082bbc87344" title="Turn OFF all LEDs immidiately." alt="" coords="164,5,258,31"/>
-<area shape="rect" id="node3" href="$_l_e_d___indication_8cpp.html#a5163d45c1af814fc9ea0cca80f001657" title="Fade&#45;in Turning On any LED at certain PWM speed." alt="" coords="167,55,255,80"/>
-</map>
